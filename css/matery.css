@@ -689,7 +689,7 @@ header .go-back i {
 }
 
 .index-card {
-    margin-top: -15px;
+    margin-top: -10px;
     padding-top: 20px;
 }
 
@@ -731,8 +731,17 @@ header .go-back i {
     padding-top: 30px;
 }
 
-.index-card .card .card-content {
+/* .index-card .card .card-content {
     padding: 20px 40px;
+} */
+
+.index-card .card .card-content {
+    padding: 20x 20px;
+}
+
+.index-card .card {
+    position: relative;
+    margin: .5rem 1rem 1rem 1rem;
 }
 
 @media only screen and (min-width: 1418px) {
@@ -753,6 +762,7 @@ header .go-back i {
     .index-card .card .card-content {
         padding: 20px 20px;
     }
+
 }
 
 .recommend .row .col {
