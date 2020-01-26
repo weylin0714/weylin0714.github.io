@@ -739,6 +739,11 @@ header .go-back i {
     padding: 5x 5px;
 }
 
+.index-card .card {
+    position: relative;
+    margin: .5rem 1rem 1rem 1rem;
+}
+
 @media only screen and (min-width: 1418px) {
     .recommend {
         margin-top: 20px;
@@ -754,10 +759,6 @@ header .go-back i {
 
 /*中等屏幕下(平板类)的样式*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
-    .index-card .card .card-content {
-        padding: 20px 20px;
-    }
-
     .index-card .card .card-content {
         padding: 20px 20px;
     }
@@ -908,7 +909,6 @@ article .card-image {
 
 article .card-image img {
     height: 220px;
-    width: 375px;
     border-radius: 0.3rem;
     opacity: .7;
 }
