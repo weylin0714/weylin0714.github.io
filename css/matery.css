@@ -739,11 +739,6 @@ header .go-back i {
     padding: 5x 5px;
 }
 
-.index-card .card {
-    position: relative;
-    margin: .5rem 1rem 1rem 1rem;
-}
-
 @media only screen and (min-width: 1418px) {
     .recommend {
         margin-top: 20px;

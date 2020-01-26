@@ -6,16 +6,16 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Linux部署Python3和virtualenvwrapper, 简若">
     <meta name="description" content="一、安装Python3
-安装lrzsz，windows与CentOS互传文件
-yum -y install lrzsz
+安装lrzsz，windows与CentOS互传文件 
+yum -y install lrzsz 
 上传文件：rz
 下载文件：sz
 
 安装Python
 
-安装依赖
+安装依赖 
 
-yum -y groupinstall &amp;quot;D">
+yum -y groupinstall &#34;Dev">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -472,21 +472,21 @@ yum -y groupinstall &amp;quot;D">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-01-22
+                    2020-01-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    421
+                    459
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -503,16 +503,16 @@ yum -y groupinstall &amp;quot;D">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="一、安装Python3"><a href="#一、安装Python3" class="headerlink" title="一、安装Python3"></a><strong>一、安装Python3</strong></h2><ol>
-<li><p>安装lrzsz，windows与CentOS互传文件</p>
-<pre><code>yum -y install lrzsz
+<li><p>安装lrzsz，windows与CentOS互传文件 </p>
+<pre><code>yum -y install lrzsz 
 上传文件：rz
 下载文件：sz</code></pre><a id="more"></a>
 </li>
 <li><p>安装Python</p>
 <ul>
-<li>安装依赖</li>
+<li>安装依赖 </li>
 </ul>
-<pre><code>yum -y groupinstall &quot;Development tools&quot;
+<pre><code>yum -y groupinstall "Development tools"
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</code></pre><ul>
 <li>在线下载或本地上传rz</li>
 </ul>
@@ -557,12 +557,12 @@ source /usr/local/python3/bin/virtualenvwrapper.sh</code></pre><ul>
 </ul>
 <pre><code>source ~/.bashrc</code></pre></li>
 <li><p>修改快捷键（由于virtualenvwrapper命令太长）</p>
-<pre><code>alias mkv=&#39;mkvirtualenv&#39; # 创建一个虚拟环境
-alias rmv=&#39;rmvirtualenv&#39; # 删除虚拟环境
-alias lsv=&#39;lsvirtualenv&#39; # 查看所有的虚拟环境
-alias cdv=&#39;cdvirtualenv&#39; # 切换到虚拟环境的目录
-alias cds=&#39;cdsitepackages&#39; # 切换到虚拟环境的site-packages目录
-alias lss=&#39;lssitepackages&#39; # 查看虚拟环境site-packages目录的文件
+<pre><code>alias mkv='mkvirtualenv' # 创建一个虚拟环境
+alias rmv='rmvirtualenv' # 删除虚拟环境
+alias lsv='lsvirtualenv' # 查看所有的虚拟环境
+alias cdv='cdvirtualenv' # 切换到虚拟环境的目录
+alias cds='cdsitepackages' # 切换到虚拟环境的site-packages目录
+alias lss='lssitepackages' # 查看虚拟环境site-packages目录的文件
 unalias mkv # 取消别名</code></pre></li>
 <li><p>创建虚拟环境</p>
 <pre><code>mkv venv</code></pre></li>
@@ -570,7 +570,25 @@ unalias mkv # 取消别名</code></pre></li>
 <pre><code>workon venv # 切换虚拟环境
 deactivate # 退出虚拟环境</code></pre></li>
 </ol>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -790,6 +808,32 @@ deactivate # 退出虚拟环境</code></pre></li>
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '60961d5b5123175ae775',
+        clientSecret: 'ebda23c9758d4b26ea4b438580ae79620384442e',
+        repo: 'gitalk',
+        owner: 'weylin0714',
+        admin: "weylin0714",
+        id: '2019-12-24T09-17-24',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -822,16 +866,16 @@ deactivate # 退出虚拟环境</code></pre></li>
                     <div class="summary block-with-text">
                         
                             一、安装Python3
-安装lrzsz，windows与CentOS互传文件
-yum -y install lrzsz
+安装lrzsz，windows与CentOS互传文件 
+yum -y install lrzsz 
 上传文件：rz
 下载文件：sz
 
 安装Python
 
-安装依赖
+安装依赖 
 
-yum -y groupinstall &quot;D
+yum -y groupinstall "Dev
                         
                     </div>
                     <div class="publish-info">
@@ -885,7 +929,7 @@ yum -y groupinstall &quot;D
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 前言&emsp;&emsp;Pandas是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1
+                            1. 前言  Pandas是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1维）和DataFra
                         
                     </div>
                     <div class="publish-info">
@@ -1013,7 +1057,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1025,7 +1069,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1088,17 +1132,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2019</span>
+            <span id="year">2020</span>
             <a href="http://www.linwang93.cn" target="_blank">Lin</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.9k</span>&nbsp;字
+                class="white-color">12k</span>&nbsp;字
             
             
             
@@ -1117,6 +1161,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "2";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             

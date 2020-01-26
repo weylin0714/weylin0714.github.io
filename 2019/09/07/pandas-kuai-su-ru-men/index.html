@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Pandas快速入门, 简若">
-    <meta name="description" content="1. 前言&amp;emsp;&amp;emsp;Pandas是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1">
+    <meta name="description" content="1. 前言  Pandas是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1维）和DataFra">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -492,10 +492,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>&emsp;&emsp;<strong>Pandas</strong>是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1维）和DataFrame（2维）两种主要的数据结构。DataFrame是一个表格型的数据结构，包含有一组有序的列，每列可以是不同的值类型(数值、字符串、布尔型等)，DataFrame即有行索引也有列索引。Series是一种类似于一维数组的对象，是由一组数据(各种NumPy数据类型)以及一组与之相关的数据标签(即索引)组成。</p>
+                <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>  <strong>Pandas</strong>是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1维）和DataFrame（2维）两种主要的数据结构。DataFrame是一个表格型的数据结构，包含有一组有序的列，每列可以是不同的值类型(数值、字符串、布尔型等)，DataFrame即有行索引也有列索引。Series是一种类似于一维数组的对象，是由一组数据(各种NumPy数据类型)以及一组与之相关的数据标签(即索引)组成。</p>
 <a id="more"></a>
 
-<h2 id="2-Pandas快速入门"><a href="#2-Pandas快速入门" class="headerlink" title="2. Pandas快速入门"></a>2. Pandas快速入门</h2><h3 id="2-1-数据结构"><a href="#2-1-数据结构" class="headerlink" title="2.1 数据结构"></a>2.1 数据结构</h3><h4 id="2-1-1-Series"><a href="#2-1-1-Series" class="headerlink" title="2.1.1 Series"></a>2.1.1 Series</h4><p>&emsp;&emsp;<strong>Series</strong>是一维索引标记的数组，能够保存任何数据类型（整数、字符串、浮点数、Python对象等）。创建Series的基本方法：</p>
+<h2 id="2-Pandas快速入门"><a href="#2-Pandas快速入门" class="headerlink" title="2. Pandas快速入门"></a>2. Pandas快速入门</h2><h3 id="2-1-数据结构"><a href="#2-1-数据结构" class="headerlink" title="2.1 数据结构"></a>2.1 数据结构</h3><h4 id="2-1-1-Series"><a href="#2-1-1-Series" class="headerlink" title="2.1.1 Series"></a>2.1.1 Series</h4><p>  <strong>Series</strong>是一维索引标记的数组，能够保存任何数据类型（整数、字符串、浮点数、Python对象等）。创建Series的基本方法：</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd   <span class="token comment" spellcheck="true"># 在使用pandas模块时需要先引入 </span>
 s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>data<span class="token punctuation">,</span> index<span class="token operator">=</span>index<span class="token punctuation">)</span></code></pre>
 <p>其中，data可以是字典、多维数组 、标量等；索引index是轴标签列表。</p>
@@ -556,7 +556,7 @@ Out<span class="token punctuation">:</span>
     b    <span class="token number">5.0</span>
     c    <span class="token number">5.0</span>
     dtype<span class="token punctuation">:</span> float64</code></pre>
-<h4 id="2-1-2-数据帧（DataFrame）"><a href="#2-1-2-数据帧（DataFrame）" class="headerlink" title="2.1.2 数据帧（DataFrame）"></a>2.1.2 数据帧（DataFrame）</h4><p>&emsp;&emsp;<strong>DataFrame</strong>是一个二维标记数据结构，具有可能不同类型的列，可以将其视为电子表格或SQL表。DataFrame可以接受的数据：列表、字典、Series字典、多维数组字典、列表字典等。</p>
+<h4 id="2-1-2-数据帧（DataFrame）"><a href="#2-1-2-数据帧（DataFrame）" class="headerlink" title="2.1.2 数据帧（DataFrame）"></a>2.1.2 数据帧（DataFrame）</h4><p>  <strong>DataFrame</strong>是一个二维标记数据结构，具有可能不同类型的列，可以将其视为电子表格或SQL表。DataFrame可以接受的数据：列表、字典、Series字典、多维数组字典、列表字典等。</p>
 <ul>
 <li>data为Series构成的字典</li>
 </ul>
@@ -1108,7 +1108,7 @@ Out<span class="token punctuation">:</span>
 <h5 id="2-4-2-2-按值排序"><a href="#2-4-2-2-按值排序" class="headerlink" title="2.4.2.2 按值排序"></a>2.4.2.2 按值排序</h5><ul>
 <li>Series按值排序</li>
 </ul>
-<pre><code>df.sort_values(axis=0, ascending=True, inplace=False, na_position=&#39;last&#39;)</code></pre><pre class=" language-python"><code class="language-python">s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<pre><code>df.sort_values(axis=0, ascending=True, inplace=False, na_position='last')</code></pre><pre class=" language-python"><code class="language-python">s <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 s<span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>na_position <span class="token operator">=</span> <span class="token string">'first'</span><span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     <span class="token number">0</span>    NaN
@@ -1120,7 +1120,7 @@ Out<span class="token punctuation">:</span>
 <ul>
 <li>DataFrame按值排序</li>
 </ul>
-<pre><code>df.sort_values(by=[&#39;列名&#39;], ascending=True, inplace=False, na_position=&#39;last&#39;)</code></pre><p>参数说明：</p>
+<pre><code>df.sort_values(by=['列名'], ascending=True, inplace=False, na_position='last')</code></pre><p>参数说明：</p>
 <table>
 <thead>
 <tr>
@@ -1201,7 +1201,7 @@ Out<span class="token punctuation">:</span>
 <h4 id="2-4-4-合并"><a href="#2-4-4-合并" class="headerlink" title="2.4.4 合并"></a>2.4.4 合并</h4><ul>
 <li>merge</li>
 </ul>
-<pre><code>pd.merge(left, right, how=&#39;inner&#39;, on=None, left_on=None, right_on=None, left_index=False, right_index=False,             sort=True, suffixes=(&#39;_x&#39;, &#39;_y&#39;), copy=True, indicator=False, validate=None)</code></pre><p>参数说明：</p>
+<pre><code>pd.merge(left, right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False,             sort=True, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)</code></pre><p>参数说明：</p>
 <table>
 <thead>
 <tr>
@@ -1323,7 +1323,7 @@ Out<span class="token punctuation">:</span>
 <ul>
 <li>concat</li>
 </ul>
-<pre><code>pd.concat(objs, axis=0, join=&#39;outer&#39;, ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, copy=True)</code></pre><p>常用参数说明：</p>
+<pre><code>pd.concat(objs, axis=0, join='outer', ignore_index=False, keys=None, levels=None, names=None, verify_integrity=False, copy=True)</code></pre><p>常用参数说明：</p>
 <table>
 <thead>
 <tr>
@@ -1495,7 +1495,25 @@ bar one    <span class="token number">0.479966</span> <span class="token operato
 foo one    <span class="token number">0.843216</span>  <span class="token number">0.341841</span>
     three <span class="token operator">-</span><span class="token number">0.943761</span> <span class="token operator">-</span><span class="token number">0.460587</span>
     two    <span class="token number">0.601747</span>  <span class="token number">1.587092</span></code></pre>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -1711,6 +1729,32 @@ foo one    <span class="token number">0.843216</span>  <span class="token number
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '60961d5b5123175ae775',
+        clientSecret: 'ebda23c9758d4b26ea4b438580ae79620384442e',
+        repo: 'gitalk',
+        owner: 'weylin0714',
+        admin: "weylin0714",
+        id: '2019-09-07T16-52-16',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -1742,16 +1786,16 @@ foo one    <span class="token number">0.843216</span>  <span class="token number
                     <div class="summary block-with-text">
                         
                             一、安装Python3
-安装lrzsz，windows与CentOS互传文件
-yum -y install lrzsz
+安装lrzsz，windows与CentOS互传文件 
+yum -y install lrzsz 
 上传文件：rz
 下载文件：sz
 
 安装Python
 
-安装依赖
+安装依赖 
 
-yum -y groupinstall &quot;D
+yum -y groupinstall "Dev
                         
                     </div>
                     <div class="publish-info">
@@ -1804,7 +1848,10 @@ yum -y groupinstall &quot;D
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 前言&emsp;&emsp;Hexo是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首
+                            1. 前言  Hexo是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。
+
+
+2. 
                         
                     </div>
                     <div class="publish-info">
@@ -1928,7 +1975,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1940,7 +1987,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -2003,17 +2050,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2019</span>
+            <span id="year">2020</span>
             <a href="http://www.linwang93.cn" target="_blank">Lin</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.9k</span>&nbsp;字
+                class="white-color">12k</span>&nbsp;字
             
             
             
@@ -2032,6 +2079,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "2";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             

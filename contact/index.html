@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, 简若">
-    <meta name="description" content="标签 | 简若">
+    <meta name="keywords" content="contact, 简若">
+    <meta name="description" content="contact | 简若">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签 | 简若</title>
+    <title>contact | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -342,92 +342,72 @@
 </div>
 
 <main class="content">
-
-    
-
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/Python/" title="Python: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Python" style="background-color: #F9EBEA;">Python
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/virtualenvwrapper/" title="virtualenvwrapper: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="virtualenvwrapper" style="background-color: #F5EEF8;">virtualenvwrapper
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Hexo/" title="Hexo: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Hexo" style="background-color: #D5F5E3;">Hexo
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Markdown/" title="Markdown: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Markdown" style="background-color: #E8F8F5;">Markdown
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Pandas/" title="Pandas: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Pandas" style="background-color: #FEF9E7;">Pandas
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
+    <div id="contact" class="container chip-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
+                </div>
+                <h2 id="畅所欲言"><a href="#畅所欲言" class="headerlink" title="畅所欲言"></a>畅所欲言</h2><p>在这里可以留下你的足迹，欢迎在下方留言，一起交流学习！</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
         </div>
+        <div class="card">
+            
+            <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
     </div>
+    <div id="gitalk-container" class="card-content"></div>
 </div>
 
-    
-    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
-    }
-</style>
-
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
-<script type="text/javascript">
-    
-
-    $('#tag-wordcloud').jQCloud([{"text":"Python","weight":1,"link":"http://www.linwang93.cn/tags/Python/"},{"text":"virtualenvwrapper","weight":1,"link":"http://www.linwang93.cn/tags/virtualenvwrapper/"},{"text":"Hexo","weight":1,"link":"http://www.linwang93.cn/tags/Hexo/"},{"text":"Markdown","weight":1,"link":"http://www.linwang93.cn/tags/Markdown/"},{"text":"Pandas","weight":1,"link":"http://www.linwang93.cn/tags/Pandas/"}], {
-        autoResize: true
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '60961d5b5123175ae775',
+        clientSecret: 'ebda23c9758d4b26ea4b438580ae79620384442e',
+        repo: 'gitalk',
+        owner: 'weylin0714',
+        admin: "weylin0714",
+        id: '2020-01-26T20-00-50',
+        distractionFreeMode: false  // Facebook-like distraction free mode
     });
-</script>
-    
 
+    gitalk.render('gitalk-container');
+</script>
+            
+
+            
+
+            
+
+            
+
+            
+        </div>
+    </div>
 </main>
 
 

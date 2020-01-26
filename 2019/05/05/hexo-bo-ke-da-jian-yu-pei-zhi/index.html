@@ -5,7 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo博客搭建与配置, 简若">
-    <meta name="description" content="1. 前言&amp;emsp;&amp;emsp;Hexo是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首">
+    <meta name="description" content="1. 前言  Hexo是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。
+
+
+2. ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -488,7 +491,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>&emsp;&emsp;Hexo是一个快速、简洁且高效的博客框架，使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。</p>
+                <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>  Hexo是一个快速、简洁且高效的博客框架，使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。</p>
 <a id="more"></a>
 
 <h2 id="2-博客搭建"><a href="#2-博客搭建" class="headerlink" title="2. 博客搭建"></a>2. 博客搭建</h2><h3 id="2-1-准备环境"><a href="#2-1-准备环境" class="headerlink" title="2.1 准备环境"></a>2.1 准备环境</h3><ol>
@@ -496,23 +499,23 @@
 <li>安装node.js，参考：<a href="https://jingyan.baidu.com/article/48b37f8dd141b41a646488bc.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/48b37f8dd141b41a646488bc.html</a></li>
 <li>安装Git，下载地址：<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a></li>
 </ol>
-<h3 id="2-2-创建github仓库"><a href="#2-2-创建github仓库" class="headerlink" title="2.2 创建github仓库"></a>2.2 创建github仓库</h3><p> &emsp;&emsp;新建一个名为<code>username.github.io</code>的仓库，比如，你的github用户名为zhangsan，则新建仓库zhangsan.github.io。</p>
+<h3 id="2-2-创建github仓库"><a href="#2-2-创建github仓库" class="headerlink" title="2.2 创建github仓库"></a>2.2 创建github仓库</h3><p>   新建一个名为<code>username.github.io</code>的仓库，比如，你的github用户名为zhangsan，则新建仓库zhangsan.github.io。</p>
 <h3 id="2-3-配置SSH-key"><a href="#2-3-配置SSH-key" class="headerlink" title="2.3 配置SSH key"></a>2.3 配置SSH key</h3><ul>
 <li>创建一个SSH key。（在Git bash命令行输入）</li>
 </ul>
 <pre><code>$ cd ~/. ssh    # 检查本机是否已存在ssh密钥</code></pre><p>如果提示：No such file or directory，则说明是第一次使用Git。然后，在命令行输入以下命令</p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;邮箱地址&quot;</code></pre><p>连续三次回车，在用户目录下生成一个密钥文件（.ssh\id_rsa.pub）。</p>
+<pre><code>$ ssh-keygen -t rsa -C "邮箱地址"</code></pre><p>连续三次回车，在用户目录下生成一个密钥文件（.ssh\id_rsa.pub）。</p>
 <ul>
 <li>添加密钥到github</li>
 </ul>
-<p>&emsp;&emsp;复制id_rsa.pub文件中的内容并添加到github。打开github个人主页，进入Settings -&gt; SSH and GPG keys -&gt; New SSH key:</p>
-<div align=center><img src="Hexo博客搭建与配置\1.png" width=60% height = 60% ></div>
+<p>  复制id_rsa.pub文件中的内容并添加到github。打开github个人主页，进入Settings -&gt; SSH and GPG keys -&gt; New SSH key:</p>
+<div align="center"><img src="Hexo博客搭建与配置\1.png" width="60%" height="60%"></div>
 * 测试是否添加成功
 
 <pre><code>$ ssh -T git@github.com
 $ yes</code></pre><p>返回”You’ve successfully authenticated”，则说明添加成功。</p>
-<h3 id="2-4-绑定域名"><a href="#2-4-绑定域名" class="headerlink" title="2.4 绑定域名"></a>2.4 绑定域名</h3><p>&emsp;&emsp;可以不绑定域名，直接用默认的username.github.io来访问，也可以购买一个属于自己的域名。首先，需要注册一个域名，可以到<a href="https://sg.godaddy.com/zh/offers/domains/godaddycom?isc=gennbacn07&countryview=1&currencyType=CNY&utm_source=Baidu&utm_medium=cpc&utm_term=Title&utm_campaign=2019Brandzone%5FPC&utm_content=Brandzone%5FPC&gclid=CNql2LbdheICFYNOvAod4QMBcA&gclsrc=ds" target="_blank" rel="noopener">godaddy</a>网站注册，也可以使用国内的<a href="https://wanwang.aliyun.com/?spm=5176.8142029.735711.62.3dbd6d3e5uxczh" target="_blank" rel="noopener">阿里云</a>，价格也比较便宜。我个人是使用的阿里云注册域名。</p>
-<p>&emsp;&emsp;然后，需要绑定域名。域名配置常用的两种方式：CNAME和A记录。</p>
+<h3 id="2-4-绑定域名"><a href="#2-4-绑定域名" class="headerlink" title="2.4 绑定域名"></a>2.4 绑定域名</h3><p>  可以不绑定域名，直接用默认的username.github.io来访问，也可以购买一个属于自己的域名。首先，需要注册一个域名，可以到<a href="https://sg.godaddy.com/zh/offers/domains/godaddycom?isc=gennbacn07&amp;countryview=1&amp;currencyType=CNY&amp;utm_source=Baidu&amp;utm_medium=cpc&amp;utm_term=Title&amp;utm_campaign=2019Brandzone%5FPC&amp;utm_content=Brandzone%5FPC&amp;gclid=CNql2LbdheICFYNOvAod4QMBcA&amp;gclsrc=ds" target="_blank" rel="noopener">godaddy</a>网站注册，也可以使用国内的<a href="https://wanwang.aliyun.com/?spm=5176.8142029.735711.62.3dbd6d3e5uxczh" target="_blank" rel="noopener">阿里云</a>，价格也比较便宜。我个人是使用的阿里云注册域名。</p>
+<p>  然后，需要绑定域名。域名配置常用的两种方式：CNAME和A记录。</p>
 <ul>
 <li><p>添加CNAME记录指向&lt;github账号名称&gt;.github.io</p>
 <p>类型选择为CNAME；</p>
@@ -534,7 +537,7 @@ $ yes</code></pre><p>返回”You’ve successfully authenticated”，则说明
 </ul>
 </li>
 </ul>
-<h3 id="2-5-安装Hexo"><a href="#2-5-安装Hexo" class="headerlink" title="2.5 安装Hexo"></a>2.5 安装Hexo</h3><p>&emsp;&emsp; 在命令行（即Git Bash）运行一下命令：</p>
+<h3 id="2-5-安装Hexo"><a href="#2-5-安装Hexo" class="headerlink" title="2.5 安装Hexo"></a>2.5 安装Hexo</h3><p>   在命令行（即Git Bash）运行一下命令：</p>
 <pre><code>npm install -g hexo-cli</code></pre><p>初始化Hexo，在命令行运行以下命令：</p>
 <pre><code>$ hexo init &lt;folder&gt;  # &lt;folder&gt;为存放Hexo初始化文件的路径，即站点目录，如我的目录为E：\hexo
 $ cd &lt;folder&gt;
@@ -551,7 +554,7 @@ $ npm install</code></pre><p>运行结束后，在路径下生成hexo文件夹�
 <li>站点配置文件：站点目录下的<code>_config.yml</code>，路径为<code>&lt;folder&gt;\_config.yml</code></li>
 <li>主题配置文件：站点目录下themes文件夹下的，主题文件夹下的<code>_config.yml</code>，路径为<code>&lt;folder&gt;\themes\&lt;主题文件夹&gt;\_config.yml</code></li>
 </ul>
-<p>&emsp;&emsp;在命令行（即Git Bash）运行以下命令：</p>
+<p>  在命令行（即Git Bash）运行以下命令：</p>
 <pre><code>$ hexo g # 生成
 $ hexo s # 启动服务</code></pre><p>执行以上命令之后，会在public文件夹生成相关html文件，这些文件将来都是要提交到github。</p>
 <p>打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可看到博客内容。</p>
@@ -561,10 +564,10 @@ $ hexo s # 启动服务</code></pre><p>执行以上命令之后，会在public�
   type: git
   repo: git@github.com:&lt;Github账号名称&gt;/&lt;Github账号名称&gt;.github.io.git
   branch: master</code></pre><p>还需要安装一个插件，运行以下命令：</p>
-<pre><code>$ npm install hexo-deployer-git --save</code></pre><h3 id="2-7-常用hexo命令"><a href="#2-7-常用hexo命令" class="headerlink" title="2.7 常用hexo命令"></a>2.7 常用hexo命令</h3><pre><code>hexo new &quot;postName&quot;               #新建文章
-hexo new page &quot;pageName&quot;          #新建页面
+<pre><code>$ npm install hexo-deployer-git --save</code></pre><h3 id="2-7-常用hexo命令"><a href="#2-7-常用hexo命令" class="headerlink" title="2.7 常用hexo命令"></a>2.7 常用hexo命令</h3><pre><code>hexo new "postName"               #新建文章
+hexo new page "pageName"          #新建页面
 hexo generate                     #生成静态页面至public目录
-hexo server                       #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）
+hexo server                       #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）
 hexo deploy                       #部署到GitHub
 hexo help                         #查看帮助
 hexo version                      #查看Hexo的版本</code></pre><p>命令缩写：</p>
@@ -574,8 +577,8 @@ hexo server = hexo s
 hexo deploy = hexo d</code></pre><p>本地修改，添加文章后，执行以下命令发布到github仓库</p>
 <pre><code>hexo clean
 hexo g
-hexo d</code></pre><h2 id="3-主题配置与优化"><a href="#3-主题配置与优化" class="headerlink" title="3. 主题配置与优化"></a>3. 主题配置与优化</h2><p>&emsp;&emsp;在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
-<h3 id="3-1-主题安装"><a href="#3-1-主题安装" class="headerlink" title="3.1 主题安装"></a>3.1 主题安装</h3><p>&emsp;&emsp;Hexo博客支持很多主题风格，其中<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a>主题是Github上Star最多的主题。我主要是基于Next6主题进行的配置与优化。</p>
+hexo d</code></pre><h2 id="3-主题配置与优化"><a href="#3-主题配置与优化" class="headerlink" title="3. 主题配置与优化"></a>3. 主题配置与优化</h2><p>  在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<h3 id="3-1-主题安装"><a href="#3-1-主题安装" class="headerlink" title="3.1 主题安装"></a>3.1 主题安装</h3><p>  Hexo博客支持很多主题风格，其中<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a>主题是Github上Star最多的主题。我主要是基于Next6主题进行的配置与优化。</p>
 <p>*　下载Ｎext主题</p>
 <p>在hexo站点目录下，启动Git Bash，运行以下命令：</p>
 <pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code></pre><p>Next主题被下载到站点目录中themes文件夹下。</p>
@@ -600,7 +603,7 @@ description: 描述
 keywords: 关键词
 author: 作者
 language: 语言（简体中文是zh-CN）
-timezone: 网站时区（Hexo 默认使用您电脑的时区）</code></pre><h3 id="3-3-主题配置"><a href="#3-3-主题配置" class="headerlink" title="3.3 主题配置"></a>3.3 主题配置</h3><h4 id="3-3-1-Next主题设定"><a href="#3-3-1-Next主题设定" class="headerlink" title="3.3.1 Next主题设定"></a>3.3.1 Next主题设定</h4><p>&emsp;&emsp;Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持四种 Scheme:</p>
+timezone: 网站时区（Hexo 默认使用您电脑的时区）</code></pre><h3 id="3-3-主题配置"><a href="#3-3-主题配置" class="headerlink" title="3.3 主题配置"></a>3.3 主题配置</h3><h4 id="3-3-1-Next主题设定"><a href="#3-3-1-Next主题设定" class="headerlink" title="3.3.1 Next主题设定"></a>3.3.1 Next主题设定</h4><p>  Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持四种 Scheme:</p>
 <pre><code>## Schemes
 #scheme: Muse
 #scheme: Mist
@@ -612,7 +615,7 @@ scheme: Gemini</code></pre><ul>
 <li>Gemini- 左侧网站信息及目录，块+片段结构布局</li>
 </ul>
 <p>Scheme 的切换通过更改 <strong>主题配置文件</strong>，搜索 scheme 关键字，将你需用启用的 scheme 前面注释 <code>#</code> 去除即可。本人使用的是Gemini风格，可以选择自己喜欢的风格。</p>
-<h4 id="3-3-2-菜单设置"><a href="#3-3-2-菜单设置" class="headerlink" title="3.3.2 菜单设置"></a>3.3.2 菜单设置</h4><p>&emsp;&emsp;刚开始默认的菜单比较少，不满足我们的要求，可以自己添加。菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 <a href="http://fontawesome.io/" target="_blank" rel="noopener">Font Awesome</a> 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景。</p>
+<h4 id="3-3-2-菜单设置"><a href="#3-3-2-菜单设置" class="headerlink" title="3.3.2 菜单设置"></a>3.3.2 菜单设置</h4><p>  刚开始默认的菜单比较少，不满足我们的要求，可以自己添加。菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 <a href="http://fontawesome.io/" target="_blank" rel="noopener">Font Awesome</a> 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景。</p>
 <p>打开<strong>主题配置文件</strong>，找到Menu Settings</p>
 <pre><code>menu:
   home: / || home                                 # 首页
@@ -697,7 +700,7 @@ search:
   # Unescape html strings to the readable one.
   unescape: false</code></pre></li>
 </ul>
-<h4 id="3-4-2-设置头像"><a href="#3-4-2-设置头像" class="headerlink" title="3.4.2 设置头像"></a>3.4.2 设置头像</h4><p>&emsp;&emsp;编辑<strong>主题配置文件</strong>，修改字段avatar，值设置成头像的链接地址。其中头像的链接地址可以是</p>
+<h4 id="3-4-2-设置头像"><a href="#3-4-2-设置头像" class="headerlink" title="3.4.2 设置头像"></a>3.4.2 设置头像</h4><p>  编辑<strong>主题配置文件</strong>，修改字段avatar，值设置成头像的链接地址。其中头像的链接地址可以是</p>
 <table>
 <thead>
 <tr>
@@ -711,7 +714,7 @@ search:
 </tr>
 <tr>
 <td align="left">站点内的地址</td>
-<td align="left">将头像放置主题目录下的 <code>source/uploads/</code> （新建 uploads 目录若不存在） <br />配置为：<code>avatar: /uploads/avatar.png</code><br />或者放置在 <code>source/images/</code> 目录下  <br />配置为：<code>avatar: /images/avatar.png</code></td>
+<td align="left">将头像放置主题目录下的 <code>source/uploads/</code> （新建 uploads 目录若不存在） <br>配置为：<code>avatar: /uploads/avatar.png</code><br>或者放置在 <code>source/images/</code> 目录下  <br>配置为：<code>avatar: /images/avatar.png</code></td>
 </tr>
 </tbody></table>
 <pre><code>avatar:
@@ -735,13 +738,13 @@ feed:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: &#39; &#39;</code></pre><ol start="3">
+  content_limit_delim: ' '</code></pre><ol start="3">
 <li>打开<strong>主题配置文件</strong>，找到rss，设置为</li>
 </ol>
-<pre><code>rss: /atom.xml</code></pre><h4 id="3-4-4-添加阅读全文按钮"><a href="#3-4-4-添加阅读全文按钮" class="headerlink" title="3.4.4 添加阅读全文按钮"></a>3.4.4 添加阅读全文按钮</h4><p>&emsp;&emsp;在主页会显示多篇文章，如果想每篇文章只显示部分内容，其余内容需要点击<strong>阅读全文</strong>按钮来进一步查看，则需要在每篇文章中添加：</p>
+<pre><code>rss: /atom.xml</code></pre><h4 id="3-4-4-添加阅读全文按钮"><a href="#3-4-4-添加阅读全文按钮" class="headerlink" title="3.4.4 添加阅读全文按钮"></a>3.4.4 添加阅读全文按钮</h4><p>  在主页会显示多篇文章，如果想每篇文章只显示部分内容，其余内容需要点击<strong>阅读全文</strong>按钮来进一步查看，则需要在每篇文章中添加：</p>
 <pre><code>显示的内容
 &lt;!--more--&gt;
-不显示的内容</code></pre><h4 id="3-4-5-修改文章内链接样式"><a href="#3-4-5-修改文章内链接样式" class="headerlink" title="3.4.5 修改文章内链接样式"></a>3.4.5 修改文章内链接样式</h4><p>&emsp;&emsp;打开themes\next\source\css_common\components\post\post.styl，在末尾添加</p>
+不显示的内容</code></pre><h4 id="3-4-5-修改文章内链接样式"><a href="#3-4-5-修改文章内链接样式" class="headerlink" title="3.4.5 修改文章内链接样式"></a>3.4.5 修改文章内链接样式</h4><p>  打开themes\next\source\css_common\components\post\post.styl，在末尾添加</p>
 <pre><code>// 文章内链接文本样式
 .post-body p a {
   color: #0593d3;
@@ -755,7 +758,7 @@ feed:
 }</code></pre><h4 id="3-4-6-添加评论系统—Valine"><a href="#3-4-6-添加评论系统—Valine" class="headerlink" title="3.4.6 添加评论系统—Valine"></a>3.4.6 添加评论系统—Valine</h4><ol>
 <li>注册LeanCloud</li>
 </ol>
-<p>&emsp;&emsp;注册后需要创建一个应用，名字可以随便起，我的应用名称为&lt;域名&gt;.counter。然后进入<strong>应用</strong>-&gt;<strong>设置</strong>-&gt;<strong>应用Key</strong>，获取<strong>App ID</strong>和<strong>App Key</strong>。</p>
+<p>  注册后需要创建一个应用，名字可以随便起，我的应用名称为&lt;域名&gt;.counter。然后进入<strong>应用</strong>-&gt;<strong>设置</strong>-&gt;<strong>应用Key</strong>，获取<strong>App ID</strong>和<strong>App Key</strong>。</p>
 <ol start="2">
 <li>打开<strong>主题配置文件</strong>，</li>
 </ol>
@@ -774,11 +777,11 @@ feed:
   comment_count: true</code></pre><ol start="3">
 <li>添加域名</li>
 </ol>
-<p>&emsp;&emsp;在LeanCloud中，选择<strong>设置</strong>-&gt;<strong>安全中心</strong>-&gt;<strong>Web安全域名</strong>，添加自己的博客域名。</p>
+<p>  在LeanCloud中，选择<strong>设置</strong>-&gt;<strong>安全中心</strong>-&gt;<strong>Web安全域名</strong>，添加自己的博客域名。</p>
 <h4 id="3-4-7-添加文章阅读量"><a href="#3-4-7-添加文章阅读量" class="headerlink" title="3.4.7 添加文章阅读量"></a>3.4.7 添加文章阅读量</h4><ol>
 <li>利用LeanCloud的统计功能，基于3.4.6创建的应用，添加一个名为Counter的类（Class）。</li>
 </ol>
-<div align=center><img src="Hexo博客搭建与配置\2.png" width=40% height = 40% ></div>
+<div align="center"><img src="Hexo博客搭建与配置\2.png" width="40%" height="40%"></div>
 2. 修改**主题配置文件**，找到leancloud配置项，添加app_id和app_key。
 
 <pre><code>leancloud_visitors:
@@ -804,11 +807,11 @@ feed:
   item_text_post: true    # 文章是否显示文字（本文字数|阅读时长）
   item_text_total: true   # 网页底部是否显示文字（站点总字数|站点阅读时长） 
   awl: 4
-  wpm: 275</code></pre><h4 id="3-4-9-添加动态背景"><a href="#3-4-9-添加动态背景" class="headerlink" title="3.4.9 添加动态背景"></a>3.4.9 添加动态背景</h4><p>&emsp;&emsp;新版的Next已集成了该功能。打开<strong>主题配置文件</strong>，选择动态背景，enable设置为true。</p>
+  wpm: 275</code></pre><h4 id="3-4-9-添加动态背景"><a href="#3-4-9-添加动态背景" class="headerlink" title="3.4.9 添加动态背景"></a>3.4.9 添加动态背景</h4><p>  新版的Next已集成了该功能。打开<strong>主题配置文件</strong>，选择动态背景，enable设置为true。</p>
 <pre><code>canvas_nest:
   enable: true
   onmobile: true # display on mobile or not
-  color: &quot;0,0,255&quot; # RGB values, use &#39;,&#39; to separate
+  color: "0,0,255" # RGB values, use ',' to separate
   opacity: 0.5 # the opacity of line: 0~1
   zIndex: -1 # z-index property of the background
   count: 99 # the number of lines
@@ -854,14 +857,14 @@ canvas_ribbon:
     show: false #是否在手机端显示</code></pre><ol start="3">
 <li>下载<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">模型</a>，我安装的是live2d-widget-model-wanko。</li>
 </ol>
-<pre><code>$ npm install live2d-widget-model-wanko</code></pre><h4 id="3-4-11-文章末尾添加版权声明"><a href="#3-4-11-文章末尾添加版权声明" class="headerlink" title="3.4.11 文章末尾添加版权声明"></a>3.4.11 文章末尾添加版权声明</h4><p>&emsp;&emsp;打开<strong>主题配置文件</strong>，找到creative_commons字段。</p>
+<pre><code>$ npm install live2d-widget-model-wanko</code></pre><h4 id="3-4-11-文章末尾添加版权声明"><a href="#3-4-11-文章末尾添加版权声明" class="headerlink" title="3.4.11 文章末尾添加版权声明"></a>3.4.11 文章末尾添加版权声明</h4><p>  打开<strong>主题配置文件</strong>，找到creative_commons字段。</p>
 <pre><code>creative_commons:
   license: by-nc-sa
   sidebar: false
   post: true
   language:</code></pre><p>修改URL，在页面底端的本文链接修改为自己的博客域名。</p>
 <pre><code># URL
-## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as &#39;/child/&#39;
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://linwang93.cn
 root: /
 permalink: :year/:month/:day/:title/
@@ -872,7 +875,7 @@ permalink_defaults:</code></pre><h4 id="3-4-12-点击图片实现全屏查看"><
 <pre><code>$ git clone https://github.com/theme-next/theme-next-fancybox3 fancybox</code></pre><ol start="3">
 <li>更改<strong>主题配置文件</strong>，找到fancybox字段，修改为true。</li>
 </ol>
-<pre><code>$ fancybox: true</code></pre><h4 id="3-4-13-设置代码块样式"><a href="#3-4-13-设置代码块样式" class="headerlink" title="3.4.13 设置代码块样式"></a>3.4.13 设置代码块样式</h4><p>&emsp;&emsp;打开<strong>主题配置文件</strong>，修改代码样式。</p>
+<pre><code>$ fancybox: true</code></pre><h4 id="3-4-13-设置代码块样式"><a href="#3-4-13-设置代码块样式" class="headerlink" title="3.4.13 设置代码块样式"></a>3.4.13 设置代码块样式</h4><p>  打开<strong>主题配置文件</strong>，修改代码样式。</p>
 <pre><code># Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
@@ -910,7 +913,7 @@ passage_end_tag:
     name: user
     animated: true
     # Change the color of icon, using Hex Code.
-    color: &quot;#808080&quot;
+    color: "#808080"
 
   copyright: Lin Wang
 
@@ -927,7 +930,7 @@ passage_end_tag:
     version: false</code></pre><ol start="2">
 <li>添加访客人数和访问量</li>
 </ol>
-<p>&emsp;&emsp;NexT提供了busuanzi来统计。打开<strong>主题配置文件</strong>，找到busuanzi_count字段。</p>
+<p>  NexT提供了busuanzi来统计。打开<strong>主题配置文件</strong>，找到busuanzi_count字段。</p>
 <pre><code>busuanzi_count:
   enable: true
   total_visitors: true
@@ -935,7 +938,7 @@ passage_end_tag:
   total_views: true
   total_views_icon: eye
   post_views: true
-  post_views_icon: eye</code></pre><h4 id="3-4-16-给页面、侧边栏添加背景图片"><a href="#3-4-16-给页面、侧边栏添加背景图片" class="headerlink" title="3.4.16 给页面、侧边栏添加背景图片"></a>3.4.16 给页面、侧边栏添加背景图片</h4><p>&emsp;&emsp;打开<code>theme/next/source/css/_custom/custom.styl</code>，添加以下代码：</p>
+  post_views_icon: eye</code></pre><h4 id="3-4-16-给页面、侧边栏添加背景图片"><a href="#3-4-16-给页面、侧边栏添加背景图片" class="headerlink" title="3.4.16 给页面、侧边栏添加背景图片"></a>3.4.16 给页面、侧边栏添加背景图片</h4><p>  打开<code>theme/next/source/css/_custom/custom.styl</code>，添加以下代码：</p>
 <pre><code>// Custom styles.
 body {
     background:url(/images/background.jpg);   # 背景图片
@@ -943,7 +946,7 @@ body {
     background-attachment:fixed;
     background-position:50% 50%;
     background-size:cover;
-}</code></pre><h4 id="3-4-17-设置个人社交图标链接"><a href="#3-4-17-设置个人社交图标链接" class="headerlink" title="3.4.17 设置个人社交图标链接"></a>3.4.17 设置个人社交图标链接</h4><p>&emsp;&emsp;打开<strong>主题配置文件</strong>，找到social字段，修改如下内容。这里仅展示了简书和E-mail两个，如果添加其他项，取消注释即可。</p>
+}</code></pre><h4 id="3-4-17-设置个人社交图标链接"><a href="#3-4-17-设置个人社交图标链接" class="headerlink" title="3.4.17 设置个人社交图标链接"></a>3.4.17 设置个人社交图标链接</h4><p>  打开<strong>主题配置文件</strong>，找到social字段，修改如下内容。这里仅展示了简书和E-mail两个，如果添加其他项，取消注释即可。</p>
 <pre><code>social:
   简书: https://www.jianshu.com/u/90e6990238e4
   #GitHub: https://github.com/yourname || github
@@ -962,14 +965,14 @@ social_icons:
   enable: true
   icons_only: false
   transition: false
-  简书: book</code></pre><h4 id="3-4-18-设置左上角或右上角的fork-me-on-github效果"><a href="#3-4-18-设置左上角或右上角的fork-me-on-github效果" class="headerlink" title="3.4.18 设置左上角或右上角的fork me on github效果"></a>3.4.18 设置左上角或右上角的fork me on github效果</h4><p>&emsp;&emsp;选择需要的<a href="https://github.blog/2008-12-19-github-ribbons/" target="_blank" rel="noopener">GitHub Ribbons</a>效果，复制所选择效果的代码。然后打开…/themes/next/layout/_layout.swig，将复制的代码粘贴到<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>之间。</p>
-<div align=center><img src="Hexo博客搭建与配置\3.png" width=100% height = 60% ></div>
+  简书: book</code></pre><h4 id="3-4-18-设置左上角或右上角的fork-me-on-github效果"><a href="#3-4-18-设置左上角或右上角的fork-me-on-github效果" class="headerlink" title="3.4.18 设置左上角或右上角的fork me on github效果"></a>3.4.18 设置左上角或右上角的fork me on github效果</h4><p>  选择需要的<a href="https://github.blog/2008-12-19-github-ribbons/" target="_blank" rel="noopener">GitHub Ribbons</a>效果，复制所选择效果的代码。然后打开…/themes/next/layout/_layout.swig，将复制的代码粘贴到<code>&lt;div class="headband"&gt;&lt;/div&gt;</code>之间。</p>
+<div align="center"><img src="Hexo博客搭建与配置\3.png" width="100%" height="60%"></div>
 *****
 
 <p><strong>到这里,Hexo博客的基础搭建与配置就介绍完了。具体效果可以访问我的博客：<a href="https://www.linwang93.cn/">https://www.linwang93.cn/</a></strong></p>
-<h2 id="4-Hexo多电脑同步"><a href="#4-Hexo多电脑同步" class="headerlink" title="4. Hexo多电脑同步"></a>4. Hexo多电脑同步</h2><p>&emsp;&emsp;我们经常有一个需求：在不同电脑上撰写博客文章并发布，这就涉及了如何在多台电脑的同步问题。这里参考了一些博客，总结了Hexo的多电脑同步方法，并亲测了方法的有效。</p>
-<p>&emsp;&emsp;主要思路:（1）Hexo私有仓库–保存Hexo源文件；（2）master公开仓库–保存Hexo生成的博客文件。</p>
-<h3 id="4-1-创建私有仓库"><a href="#4-1-创建私有仓库" class="headerlink" title="4.1 创建私有仓库"></a>4.1 创建私有仓库</h3><p>&emsp;&emsp;首先，已利用Hexo和github构建了博客，在本地有hexo配置源文件，在github中创建了仓库用于保存Hexo生成的博客文件。在github中再创建一个私有仓库，用于保存hexo配置源文件，我的仓库名为hexo-private。</p>
+<h2 id="4-Hexo多电脑同步"><a href="#4-Hexo多电脑同步" class="headerlink" title="4. Hexo多电脑同步"></a>4. Hexo多电脑同步</h2><p>  我们经常有一个需求：在不同电脑上撰写博客文章并发布，这就涉及了如何在多台电脑的同步问题。这里参考了一些博客，总结了Hexo的多电脑同步方法，并亲测了方法的有效。</p>
+<p>  主要思路:（1）Hexo私有仓库–保存Hexo源文件；（2）master公开仓库–保存Hexo生成的博客文件。</p>
+<h3 id="4-1-创建私有仓库"><a href="#4-1-创建私有仓库" class="headerlink" title="4.1 创建私有仓库"></a>4.1 创建私有仓库</h3><p>  首先，已利用Hexo和github构建了博客，在本地有hexo配置源文件，在github中创建了仓库用于保存Hexo生成的博客文件。在github中再创建一个私有仓库，用于保存hexo配置源文件，我的仓库名为hexo-private。</p>
 <h3 id="4-2-建立本地git仓库"><a href="#4-2-建立本地git仓库" class="headerlink" title="4.2 建立本地git仓库"></a>4.2 建立本地git仓库</h3><ol>
 <li>删除已有的Hexo文件夹中的主题git配置，比如我使用的是Next主题，删除该主题文件夹中的.git文件夹。如果存在多个主题文件夹，则需要都删除。</li>
 </ol>
@@ -985,13 +988,13 @@ public/
 .deploy*/</code></pre><ol start="3">
 <li>建立本地git仓库</li>
 </ol>
-<p>&emsp;&emsp;进入Hexo根目录，执行如下命令：</p>
+<p>  进入Hexo根目录，执行如下命令：</p>
 <pre><code>git init</code></pre><h3 id="4-3-本地仓库push到私有仓库"><a href="#4-3-本地仓库push到私有仓库" class="headerlink" title="4.3 本地仓库push到私有仓库"></a>4.3 本地仓库push到私有仓库</h3><pre><code>git remote add origin git@github.com:&lt;yourname&gt;/hexo-private.git
 git add .
-git commit -m &quot;my first private hexo&quot;
+git commit -m "my first private hexo"
 git push -u origin master</code></pre><p>执行以上命令后，就完成了本地Hexo配置文件的备份。</p>
 <p><strong>注：</strong>Hexo根目录中的.gitignore文件没有忽略到theme这文件夹，但是使用的Next主题文件夹原来是用git管理的，里面还有一个.gitigore文件，把themes/next/source/lib目录下的很多文件忽略掉了，这就导致上传到私有仓库时，themes/next/source/lib目录下的很多必要文件给忽略掉了，并没有上传。当在新电脑中，将该私有仓库拉下来，执行hexo g、hexo s命令后，会发现页面不能正常显示。<u>为了解决这个问题，在新电脑中将私有仓库Hexo配置源文件clone下来后，需要将原电脑Hexo文件夹下themes/next/source/lib/目录下所有文件全部复制粘贴到新电脑对应的themes/next/source/lib/目录下，这样就可以正常预览了。</u></p>
-<h3 id="4-4-新电脑上Hexo配置"><a href="#4-4-新电脑上Hexo配置" class="headerlink" title="4.4 新电脑上Hexo配置"></a>4.4 新电脑上Hexo配置</h3><p>&emsp;&emsp;在新电脑上使用Hexo撰写博客时，首先需要搭建并配置好node/npm/git/hexo等环境。node/npm/git等配置可百度查询安装配置。</p>
+<h3 id="4-4-新电脑上Hexo配置"><a href="#4-4-新电脑上Hexo配置" class="headerlink" title="4.4 新电脑上Hexo配置"></a>4.4 新电脑上Hexo配置</h3><p>  在新电脑上使用Hexo撰写博客时，首先需要搭建并配置好node/npm/git/hexo等环境。node/npm/git等配置可百度查询安装配置。</p>
 <ol>
 <li>从私有仓库拉取Hexo配置源文件</li>
 </ol>
@@ -1002,21 +1005,39 @@ git push -u origin master</code></pre><p>执行以上命令后，就完成了本
 npm install</code></pre><ol start="3">
 <li>撰写博客并发布</li>
 </ol>
-<p>&emsp;&emsp;在新电脑上撰写博客文章，在本地预览。</p>
+<p>  在新电脑上撰写博客文章，在本地预览。</p>
 <pre><code>hexo g
-hexo s</code></pre><p>&emsp;&emsp;在本地预览无误后，将博客文件推送到github博客公开仓库。</p>
-<pre><code>hexo d</code></pre><p>&emsp;&emsp;执行git status检查更改的文件，并将配置源文件push到私有仓库，完成Hexo配置源文件私有仓库同步更新。</p>
+hexo s</code></pre><p>  在本地预览无误后，将博客文件推送到github博客公开仓库。</p>
+<pre><code>hexo d</code></pre><p>  执行git status检查更改的文件，并将配置源文件push到私有仓库，完成Hexo配置源文件私有仓库同步更新。</p>
 <pre><code>git status
 git add .
-git commit -m &#39;message自定义&#39;
+git commit -m 'message自定义'
 git push</code></pre><p><strong>注：</strong>在用hexo d部署时，需要将新电脑上的ssh密钥添加到github中。</p>
-<h3 id="4-5-Hexo仓库更新"><a href="#4-5-Hexo仓库更新" class="headerlink" title="4.5 Hexo仓库更新"></a>4.5 Hexo仓库更新</h3><p>&emsp;&emsp;在其他电脑可能对私有仓库中的Hexo配置源文件作了修改，因此在新电脑上每次要先把远程私有仓库最新的配置源文件拉到本地。</p>
+<h3 id="4-5-Hexo仓库更新"><a href="#4-5-Hexo仓库更新" class="headerlink" title="4.5 Hexo仓库更新"></a>4.5 Hexo仓库更新</h3><p>  在其他电脑可能对私有仓库中的Hexo配置源文件作了修改，因此在新电脑上每次要先把远程私有仓库最新的配置源文件拉到本地。</p>
 <pre><code>git fetch --all #将git上所有文件拉取到本地
 git reset --hard origin/master  #强制将本地内容指向刚刚同步git云端内容</code></pre><hr>
 <p>参考: </p>
 <p>[1] <a href="http://ricky.moe/2017/01/13/hexo-perfect-synchronize/" target="_blank" rel="noopener">http://ricky.moe/2017/01/13/hexo-perfect-synchronize/</a></p>
 <p>[2] <a href="https://www.alankeene.com/2019/0102/hexo-perfect-synchronize.html" target="_blank" rel="noopener">https://www.alankeene.com/2019/0102/hexo-perfect-synchronize.html</a></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -1232,6 +1253,32 @@ git reset --hard origin/master  #强制将本地内容指向刚刚同步git云�
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '60961d5b5123175ae775',
+        clientSecret: 'ebda23c9758d4b26ea4b438580ae79620384442e',
+        repo: 'gitalk',
+        owner: 'weylin0714',
+        admin: "weylin0714",
+        id: '2019-05-05T11-53-50',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -1262,7 +1309,7 @@ git reset --hard origin/master  #强制将本地内容指向刚刚同步git云�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 前言&emsp;&emsp;Pandas是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1
+                            1. 前言  Pandas是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1维）和DataFra
                         
                     </div>
                     <div class="publish-info">
@@ -1315,13 +1362,13 @@ git reset --hard origin/master  #强制将本地内容指向刚刚同步git云�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            &emsp;&emsp;说明：Markdown是一种轻量级标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。
+                              说明：Markdown是一种轻量级标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。
 
 
 
 1. 基本操作1.1 内容目录[toc]
 1.2 标题＃　　　　　　　　　一级标题
-＃＃
+＃＃　　　　　　　　二级
                         
                     </div>
                     <div class="publish-info">
@@ -1445,7 +1492,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1457,7 +1504,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1520,17 +1567,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2019</span>
+            <span id="year">2020</span>
             <a href="http://www.linwang93.cn" target="_blank">Lin</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.9k</span>&nbsp;字
+                class="white-color">12k</span>&nbsp;字
             
             
             
@@ -1549,6 +1596,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "2";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-01-22T02:52:11.291Z</updated>
+  <updated>2020-01-26T11:56:41.830Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://www.linwang93.cn/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/"/>
     <id>http://www.linwang93.cn/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/</id>
     <published>2019-12-24T01:17:24.000Z</published>
-    <updated>2020-01-22T02:52:11.291Z</updated>
+    <updated>2020-01-26T11:56:41.830Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;一、安装Python3&quot;&gt;&lt;a href=&quot;#一、安装Python3&quot; class=&quot;headerlink&quot; title=&quot;一、安装Python3&quot;&gt;&lt;/a&gt;&lt;strong&gt;一、安装Python3&lt;/strong&gt;&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;安装lrzsz，windows与CentOS互传文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;yum -y install lrzsz
+&lt;li&gt;&lt;p&gt;安装lrzsz，windows与CentOS互传文件 &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum -y install lrzsz 
 上传文件：rz
-下载文件：sz&lt;/code&gt;&lt;/pre&gt;
+下载文件：sz&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ol&gt;
     
     </summary>
     
@@ -52,7 +52,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;Pandas&lt;/strong&gt;是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1维）和DataFrame（2维）两种主要的数据结构。DataFrame是一个表格型的数据结构，包含有一组有序的列，每列可以是不同的值类型(数值、字符串、布尔型等)，DataFrame即有行索引也有列索引。Series是一种类似于一维数组的对象，是由一组数据(各种NumPy数据类型)以及一组与之相关的数据标签(即索引)组成。&lt;/p&gt;
+      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h2&gt;&lt;p&gt;  &lt;strong&gt;Pandas&lt;/strong&gt;是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1维）和DataFrame（2维）两种主要的数据结构。DataFrame是一个表格型的数据结构，包含有一组有序的列，每列可以是不同的值类型(数值、字符串、布尔型等)，DataFrame即有行索引也有列索引。Series是一种类似于一维数组的对象，是由一组数据(各种NumPy数据类型)以及一组与之相关的数据标签(即索引)组成。&lt;/p&gt;
     
     </summary>
     
@@ -75,7 +75,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;Hexo是一个快速、简洁且高效的博客框架，使用 &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown&lt;/a&gt;（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。&lt;/p&gt;
+      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h2&gt;&lt;p&gt;  Hexo是一个快速、简洁且高效的博客框架，使用 &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown&lt;/a&gt;（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。&lt;/p&gt;
     
     </summary>
     
@@ -96,7 +96,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;emsp;&amp;emsp;说明：Markdown是一种&lt;strong&gt;轻量级&lt;/strong&gt;标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。&lt;/p&gt;
+      &lt;p&gt;  说明：Markdown是一种&lt;strong&gt;轻量级&lt;/strong&gt;标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。&lt;/p&gt;
     
     </summary>
     
