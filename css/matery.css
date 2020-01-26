@@ -758,6 +758,10 @@ header .go-back i {
         padding: 20px 20px;
     }
 
+    .index-card .card .card-content {
+        padding: 20px 20px;
+    }
+
 }
 
 .recommend .row .col {
@@ -888,7 +892,7 @@ article a:hover {
 }
 
 .articles .row {
-    margin-left: 0;
+    margin-left:  0;
     margin-right: 0;
 }
 
@@ -904,6 +908,7 @@ article .card-image {
 
 article .card-image img {
     height: 220px;
+    width: 375px;
     border-radius: 0.3rem;
     opacity: .7;
 }
