@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>简若</title>
+  
+  <subtitle>简若</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.linwang93.cn/"/>
+  <updated>2020-01-22T02:52:11.291Z</updated>
+  <id>http://www.linwang93.cn/</id>
+  
+  <author>
+    <name>Lin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux部署Python3和virtualenvwrapper</title>
+    <link href="http://www.linwang93.cn/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/"/>
+    <id>http://www.linwang93.cn/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/</id>
+    <published>2019-12-24T01:17:24.000Z</published>
+    <updated>2020-01-22T02:52:11.291Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、安装Python3&quot;&gt;&lt;a href=&quot;#一、安装Python3&quot; class=&quot;headerlink&quot; title=&quot;一、安装Python3&quot;&gt;&lt;/a&gt;&lt;strong&gt;一、安装Python3&lt;/strong&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装lrzsz，windows与CentOS互传文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum -y install lrzsz
+上传文件：rz
+下载文件：sz&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/tags/Python/"/>
+    
+      <category term="virtualenvwrapper" scheme="http://www.linwang93.cn/tags/virtualenvwrapper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pandas快速入门</title>
+    <link href="http://www.linwang93.cn/2019/09/07/pandas-kuai-su-ru-men/"/>
+    <id>http://www.linwang93.cn/2019/09/07/pandas-kuai-su-ru-men/</id>
+    <published>2019-09-07T08:52:16.000Z</published>
+    <updated>2020-01-25T05:35:27.949Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;Pandas&lt;/strong&gt;是Python的核心数据分析库，一个强大的分析结构化数据的工具集；它的使用基础是Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。Pandas有Series（1维）和DataFrame（2维）两种主要的数据结构。DataFrame是一个表格型的数据结构，包含有一组有序的列，每列可以是不同的值类型(数值、字符串、布尔型等)，DataFrame即有行索引也有列索引。Series是一种类似于一维数组的对象，是由一组数据(各种NumPy数据类型)以及一组与之相关的数据标签(即索引)组成。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Pandas" scheme="http://www.linwang93.cn/categories/Pandas/"/>
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Pandas/Python/"/>
+    
+    
+      <category term="Pandas" scheme="http://www.linwang93.cn/tags/Pandas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客搭建与配置</title>
+    <link href="http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/"/>
+    <id>http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/</id>
+    <published>2019-05-05T03:53:50.000Z</published>
+    <updated>2020-01-25T05:35:52.138Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1. 前言&quot;&gt;&lt;/a&gt;1. 前言&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;Hexo是一个快速、简洁且高效的博客框架，使用 &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Markdown&lt;/a&gt;（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件使用教程" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://www.linwang93.cn/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typora使用教程</title>
+    <link href="http://www.linwang93.cn/2019/05/01/typora-shi-yong-jiao-cheng/"/>
+    <id>http://www.linwang93.cn/2019/05/01/typora-shi-yong-jiao-cheng/</id>
+    <published>2019-05-01T12:11:12.000Z</published>
+    <updated>2019-11-30T03:02:00.736Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;说明：Markdown是一种&lt;strong&gt;轻量级&lt;/strong&gt;标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件使用教程" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Markdown" scheme="http://www.linwang93.cn/tags/Markdown/"/>
+    
+  </entry>
+  
+</feed>

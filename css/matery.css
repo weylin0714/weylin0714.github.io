@@ -736,12 +736,7 @@ header .go-back i {
 } */
 
 .index-card .card .card-content {
-    padding: 20x 20px;
-}
-
-.index-card .card {
-    position: relative;
-    margin: .5rem 1rem 1rem 1rem;
+    padding: 5x 5px;
 }
 
 @media only screen and (min-width: 1418px) {
@@ -766,12 +761,12 @@ header .go-back i {
 }
 
 .recommend .row .col {
-    padding: 0 1.25rem;
-}
+    padding: 0 1.0rem;
+}  /*原值为1.25rem*/
 
-.recommend .title {
-    margin-top: 25px;
-    margin-bottom: 25px;
+.recommend .title {   
+    margin-top: 10px;  /*原值为25*/
+    margin-bottom: 10px;  /*原值为25*/
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
@@ -1047,8 +1042,12 @@ article .article-tags .chip {
     text-transform: none !important;
 }
 
-#artDetail .article-info {
+/* #artDetail .article-info {
     padding: 20px 30px 1px 40px;
+    margin-bottom: -5px;
+} */
+#artDetail .article-info {
+    padding: 20px 20px 1px 25px;
     margin-bottom: -5px;
 }
 
