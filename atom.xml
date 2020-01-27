@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-01-26T11:56:41.830Z</updated>
+  <updated>2020-01-20T04:17:11.672Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10安装配置Java开发环境</title>
+    <link href="http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/"/>
+    <id>http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/</id>
+    <published>2020-01-20T01:12:42.000Z</published>
+    <updated>2020-01-20T04:17:11.672Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍在Win10系统下安装Java JDK，并配置Java JDK环境变量。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件安装配置" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Java" scheme="http://www.linwang93.cn/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux部署Python3和virtualenvwrapper</title>
@@ -71,7 +92,7 @@
     <link href="http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/"/>
     <id>http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/</id>
     <published>2019-05-05T03:53:50.000Z</published>
-    <updated>2020-01-25T05:35:52.138Z</updated>
+    <updated>2020-01-27T12:44:06.206Z</updated>
     
     <summary type="html">
     
@@ -105,6 +126,28 @@
     
     
       <category term="Markdown" scheme="http://www.linwang93.cn/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win10平台下MySQL5.7安装和配置</title>
+    <link href="http://www.linwang93.cn/2019/04/29/win10-xia-mysql5-7-de-an-zhuang-yu-pei-zhi/"/>
+    <id>http://www.linwang93.cn/2019/04/29/win10-xia-mysql5-7-de-an-zhuang-yu-pei-zhi/</id>
+    <published>2019-04-29T06:53:40.000Z</published>
+    <updated>2020-01-20T03:16:13.601Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  本文介绍在Win10系统下MySQL数据库管理系统的下载、安装和配置，并利用Navicat连接MySQL。&lt;/p&gt;
+&lt;h2 id=&quot;1-下载MySQL5-7安装文件&quot;&gt;&lt;a href=&quot;#1-下载MySQL5-7安装文件&quot; class=&quot;headerlink&quot; title=&quot;1. 下载MySQL5.7安装文件&quot;&gt;&lt;/a&gt;1. 下载MySQL5.7安装文件&lt;/h2&gt;&lt;p&gt;  进入&lt;a href=&quot;https://dev.mysql.com/downloads/mysql/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MySQL Community Server&lt;/a&gt;，找到MySQL5.7版本。打开网站，页面显示的是MySQL8.0版本，可以点击页面中&lt;a href=&quot;https://dev.mysql.com/downloads/mysql/5.7.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Looking for previous GA version?&lt;/a&gt;转到之前的一些版本。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件安装配置" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="MySQL" scheme="http://www.linwang93.cn/tags/MySQL/"/>
     
   </entry>
   
