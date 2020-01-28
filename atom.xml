@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-01-20T04:17:11.672Z</updated>
+  <updated>2020-01-28T12:09:07.042Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/"/>
     <id>http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/</id>
     <published>2020-01-20T01:12:42.000Z</published>
-    <updated>2020-01-20T04:17:11.672Z</updated>
+    <updated>2020-01-28T12:09:07.042Z</updated>
     
     <summary type="html">
     
@@ -88,11 +88,11 @@
   </entry>
   
   <entry>
-    <title>Hexo博客搭建与配置</title>
+    <title>基于NEXT主题的Hexo博客搭建与配置</title>
     <link href="http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/"/>
     <id>http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/</id>
     <published>2019-05-05T03:53:50.000Z</published>
-    <updated>2020-01-27T12:44:06.206Z</updated>
+    <updated>2020-01-28T12:17:48.266Z</updated>
     
     <summary type="html">
     
@@ -101,7 +101,7 @@
     </summary>
     
     
-      <category term="软件使用教程" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
       <category term="Hexo" scheme="http://www.linwang93.cn/tags/Hexo/"/>
@@ -113,7 +113,7 @@
     <link href="http://www.linwang93.cn/2019/05/01/typora-shi-yong-jiao-cheng/"/>
     <id>http://www.linwang93.cn/2019/05/01/typora-shi-yong-jiao-cheng/</id>
     <published>2019-05-01T12:11:12.000Z</published>
-    <updated>2019-11-30T03:02:00.736Z</updated>
+    <updated>2020-01-28T12:13:44.384Z</updated>
     
     <summary type="html">
     
@@ -134,12 +134,18 @@
     <link href="http://www.linwang93.cn/2019/04/29/win10-xia-mysql5-7-de-an-zhuang-yu-pei-zhi/"/>
     <id>http://www.linwang93.cn/2019/04/29/win10-xia-mysql5-7-de-an-zhuang-yu-pei-zhi/</id>
     <published>2019-04-29T06:53:40.000Z</published>
-    <updated>2020-01-28T09:10:40.153Z</updated>
+    <updated>2020-01-28T11:28:11.091Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;  本文介绍在Win10系统下MySQL数据库管理系统的下载、安装和配置，并利用Navicat连接MySQL。&lt;/p&gt;
-&lt;h2 id=&quot;1-下载MySQL5-7安装文件&quot;&gt;&lt;a href=&quot;#1-下载MySQL5-7安装文件&quot; class=&quot;headerlink&quot; title=&quot;1. 下载MySQL5.7安装文件&quot;&gt;&lt;/a&gt;1. 下载MySQL5.7安装文件&lt;/h2&gt;&lt;p&gt;  进入&lt;a href=&quot;https://dev.mysql.com/downloads/mysql/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MySQL Community Server&lt;/a&gt;，找到MySQL5.7版本。打开网站，页面显示的是MySQL8.0版本，可以点击页面中&lt;a href=&quot;https://dev.mysql.com/downloads/mysql/5.7.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Looking for previous GA version?&lt;/a&gt;转到之前的一些版本。&lt;/p&gt;
+      
+      
+        
+        
+          &lt;p&gt;  本文介绍在Win10系统下MySQL数据库管理系统的下载、安装和配置，并利用Navicat连接MySQL。&lt;/p&gt;
+&lt;h2 id=&quot;1-下载MySQL5-7安装文件&quot;&gt;&lt;a href=&quot;#1-下载MySQL5-7安装文件&quot; class=&quot;headerlink&quot;
+        
+      
     
     </summary>
     

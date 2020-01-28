@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo博客搭建与配置, 简若">
+    <meta name="keywords" content="基于NEXT主题的Hexo博客搭建与配置, 简若">
     <meta name="description" content="1. 前言  Hexo是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。
 
 
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hexo博客搭建与配置 | 简若</title>
+    <title>基于NEXT主题的Hexo博客搭建与配置 | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo博客搭建与配置</h1>
+                    <h1 class="description center-align post-title">基于NEXT主题的Hexo博客搭建与配置</h1>
                 </div>
             </div>
         </div>
@@ -441,8 +441,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="post-category">
-                                软件使用教程
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                教程
                             </a>
                         
                     </div>
@@ -461,7 +461,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-01-27
+                    2020-01-28
                 </div>
                 
 
@@ -509,9 +509,11 @@
 <li>添加密钥到github</li>
 </ul>
 <p>  复制id_rsa.pub文件中的内容并添加到github。打开github个人主页，进入Settings -&gt; SSH and GPG keys -&gt; New SSH key:</p>
-<div align="center"><img src="/.cn//1.png" width="60%" height="60%"></div>
-* 测试是否添加成功
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Hexo_20190505/1.png" style="zoom:50%;">
 
+<ul>
+<li>测试是否添加成功</li>
+</ul>
 <pre><code>$ ssh -T git@github.com
 $ yes</code></pre><p>返回”You’ve successfully authenticated”，则说明添加成功。</p>
 <h3 id="2-4-绑定域名"><a href="#2-4-绑定域名" class="headerlink" title="2.4 绑定域名"></a>2.4 绑定域名</h3><p>  可以不绑定域名，直接用默认的username.github.io来访问，也可以购买一个属于自己的域名。首先，需要注册一个域名，可以到<a href="https://sg.godaddy.com/zh/offers/domains/godaddycom?isc=gennbacn07&amp;countryview=1&amp;currencyType=CNY&amp;utm_source=Baidu&amp;utm_medium=cpc&amp;utm_term=Title&amp;utm_campaign=2019Brandzone%5FPC&amp;utm_content=Brandzone%5FPC&amp;gclid=CNql2LbdheICFYNOvAod4QMBcA&amp;gclsrc=ds" target="_blank" rel="noopener">godaddy</a>网站注册，也可以使用国内的<a href="https://wanwang.aliyun.com/?spm=5176.8142029.735711.62.3dbd6d3e5uxczh" target="_blank" rel="noopener">阿里云</a>，价格也比较便宜。我个人是使用的阿里云注册域名。</p>
@@ -781,9 +783,11 @@ feed:
 <h4 id="3-4-7-添加文章阅读量"><a href="#3-4-7-添加文章阅读量" class="headerlink" title="3.4.7 添加文章阅读量"></a>3.4.7 添加文章阅读量</h4><ol>
 <li>利用LeanCloud的统计功能，基于3.4.6创建的应用，添加一个名为Counter的类（Class）。</li>
 </ol>
-<div align="center"><img src="/.cn//2.png" width="40%" height="40%"></div>
-2. 修改**主题配置文件**，找到leancloud配置项，添加app_id和app_key。
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Hexo_20190505/2.png" style="zoom:50%;">
 
+<ol start="2">
+<li>修改<strong>主题配置文件</strong>，找到leancloud配置项，添加app_id和app_key。</li>
+</ol>
 <pre><code>leancloud_visitors:
   enable: true
   app_id: 添加LeanCloud App ID
@@ -966,9 +970,8 @@ social_icons:
   icons_only: false
   transition: false
   简书: book</code></pre><h4 id="3-4-18-设置左上角或右上角的fork-me-on-github效果"><a href="#3-4-18-设置左上角或右上角的fork-me-on-github效果" class="headerlink" title="3.4.18 设置左上角或右上角的fork me on github效果"></a>3.4.18 设置左上角或右上角的fork me on github效果</h4><p>  选择需要的<a href="https://github.blog/2008-12-19-github-ribbons/" target="_blank" rel="noopener">GitHub Ribbons</a>效果，复制所选择效果的代码。然后打开…/themes/next/layout/_layout.swig，将复制的代码粘贴到<code>&lt;div class="headband"&gt;&lt;/div&gt;</code>之间。</p>
-<div align="center"><img src="/.cn//3.png" width="100%" height="60%"></div>
-*****
-
+<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Hexo_20190505/3.png" alt=""></p>
+<hr>
 <p><strong>到这里,Hexo博客的基础搭建与配置就介绍完了。具体效果可以访问我的博客：<a href="https://www.linwang93.cn/">https://www.linwang93.cn/</a></strong></p>
 <h2 id="4-Hexo多电脑同步"><a href="#4-Hexo多电脑同步" class="headerlink" title="4. Hexo多电脑同步"></a>4. Hexo多电脑同步</h2><p>  我们经常有一个需求：在不同电脑上撰写博客文章并发布，这就涉及了如何在多台电脑的同步问题。这里参考了一些博客，总结了Hexo的多电脑同步方法，并亲测了方法的有效。</p>
 <p>  主要思路:（1）Hexo私有仓库–保存Hexo源文件；（2）master公开仓库–保存Hexo生成的博客文件。</p>
