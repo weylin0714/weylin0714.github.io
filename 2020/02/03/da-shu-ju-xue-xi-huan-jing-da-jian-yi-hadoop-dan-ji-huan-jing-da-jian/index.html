@@ -507,17 +507,17 @@ export PATH=${JAVA_HOME}/bin:$PATH</code></pre>
 <ul>
 <li>环境变量配置生效</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile</code></pre>
+<pre class=" language-shell"><code class="language-shell">source /etc/profile</code></pre>
 <ul>
 <li>验证JAVA是否安装成功</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">java -version
+<pre class=" language-shell"><code class="language-shell">java -version
 java
 javac</code></pre>
 <h3 id="1-2-配置免密登录"><a href="#1-2-配置免密登录" class="headerlink" title="1.2 配置免密登录"></a>1.2 配置免密登录</h3><ul>
 <li>安装SSH server</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> yum <span class="token function">install</span> openssh-server  <span class="token comment" spellcheck="true"># 服务器上已经安装</span></code></pre>
+<pre class=" language-shell"><code class="language-shell">sudo yum install openssh-server  # 服务器上已经安装</code></pre>
 <ul>
 <li>修改sshd_config配置</li>
 </ul>
@@ -532,16 +532,16 @@ PermitRootLogin yes</code></pre>
 <ul>
 <li>登录本机，需要密码才能登录</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> localhost</code></pre>
+<pre class=" language-shell"><code class="language-shell">ssh localhost</code></pre>
 <ul>
 <li>退出ssh，利用 ssh-keygen 生成密钥，并将密钥加入到授权</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">exit</span> <span class="token comment" spellcheck="true"># 退出上一步登录的ssh localhost</span>
-<span class="token function">cd</span> ~/.ssh/  <span class="token comment" spellcheck="true"># 若没有该目录，请先执行一次ssh localhost</span>
-ssh-keygen -t rsa   <span class="token comment" spellcheck="true"># 需要连续敲击三次回车</span>
-<span class="token comment" spellcheck="true"># 写入公匙到授权文件</span>
-<span class="token function">cat</span> ./id_rsa.pub <span class="token operator">>></span> ./authorized_keys 
-<span class="token function">chmod</span> 600 authorized_keys</code></pre>
+<pre class=" language-shell"><code class="language-shell">exit # 退出上一步登录的ssh localhost
+cd ~/.ssh/  # 若没有该目录，请先执行一次ssh localhost
+ssh-keygen -t rsa   # 需要连续敲击三次回车
+# 写入公匙到授权文件
+cat ./id_rsa.pub >> ./authorized_keys 
+chmod 600 authorized_keys</code></pre>
 <ul>
 <li>免密登录</li>
 </ul>
@@ -550,35 +550,35 @@ ssh-keygen -t rsa   <span class="token comment" spellcheck="true"># 需要连续
 <ul>
 <li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为hadoop</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf hadoop-2.6.0-cdh5.16.2.tar.gz -C /usr/local/
-<span class="token function">mv</span> hadoop-2.6.0-cdh5.16.2 hadoop</code></pre>
+<pre class=" language-shell"><code class="language-shell">tar -zxvf hadoop-2.6.0-cdh5.16.2.tar.gz -C /usr/local/
+mv hadoop-2.6.0-cdh5.16.2 hadoop</code></pre>
 <ul>
 <li>配置环境变量</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 打开配置文件</span>
+<pre class=" language-shell"><code class="language-shell"># 打开配置文件
 vim /etc/profile
-<span class="token comment" spellcheck="true"># 添加Hadoop环境变量</span>
-<span class="token function">export</span> HADOOP_HOME<span class="token operator">=</span>/usr/local/hadoop
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">${HADOOP_HOME}</span>/bin:<span class="token variable">${HADOOP_HOME}</span>/sbin</code></pre>
+# 添加Hadoop环境变量
+export HADOOP_HOME=/usr/local/hadoop
+export PATH=$PATH:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin</code></pre>
 <ul>
 <li>环境变量生效</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile</code></pre>
+<pre class=" language-shell"><code class="language-shell">source /etc/profile</code></pre>
 <ul>
 <li>验证Hadoop 是否可用</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">hadoop version</code></pre>
+<pre class=" language-shell"><code class="language-shell">hadoop version</code></pre>
 <h3 id="2-2-单机伪分布配置"><a href="#2-2-单机伪分布配置" class="headerlink" title="2.2 单机伪分布配置"></a>2.2 单机伪分布配置</h3><h4 id="2-2-1-HDFS环境搭建"><a href="#2-2-1-HDFS环境搭建" class="headerlink" title="2.2.1 HDFS环境搭建"></a>2.2.1 HDFS环境搭建</h4><h5 id="2-2-1-1-修改配置"><a href="#2-2-1-1-修改配置" class="headerlink" title="2.2.1.1 修改配置"></a>2.2.1.1 修改配置</h5><p>进入 <code>/usr/local/hadoop/etc/hadoop/</code> 目录下，修改以下配置：</p>
 <ul>
 <li><p>hadoop-env.sh</p>
 <p>修改hadoop-env.sh文件，在文件开始处添加Hadoop和Java环境变量。</p>
 </li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">vim /usr/local/hadoop/etc/hadoop/hadoop-env.sh
-<span class="token comment" spellcheck="true"># 添加</span>
-<span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/usr/local/java
-<span class="token function">export</span> HADOOP_HOME<span class="token operator">=</span>/usr/local/hadoop
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/usr/local/hadoop/bin</code></pre>
+<pre class=" language-shell"><code class="language-shell">vim /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+# 添加
+export JAVA_HOME=/usr/local/java
+export HADOOP_HOME=/usr/local/hadoop
+export PATH=$PATH:/usr/local/hadoop/bin</code></pre>
 <ul>
 <li><p>core-site.xml</p>
 <p>修改配置文件 core-site.xml </p>
