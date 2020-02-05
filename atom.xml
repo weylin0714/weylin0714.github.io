@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-02-03T09:31:12.162Z</updated>
+  <updated>2020-02-03T15:24:12.057Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hadoop+HBase+Spark+Hive环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/01/hadoop-hbase-spark-hive-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/01/hadoop-hbase-spark-hive-huan-jing-da-jian/</id>
-    <published>2020-02-01T06:21:18.000Z</published>
-    <updated>2020-02-03T09:31:12.162Z</updated>
+    <title>大数据学习环境搭建(四)--Spark单机环境搭建</title>
+    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/"/>
+    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/</id>
+    <published>2020-02-03T15:24:12.000Z</published>
+    <updated>2020-02-03T15:24:12.057Z</updated>
     
     <summary type="html">
     
@@ -29,21 +29,98 @@
       
         
         
-          &lt;p&gt;1.安装Java环境&lt;/p&gt;
-&lt;script&gt;
+          &lt;script&gt;
         document.querySelectorAll(&#39;.github-emoji&#39;)
           .forEach(el =&gt; {
-            if (!el.dataset.src) {
+            if (!el.dataset.src) { return; }
+       
         
       
     
     </summary>
     
     
-      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据学习环境搭建(三)--Hive单机环境搭建</title>
+    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/"/>
+    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/</id>
+    <published>2020-02-03T15:22:59.000Z</published>
+    <updated>2020-02-03T15:22:59.682Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
     
     
-      <category term="大数据" scheme="http://www.linwang93.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据学习环境搭建(二)--HBase单机环境搭建</title>
+    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/"/>
+    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/</id>
+    <published>2020-02-03T15:22:40.000Z</published>
+    <updated>2020-02-03T15:22:40.980Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大数据学习环境搭建(一)--Hadoop单机环境搭建</title>
+    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/"/>
+    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/</id>
+    <published>2020-02-03T15:21:03.000Z</published>
+    <updated>2020-02-05T09:39:42.607Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Hadoop有三种运行模式：单机模式、伪分布式模式、全分布式集群模式。&lt;strong&gt;单机模式&lt;/strong&gt;：Hadoop的默认模式（非分布式模式），无需进行其他配置即可运行。非分布式即单Java进程，用于开发和调试。&lt;strong&gt;伪分布式模式&lt;/strong&gt;：Ha
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hadoop" scheme="http://www.linwang93.cn/tags/Hadoop/"/>
     
   </entry>
   
@@ -53,60 +130,6 @@
     <id>http://www.linwang93.cn/2020/01/28/sqoop-dao-ru-mysql-shu-ju-dao-hive/</id>
     <published>2020-01-28T13:29:15.000Z</published>
     <updated>2020-01-28T13:29:15.798Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Numpy快速入门</title>
-    <link href="http://www.linwang93.cn/2020/01/28/numpy-kuai-su-ru-men/"/>
-    <id>http://www.linwang93.cn/2020/01/28/numpy-kuai-su-ru-men/</id>
-    <published>2020-01-28T13:24:28.000Z</published>
-    <updated>2020-01-28T13:24:28.347Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析之Pandas VS SQL</title>
-    <link href="http://www.linwang93.cn/2020/01/28/shu-ju-fen-xi-zhi-pandas-vs-sql/"/>
-    <id>http://www.linwang93.cn/2020/01/28/shu-ju-fen-xi-zhi-pandas-vs-sql/</id>
-    <published>2020-01-28T13:23:04.000Z</published>
-    <updated>2020-01-28T13:23:04.374Z</updated>
     
     <summary type="html">
     

@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Win10安装配置Java开发环境, 简若">
-    <meta name="description" content="本文介绍在Win10系统下安装Java JDK，并配置Java JDK环境变量。
-1. 下载并安装Java JDK进入Java JDK下载页面，选择JDK版本。我们选择下载JDK 8u241的Windows x64版本，需要选中上面的Acc">
+    <meta name="keywords" content="大数据学习环境搭建(四)--Spark单机环境搭建, 简若">
+    <meta name="description" content="
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Win10安装配置Java开发环境 | 简若</title>
+    <title>大数据学习环境搭建(四)--Spark单机环境搭建 | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Win10安装配置Java开发环境</h1>
+                    <h1 class="description center-align post-title">大数据学习环境搭建(四)--Spark单机环境搭建</h1>
                 </div>
             </div>
         </div>
@@ -425,25 +427,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                教程
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -452,21 +441,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-20
+                    2020-02-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-01-28
+                    2020-02-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    458
+                    52
                 </div>
                 
 
@@ -489,36 +478,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文介绍在Win10系统下安装Java JDK，并配置Java JDK环境变量。</p>
-<h2 id="1-下载并安装Java-JDK"><a href="#1-下载并安装Java-JDK" class="headerlink" title="1. 下载并安装Java JDK"></a>1. 下载并安装Java JDK</h2><p>进入<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Java JDK</a>下载页面，选择JDK版本。我们选择下载<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">JDK 8u241</a>的Windows x64版本，需要选中上面的Accept License Agreement后，点击jdk-8u241-windows-x64.exe下载。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-1.png" style="zoom:50%;">
-
-<p>下载完成后，找到下载文件，双击进行安装，具体操作步骤如下：</p>
-<p>步骤01：双击安装包，修改安装位置，默认在C盘。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-2.png" style="zoom:50%;">
-
-<p>步骤02：更改安装位置后，点击下一步进行安装，安装过程中弹出jre安装位置，更改jre安装位置，建议和jdk同路径下。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-3.png" style="zoom:50%;">
-
-<p>步骤03：设置好jre位置后，点击下一步继续安装，直至完成。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-4.png" style="zoom:50%;">
-
-<h2 id="2-配置Java-JDK环境变量"><a href="#2-配置Java-JDK环境变量" class="headerlink" title="2. 配置Java JDK环境变量"></a>2. 配置Java JDK环境变量</h2><p>安装完Java JDK后不能直接使用，还需配置系统的环境变量。</p>
-<p>步骤01：选中此电脑，右击选择<strong>属性</strong>，选择<strong>高级系统设置</strong>，选择<strong>环境变量</strong>。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-1.png" style="zoom:40%;">
-
-<p>步骤02：在环境变量窗口，新建系统变量，变量名：<strong>JAVA_HOME</strong>，变量值为JDK的安装目录，点击确定。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-2.png" style="zoom:40%;">
-
-<p>步骤03：修改系统变量中的Path变量，点击新建，添加新的变量值：<strong>%JAVA_HOME%\bin</strong>，<strong>%JAVA_HOME%\jre\bin</strong>，点击确定。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-3.png" style="zoom:50%;">
-
-<p>步骤04：新建系统变量，变量名：<strong>CLASSPATH</strong>，变量值：<strong>.;%JAVA_HOME%\lib\dt.jar; %JAVA_HOME%\lib\tools.jar;</strong>，点击确定。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-4.png" style="zoom:50%;">
-
-<p>步骤05：上述配置完成后，点击确定。</p>
-<p>步骤06：验证Java是否安装成功。WINDOWS+R键，输入cmd，进入命令行界面。在命令行界面，分别输入java -verison、java、javac，有如下输出，则说明配置成功。</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-5.png" style="zoom:40%;"><script>
+                <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -561,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/">http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/</a>
+                    <a href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/">http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -598,11 +558,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -771,7 +727,7 @@
         repo: 'gitalk',
         owner: 'weylin0714',
         admin: "weylin0714",
-        id: '2020-01-20T09-12-42',
+        id: '2020-02-03T23-24-12',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -792,17 +748,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/01/28/sqoop-dao-ru-mysql-shu-ju-dao-hive/">
+                <a href="/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Sqoop导入Mysql数据到Hive">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="大数据学习环境搭建(四)--Spark单机环境搭建">
                         
-                        <span class="card-title">Sqoop导入Mysql数据到Hive</span>
+                        <span class="card-title">大数据学习环境搭建(四)--Spark单机环境搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -815,9 +772,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -826,6 +783,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -836,55 +794,35 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/">
+                <a href="/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Linux部署Python3和virtualenvwrapper">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="大数据学习环境搭建(三)--Hive单机环境搭建">
                         
-                        <span class="card-title">Linux部署Python3和virtualenvwrapper</span>
+                        <span class="card-title">大数据学习环境搭建(三)--Hive单机环境搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、安装Python3
-CentOS7默认安装了Python2，在CentOS7中安装Python3，并设置为默认。
-
-
-安装lrzsz，windows与CentOS互传文件 
-yum -y install lrzsz 
-上传文件：rz
-下
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-03
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                    教程
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Lin
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/virtualenvwrapper/">
-                        <span class="chip bg-color">virtualenvwrapper</span>
-                    </a>
-                    
                 </div>
                 
             </div>
