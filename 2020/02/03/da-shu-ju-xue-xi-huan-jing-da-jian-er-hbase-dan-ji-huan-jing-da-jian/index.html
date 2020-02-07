@@ -5,10 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="大数据学习环境搭建(二)--HBase单机环境搭建, 简若">
-    <meta name="description" content="
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return">
+    <meta name="description" content="HBase是一种分布式存储的数据库，技术上来讲，它更像是分布式存储而不是分布式数据库。HBase的运行有三种模式：单机模式、伪分布式模式、分布式模式。出于学习目的，我们只在一台阿里云服务器上部署单机伪分布环境。
+1. HBase安装前配置H">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -427,12 +425,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Hbase/">
+                                <span class="chip bg-color">Hbase</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                教程
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -448,21 +459,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-03
+                    2020-02-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    52
+                    684
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -478,7 +489,76 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <p>HBase是一种分布式存储的数据库，技术上来讲，它更像是分布式存储而不是分布式数据库。HBase的运行有三种模式：单机模式、伪分布式模式、分布式模式。出于学习目的，我们只在一台阿里云服务器上部署单机伪分布环境。</p>
+<h2 id="1-HBase安装前配置"><a href="#1-HBase安装前配置" class="headerlink" title="1. HBase安装前配置"></a>1. HBase安装前配置</h2><p>HBase 需要依赖JDK环境，JDK安装可参考<a href="https://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/">Hadoop单机环境搭建</a>中的介绍。</p>
+<h2 id="2-HBase安装与配置"><a href="#2-HBase安装与配置" class="headerlink" title="2. HBase安装与配置"></a>2. HBase安装与配置</h2><p>安装HBase前，需要预先安装 Hadoop。Hadoop 的安装方式可参考<a href="https://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/">Hadoop单机环境搭建</a>。</p>
+<h3 id="2-1-下载与安装"><a href="#2-1-下载与安装" class="headerlink" title="2.1 下载与安装"></a>2.1 下载与安装</h3><p>下载HBase安装包，HBase版本要与 Hadoop 的版本兼容，不然会出现各种 Jar 包冲突。这里我安装的 Hadoop 版本为 <code>hadoop-2.6.0-cdh5.16.2</code>，为保持版本一致，选择的 HBase 版本为 <code>hbase-1.2.0-cdh5.16.2</code>，下载地址为：<a href="http://archive.cloudera.com/cdh5/cdh/5/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/</a></p>
+<ul>
+<li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为hbase</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">tar -zxvf hbase-1.2.0-cdh5.16.2.tar.gz -C /usr/local/
+# 将解压到/usr/local/目录下的文件夹重命名
+mv hbase-1.2.0-cdh5.16.2/ hbase</code></pre>
+<ul>
+<li>配置环境变量</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell"># 打开配置文件 
+vim /etc/profile 
+# 添加HBase环境变量 
+export HBASE_HOME=/usr/local/hbase
+export PATH=$HBASE_HOME/bin:$PATH</code></pre>
+<ul>
+<li>环境变量生效</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">source /etc/profile</code></pre>
+<ul>
+<li>查看HBase版本，确定hbase安装成功</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">hbase version</code></pre>
+<h3 id="2-2-单机伪集群配置"><a href="#2-2-单机伪集群配置" class="headerlink" title="2.2 单机伪集群配置"></a>2.2 单机伪集群配置</h3><h4 id="2-2-1-修改配置"><a href="#2-2-1-修改配置" class="headerlink" title="2.2.1 修改配置"></a>2.2.1 修改配置</h4><ul>
+<li>hbase-env.sh</li>
+</ul>
+<p>修改/usr/local/hbase/conf/目录下的hbase-env.sh文件，添加如下环境变量</p>
+<pre class=" language-shell"><code class="language-shell">export JAVA_HOME=/usr/local/java
+export HBASE_HOME=/usr/local/hbase
+export PATH=$PATH:$HBASE_HOME/bin
+export HBASE_MANAGES_ZK=true   # Hbase自带zookeeper</code></pre>
+<ul>
+<li>hbase-site.xml</li>
+</ul>
+<p>配置/usr/local/hbase/conf/hbase-site.xml，打开并编辑hbase-site.xml</p>
+<pre class=" language-shell"><code class="language-shell">vim /usr/local/hbase/conf/hbase-site.xml</code></pre>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--指定HBase以分布式模式运行--></span>   
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.cluster.distributed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--指定HBase数据存储路径为HDFS上的hbase目录,hbase目录不需要预先创建，程序会自动创建--></span>   
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.rootdir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://localhost:8020/hbase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="2-2-2-启动"><a href="#2-2-2-启动" class="headerlink" title="2.2.2 启动"></a>2.2.2 启动</h4><p>切换至/usr/local/hbase/bin目录，执行以下命令：</p>
+<pre class=" language-shell"><code class="language-shell">start-hbase.sh</code></pre>
+<h4 id="2-2-3-验证是否启动成功"><a href="#2-2-3-验证是否启动成功" class="headerlink" title="2.2.3 验证是否启动成功"></a>2.2.3 验证是否启动成功</h4><ul>
+<li>使用<code>jps</code>命令查看进程</li>
+</ul>
+<p>HBase的进程:  HMaster，HRegionServer，HBase内置的Zookeeper的进程: HQuorumPeer，其余的为 HDFS 和 YARN 的进程。</p>
+<pre><code>[root@centos bin]# jps
+3168 ResourceManager
+2178 NameNode
+5302 Jps
+3254 NodeManager
+2759 DataNode
+4844 HMaster
+2445 SecondaryNameNode
+4974 HRegionServer
+4767 HQuorumPeer</code></pre><ul>
+<li>访问HBase Web UI界面，访问地址：IP:60010</li>
+</ul>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -558,7 +638,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Hbase/">
+                                    <span class="chip bg-color">Hbase</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -764,10 +848,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hive是一个架构在Hadoop之上的数据仓库工具，可以将结构化的数据文件映射成为一张数据库表，并提供类SQL的查询功能，为大数据查询和分析提供方便。这里在阿里云服务器上搭建Hive单机伪分布环境。
+1. Hive安装与配置1.1 下载与安
                         
                     </div>
                     <div class="publish-info">
@@ -776,11 +858,23 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lin
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hive/">
+                        <span class="chip bg-color">Hive</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1013,7 +1107,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.2k</span>&nbsp;字
+                class="white-color">18.2k</span>&nbsp;字
             
             
             

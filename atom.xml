@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-02-03T15:24:12.057Z</updated>
+  <updated>2020-02-07T07:16:38.322Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/"/>
     <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/</id>
     <published>2020-02-03T15:24:12.000Z</published>
-    <updated>2020-02-03T15:24:12.057Z</updated>
+    <updated>2020-02-07T07:16:38.322Z</updated>
     
     <summary type="html">
     
@@ -29,17 +29,18 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;p&gt;Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。&lt;/p&gt;
+&lt;h2 id=&quot;1-Spark安装与配置&quot;&gt;&lt;a
         
       
     
     </summary>
     
     
+      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Spark" scheme="http://www.linwang93.cn/tags/Spark/"/>
     
   </entry>
   
@@ -48,7 +49,7 @@
     <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/"/>
     <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/</id>
     <published>2020-02-03T15:22:59.000Z</published>
-    <updated>2020-02-03T15:22:59.682Z</updated>
+    <updated>2020-02-06T12:52:04.071Z</updated>
     
     <summary type="html">
     
@@ -56,17 +57,18 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;p&gt;Hive是一个架构在Hadoop之上的数据仓库工具，可以将结构化的数据文件映射成为一张数据库表，并提供类SQL的查询功能，为大数据查询和分析提供方便。这里在阿里云服务器上搭建Hive单机伪分布环境。&lt;/p&gt;
+&lt;h2 id=&quot;1-Hive安装与配置&quot;&gt;&lt;a
         
       
     
     </summary>
     
     
+      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hive" scheme="http://www.linwang93.cn/tags/Hive/"/>
     
   </entry>
   
@@ -75,7 +77,7 @@
     <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/"/>
     <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/</id>
     <published>2020-02-03T15:22:40.000Z</published>
-    <updated>2020-02-03T15:22:40.980Z</updated>
+    <updated>2020-02-05T13:33:39.229Z</updated>
     
     <summary type="html">
     
@@ -83,17 +85,18 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;p&gt;HBase是一种分布式存储的数据库，技术上来讲，它更像是分布式存储而不是分布式数据库。HBase的运行有三种模式：单机模式、伪分布式模式、分布式模式。出于学习目的，我们只在一台阿里云服务器上部署单机伪分布环境。&lt;/p&gt;
+&lt;h2 id=&quot;1-HBase安装前配置&quot;&gt;&lt;a
         
       
     
     </summary>
     
     
+      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hbase" scheme="http://www.linwang93.cn/tags/Hbase/"/>
     
   </entry>
   
@@ -102,7 +105,7 @@
     <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/"/>
     <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/</id>
     <published>2020-02-03T15:21:03.000Z</published>
-    <updated>2020-02-05T11:11:28.237Z</updated>
+    <updated>2020-02-05T13:33:17.187Z</updated>
     
     <summary type="html">
     

@@ -5,10 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="大数据学习环境搭建(四)--Spark单机环境搭建, 简若">
-    <meta name="description" content="
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return">
+    <meta name="description" content="Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。
+1. Spark安装与配置1.1 Spark安装下载">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -427,12 +425,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Spark/">
+                                <span class="chip bg-color">Spark</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                教程
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -448,21 +459,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-03
+                    2020-02-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    52
+                    761
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -478,7 +489,85 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <p>Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。</p>
+<h2 id="1-Spark安装与配置"><a href="#1-Spark安装与配置" class="headerlink" title="1. Spark安装与配置"></a>1. Spark安装与配置</h2><h3 id="1-1-Spark安装"><a href="#1-1-Spark安装" class="headerlink" title="1.1 Spark安装"></a>1.1 Spark安装</h3><p>下载Spark安装包，下载地址：<a href="http://spark.apache.org/downloads.html" target="_blank" rel="noopener">http://spark.apache.org/downloads.html</a> ，这里我下载版本为<code>spark-2.4.4-bin-hadoop2.6</code>。</p>
+<ul>
+<li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为spark</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">tar -zxvf spark-2.4.4-bin-hadoop2.6.tar.gz -C /usr/local/
+# 将解压到/usr/local/目录下的文件夹重命名
+mv spark-2.4.4-bin-hadoop2.6/ spark</code></pre>
+<ul>
+<li>配置环境变量</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell"># 打开配置文件 
+vim /etc/profile 
+# 添加Spark环境变量 
+export SPARK_HOME=/usr/local/spark
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin</code></pre>
+<ul>
+<li>环境变量生效</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">source /etc/profile</code></pre>
+<h3 id="1-2-Local模式运行"><a href="#1-2-Local模式运行" class="headerlink" title="1.2 Local模式运行"></a>1.2 Local模式运行</h3><p>Local 模式是单机运行，它采用单节点多线程方式运行，不用部署，开箱即用，适合日常测试开发。</p>
+<p>进入到/usr/local/spark/bin目录下，执行以下命令启动spark。</p>
+<pre class=" language-shell"><code class="language-shell"># 启动spark-shell
+spark-shell --master local[2]</code></pre>
+<ul>
+<li><strong>local</strong>：只启动一个工作线程；</li>
+<li><strong>local[k]</strong>：启动 k 个工作线程；</li>
+<li><strong>local[*]</strong>：启动跟 cpu 数目相同的工作线程数。</li>
+</ul>
+<p>可以通过 Web UI 查看作业的执行情况，访问地址：IP:4040</p>
+<h2 id="2-Scala安装与配置"><a href="#2-Scala安装与配置" class="headerlink" title="2.Scala安装与配置"></a>2.Scala安装与配置</h2><p>Spark 是基于 Scala 语言进行开发的，分别提供了基于 Scala、Java、Python 语言的 API。这里分别介绍在CentOS7和win10系统中安装Scala。</p>
+<h3 id="2-1-在CentOS7中安装Scala"><a href="#2-1-在CentOS7中安装Scala" class="headerlink" title="2.1 在CentOS7中安装Scala"></a>2.1 在CentOS7中安装Scala</h3><h4 id="2-1-1-前置条件"><a href="#2-1-1-前置条件" class="headerlink" title="2.1.1 前置条件"></a>2.1.1 前置条件</h4><p>Scala 的运行依赖于JDK，需要预先安装好JDK，我安装的JDK 1.8版本。JDK安装可参考<a href="https://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/">Hadoop单机环境搭建</a>中的介绍。</p>
+<h4 id="2-1-2-安装与配置"><a href="#2-1-2-安装与配置" class="headerlink" title="2.1.2 安装与配置"></a>2.1.2 安装与配置</h4><ul>
+<li>下载Scala，下载地址：<a href="https://www.scala-lang.org/download/" target="_blank" rel="noopener">https://www.scala-lang.org/download/</a></li>
+<li>将安装包移动到/usr/local目录下，解压，将解压文件夹重命名</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell"># 解压
+tar -zxvf scala-2.13.1.tgz
+# 重命名
+mv scala-2.13.1/ scala</code></pre>
+<ul>
+<li>配置环境</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">vim ~/.bash_profile
+# 添加scala配置
+export SCALA_HOME=/usr/local/scala
+export PATH=$PATH:$SCALA_HOME/bin
+# 环境生效
+source ~/.bash_profile</code></pre>
+<ul>
+<li>验证是否安装成功</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">[root@centos local]# scala
+scala>
+# 退出
+:quit  # 或 ctrl + D</code></pre>
+<h3 id="2-2-在Win10中安装Scala"><a href="#2-2-在Win10中安装Scala" class="headerlink" title="2.2 在Win10中安装Scala"></a>2.2 在Win10中安装Scala</h3><h4 id="2-2-1-前置条件"><a href="#2-2-1-前置条件" class="headerlink" title="2.2.1 前置条件"></a>2.2.1 前置条件</h4><p>在Win10环境下安装好JDK环境，安装可参考Win10安装配置Java开发环境的介绍。</p>
+<h4 id="2-2-2-安装与配置"><a href="#2-2-2-安装与配置" class="headerlink" title="2.2.2 安装与配置"></a>2.2.2 安装与配置</h4><ul>
+<li>安装Scala插件</li>
+</ul>
+<p>我们使用IDEA作为开发工具，默认不支持 Scala 语言的开发，需要通过插件进行扩展，安装Scala插件。</p>
+<ul>
+<li>安装Scala SDK</li>
+</ul>
+<p>官网下载安装包进行安装，下载地址：<a href="https://www.scala-lang.org/download/" target="_blank" rel="noopener">https://www.scala-lang.org/download/</a></p>
+<p>这里我的系统是Win10，下载 scala-2.12.7msi 版本的安装包后，一直点击下一步进行安装，安装完成后会自动配置好环境变量。</p>
+<ul>
+<li>创建Scala项目</li>
+</ul>
+<p>新建项目，选择创建<code>Scala—IDEA</code>工程：</p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Spark_20200203/1.png" style="zoom:50.5%;">
+
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Spark_20200203/2.png" style="zoom:46%;">
+
+
+
+
+
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -558,7 +647,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Spark/">
+                                    <span class="chip bg-color">Spark</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -765,10 +858,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。
+1. Spark安装与配置1.1 Spark安装下载
                         
                     </div>
                     <div class="publish-info">
@@ -777,13 +868,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lin
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Spark/">
+                        <span class="chip bg-color">Spark</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -806,10 +909,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            Hive是一个架构在Hadoop之上的数据仓库工具，可以将结构化的数据文件映射成为一张数据库表，并提供类SQL的查询功能，为大数据查询和分析提供方便。这里在阿里云服务器上搭建Hive单机伪分布环境。
+1. Hive安装与配置1.1 下载与安
                         
                     </div>
                     <div class="publish-info">
@@ -818,11 +919,23 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lin
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hive/">
+                        <span class="chip bg-color">Hive</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1006,7 +1119,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.2k</span>&nbsp;字
+                class="white-color">18.2k</span>&nbsp;字
             
             
             
