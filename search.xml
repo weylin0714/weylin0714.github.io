@@ -8,7 +8,7 @@
       <link href="/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/"/>
       <url>/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/</url>
       
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<p>Sqoop是Hdoop与关系型数据库之间传递数据的工具，可以实现Mysql等关系型数据库与Hadoop的HDFS、HIVE、HBASE等数据存储系统间数据互传。Sqoop有Sqoop1和Sqoop2两个版本，但它们不兼容，并且官方并不建议在生产环境中使用sqoop2。我们这里用的是Sqoop1，在CentOS7系统中安装配置Sqoop。</p><h2 id="1-Sqoop安装与配置"><a href="#1-Sqoop安装与配置" class="headerlink" title="1. Sqoop安装与配置"></a>1. Sqoop安装与配置</h2><h3 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h3><p>下载Sqoop安装包，这里我下载的是CDH版本，下载地址为：<a href="http://archive.cloudera.com/cdh5/cdh/5/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/</a></p><ul><li>将安装包移动到/usr/local/src目录下，解压到/usr/local/目录下，重命名为sqoop</li></ul><pre class=" language-shell"><code class="language-shell"># 解压tar -zxvf sqoop-1.4.6-cdh5.16.2.tar.gz -C /usr/local/# 重命名mv sqoop-1.4.6-cdh5.16.2 sqoop</code></pre><ul><li>配置环境变量</li></ul><p>打开环境变量配置文件，添加以下内容：</p><pre class=" language-shell"><code class="language-shell"># 打开配置文件 vim /etc/profile # 添加Sqoop环境变量 export SQOOP_HOME=/usr/local/sqoopexport PATH=$PATH:$SQOOP_HOME/bin</code></pre><ul><li>环境变量生效</li></ul><pre class=" language-shell"><code class="language-shell">source /etc/profile</code></pre><h3 id="1-2-配置"><a href="#1-2-配置" class="headerlink" title="1.2 配置"></a>1.2 配置</h3><ul><li>修改Sqoop配置文件sqoop-env.sh</li></ul><p>进入到/usr/local/sqoop/conf目录下，拷贝sqoop-env-template.sh为sqoop-env.sh。编辑sqoop-env.sh，添加以下配置：</p><pre class=" language-shell"><code class="language-shell">export HADOOP_COMMON_HOME=/usr/local/hadoopexport HADOOP_MAPRED_HOME=/usr/local/hadoopexport HBASE_HOME=/usr/local/hbaseexport HIVE_HOME=/usr/local/hive</code></pre><ul><li>将JDBC驱动移动到/usr/local/sqoop/lib目录下</li></ul><p>下载<a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" rel="noopener">JDBC驱动</a>，我下载的版本包是mysql-connector-java-5.1.48.tar.gz。</p><pre class=" language-shell"><code class="language-shell"># 解压 tar -zxvf mysql-connector-java-5.1.48.tar.gz # 进入到解压目录，将mysql-connector-java-5.1.48.jar移动到/usr/local/sqoop/lib目录下 cd mysql-connector-java-5.1.48 cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/</code></pre><ul><li>验证</li></ul><pre class=" language-shell"><code class="language-shell">sqoop help</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -207,9 +207,9 @@
       
         <tags>
             
-            <tag> Pandas </tag>
-            
             <tag> Python </tag>
+            
+            <tag> Pandas </tag>
             
         </tags>
       

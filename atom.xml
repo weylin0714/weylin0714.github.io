@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-02-07T13:43:34.606Z</updated>
+  <updated>2020-02-07T15:42:19.903Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.linwang93.cn/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/"/>
     <id>http://www.linwang93.cn/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/</id>
     <published>2020-02-07T13:18:16.000Z</published>
-    <updated>2020-02-07T13:43:34.606Z</updated>
+    <updated>2020-02-07T15:42:19.903Z</updated>
     
     <summary type="html">
     
@@ -29,11 +29,7 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;p&gt;Sqoop是Hdoop与关系型数据库之间传递数据的工具，可以实现Mysql等关系型数据库与Hadoop的HDFS、HIVE、HBASE等数据存储系统间数据互传。Sqoop有Sqoop1和Sqoop2两个版本，但它们不兼容，并且官方并不建议在生产环境中使用sqoop2。我们这
         
       
     
@@ -248,9 +244,9 @@
       <category term="数据分析" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="Pandas" scheme="http://www.linwang93.cn/tags/Pandas/"/>
-    
       <category term="Python" scheme="http://www.linwang93.cn/tags/Python/"/>
+    
+      <category term="Pandas" scheme="http://www.linwang93.cn/tags/Pandas/"/>
     
   </entry>
   
