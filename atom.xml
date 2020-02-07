@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-02-07T07:16:38.322Z</updated>
+  <updated>2020-02-07T13:43:34.606Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -17,122 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>大数据学习环境搭建(四)--Spark单机环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/</id>
-    <published>2020-02-03T15:24:12.000Z</published>
-    <updated>2020-02-07T07:16:38.322Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。&lt;/p&gt;
-&lt;h2 id=&quot;1-Spark安装与配置&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Spark" scheme="http://www.linwang93.cn/tags/Spark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大数据学习环境搭建(三)--Hive单机环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/</id>
-    <published>2020-02-03T15:22:59.000Z</published>
-    <updated>2020-02-06T12:52:04.071Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Hive是一个架构在Hadoop之上的数据仓库工具，可以将结构化的数据文件映射成为一张数据库表，并提供类SQL的查询功能，为大数据查询和分析提供方便。这里在阿里云服务器上搭建Hive单机伪分布环境。&lt;/p&gt;
-&lt;h2 id=&quot;1-Hive安装与配置&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Hive" scheme="http://www.linwang93.cn/tags/Hive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大数据学习环境搭建(二)--HBase单机环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/</id>
-    <published>2020-02-03T15:22:40.000Z</published>
-    <updated>2020-02-05T13:33:39.229Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;HBase是一种分布式存储的数据库，技术上来讲，它更像是分布式存储而不是分布式数据库。HBase的运行有三种模式：单机模式、伪分布式模式、分布式模式。出于学习目的，我们只在一台阿里云服务器上部署单机伪分布环境。&lt;/p&gt;
-&lt;h2 id=&quot;1-HBase安装前配置&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Hbase" scheme="http://www.linwang93.cn/tags/Hbase/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大数据学习环境搭建(一)--Hadoop单机环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/</id>
-    <published>2020-02-03T15:21:03.000Z</published>
-    <updated>2020-02-05T13:33:17.187Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Hadoop有三种运行模式：单机模式、伪分布式模式、全分布式集群模式。&lt;strong&gt;单机模式&lt;/strong&gt;：Hadoop的默认模式（非分布式模式），无需进行其他配置即可运行。非分布式即单Java进程，用于开发和调试。&lt;strong&gt;伪分布式模式&lt;/strong&gt;：Ha
-        
-      
-    
-    </summary>
-    
-    
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Hadoop" scheme="http://www.linwang93.cn/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sqoop导入Mysql数据到Hive</title>
-    <link href="http://www.linwang93.cn/2020/01/28/sqoop-dao-ru-mysql-shu-ju-dao-hive/"/>
-    <id>http://www.linwang93.cn/2020/01/28/sqoop-dao-ru-mysql-shu-ju-dao-hive/</id>
-    <published>2020-01-28T13:29:15.000Z</published>
-    <updated>2020-01-28T13:29:15.798Z</updated>
+    <title>Linux环境Sqoop的安装与配置</title>
+    <link href="http://www.linwang93.cn/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/"/>
+    <id>http://www.linwang93.cn/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/</id>
+    <published>2020-02-07T13:18:16.000Z</published>
+    <updated>2020-02-07T13:43:34.606Z</updated>
     
     <summary type="html">
     
@@ -151,6 +40,131 @@
     </summary>
     
     
+      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Sqoop" scheme="http://www.linwang93.cn/tags/Sqoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据学习环境搭建(四)--Spark单机环境搭建</title>
+    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/"/>
+    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/</id>
+    <published>2020-02-03T15:24:12.000Z</published>
+    <updated>2020-02-07T13:07:04.033Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。&lt;/p&gt;
+&lt;h2 id=&quot;1-Spark安装与配置&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Spark" scheme="http://www.linwang93.cn/tags/Spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据学习环境搭建(三)--Hive单机环境搭建</title>
+    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/"/>
+    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/</id>
+    <published>2020-02-03T15:22:59.000Z</published>
+    <updated>2020-02-07T13:06:42.810Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Hive是一个架构在Hadoop之上的数据仓库工具，可以将结构化的数据文件映射成为一张数据库表，并提供类SQL的查询功能，为大数据查询和分析提供方便。这里在阿里云服务器上搭建Hive单机伪分布环境。&lt;/p&gt;
+&lt;h2 id=&quot;1-Hive安装与配置&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Hive" scheme="http://www.linwang93.cn/tags/Hive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据学习环境搭建(二)--HBase单机环境搭建</title>
+    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/"/>
+    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/</id>
+    <published>2020-02-03T15:22:40.000Z</published>
+    <updated>2020-02-07T13:06:14.102Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;HBase是一种分布式存储的数据库，技术上来讲，它更像是分布式存储而不是分布式数据库。HBase的运行有三种模式：单机模式、伪分布式模式、分布式模式。出于学习目的，我们只在一台阿里云服务器上部署单机伪分布环境。&lt;/p&gt;
+&lt;h2 id=&quot;1-HBase安装前配置&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Hbase" scheme="http://www.linwang93.cn/tags/Hbase/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据学习环境搭建(一)--Hadoop单机环境搭建</title>
+    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/"/>
+    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/</id>
+    <published>2020-02-03T15:21:03.000Z</published>
+    <updated>2020-02-07T13:05:31.449Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Hadoop有三种运行模式：单机模式、伪分布式模式、全分布式集群模式。&lt;strong&gt;单机模式&lt;/strong&gt;：Hadoop的默认模式（非分布式模式），无需进行其他配置即可运行。非分布式即单Java进程，用于开发和调试。&lt;strong&gt;伪分布式模式&lt;/strong&gt;：Ha
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Hadoop" scheme="http://www.linwang93.cn/tags/Hadoop/"/>
     
   </entry>
   
@@ -159,7 +173,7 @@
     <link href="http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/"/>
     <id>http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/</id>
     <published>2020-01-20T01:12:42.000Z</published>
-    <updated>2020-01-28T13:37:50.363Z</updated>
+    <updated>2020-02-07T13:00:08.918Z</updated>
     
     <summary type="html">
     
@@ -175,7 +189,7 @@
     </summary>
     
     
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
     
       <category term="Java" scheme="http://www.linwang93.cn/tags/Java/"/>
@@ -187,7 +201,7 @@
     <link href="http://www.linwang93.cn/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/"/>
     <id>http://www.linwang93.cn/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/</id>
     <published>2019-12-24T01:17:24.000Z</published>
-    <updated>2020-02-01T03:17:41.686Z</updated>
+    <updated>2020-02-07T13:02:53.963Z</updated>
     
     <summary type="html">
     
@@ -202,7 +216,7 @@
     </summary>
     
     
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
     
       <category term="Python" scheme="http://www.linwang93.cn/tags/Python/"/>
@@ -216,7 +230,7 @@
     <link href="http://www.linwang93.cn/2019/09/07/pandas-kuai-su-ru-men/"/>
     <id>http://www.linwang93.cn/2019/09/07/pandas-kuai-su-ru-men/</id>
     <published>2019-09-07T08:52:16.000Z</published>
-    <updated>2020-01-28T13:37:26.253Z</updated>
+    <updated>2020-02-07T13:02:35.922Z</updated>
     
     <summary type="html">
     
@@ -231,12 +245,12 @@
     </summary>
     
     
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+      <category term="数据分析" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
       <category term="Pandas" scheme="http://www.linwang93.cn/tags/Pandas/"/>
     
-      <category term="数据分析" scheme="http://www.linwang93.cn/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="Python" scheme="http://www.linwang93.cn/tags/Python/"/>
     
   </entry>
   
@@ -245,7 +259,7 @@
     <link href="http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/"/>
     <id>http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/</id>
     <published>2019-05-05T03:53:50.000Z</published>
-    <updated>2020-01-28T13:36:45.057Z</updated>
+    <updated>2020-02-07T13:03:37.972Z</updated>
     
     <summary type="html">
     
@@ -260,7 +274,7 @@
     </summary>
     
     
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
     
       <category term="Hexo" scheme="http://www.linwang93.cn/tags/Hexo/"/>
@@ -274,7 +288,7 @@
     <link href="http://www.linwang93.cn/2019/05/01/typora-shi-yong-jiao-cheng/"/>
     <id>http://www.linwang93.cn/2019/05/01/typora-shi-yong-jiao-cheng/</id>
     <published>2019-05-01T12:11:12.000Z</published>
-    <updated>2020-01-28T13:37:38.491Z</updated>
+    <updated>2020-02-07T13:01:42.848Z</updated>
     
     <summary type="html">
     
@@ -291,7 +305,7 @@
     </summary>
     
     
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="软件使用教程" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
     
     
       <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
@@ -303,7 +317,7 @@
     <link href="http://www.linwang93.cn/2019/04/29/win10-xia-mysql5-7-de-an-zhuang-yu-pei-zhi/"/>
     <id>http://www.linwang93.cn/2019/04/29/win10-xia-mysql5-7-de-an-zhuang-yu-pei-zhi/</id>
     <published>2019-04-29T06:53:40.000Z</published>
-    <updated>2020-01-28T13:18:20.756Z</updated>
+    <updated>2020-02-07T12:59:52.140Z</updated>
     
     <summary type="html">
     
@@ -319,7 +333,7 @@
     </summary>
     
     
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
     
       <category term="MySQL" scheme="http://www.linwang93.cn/tags/MySQL/"/>

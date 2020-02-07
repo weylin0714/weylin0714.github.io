@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Linux环境Sqoop的安装与配置</title>
+      <link href="/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/"/>
+      <url>/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据框架 </category>
+          
+          <category> 软件安装与配置 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Sqoop </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>大数据学习环境搭建(四)--Spark单机环境搭建</title>
       <link href="/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/"/>
       <url>/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/</url>
@@ -13,7 +40,9 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 大数据框架 </category>
+          
+          <category> 软件安装与配置 </category>
           
       </categories>
       
@@ -38,7 +67,9 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 大数据框架 </category>
+          
+          <category> 软件安装与配置 </category>
           
       </categories>
       
@@ -63,7 +94,9 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 大数据框架 </category>
+          
+          <category> 软件安装与配置 </category>
           
       </categories>
       
@@ -88,7 +121,9 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 大数据框架 </category>
+          
+          <category> 软件安装与配置 </category>
           
       </categories>
       
@@ -104,19 +139,6 @@
     
     
     <entry>
-      <title>Sqoop导入Mysql数据到Hive</title>
-      <link href="/2020/01/28/sqoop-dao-ru-mysql-shu-ju-dao-hive/"/>
-      <url>/2020/01/28/sqoop-dao-ru-mysql-shu-ju-dao-hive/</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Win10安装配置Java开发环境</title>
       <link href="/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/"/>
       <url>/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/</url>
@@ -126,7 +148,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 软件安装与配置 </category>
           
       </categories>
       
@@ -151,7 +173,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 软件安装与配置 </category>
           
       </categories>
       
@@ -178,7 +200,7 @@
       
       <categories>
           
-          <category> Python </category>
+          <category> 数据分析 </category>
           
       </categories>
       
@@ -187,7 +209,7 @@
             
             <tag> Pandas </tag>
             
-            <tag> 数据分析 </tag>
+            <tag> Python </tag>
             
         </tags>
       
@@ -205,7 +227,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 软件安装与配置 </category>
           
       </categories>
       
@@ -232,7 +254,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 软件使用教程 </category>
           
       </categories>
       
@@ -257,7 +279,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 软件安装与配置 </category>
           
       </categories>
       
