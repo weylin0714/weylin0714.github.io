@@ -28,7 +28,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -463,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-07
+                    2020-02-08
                 </div>
                 
 
@@ -498,25 +499,25 @@
 <ul>
 <li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为spark</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">tar -zxvf spark-2.4.4-bin-hadoop2.6.tar.gz -C /usr/local/
-# 将解压到/usr/local/目录下的文件夹重命名
-mv spark-2.4.4-bin-hadoop2.6/ spark</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf spark-2.4.4-bin-hadoop2.6.tar.gz -C /usr/local/
+<span class="token comment" spellcheck="true"># 将解压到/usr/local/目录下的文件夹重命名</span>
+<span class="token function">mv</span> spark-2.4.4-bin-hadoop2.6/ spark<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置环境变量</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell"># 打开配置文件 
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 打开配置文件 </span>
 vim /etc/profile 
-# 添加Spark环境变量 
-export SPARK_HOME=/usr/local/spark
-export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin</code></pre>
+<span class="token comment" spellcheck="true"># 添加Spark环境变量 </span>
+<span class="token function">export</span> SPARK_HOME<span class="token operator">=</span>/usr/local/spark
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$SPARK_HOME</span>/bin:<span class="token variable">$SPARK_HOME</span>/sbin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>环境变量生效</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">source /etc/profile</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-2-Local模式运行"><a href="#1-2-Local模式运行" class="headerlink" title="1.2 Local模式运行"></a>1.2 Local模式运行</h3><p>Local 模式是单机运行，它采用单节点多线程方式运行，不用部署，开箱即用，适合日常测试开发。</p>
 <p>进入到/usr/local/spark/bin目录下，执行以下命令启动spark。</p>
-<pre class=" language-shell"><code class="language-shell"># 启动spark-shell
-spark-shell --master local[2]</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 启动spark-shell</span>
+spark-shell --master local<span class="token punctuation">[</span>2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>local</strong>：只启动一个工作线程；</li>
 <li><strong>local[k]</strong>：启动 k 个工作线程；</li>
@@ -529,26 +530,26 @@ spark-shell --master local[2]</code></pre>
 <li>下载Scala，下载地址：<a href="https://www.scala-lang.org/download/" target="_blank" rel="noopener">https://www.scala-lang.org/download/</a></li>
 <li>将安装包移动到/usr/local目录下，解压，将解压文件夹重命名</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell"># 解压
-tar -zxvf scala-2.13.1.tgz
-# 重命名
-mv scala-2.13.1/ scala</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压</span>
+<span class="token function">tar</span> -zxvf scala-2.13.1.tgz
+<span class="token comment" spellcheck="true"># 重命名</span>
+<span class="token function">mv</span> scala-2.13.1/ scala<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置环境</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">vim ~/.bash_profile
-# 添加scala配置
-export SCALA_HOME=/usr/local/scala
-export PATH=$PATH:$SCALA_HOME/bin
-# 环境生效
-source ~/.bash_profile</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">vim ~/.bash_profile
+<span class="token comment" spellcheck="true"># 添加scala配置</span>
+<span class="token function">export</span> SCALA_HOME<span class="token operator">=</span>/usr/local/scala
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$SCALA_HOME</span>/bin
+<span class="token comment" spellcheck="true"># 环境生效</span>
+<span class="token function">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>验证是否安装成功</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">[root@centos local]# scala
-scala>
-# 退出
-:quit  # 或 ctrl + D</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos local<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># scala</span>
+scala<span class="token operator">></span>
+<span class="token comment" spellcheck="true"># 退出</span>
+:quit  <span class="token comment" spellcheck="true"># 或 ctrl + D</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-2-在Win10中安装Scala"><a href="#2-2-在Win10中安装Scala" class="headerlink" title="2.2 在Win10中安装Scala"></a>2.2 在Win10中安装Scala</h3><h4 id="2-2-1-前置条件"><a href="#2-2-1-前置条件" class="headerlink" title="2.2.1 前置条件"></a>2.2.1 前置条件</h4><p>在Win10环境下安装好JDK环境，安装可参考Win10安装配置Java开发环境的介绍。</p>
 <h4 id="2-2-2-安装与配置"><a href="#2-2-2-安装与配置" class="headerlink" title="2.2.2 安装与配置"></a>2.2.2 安装与配置</h4><ul>
 <li>安装Scala插件</li>
@@ -999,12 +1000,8 @@ scala>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->

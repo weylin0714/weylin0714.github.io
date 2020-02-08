@@ -11,8 +11,7 @@ CentOS7默认安装了Python2，在CentOS7中安装Python3，并设置为默认�
 
 安装lrzsz，windows与CentOS互传文件 
 yum -y install lrzsz 
-上传文件：rz
-下">
+# 上传文件：rz">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +33,8 @@ yum -y install lrzsz
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -469,7 +469,7 @@ yum -y install lrzsz
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-07
+                    2020-02-08
                 </div>
                 
 
@@ -504,73 +504,86 @@ yum -y install lrzsz
 </blockquote>
 <ol>
 <li><p>安装lrzsz，windows与CentOS互传文件 </p>
-<pre><code>yum -y install lrzsz 
-上传文件：rz
-下载文件：sz</code></pre></li>
+<pre class="line-numbers language-bash"><code class="language-bash">yum -y <span class="token function">install</span> lrzsz 
+<span class="token comment" spellcheck="true"># 上传文件：rz</span>
+<span class="token comment" spellcheck="true"># 下载文件：sz</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>安装Python</p>
 <ul>
 <li>安装依赖 </li>
 </ul>
-<pre><code>yum -y groupinstall "Development tools"
-yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</code></pre><ul>
+<pre class="line-numbers language-bash"><code class="language-bash">yum -y groupinstall <span class="token string">"Development tools"</span>
+yum -y <span class="token function">install</span> zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
 <li>在线下载或本地上传rz</li>
 </ul>
-<pre><code>wget https://www.python.org/downloads/release/python-376/
-或
-rz上传本地安装包</code></pre><ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> https://www.python.org/downloads/release/python-376/
+<span class="token comment" spellcheck="true"># 或 rz上传本地安装包</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<ul>
 <li>解压</li>
 </ul>
-<pre><code>tar zxvf Python-3.7.6.tgz</code></pre><ul>
+<pre class="line-numbers language-bash"><code class="language-bash">   <span class="token function">tar</span> zxvf Python-3.7.6.tgz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
 <li>切换到解压目录，配置、编译、安装</li>
 </ul>
-<pre><code>cd Python-3.7.6
-./configure --prefix=/usr/local/python3
-make
-make install</code></pre><ul>
+<pre class="line-numbers language-bash"><code class="language-bash">   <span class="token function">cd</span> Python-3.7.6
+   ./configure --prefix<span class="token operator">=</span>/usr/local/python3
+   <span class="token function">make</span>
+   <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>创建软链接（将python3设置为默认python）</li>
 </ul>
-<pre><code>ln -s /usr/local/python3/bin/python3 /usr/bin/python
-ln -s /usr/local/python3/bin/pip3 /usr/bin/pip</code></pre><ul>
+<pre class="line-numbers language-bash"><code class="language-bash">   <span class="token function">ln</span> -s /usr/local/python3/bin/python3 /usr/bin/python
+   <span class="token function">ln</span> -s /usr/local/python3/bin/pip3 /usr/bin/pip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
 <li>更改yum配置</li>
 </ul>
-<pre><code>yum采用Python2作为命令解释器，在修改默认Python后，需修改下述文件
-vim /usr/bin/yum 
-vim /usr/libexec/urlgrabber-ext-down
-vim /usr/bin/yum-config-manager
-将首行的Python都修改为Python2</code></pre></li>
-</ol>
+<pre class="line-numbers language-bash"><code class="language-bash">   <span class="token comment" spellcheck="true"># yum采用Python2作为命令解释器，在修改默认Python后，需修改下述文件</span>
+   vim /usr/bin/yum 
+   vim /usr/libexec/urlgrabber-ext-down
+   vim /usr/bin/yum-config-manager
+   <span class="token comment" spellcheck="true"># 将首行的Python都修改为Python2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二、安装配置虚拟环境virtualenvwrapper"><a href="#二、安装配置虚拟环境virtualenvwrapper" class="headerlink" title="二、安装配置虚拟环境virtualenvwrapper"></a><strong>二、安装配置虚拟环境virtualenvwrapper</strong></h2><ol>
 <li><p>安装virtualenvwrapper</p>
-<pre><code>pip3 install virtualenvwrapper</code></pre></li>
+<pre class="line-numbers language-bash"><code class="language-bash">pip3 <span class="token function">install</span> virtualenvwrapper<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>配置virtualenvwrapper</p>
 <ul>
 <li>创建存放虚拟环境的目录</li>
 </ul>
-<pre><code>mkdir ~/.virtualenvs</code></pre><ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> ~/.virtualenvs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
 <li>编辑.bashrc文件</li>
 </ul>
-<pre><code>vim ~/.bashrc
-在文件中加入：
-export WORKON_HOME=~/.virtualenvs #指定virtualenvwrapper环境的目录
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3 #指定通过哪个python版本来创建虚拟环境
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/python3/bin/virtualenv
-source /usr/local/python3/bin/virtualenvwrapper.sh</code></pre><ul>
+<pre class="line-numbers language-bash"><code class="language-bash">vim ~/.bashrc
+<span class="token comment" spellcheck="true"># 在文件中加入：</span>
+<span class="token function">export</span> WORKON_HOME<span class="token operator">=</span>~/.virtualenvs <span class="token comment" spellcheck="true"># 指定virtualenvwrapper环境的目录</span>
+<span class="token function">export</span> VIRTUALENVWRAPPER_PYTHON<span class="token operator">=</span>/usr/bin/python3 <span class="token comment" spellcheck="true"># 指定通过哪个python版本来创建虚拟环境</span>
+<span class="token function">export</span> VIRTUALENVWRAPPER_VIRTUALENV<span class="token operator">=</span>/usr/local/python3/bin/virtualenv
+<span class="token function">source</span> /usr/local/python3/bin/virtualenvwrapper.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>使修改环境变量生效</li>
 </ul>
-<pre><code>source ~/.bashrc</code></pre></li>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>修改快捷键（由于virtualenvwrapper命令太长）</p>
-<pre><code>alias mkv='mkvirtualenv' # 创建一个虚拟环境
-alias rmv='rmvirtualenv' # 删除虚拟环境
-alias lsv='lsvirtualenv' # 查看所有的虚拟环境
-alias cdv='cdvirtualenv' # 切换到虚拟环境的目录
-alias cds='cdsitepackages' # 切换到虚拟环境的site-packages目录
-alias lss='lssitepackages' # 查看虚拟环境site-packages目录的文件
-unalias mkv # 取消别名</code></pre></li>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">alias</span> mkv<span class="token operator">=</span><span class="token string">'mkvirtualenv'</span> <span class="token comment" spellcheck="true"># 创建一个虚拟环境</span>
+<span class="token function">alias</span> rmv<span class="token operator">=</span><span class="token string">'rmvirtualenv'</span> <span class="token comment" spellcheck="true"># 删除虚拟环境</span>
+<span class="token function">alias</span> lsv<span class="token operator">=</span><span class="token string">'lsvirtualenv'</span> <span class="token comment" spellcheck="true"># 查看所有的虚拟环境</span>
+<span class="token function">alias</span> cdv<span class="token operator">=</span><span class="token string">'cdvirtualenv'</span> <span class="token comment" spellcheck="true"># 切换到虚拟环境的目录</span>
+<span class="token function">alias</span> cds<span class="token operator">=</span><span class="token string">'cdsitepackages'</span> <span class="token comment" spellcheck="true"># 切换到虚拟环境的site-packages目录</span>
+<span class="token function">alias</span> lss<span class="token operator">=</span><span class="token string">'lssitepackages'</span> <span class="token comment" spellcheck="true"># 查看虚拟环境site-packages目录的文件</span>
+<span class="token function">unalias</span> mkv <span class="token comment" spellcheck="true"># 取消别名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>创建虚拟环境</p>
-<pre><code>mkv venv</code></pre></li>
+<pre class="line-numbers language-bash"><code class="language-bash">mkv venv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>进入和退出虚拟环境</p>
-<pre><code>workon venv # 切换虚拟环境
-deactivate # 退出虚拟环境</code></pre></li>
+<pre class="line-numbers language-bash"><code class="language-bash">workon venv <span class="token comment" spellcheck="true"># 切换虚拟环境</span>
+deactivate <span class="token comment" spellcheck="true"># 退出虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 </ol>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1000,12 +1013,8 @@ deactivate # 退出虚拟环境</code></pre></li>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->

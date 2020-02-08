@@ -99,7 +99,7 @@ blockquote {
 }
 
 .line-numbers-rows {
-    border-right-width: 0px !important;
+    border-right-width: 1px !important;
 }
 
 .line-numbers {
@@ -120,7 +120,7 @@ pre {
     tab-size: 4;
 }
 
-.code-area::after {
+/* .code-area::after {
     content: " ";
     position: absolute;
     border-radius: 50%;
@@ -132,11 +132,11 @@ pre {
     margin-top: 12px;
     -webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #1E90FF;
     box-shadow: 20px 0 #ffbd2e, 40px 0 #1E90FF;
-}
+} */
 
 code {
     padding: 1px 5px;
-    top: 13px !important;
+    top: 1px !important;
     font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
     font-size: 0.91rem;
     color: #e96900;

@@ -28,7 +28,8 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -463,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-07
+                    2020-02-08
                 </div>
                 
 
@@ -500,39 +501,39 @@
 <ul>
 <li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为hbase</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">tar -zxvf hbase-1.2.0-cdh5.16.2.tar.gz -C /usr/local/
-# 将解压到/usr/local/目录下的文件夹重命名
-mv hbase-1.2.0-cdh5.16.2/ hbase</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf hbase-1.2.0-cdh5.16.2.tar.gz -C /usr/local/
+<span class="token comment" spellcheck="true"># 将解压到/usr/local/目录下的文件夹重命名</span>
+<span class="token function">mv</span> hbase-1.2.0-cdh5.16.2/ hbase<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置环境变量</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell"># 打开配置文件 
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 打开配置文件 </span>
 vim /etc/profile 
-# 添加HBase环境变量 
-export HBASE_HOME=/usr/local/hbase
-export PATH=$HBASE_HOME/bin:$PATH</code></pre>
+<span class="token comment" spellcheck="true"># 添加HBase环境变量 </span>
+<span class="token function">export</span> HBASE_HOME<span class="token operator">=</span>/usr/local/hbase
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$HBASE_HOME</span>/bin:<span class="token variable">$PATH</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>环境变量生效</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">source /etc/profile</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>查看HBase版本，确定hbase安装成功</li>
 </ul>
-<pre class=" language-shell"><code class="language-shell">hbase version</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">hbase version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="2-2-单机伪集群配置"><a href="#2-2-单机伪集群配置" class="headerlink" title="2.2 单机伪集群配置"></a>2.2 单机伪集群配置</h3><h4 id="2-2-1-修改配置"><a href="#2-2-1-修改配置" class="headerlink" title="2.2.1 修改配置"></a>2.2.1 修改配置</h4><ul>
 <li>hbase-env.sh</li>
 </ul>
 <p>修改/usr/local/hbase/conf/目录下的hbase-env.sh文件，添加如下环境变量</p>
-<pre class=" language-shell"><code class="language-shell">export JAVA_HOME=/usr/local/java
-export HBASE_HOME=/usr/local/hbase
-export PATH=$PATH:$HBASE_HOME/bin
-export HBASE_MANAGES_ZK=true   # Hbase自带zookeeper</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/usr/local/java
+<span class="token function">export</span> HBASE_HOME<span class="token operator">=</span>/usr/local/hbase
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$HBASE_HOME</span>/bin
+<span class="token function">export</span> HBASE_MANAGES_ZK<span class="token operator">=</span>true   <span class="token comment" spellcheck="true"># Hbase自带zookeeper</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>hbase-site.xml</li>
 </ul>
 <p>配置/usr/local/hbase/conf/hbase-site.xml，打开并编辑hbase-site.xml</p>
-<pre class=" language-shell"><code class="language-shell">vim /usr/local/hbase/conf/hbase-site.xml</code></pre>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-bash"><code class="language-bash">vim /usr/local/hbase/conf/hbase-site.xml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
     <span class="token comment" spellcheck="true">&lt;!--指定HBase以分布式模式运行--></span>   
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.cluster.distributed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
@@ -543,14 +544,14 @@ export HBASE_MANAGES_ZK=true   # Hbase自带zookeeper</code></pre>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.rootdir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://localhost:8020/hbase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="2-2-2-启动"><a href="#2-2-2-启动" class="headerlink" title="2.2.2 启动"></a>2.2.2 启动</h4><p>切换至/usr/local/hbase/bin目录，执行以下命令：</p>
-<pre class=" language-shell"><code class="language-shell">start-hbase.sh</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">start-hbase.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="2-2-3-验证是否启动成功"><a href="#2-2-3-验证是否启动成功" class="headerlink" title="2.2.3 验证是否启动成功"></a>2.2.3 验证是否启动成功</h4><ul>
 <li>使用<code>jps</code>命令查看进程</li>
 </ul>
 <p>HBase的进程:  HMaster，HRegionServer，HBase内置的Zookeeper的进程: HQuorumPeer，其余的为 HDFS 和 YARN 的进程。</p>
-<pre><code>[root@centos bin]# jps
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># jps</span>
 3168 ResourceManager
 2178 NameNode
 5302 Jps
@@ -559,7 +560,8 @@ export HBASE_MANAGES_ZK=true   # Hbase自带zookeeper</code></pre>
 4844 HMaster
 2445 SecondaryNameNode
 4974 HRegionServer
-4767 HQuorumPeer</code></pre><ul>
+4767 HQuorumPeer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>访问HBase Web UI界面，访问地址：IP:60010</li>
 </ul>
 <script>
@@ -990,12 +992,8 @@ export HBASE_MANAGES_ZK=true   # Hbase自带zookeeper</code></pre>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
