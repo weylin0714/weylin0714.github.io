@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-02-07T15:51:08.804Z</updated>
+  <updated>2020-02-14T12:38:58.555Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -17,11 +17,120 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Superset开发环境搭建</title>
+    <link href="http://www.linwang93.cn/posts/8f56d411.html"/>
+    <id>http://www.linwang93.cn/posts/8f56d411.html</id>
+    <published>2020-02-12T08:48:24.000Z</published>
+    <updated>2020-02-14T12:38:58.555Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-Node-js安装配置&quot;&gt;&lt;a href=&quot;#1-Node-js安装配置&quot; class=&quot;headerlink&quot; title=&quot;1. Node.js安装配置&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="可视化工具" scheme="http://www.linwang93.cn/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Superset" scheme="http://www.linwang93.cn/tags/Superset/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git安装配置与基本使用</title>
+    <link href="http://www.linwang93.cn/posts/c6c40a41.html"/>
+    <id>http://www.linwang93.cn/posts/c6c40a41.html</id>
+    <published>2020-02-11T11:46:34.000Z</published>
+    <updated>2020-02-14T12:38:58.549Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。我们在CentOS7环境下安装配置Git，并学习Git的基本操作。&lt;/p&gt;
+&lt;h2 id=&quot;1-Git安装配置&quot;&gt;&lt;a href=&quot;#1-Git安装配置&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="版本控制工具" scheme="http://www.linwang93.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://www.linwang93.cn/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HUE部署与使用</title>
+    <link href="http://www.linwang93.cn/posts/357898e8.html"/>
+    <id>http://www.linwang93.cn/posts/357898e8.html</id>
+    <published>2020-02-11T02:28:46.000Z</published>
+    <updated>2020-02-14T12:38:58.550Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;HUE是一个开源的Apache Hadoop UI系统，基于Python
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="HUE" scheme="http://www.linwang93.cn/tags/HUE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hive入门教程</title>
+    <link href="http://www.linwang93.cn/posts/73248e8e.html"/>
+    <id>http://www.linwang93.cn/posts/73248e8e.html</id>
+    <published>2020-02-08T14:26:42.000Z</published>
+    <updated>2020-02-14T12:38:58.550Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据框架教程" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hive" scheme="http://www.linwang93.cn/tags/Hive/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux环境Sqoop的安装与配置</title>
-    <link href="http://www.linwang93.cn/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/"/>
-    <id>http://www.linwang93.cn/2020/02/07/linux-huan-jing-sqoop-de-an-zhuang-yu-pei-zhi/</id>
+    <link href="http://www.linwang93.cn/posts/620e2f13.html"/>
+    <id>http://www.linwang93.cn/posts/620e2f13.html</id>
     <published>2020-02-07T13:18:16.000Z</published>
-    <updated>2020-02-07T15:51:08.804Z</updated>
+    <updated>2020-02-14T12:38:58.552Z</updated>
     
     <summary type="html">
     
@@ -47,10 +156,10 @@
   
   <entry>
     <title>大数据学习环境搭建(四)--Spark单机环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-si-spark-dan-ji-huan-jing-da-jian/</id>
+    <link href="http://www.linwang93.cn/posts/f28d3f89.html"/>
+    <id>http://www.linwang93.cn/posts/f28d3f89.html</id>
     <published>2020-02-03T15:24:12.000Z</published>
-    <updated>2020-02-08T13:56:02.601Z</updated>
+    <updated>2020-02-14T12:38:58.561Z</updated>
     
     <summary type="html">
     
@@ -77,10 +186,10 @@
   
   <entry>
     <title>大数据学习环境搭建(三)--Hive单机环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-san-hive-dan-ji-huan-jing-da-jian/</id>
+    <link href="http://www.linwang93.cn/posts/73be190e.html"/>
+    <id>http://www.linwang93.cn/posts/73be190e.html</id>
     <published>2020-02-03T15:22:59.000Z</published>
-    <updated>2020-02-08T14:15:21.253Z</updated>
+    <updated>2020-02-14T12:38:58.559Z</updated>
     
     <summary type="html">
     
@@ -107,10 +216,10 @@
   
   <entry>
     <title>大数据学习环境搭建(二)--HBase单机环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-er-hbase-dan-ji-huan-jing-da-jian/</id>
+    <link href="http://www.linwang93.cn/posts/a32d9546.html"/>
+    <id>http://www.linwang93.cn/posts/a32d9546.html</id>
     <published>2020-02-03T15:22:40.000Z</published>
-    <updated>2020-02-08T13:50:44.909Z</updated>
+    <updated>2020-02-14T12:38:58.560Z</updated>
     
     <summary type="html">
     
@@ -137,10 +246,10 @@
   
   <entry>
     <title>大数据学习环境搭建(一)--Hadoop单机环境搭建</title>
-    <link href="http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/"/>
-    <id>http://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/</id>
+    <link href="http://www.linwang93.cn/posts/6dd29b8f.html"/>
+    <id>http://www.linwang93.cn/posts/6dd29b8f.html</id>
     <published>2020-02-03T15:21:03.000Z</published>
-    <updated>2020-02-08T13:47:11.764Z</updated>
+    <updated>2020-02-14T12:38:58.557Z</updated>
     
     <summary type="html">
     
@@ -166,10 +275,10 @@
   
   <entry>
     <title>Win10安装配置Java开发环境</title>
-    <link href="http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/"/>
-    <id>http://www.linwang93.cn/2020/01/20/win10-an-zhuang-pei-zhi-java-kai-fa-huan-jing/</id>
+    <link href="http://www.linwang93.cn/posts/26c0f6e1.html"/>
+    <id>http://www.linwang93.cn/posts/26c0f6e1.html</id>
     <published>2020-01-20T01:12:42.000Z</published>
-    <updated>2020-02-07T13:00:08.918Z</updated>
+    <updated>2020-02-14T12:38:58.558Z</updated>
     
     <summary type="html">
     
@@ -193,11 +302,11 @@
   </entry>
   
   <entry>
-    <title>Linux部署Python3和virtualenvwrapper</title>
-    <link href="http://www.linwang93.cn/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/"/>
-    <id>http://www.linwang93.cn/2019/12/24/linux-bu-shu-python3-he-virtualenvwrapper/</id>
+    <title>CentOS7部署Python和virtualenvwrapper</title>
+    <link href="http://www.linwang93.cn/posts/e3623c79.html"/>
+    <id>http://www.linwang93.cn/posts/e3623c79.html</id>
     <published>2019-12-24T01:17:24.000Z</published>
-    <updated>2020-02-08T13:45:06.698Z</updated>
+    <updated>2020-02-14T12:38:58.554Z</updated>
     
     <summary type="html">
     
@@ -205,7 +314,7 @@
       
         
         
-          &lt;h2 id=&quot;一、安装Python3&quot;&gt;&lt;a href=&quot;#一、安装Python3&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;1-升级Python2&quot;&gt;&lt;a href=&quot;#1-升级Python2&quot; class=&quot;headerlink&quot; title=&quot;1. 升级Python2&quot;&gt;&lt;/a&gt;1.
         
       
     
@@ -223,10 +332,10 @@
   
   <entry>
     <title>Pandas快速入门</title>
-    <link href="http://www.linwang93.cn/2019/09/07/pandas-kuai-su-ru-men/"/>
-    <id>http://www.linwang93.cn/2019/09/07/pandas-kuai-su-ru-men/</id>
+    <link href="http://www.linwang93.cn/posts/54cc6129.html"/>
+    <id>http://www.linwang93.cn/posts/54cc6129.html</id>
     <published>2019-09-07T08:52:16.000Z</published>
-    <updated>2020-02-07T13:02:35.922Z</updated>
+    <updated>2020-02-14T12:38:58.553Z</updated>
     
     <summary type="html">
     
@@ -252,10 +361,10 @@
   
   <entry>
     <title>基于Next主题的Hexo博客搭建与配置</title>
-    <link href="http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/"/>
-    <id>http://www.linwang93.cn/2019/05/05/hexo-bo-ke-da-jian-yu-pei-zhi/</id>
+    <link href="http://www.linwang93.cn/posts/2306985b.html"/>
+    <id>http://www.linwang93.cn/posts/2306985b.html</id>
     <published>2019-05-05T03:53:50.000Z</published>
-    <updated>2020-02-07T13:03:37.972Z</updated>
+    <updated>2020-02-14T12:38:58.551Z</updated>
     
     <summary type="html">
     
@@ -281,10 +390,10 @@
   
   <entry>
     <title>Typora使用教程</title>
-    <link href="http://www.linwang93.cn/2019/05/01/typora-shi-yong-jiao-cheng/"/>
-    <id>http://www.linwang93.cn/2019/05/01/typora-shi-yong-jiao-cheng/</id>
+    <link href="http://www.linwang93.cn/posts/64297bf3.html"/>
+    <id>http://www.linwang93.cn/posts/64297bf3.html</id>
     <published>2019-05-01T12:11:12.000Z</published>
-    <updated>2020-02-07T13:01:42.848Z</updated>
+    <updated>2020-02-14T12:38:58.553Z</updated>
     
     <summary type="html">
     
@@ -310,10 +419,10 @@
   
   <entry>
     <title>Win10平台下MySQL5.7安装和配置</title>
-    <link href="http://www.linwang93.cn/2019/04/29/win10-xia-mysql5-7-de-an-zhuang-yu-pei-zhi/"/>
-    <id>http://www.linwang93.cn/2019/04/29/win10-xia-mysql5-7-de-an-zhuang-yu-pei-zhi/</id>
+    <link href="http://www.linwang93.cn/posts/e8fca04b.html"/>
+    <id>http://www.linwang93.cn/posts/e8fca04b.html</id>
     <published>2019-04-29T06:53:40.000Z</published>
-    <updated>2020-02-07T12:59:52.140Z</updated>
+    <updated>2020-02-14T12:38:58.555Z</updated>
     
     <summary type="html">
     
