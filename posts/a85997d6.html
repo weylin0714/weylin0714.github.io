@@ -4,9 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git安装配置与基本使用, 简若">
-    <meta name="description" content="Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。我们在CentOS7环境下安装配置Git，并学习Git的基本操作。
-1. Git安装配置1.1 Git安装1.1.1 检查是否安装[root@centos ~]#">
+    <meta name="keywords" content="CentOS7下MySQL安装与卸载, 简若">
+    <meta name="description" content="1. MySQL数据库安装1.1 安装前准备
+下载并安装MySQL yum仓库
+
+访问MySQL Yum 仓库下载页，选择合适得版本下载。
+# 进入/usr/local/src目录下，在线下载rpm包
+wget http://repo.my">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Git安装配置与基本使用 | 简若</title>
+    <title>CentOS7下MySQL安装与卸载 | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/c6c40a41.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/a85997d6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git安装配置与基本使用</h1>
+                    <h1 class="description center-align post-title">CentOS7下MySQL安装与卸载</h1>
                 </div>
             </div>
         </div>
@@ -428,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
                     </div>
@@ -440,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/" class="post-category">
-                                版本控制工具
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
                             </a>
                         
                     </div>
@@ -453,28 +457,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-11
+                    2020-02-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-16
+                    2020-02-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    623
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -490,78 +494,124 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。我们在CentOS7环境下安装配置Git，并学习Git的基本操作。</p>
-<h2 id="1-Git安装配置"><a href="#1-Git安装配置" class="headerlink" title="1. Git安装配置"></a>1. Git安装配置</h2><h3 id="1-1-Git安装"><a href="#1-1-Git安装" class="headerlink" title="1.1 Git安装"></a>1.1 Git安装</h3><h4 id="1-1-1-检查是否安装"><a href="#1-1-1-检查是否安装" class="headerlink" title="1.1.1 检查是否安装"></a>1.1.1 检查是否安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># git</span>
--bash: git: <span class="token function">command</span> not found  <span class="token comment" spellcheck="true"># 系统中未安装</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id="1-1-2-在线安装Git"><a href="#1-1-2-在线安装Git" class="headerlink" title="1.1.2 在线安装Git"></a>1.1.2 在线安装Git</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在线安装</span>
-yum <span class="token function">install</span> -y <span class="token function">git</span>
-<span class="token comment" spellcheck="true"># 查看安装版本</span>
-<span class="token function">git</span> --version
-<span class="token comment" spellcheck="true"># 通过该种方式安装的版本可能较旧，我们卸载git，用下面源码方式进行安装</span>
-yum remove <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="1-1-3-源码安装Git"><a href="#1-1-3-源码安装Git" class="headerlink" title="1.1.3 源码安装Git"></a>1.1.3 源码安装Git</h4><ul>
-<li>下载Git特定版本，我们下载v2.24.1。</li>
+                <h2 id="1-MySQL数据库安装"><a href="#1-MySQL数据库安装" class="headerlink" title="1. MySQL数据库安装"></a>1. MySQL数据库安装</h2><h3 id="1-1-安装前准备"><a href="#1-1-安装前准备" class="headerlink" title="1.1 安装前准备"></a>1.1 安装前准备</h3><ul>
+<li>下载并安装MySQL yum仓库</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在线下载到/usr/local/src目录下</span>
-<span class="token function">wget</span> https://github.com/git/git/archive/v2.24.1.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>访问<a href="http://repo.mysql.com/" target="_blank" rel="noopener">MySQL Yum 仓库下载页</a>，选择合适得版本下载。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 进入/usr/local/src目录下，在线下载rpm包</span>
+<span class="token function">wget</span> http://repo.mysql.com/mysql57-community-release-el7-11.noarch.rpm
+<span class="token comment" spellcheck="true">#安装rpm包获得MySQL yum仓库</span>
+<span class="token function">sudo</span> rpm -ivh mysql57-community-release-el7-11.noarch.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>安装依赖</li>
+<li>选择发行版</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash">yum -y <span class="token function">install</span> curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上面安装得rpm包中涵盖了多个版本的MySQL，以及一些基础组件。选择哪个版本，需要修改配置文件。这里我选择MySQL5.7，将配置文件中MySQL 5.7 Community Server的enabled属性值设为1，其余都为0</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 修改/etc/yum.repos.d/目录下的mysql-community.repo配置文件</span>
+vim /etc/yum.repos.d/mysql-community.repo <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
-<li>安装Git</li>
+<li>验证mysql5.7是否已启用</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压Git安装包到/usr/local/目录</span>
-<span class="token function">tar</span> -zxvf v2.24.1.tar.gz -C /usr/local
-<span class="token comment" spellcheck="true"># 进入到解压目录</span>
-<span class="token function">cd</span> git-2.24.1
-<span class="token comment" spellcheck="true"># 编译并安装Git，安装在/usr/local/git目录下</span>
-<span class="token function">make</span> prefix<span class="token operator">=</span>/usr/local/git all
-<span class="token function">sudo</span> <span class="token function">make</span> prefix<span class="token operator">=</span>/usr/local/git <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yum repolist enabled <span class="token operator">|</span> <span class="token function">grep</span> mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="1-2-安装MySQL服务"><a href="#1-2-安装MySQL服务" class="headerlink" title="1.2 安装MySQL服务"></a>1.2 安装MySQL服务</h3><pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> mysql-community-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="1-3-启动MySQL"><a href="#1-3-启动MySQL" class="headerlink" title="1.3 启动MySQL"></a>1.3 启动MySQL</h3><p>启动MySQL服务并检查状态:</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 启动MySQL</span>
+systemctl start mysqld.service
+<span class="token comment" spellcheck="true">#检查状态</span>
+systemctl status mysqld.service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-4-MySQL默认安装目录"><a href="#1-4-MySQL默认安装目录" class="headerlink" title="1.4 MySQL默认安装目录"></a>1.4 MySQL默认安装目录</h3><ul>
+<li>运行脚本：在/usr/local/目录下</li>
+<li>服务启动脚本mysqld.service：在/usr/lib/systemd/system/目录下</li>
+<li>配置文件：/etc/my.cnf</li>
+<li>日志文件：/var/log/mysqld.log</li>
+<li>服务：/usr/sbin/mysqld</li>
+</ul>
+<h3 id="1-5-初始化root账户"><a href="#1-5-初始化root账户" class="headerlink" title="1.5 初始化root账户"></a>1.5 初始化root账户</h3><p>MySQL默认创建了‘root’@’localhost’账号，并创建了临时密码，密码打印在mysql日志中，找到并修改密码。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 获取临时密码 </span>
+<span class="token function">grep</span> <span class="token string">'temporary password'</span> /var/log/mysqld.log 
+<span class="token comment" spellcheck="true"># 用获取的密码登录</span>
+MySQL mysql -uroot -p 
+<span class="token comment" spellcheck="true"># 登陆MySQL后，修改密码。密码规则：至少包含1个大写字母、1个小写字母、1个数字、1个特殊字符，总长度不小于8 </span>
+ALTER USER <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED BY <span class="token string">'新密码'</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-6-Navicat连接MySQL"><a href="#1-6-Navicat连接MySQL" class="headerlink" title="1.6 Navicat连接MySQL"></a>1.6 Navicat连接MySQL</h3><ul>
+<li>打开服务器的3306端口</li>
+<li>Navicat连接报错：Host ‘IP’ is not allowed to connect to this MySQL server，解决方法：</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用账号密码登陆</span>
+MySQL mysql -uroot -p 
+<span class="token comment" spellcheck="true"># 选择数据库 </span>
+use mysql<span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true"># 允许任何主机连接 </span>
+update user <span class="token keyword">set</span> host<span class="token operator">=</span><span class="token string">'%'</span> where user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true"># 刷新权限 </span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注：默认只允许root帐户在本地登录，如果要在其它机器上连接MySQL，必须修改root允许远程连接，如上述操作。或者添加一个允许远程连接的帐户。</p>
+<h3 id="1-7-查看和修改密码策略"><a href="#1-7-查看和修改密码策略" class="headerlink" title="1.7 查看和修改密码策略"></a>1.7 查看和修改密码策略</h3><ul>
+<li>查看密码策略</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">show variables like <span class="token string">'%validate_password%'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true"># 默认</span>
++--------------------------------------+--------+
+<span class="token operator">|</span> Variable_name                        <span class="token operator">|</span> Value  <span class="token operator">|</span>
++--------------------------------------+--------+
+<span class="token operator">|</span> validate_password_check_user_name    <span class="token operator">|</span> OFF    <span class="token operator">|</span>    
+<span class="token operator">|</span> validate_password_dictionary_file    <span class="token operator">|</span>        <span class="token operator">|</span>
+<span class="token operator">|</span> validate_password_length             <span class="token operator">|</span> 8      <span class="token operator">|</span>    <span class="token comment" spellcheck="true"># 密码最小长度</span>
+<span class="token operator">|</span> validate_password_mixed_case_count   <span class="token operator">|</span> 1      <span class="token operator">|</span>    <span class="token comment" spellcheck="true"># 密码至少要包含的小写字母个数和大写字母个数</span>
+<span class="token operator">|</span> validate_password_number_count       <span class="token operator">|</span> 1      <span class="token operator">|</span>    <span class="token comment" spellcheck="true"># 密码至少要包含的数字个数</span>
+<span class="token operator">|</span> validate_password_policy             <span class="token operator">|</span> MEDIUM <span class="token operator">|</span>    <span class="token comment" spellcheck="true"># 密码强度等级，对应等级为：0/LOW、1/MEDIUM、2/STRONG,默认为1</span>
+<span class="token operator">|</span> validate_password_special_char_count <span class="token operator">|</span> 1      <span class="token operator">|</span>    <span class="token comment" spellcheck="true"># 密码至少要包含的特殊字符数</span>
++--------------------------------------+--------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>配置环境变量</li>
+<li>修改密码策略</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 编辑环境配置文件</span>
-vim /etc/profile
-<span class="token comment" spellcheck="true"># 配置文件末尾添加</span>
-<span class="token function">export</span> PATH<span class="token operator">=</span>/usr/local/git/bin:<span class="token variable">$PATH</span>
-<span class="token comment" spellcheck="true"># 生效</span>
-<span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 设置密码强度等级为LOW</span>
+<span class="token keyword">set</span> global validate_password_policy<span class="token operator">=</span>0<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="1-8-MySQL用户管理"><a href="#1-8-MySQL用户管理" class="headerlink" title="1.8 MySQL用户管理"></a>1.8 MySQL用户管理</h3><ul>
+<li>添加用户</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 选择数据库</span>
+use mysql<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true"># 创建新用户,%表示任意IP都可访问，localhost表示只有本机可以访问</span>
+create user username@<span class="token string">'%'</span> identified by <span class="token string">'password'</span><span class="token punctuation">;</span>   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>验证安装是否成功</li>
+<li>分配用户权限</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="1-2-Git配置，生成授权证书"><a href="#1-2-Git配置，生成授权证书" class="headerlink" title="1.2 Git配置，生成授权证书"></a>1.2 Git配置，生成授权证书</h3><p>公钥是代码托管服务(CodeHub)识别用户身份的一种认证方式。通过公钥，可以将本地git项目与代码托管服务(CodeHub)建立联系，可以将本地代码上传到代码托管服务(CodeHub)或者将代码托管服务(CodeHub)代码下载到本地。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 命令格式：grant privilegesCode on dbName.tableName to username@host identified by "password";</span>
+grant all privileges on *.* to username@<span class="token string">'%'</span> identified by <span class="token string">'password'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true"># 刷新权限</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>privilegesCode</strong>表示授予的权限类型：all privileges（所有权限）、select（读取权限）、delete（删除权限）、update（更新权限）、create（创建权限）、drop（删除数据库、数据表权限）。</p>
+<h2 id="2-MySQL数据库卸载"><a href="#2-MySQL数据库卸载" class="headerlink" title="2. MySQL数据库卸载"></a>2. MySQL数据库卸载</h2><ul>
+<li>停止MySQL服务</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">systemctl stop mysqld.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
-<li>配置用户名和邮箱</li>
+<li>检查已安装的MySQL组件</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"Github的用户名"</span>
-<span class="token function">git</span> config --global user.email <span class="token string">"Github的注册邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yum list installed <span class="token operator">|</span> <span class="token function">grep</span> mysql  <span class="token comment" spellcheck="true"># 或者用rpm -qa | grep -i mysql</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>例如，在我的CentOS中已安装了以下组件：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/1.png" alt=""></p>
 <ul>
-<li>查看设置的信息</li>
+<li>卸载MySQL组件</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> config --list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">yum remove mysql-community-client.x86_64 mysql-community-common.x86_64 mysql-community-devel.x86_64 mysql-community-libs.x86_64 mysql-community-libs-compat.x86_64 mysql-community-server.x86_64
+rpm -e --nodeps mysql57-community-release.noarch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
-<li>检查是否已经有ssh秘钥</li>
+<li>删除MySQL相关目录或文件</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd ~/.ssh</span>
-<span class="token punctuation">[</span>root@centos .ssh<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ls</span>
-authorized_keys  id_rsa  id_rsa.pub  known_hosts
-<span class="token comment" spellcheck="true"># 如果有id_rsa和id_rsa.pub文件，不需要再创建ssh key，如果没有则执行下一步</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查找</span>
+<span class="token function">whereis</span> mysql  <span class="token comment" spellcheck="true"># 或者用find / -name mysql进行全盘扫描</span>
+<span class="token comment" spellcheck="true"># 删除查找出来的目录或文件</span>
+<span class="token function">rm</span> -rf /usr/share/mysql /var/lib/mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>创建ssh key</li>
+<li>删除MySQL配置文件</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"git的邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>将id_rsa.pub中的公钥添加到Github中</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 复制id_rsa.pub文件内容</span>
-<span class="token function">cat</span> ~/.ssh/id_rsa.pub
-<span class="token comment" spellcheck="true"># 添加到Github SSH keys：登录Github，点击Settings->点击New SSH key->添加ssh key</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>测试是否配置成功</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ssh</span> -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 删除/etc/my.cnf</span>
+<span class="token function">rm</span> -rf /etc/my.cnf
+<span class="token comment" spellcheck="true"># 删除/var/log/mysqld.log，如果不删除这个文件，会导致新安装的mysql无法生存新密码，导致无法登陆</span>
+<span class="token function">rm</span> -rf /var/log/mysqld.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>至此，基本完成了MySQL的卸载！</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -605,7 +655,7 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.linwang93.cn/posts/c6c40a41.html">http://www.linwang93.cn/posts/c6c40a41.html</a>
+                    <a href="http://www.linwang93.cn/posts/a85997d6.html">http://www.linwang93.cn/posts/a85997d6.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -643,8 +693,8 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
                                 </a>
                             
                         </div>
@@ -815,7 +865,7 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
         repo: 'gitalk',
         owner: 'weylin0714',
         admin: "weylin0714",
-        id: '2020-02-11T19-46-34',
+        id: '2020-02-18T14-30-56',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -836,9 +886,64 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/a85997d6.html">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/a85997d6.jpg" class="responsive-img" alt="CentOS7下MySQL安装与卸载">
+                        
+                        <span class="card-title">CentOS7下MySQL安装与卸载</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. MySQL数据库安装1.1 安装前准备
+下载并安装MySQL yum仓库
+
+访问MySQL Yum 仓库下载页，选择合适得版本下载。
+# 进入/usr/local/src目录下，在线下载rpm包
+wget http://repo.my
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/8f56d411.html">
                     <div class="card-image">
@@ -859,9 +964,9 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -879,54 +984,6 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
                     
                     <a href="/tags/Superset/">
                         <span class="chip bg-color">Superset</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/357898e8.html">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/357898e8.jpg" class="responsive-img" alt="HUE部署与使用">
-                        
-                        <span class="card-title">HUE部署与使用</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            HUE是一个开源的Apache Hadoop UI系统，基于Python Web框架Django实现。HUE是一个Web应用，设计初衷是简化用户和Hadoop集群间的交互。Hue几乎可以支持所有大数据框架：HDFS，HIVE，HBASE，Z
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                    大数据
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/HUE/">
-                        <span class="chip bg-color">HUE</span>
                     </a>
                     
                 </div>

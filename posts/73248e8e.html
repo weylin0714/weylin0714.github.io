@@ -26,9 +26,9 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -459,21 +459,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-16
+                    2020-03-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    15 分
                 </div>
                 
 
@@ -670,9 +670,282 @@
 <td>列存储。通过按列进行高效压缩和特殊的编码技术，从而在降低存储空间的同时提高了 IO 效率。</td>
 </tr>
 </tbody></table>
-<h2 id="四、Hive的常用DDL操作"><a href="#四、Hive的常用DDL操作" class="headerlink" title="四、Hive的常用DDL操作"></a>四、Hive的常用DDL操作</h2><h3 id="4-1-数据库操作"><a href="#4-1-数据库操作" class="headerlink" title="4.1 数据库操作"></a>4.1 数据库操作</h3><h4 id="4-1-1-创建数据库"><a href="#4-1-1-创建数据库" class="headerlink" title="4.1.1 创建数据库"></a>4.1.1 创建数据库</h4><h4 id="4-1-2-查看数据库"><a href="#4-1-2-查看数据库" class="headerlink" title="4.1.2 查看数据库"></a>4.1.2 查看数据库</h4><h4 id="4-1-3-切换数据库"><a href="#4-1-3-切换数据库" class="headerlink" title="4.1.3 切换数据库"></a>4.1.3 切换数据库</h4><h4 id="4-1-4-删除数据库"><a href="#4-1-4-删除数据库" class="headerlink" title="4.1.4 删除数据库"></a>4.1.4 删除数据库</h4><h3 id="4-2-表操作"><a href="#4-2-表操作" class="headerlink" title="4.2 表操作"></a>4.2 表操作</h3><h4 id="4-2-1-表类型"><a href="#4-2-1-表类型" class="headerlink" title="4.2.1 表类型"></a>4.2.1 表类型</h4><h4 id="4-2-2-创建表"><a href="#4-2-2-创建表" class="headerlink" title="4.2.2 创建表"></a>4.2.2 创建表</h4><h4 id="4-2-3-修改表"><a href="#4-2-3-修改表" class="headerlink" title="4.2.3 修改表"></a>4.2.3 修改表</h4><h4 id="4-2-4-清空-删除表"><a href="#4-2-4-清空-删除表" class="headerlink" title="4.2.4 清空/删除表"></a>4.2.4 清空/删除表</h4><h2 id="五、Hive的常用DML操作"><a href="#五、Hive的常用DML操作" class="headerlink" title="五、Hive的常用DML操作"></a>五、Hive的常用DML操作</h2><p>六、Hive数据查询</p>
-<p>七、Hive函数</p>
-<script>
+<h2 id="四、Hive的常用DDL操作"><a href="#四、Hive的常用DDL操作" class="headerlink" title="四、Hive的常用DDL操作"></a>四、Hive的常用DDL操作</h2><h3 id="4-1-数据库操作"><a href="#4-1-数据库操作" class="headerlink" title="4.1 数据库操作"></a>4.1 数据库操作</h3><h4 id="4-1-1-创建数据库"><a href="#4-1-1-创建数据库" class="headerlink" title="4.1.1 创建数据库"></a>4.1.1 创建数据库</h4><ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> db_name  <span class="token comment" spellcheck="true">--不加IF NOT EXISTS，如果创建的数据库存在，则会报异常</span>
+<span class="token punctuation">[</span>LOCATION hdfs_path<span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">--可指定hive数据库存储在HDFS上的位置，默认位置是在HDFS上的目录/user/hive/warehouse下面</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>示例</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> test_db<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="4-1-2-查看数据库"><a href="#4-1-2-查看数据库" class="headerlink" title="4.1.2 查看数据库"></a>4.1.2 查看数据库</h4><ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--查看所有的数据库</span>
+<span class="token keyword">SHOW</span> <span class="token keyword">DATABASES</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 查看指定数据库的信息</span>
+<span class="token keyword">DESC</span> <span class="token keyword">DATABASE</span> db_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>示例</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 查看所有的数据库，test_db为上一步创建的数据库</span>
+<span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> SHOW DATABASES;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------------+--+</span>
+<span class="token operator">|</span> database_name  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------------+--+</span>
+<span class="token operator">|</span> <span class="token keyword">default</span>        <span class="token operator">|</span>
+<span class="token operator">|</span> test_db        <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------------+--+</span>
+<span class="token number">2</span> <span class="token keyword">rows</span> selected <span class="token punctuation">(</span><span class="token number">0.02</span> seconds<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 查看指定数据库的信息</span>
+<span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> DESC DATABASE test_db;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------+----------+----------------------------------------------------+-------------+-------------+-------------+--+</span>
+<span class="token operator">|</span> db_name  <span class="token operator">|</span> <span class="token keyword">comment</span>  <span class="token operator">|</span>                      location                      <span class="token operator">|</span> owner_name  <span class="token operator">|</span> owner_type  <span class="token operator">|</span> parameters  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------+----------+----------------------------------------------------+-------------+-------------+-------------+--+</span>
+<span class="token operator">|</span> test_db  <span class="token operator">|</span>          <span class="token operator">|</span> hdfs:<span class="token comment" spellcheck="true">//localhost:8020/user/hive/warehouse/test_db.db | root        | USER        |             |</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">----------+----------+----------------------------------------------------+-------------+-------------+-------------+--+</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-1-3-切换数据库"><a href="#4-1-3-切换数据库" class="headerlink" title="4.1.3 切换数据库"></a>4.1.3 切换数据库</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">USE</span> db_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="4-1-4-删除数据库"><a href="#4-1-4-删除数据库" class="headerlink" title="4.1.4 删除数据库"></a>4.1.4 删除数据库</h4><ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> db_name <span class="token punctuation">[</span><span class="token keyword">RESTRICT</span><span class="token operator">|</span><span class="token keyword">CASCADE</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 默认行为是RESTRICT，如果数据库不是空的,则删除失败。如果要删除数据库及其中的表，则使用CASCADE。IF EXISTS可选，如果不加，当数据库不存在时，删除会报错。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>示例</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">DATABASE</span> test_db<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4-2-表操作"><a href="#4-2-表操作" class="headerlink" title="4.2 表操作"></a>4.2 表操作</h3><h4 id="4-2-1-创建表"><a href="#4-2-1-创建表" class="headerlink" title="4.2.1 创建表"></a>4.2.1 创建表</h4><h5 id="4-2-1-1-内部表（管理表）"><a href="#4-2-1-1-内部表（管理表）" class="headerlink" title="4.2.1.1 内部表（管理表）"></a>4.2.1.1 内部表（管理表）</h5><ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span>  <span class="token keyword">TABLE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> tbl_name<span class="token punctuation">(</span>col_name data_type<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token keyword">ROW</span> FORMAT row_format<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">-- 指定分隔符</span>
+<span class="token punctuation">[</span>STORED <span class="token keyword">AS</span> file_format<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">-- 设置存储文件格式</span>
+<span class="token punctuation">[</span>LOCATION hdfs_path<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true">-- 指定表的存储位置</span>
+<span class="token comment" spellcheck="true">/*
+ROW FORMAT DELIMITED  分隔符设置开始语句
+FIELDS TERMINATED BY ‘\001’  设置字段与字段之间的分隔符
+COLLECTION ITEMS TERMINATED BY ‘\002’  设置一个复杂类型（array,struct)字段的各个item之间的分隔符
+MAP KEYS TERMINATED BY '\003'   设置一个复杂类型(Map)字段的key、value之间的分隔符
+LINES TERMINATED BY： 设置行与行之间的分隔符
+*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>示例</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">/*
+CREATE TABLE Product
+(product_id INT,
+ product_name STRING,
+ product_type STRING,
+ sale_price DOUBLE)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ',';
+*/</span>
+<span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> use test_db;</span>
+<span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> CREATE TABLE Product</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token punctuation">(</span>product_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  product_name STRING<span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  product_type STRING<span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  sale_price <span class="token keyword">DOUBLE</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token keyword">ROW</span> FORMAT DELIMITED
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token keyword">FIELDS</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">','</span><span class="token punctuation">;</span>
+<span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> desc product;  -- 查看表信息</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------------+------------+----------+--+</span>
+<span class="token operator">|</span>   col_name    <span class="token operator">|</span> data_type  <span class="token operator">|</span> <span class="token keyword">comment</span>  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------------+------------+----------+--+</span>
+<span class="token operator">|</span> product_id    <span class="token operator">|</span> <span class="token keyword">int</span>        <span class="token operator">|</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> product_name  <span class="token operator">|</span> string     <span class="token operator">|</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> product_type  <span class="token operator">|</span> string     <span class="token operator">|</span>          <span class="token operator">|</span>
+<span class="token operator">|</span> sale_price    <span class="token operator">|</span> <span class="token keyword">double</span>     <span class="token operator">|</span>          <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">---------------+------------+----------+--+</span>
+<span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> show create table product;  --查看table的存储路径</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>建表后，hive会在仓库目录中建一个表目录： /user/hive/warehouse/test_db.db/product。</p>
+<p>删除内部表时，元数据和数据都会被删除。</p>
+<h5 id="4-2-1-2-外部表"><a href="#4-2-1-2-外部表" class="headerlink" title="4.2.1.2 外部表"></a>4.2.1.2 外部表</h5><ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> EXTERNAL <span class="token keyword">TABLE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> tbl_name<span class="token punctuation">(</span>col_name data_type<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token keyword">ROW</span> FORMAT row_format<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">-- 指定分隔符</span>
+<span class="token punctuation">[</span>STORED <span class="token keyword">AS</span> file_format<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">-- 设置存储文件格式</span>
+<span class="token punctuation">[</span>LOCATION hdfs_path<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true">-- 指定表的存储位置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>示例</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> CREATE EXTERNAL TABLE Product_E   -- 创建外部表</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token punctuation">(</span>product_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  product_name STRING<span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  product_type STRING<span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  sale_price <span class="token keyword">DOUBLE</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token keyword">ROW</span> FORMAT DELIMITED
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token keyword">FIELDS</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">','</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> LOCATION <span class="token string">'/user/hive/external/product_e'</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">-- 指定存储路径</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>删除外部表时，只删除metastore上的元数据，不删除HDFS中的表数据。</p>
+<h5 id="4-2-1-3-分区表"><a href="#4-2-1-3-分区表" class="headerlink" title="4.2.1.3 分区表"></a>4.2.1.3 分区表</h5><p>分区表一般在数据量比较大，且有明确的分区字段时使用。根据分区字段将数据分子目录存储，用分区字段作为查询条件查询效率会比较高。</p>
+<ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span>  <span class="token keyword">TABLE</span> <span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> tbl_name<span class="token punctuation">(</span>col_name data_type<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span>PARTITIONED <span class="token keyword">BY</span> <span class="token punctuation">(</span>col_name data_type<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true">-- 分区表分区规则</span>
+<span class="token punctuation">[</span><span class="token keyword">ROW</span> FORMAT row_format<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">-- 指定分隔符</span>
+<span class="token punctuation">[</span>STORED <span class="token keyword">AS</span> file_format<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">-- 设置存储文件格式</span>
+<span class="token punctuation">[</span>LOCATION hdfs_path<span class="token punctuation">]</span>    <span class="token comment" spellcheck="true">-- 指定表的存储位置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>示例</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> CREATE TABLE Product_p</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token punctuation">(</span>product_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  product_name STRING<span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  product_type STRING<span class="token punctuation">,</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span>  sale_price <span class="token keyword">DOUBLE</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> PARTITIONED <span class="token keyword">BY</span>  <span class="token punctuation">(</span>city STRING<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">-- 按照城市进行分区</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token keyword">ROW</span> FORMAT DELIMITED
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">></span> <span class="token keyword">FIELDS</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">','</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-2-2-修改表"><a href="#4-2-2-修改表" class="headerlink" title="4.2.2 修改表"></a>4.2.2 修改表</h4><ul>
+<li>修改表名</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tbl_name_old <span class="token keyword">RENAME</span> <span class="token keyword">TO</span> tbl_name_new
+<span class="token comment" spellcheck="true">/*
+tbl_name_old: 原表
+tbl_name_new: 重命名后的表
+*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>修改字段</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">/*
+col_name_old: 原字段名
+col_name_new: 新字段名
+data_type_new: 新字段类型
+col_comment: 字段注释
+FIRST: 将字段放在第一列
+AFTER: 将字段放在col_name之后 
+*/</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tbl_name CHANGE 
+<span class="token punctuation">[</span><span class="token keyword">COLUMN</span><span class="token punctuation">]</span> col_name_old col_name_new data_type_new
+<span class="token punctuation">[</span>CONMMENT col_comment<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">FIRST</span><span class="token operator">|</span><span class="token keyword">AFTER</span> col_name<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>添加字段</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tbl_name <span class="token keyword">ADD</span> <span class="token keyword">COLUMNS</span> <span class="token punctuation">(</span>col_name data_type<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="4-2-3-清空-删除表"><a href="#4-2-3-清空-删除表" class="headerlink" title="4.2.3 清空/删除表"></a>4.2.3 清空/删除表</h4><ul>
+<li>清空内部表的数据</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 清空整个表或表指定分区中的数据</span>
+<span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span> tbl_name <span class="token punctuation">[</span><span class="token keyword">PARTITION</span> <span class="token punctuation">(</span>partition_column <span class="token operator">=</span> partition_col_value<span class="token punctuation">,</span>  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>目前，TRUNCATE只能用于内部表的清空操作，用于外部表会抛出异常。</p>
+<ul>
+<li>删除表</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> tbl_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>内部表：不仅会删除表的元数据，同时会删除 HDFS 上的数据。</p>
+<p>外部表：只会删除表的元数据，不会删除 HDFS 上的数据。</p>
+<p>删除视图引用的表时，不会给出警告（但视图已经无效了，必须由用户删除或重新创建）。</p>
+<h4 id="4-2-4-查看表"><a href="#4-2-4-查看表" class="headerlink" title="4.2.4 查看表"></a>4.2.4 查看表</h4><ul>
+<li>查看表信息</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DESC</span> <span class="token punctuation">[</span><span class="token keyword">EXTENDED</span><span class="token operator">|</span>FORMATTED<span class="token punctuation">]</span> tbl_name<span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>查看表列表</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">TABLES</span> <span class="token punctuation">[</span><span class="token operator">IN</span> database_name<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 可以指定查看database_name中的表列表</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>查看表的分区列表</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SHOW</span> PARTITIONS tbl_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>查看表的创建语句</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> tbl_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="五、Hive的常用DML操作"><a href="#五、Hive的常用DML操作" class="headerlink" title="五、Hive的常用DML操作"></a>五、Hive的常用DML操作</h2><h3 id="5-1-导入数据到表"><a href="#5-1-导入数据到表" class="headerlink" title="5.1 导入数据到表"></a>5.1 导入数据到表</h3><ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">LOAD</span> <span class="token keyword">DATA</span> <span class="token punctuation">[</span><span class="token keyword">LOCAL</span><span class="token punctuation">]</span> INPATH <span class="token string">'filepath'</span> <span class="token punctuation">[</span>OVERWRITE<span class="token punctuation">]</span> <span class="token keyword">INTO</span> <span class="token keyword">TABLE</span> tbl_name <span class="token punctuation">[</span><span class="token keyword">PARTITION</span> <span class="token punctuation">(</span>partcol1<span class="token operator">=</span>val1<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">/*
+LOCAL: 表示从本地导入数据，缺省则表示从HDFS中导入。
+filepath: 数据文件路径或目录，建议使用绝对路径。
+OVERWRITE: 删除原表中的数据，添加新的数据，缺省则表示在原表中追加。
+*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>示例</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 从本地导入</span>
+<span class="token keyword">LOAD</span> <span class="token keyword">DATA</span> <span class="token keyword">LOCAL</span> INPATH <span class="token string">'/opt/product1.txt'</span> <span class="token keyword">INTO</span> <span class="token keyword">TABLE</span> product_p <span class="token keyword">PARTITION</span> <span class="token punctuation">(</span>city<span class="token operator">=</span><span class="token string">'Shanghai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">LOAD</span> <span class="token keyword">DATA</span> <span class="token keyword">LOCAL</span> INPATH <span class="token string">'/opt/product2.txt'</span> <span class="token keyword">INTO</span> <span class="token keyword">TABLE</span> product_p <span class="token keyword">PARTITION</span> <span class="token punctuation">(</span>city<span class="token operator">=</span><span class="token string">'Jiangsu'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- 查看导入的数据</span>
+<span class="token number">0</span>: jdbc:hive2:<span class="token comment" spellcheck="true">//localhost:10000> SELECT * FROM product_p where city='Jiangsu';</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-----------------------+-------------------------+-------------------------+-----------------------+-----------------+--+</span>
+<span class="token operator">|</span> product_p<span class="token punctuation">.</span>product_id  <span class="token operator">|</span> product_p<span class="token punctuation">.</span>product_name  <span class="token operator">|</span> product_p<span class="token punctuation">.</span>product_type  <span class="token operator">|</span> product_p<span class="token punctuation">.</span>sale_price  <span class="token operator">|</span> product_p<span class="token punctuation">.</span>city  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-----------------------+-------------------------+-------------------------+-----------------------+-----------------+--+</span>
+<span class="token operator">|</span> <span class="token number">1</span>                     <span class="token operator">|</span> T恤                      <span class="token operator">|</span> 衣服                      <span class="token operator">|</span> <span class="token number">70.0</span>                  <span class="token operator">|</span> Jiangsu         <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>                     <span class="token operator">|</span> 尺子                      <span class="token operator">|</span> 办公用品                    <span class="token operator">|</span> <span class="token number">12.0</span>                  <span class="token operator">|</span> Jiangsu         <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">3</span>                     <span class="token operator">|</span> 牛仔裤                     <span class="token operator">|</span> 衣服                      <span class="token operator">|</span> <span class="token number">180.0</span>                 <span class="token operator">|</span> Jiangsu         <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">4</span>                     <span class="token operator">|</span> 手机                      <span class="token operator">|</span> 电子产品                    <span class="token operator">|</span> <span class="token number">5500.0</span>                <span class="token operator">|</span> Jiangsu         <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">5</span>                     <span class="token operator">|</span> 钢笔                      <span class="token operator">|</span> 办公用品                    <span class="token operator">|</span> <span class="token number">35.0</span>                  <span class="token operator">|</span> Jiangsu         <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">6</span>                     <span class="token operator">|</span> 风衣                      <span class="token operator">|</span> 衣服                      <span class="token operator">|</span> <span class="token number">350.0</span>                 <span class="token operator">|</span> Jiangsu         <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">7</span>                     <span class="token operator">|</span> 笔记本电脑                   <span class="token operator">|</span> 电子产品                    <span class="token operator">|</span> <span class="token number">7000.0</span>                <span class="token operator">|</span> Jiangsu         <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">-----------------------+-------------------------+-------------------------+-----------------------+-----------------+--+</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-2-插入数据到表"><a href="#5-2-插入数据到表" class="headerlink" title="5.2 插入数据到表"></a>5.2 插入数据到表</h3><ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> OVERWRITE <span class="token keyword">TABLE</span> tbl_name <span class="token punctuation">[</span><span class="token keyword">PARTITION</span> <span class="token punctuation">(</span>partcol1<span class="token operator">=</span>val1<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span> select_statement <span class="token keyword">FROM</span> from_statement<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- INSERT OVERWRITE会覆盖原数据</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token keyword">TABLE</span> tbl_name <span class="token punctuation">[</span><span class="token keyword">PARTITION</span> <span class="token punctuation">(</span>partcol1<span class="token operator">=</span>val1<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span> select_statement <span class="token keyword">FROM</span> from_statement<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">-- INSERT INTO在原数据后追加</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>示例</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> <span class="token keyword">TABLE</span> product <span class="token keyword">SELECT</span> product_id<span class="token punctuation">,</span> product_name<span class="token punctuation">,</span> product_type<span class="token punctuation">,</span> sale_price <span class="token keyword">FROM</span> product_p <span class="token keyword">WHERE</span> city<span class="token operator">=</span><span class="token string">'Shanghai'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="5-3-Hive数据查询"><a href="#5-3-Hive数据查询" class="headerlink" title="5.3 Hive数据查询"></a>5.3 Hive数据查询</h3><h4 id="5-3-1-单表查询"><a href="#5-3-1-单表查询" class="headerlink" title="5.3.1 单表查询"></a>5.3.1 单表查询</h4><ul>
+<li>语法</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> select_expr<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">FROM</span> tbl_name
+<span class="token punctuation">[</span><span class="token keyword">WHERE</span> where_condition<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">GROUP</span> <span class="token keyword">BY</span> col_list <span class="token punctuation">[</span><span class="token keyword">HAVING</span> having_condition<span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">ORDER</span> <span class="token keyword">BY</span> col_list<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>CLUSTER <span class="token keyword">BY</span> col_list <span class="token operator">|</span> <span class="token punctuation">[</span>DISTRIBUTE <span class="token keyword">BY</span> col_list<span class="token punctuation">]</span> <span class="token punctuation">[</span>SORT <span class="token keyword">BY</span> col_list<span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">LIMIT</span> <span class="token keyword">rows</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">/*
+select_expr: 查询的字段
+tbl_name: 表名
+where_condition: 查询数据的限制条件
+GROUP BY col_list: 按字段列表col_list进行分组，可以是多个字段
+LIMIT rows: 返回指定行数的数据
+HAVING having_condition: 对GROUP BY语句产生分组的结果进行条件过滤
+*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Hive有四种排序方式：ORDER BY、SORT BY、DISTRIBUTE BY、CLUSTER BY。</p>
+<p>ORDER BY：最常用的一种排序，是一种全局排序，与关系型数据库中的ORDER BY类似。该种排序方式是所有的数据在一个reducer上面进行排序，所以一般使用这个函数进行排序的时候速度较慢。此外，在严格模式下(hive.mapred.mode=strict)，ORDER BY必须和LIMIT一起使用，否则会报错。</p>
+<p>SORT BY：在每个 Reducer 中进行排序，可以保证每个 Reducer 的输出数据是有序的，但不能保证全局有序。</p>
+<p>DISTRIBUTE BY：控制map的输出在reducer上如何划分。一般与SORT BY结合使用实现全局排序。</p>
+<p>CLUSTER BY：同时具备DISTRIBUTE BY和SORT BY的功能，要求DISTRIBUTE BY和SORT BY所用的字段要相同，可以保证数据在全局是有序的。</p>
+<h4 id="5-3-2-多表联结查询"><a href="#5-3-2-多表联结查询" class="headerlink" title="5.3.2 多表联结查询"></a>5.3.2 多表联结查询</h4><p>Hive 支持内连接，左连接，右连接，全连接，左半连接（Hive专用）。</p>
+<ul>
+<li>INNER JOIN ON / JOIN ON（内连接）</li>
+</ul>
+<p>取两个表的交集，即两表中都存在的记录。</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> t1<span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">,</span> t2<span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">FROM</span> t1 <span class="token keyword">JOIN</span> t2 <span class="token keyword">ON</span> <span class="token punctuation">(</span>t1<span class="token punctuation">.</span>key1 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key1 <span class="token operator">AND</span> t1<span class="token punctuation">.</span>key2 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>LEFT [OUTER] JOIN ON（左【外】连接）</li>
+</ul>
+<p>以JOIN左边的表为主表，返回的数据行数跟主表相同，保留左边表的字段值，右表关联不上的字段为NULL。</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> t1<span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">,</span> t2<span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">FROM</span> t1 <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> t2 <span class="token keyword">ON</span> <span class="token punctuation">(</span>t1<span class="token punctuation">.</span>key1 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key1 <span class="token operator">AND</span> t1<span class="token punctuation">.</span>key2 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>RIGHT [OUTER] JOIN ON（右【外】连接）</li>
+</ul>
+<p>以JOIN右边的表为主表，返回的数据行数跟主表相同，保留右边表的字段值，左表关联不上的字段为NULL。</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> t1<span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">,</span> t2<span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">FROM</span> t1 <span class="token keyword">RIGHT</span> <span class="token keyword">JOIN</span> t2 <span class="token keyword">ON</span> <span class="token punctuation">(</span>t1<span class="token punctuation">.</span>key1 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key1 <span class="token operator">AND</span> t1<span class="token punctuation">.</span>key2 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>FULL [OUTER] JOIN ON（全【外】连接）</li>
+</ul>
+<p>返回两个表的并集，不符合ON条件的用NULL表示。</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> t1<span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">,</span> t2<span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">FROM</span> t1 <span class="token keyword">FULL</span> <span class="token keyword">JOIN</span> t2 <span class="token keyword">ON</span> <span class="token punctuation">(</span>t1<span class="token punctuation">.</span>key1 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key1 <span class="token operator">AND</span> t1<span class="token punctuation">.</span>key2 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>LEFT SEMI JOIN ON（左半连接）</li>
+</ul>
+<p>以JOIN左边的表为主表，不拼接两个表的字段，而是两个表根据ON子句中设置的过滤条件做交集，并返回主表的记录。</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> t1<span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">FROM</span> t1 <span class="token keyword">LEFT</span> SEMI <span class="token keyword">JOIN</span> t2 <span class="token keyword">ON</span> <span class="token punctuation">(</span>t1<span class="token punctuation">.</span>key1 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key1 <span class="token operator">AND</span> t1<span class="token punctuation">.</span>key2 <span class="token operator">=</span> t2<span class="token punctuation">.</span>key2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="六、Hive函数"><a href="#六、Hive函数" class="headerlink" title="六、Hive函数"></a>六、Hive函数</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1218,7 +1491,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.8k</span>&nbsp;字
+                class="white-color">27.1k</span>&nbsp;字
             
             
             
