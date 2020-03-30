@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-02-18T14:12:54.803Z</updated>
+  <updated>2020-03-30T15:55:44.635Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习笔记（二）：基础语法</title>
+    <link href="http://www.linwang93.cn/posts/e8a303d6.html"/>
+    <id>http://www.linwang93.cn/posts/e8a303d6.html</id>
+    <published>2020-03-28T06:24:47.000Z</published>
+    <updated>2020-03-30T15:55:44.635Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-基础语法&quot;&gt;&lt;a href=&quot;#1-基础语法&quot; class=&quot;headerlink&quot; title=&quot;1. 基础语法&quot;&gt;&lt;/a&gt;1. 基础语法&lt;/h2&gt;&lt;h3 id=&quot;1-1-缩进&quot;&gt;&lt;a href=&quot;#1-1-缩进&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记（一）：Python全栈学习知识提纲与路线</title>
+    <link href="http://www.linwang93.cn/posts/88213f00.html"/>
+    <id>http://www.linwang93.cn/posts/88213f00.html</id>
+    <published>2020-03-08T03:31:36.000Z</published>
+    <updated>2020-03-27T16:08:30.826Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;工作中Python作为主要开发语言，学习过一些基础，但比较零散，也常常忘记。工作中往往是有啥实现需求再去搜索相关内容。一直希望能够系统深入的学习Python及其应用，这里，简要梳理了Python的学习路线与核心知识提纲。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据分布式集群基础环境搭建</title>
+    <link href="http://www.linwang93.cn/posts/d5114645.html"/>
+    <id>http://www.linwang93.cn/posts/d5114645.html</id>
+    <published>2020-03-06T14:02:55.000Z</published>
+    <updated>2020-03-07T10:19:27.845Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在学习大数据时，需要搭建一套分布式集群环境供学习使用。在没有足够服务器资源的情况下，这里我通过VMware虚拟机搭建一套分布式集群基础环境。&lt;/p&gt;
+&lt;h2 id=&quot;1-VMware中安装CentOS7&quot;&gt;&lt;a href=&quot;#1-VMware中安装CentOS7&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="集群环境" scheme="http://www.linwang93.cn/tags/%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS7下MySQL安装与卸载</title>
@@ -48,7 +127,7 @@
     <link href="http://www.linwang93.cn/posts/8f56d411.html"/>
     <id>http://www.linwang93.cn/posts/8f56d411.html</id>
     <published>2020-02-12T08:48:24.000Z</published>
-    <updated>2020-02-16T04:23:18.463Z</updated>
+    <updated>2020-03-07T08:18:40.624Z</updated>
     
     <summary type="html">
     
@@ -75,7 +154,7 @@
     <link href="http://www.linwang93.cn/posts/c6c40a41.html"/>
     <id>http://www.linwang93.cn/posts/c6c40a41.html</id>
     <published>2020-02-11T11:46:34.000Z</published>
-    <updated>2020-02-16T04:20:21.153Z</updated>
+    <updated>2020-03-07T08:20:18.147Z</updated>
     
     <summary type="html">
     
@@ -91,7 +170,7 @@
     </summary>
     
     
-      <category term="版本控制工具" scheme="http://www.linwang93.cn/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
       <category term="Git" scheme="http://www.linwang93.cn/tags/Git/"/>
@@ -130,7 +209,7 @@
     <link href="http://www.linwang93.cn/posts/73248e8e.html"/>
     <id>http://www.linwang93.cn/posts/73248e8e.html</id>
     <published>2020-02-08T14:26:42.000Z</published>
-    <updated>2020-03-01T14:13:23.936Z</updated>
+    <updated>2020-03-07T08:19:58.011Z</updated>
     
     <summary type="html">
     
@@ -145,7 +224,7 @@
     </summary>
     
     
-      <category term="大数据框架教程" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E6%95%99%E7%A8%8B/"/>
+      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
       <category term="Hive" scheme="http://www.linwang93.cn/tags/Hive/"/>
@@ -157,7 +236,7 @@
     <link href="http://www.linwang93.cn/posts/620e2f13.html"/>
     <id>http://www.linwang93.cn/posts/620e2f13.html</id>
     <published>2020-02-07T13:18:16.000Z</published>
-    <updated>2020-02-16T04:14:40.657Z</updated>
+    <updated>2020-03-07T08:19:27.677Z</updated>
     
     <summary type="html">
     
@@ -172,9 +251,7 @@
     </summary>
     
     
-      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
       <category term="Sqoop" scheme="http://www.linwang93.cn/tags/Sqoop/"/>
@@ -186,7 +263,7 @@
     <link href="http://www.linwang93.cn/posts/f28d3f89.html"/>
     <id>http://www.linwang93.cn/posts/f28d3f89.html</id>
     <published>2020-02-03T15:24:12.000Z</published>
-    <updated>2020-02-15T14:55:09.641Z</updated>
+    <updated>2020-03-07T08:16:35.026Z</updated>
     
     <summary type="html">
     
@@ -202,9 +279,7 @@
     </summary>
     
     
-      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
       <category term="Spark" scheme="http://www.linwang93.cn/tags/Spark/"/>
@@ -216,7 +291,7 @@
     <link href="http://www.linwang93.cn/posts/73be190e.html"/>
     <id>http://www.linwang93.cn/posts/73be190e.html</id>
     <published>2020-02-03T15:22:59.000Z</published>
-    <updated>2020-02-22T06:29:22.451Z</updated>
+    <updated>2020-03-07T08:16:47.718Z</updated>
     
     <summary type="html">
     
@@ -232,9 +307,7 @@
     </summary>
     
     
-      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
       <category term="Hive" scheme="http://www.linwang93.cn/tags/Hive/"/>
@@ -246,7 +319,7 @@
     <link href="http://www.linwang93.cn/posts/a32d9546.html"/>
     <id>http://www.linwang93.cn/posts/a32d9546.html</id>
     <published>2020-02-03T15:22:40.000Z</published>
-    <updated>2020-02-15T15:00:05.414Z</updated>
+    <updated>2020-03-07T08:16:57.678Z</updated>
     
     <summary type="html">
     
@@ -262,9 +335,7 @@
     </summary>
     
     
-      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
       <category term="Hbase" scheme="http://www.linwang93.cn/tags/Hbase/"/>
@@ -276,7 +347,7 @@
     <link href="http://www.linwang93.cn/posts/6dd29b8f.html"/>
     <id>http://www.linwang93.cn/posts/6dd29b8f.html</id>
     <published>2020-02-03T15:21:03.000Z</published>
-    <updated>2020-02-15T14:08:15.661Z</updated>
+    <updated>2020-03-07T08:16:24.538Z</updated>
     
     <summary type="html">
     
@@ -291,9 +362,7 @@
     </summary>
     
     
-      <category term="大数据框架" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
     
       <category term="Hadoop" scheme="http://www.linwang93.cn/tags/Hadoop/"/>
@@ -333,7 +402,7 @@
     <link href="http://www.linwang93.cn/posts/e3623c79.html"/>
     <id>http://www.linwang93.cn/posts/e3623c79.html</id>
     <published>2019-12-24T01:17:24.000Z</published>
-    <updated>2020-02-16T04:12:04.046Z</updated>
+    <updated>2020-03-07T08:19:42.340Z</updated>
     
     <summary type="html">
     
@@ -348,10 +417,8 @@
     </summary>
     
     
-      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
     
-    
-      <category term="Python" scheme="http://www.linwang93.cn/tags/Python/"/>
     
       <category term="virtualenvwrapper" scheme="http://www.linwang93.cn/tags/virtualenvwrapper/"/>
     
@@ -362,7 +429,7 @@
     <link href="http://www.linwang93.cn/posts/54cc6129.html"/>
     <id>http://www.linwang93.cn/posts/54cc6129.html</id>
     <published>2019-09-07T08:52:16.000Z</published>
-    <updated>2020-02-15T14:48:33.838Z</updated>
+    <updated>2020-03-07T08:19:18.754Z</updated>
     
     <summary type="html">
     
@@ -377,10 +444,8 @@
     </summary>
     
     
-      <category term="数据分析" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
     
-    
-      <category term="Python" scheme="http://www.linwang93.cn/tags/Python/"/>
     
       <category term="Pandas" scheme="http://www.linwang93.cn/tags/Pandas/"/>
     
@@ -420,7 +485,7 @@
     <link href="http://www.linwang93.cn/posts/64297bf3.html"/>
     <id>http://www.linwang93.cn/posts/64297bf3.html</id>
     <published>2019-05-01T12:11:12.000Z</published>
-    <updated>2020-02-16T04:27:30.951Z</updated>
+    <updated>2020-03-07T08:18:27.007Z</updated>
     
     <summary type="html">
     
@@ -437,7 +502,7 @@
     </summary>
     
     
-      <category term="软件使用教程" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
       <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
@@ -449,7 +514,7 @@
     <link href="http://www.linwang93.cn/posts/e8fca04b.html"/>
     <id>http://www.linwang93.cn/posts/e8fca04b.html</id>
     <published>2019-04-29T06:53:40.000Z</published>
-    <updated>2020-02-15T14:53:11.827Z</updated>
+    <updated>2020-03-07T08:20:42.755Z</updated>
     
     <summary type="html">
     
@@ -465,7 +530,7 @@
     </summary>
     
     
-      <category term="软件安装与配置" scheme="http://www.linwang93.cn/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <category term="数据库" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
       <category term="MySQL" scheme="http://www.linwang93.cn/tags/MySQL/"/>
