@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-03-30T15:55:44.635Z</updated>
+  <updated>2020-03-30T16:13:57.561Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.linwang93.cn/posts/e8a303d6.html"/>
     <id>http://www.linwang93.cn/posts/e8a303d6.html</id>
     <published>2020-03-28T06:24:47.000Z</published>
-    <updated>2020-03-30T15:55:44.635Z</updated>
+    <updated>2020-03-30T16:13:57.561Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,10 @@
     </summary>
     
     
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -44,7 +48,7 @@
     <link href="http://www.linwang93.cn/posts/88213f00.html"/>
     <id>http://www.linwang93.cn/posts/88213f00.html</id>
     <published>2020-03-08T03:31:36.000Z</published>
-    <updated>2020-03-27T16:08:30.826Z</updated>
+    <updated>2020-03-30T16:14:01.790Z</updated>
     
     <summary type="html">
     
