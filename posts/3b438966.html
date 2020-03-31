@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="大数据学习环境搭建(四)--Spark单机环境搭建, 简若">
-    <meta name="description" content="Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。
-1. Spark安装与配置1.1 Spark安装下载">
+    <meta name="keywords" content="Python学习笔记（三）：数据类型, 简若">
+    <meta name="description" content="1.基础部分Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。
+上述6种数据类型可分为两类：
+
+不可变数据类型：数字、字符串">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>大数据学习环境搭建(四)--Spark单机环境搭建 | 简若</title>
+    <title>Python学习笔记（三）：数据类型 | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/f28d3f89.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">大数据学习环境搭建(四)--Spark单机环境搭建</h1>
+                    <h1 class="description center-align post-title">Python学习笔记（三）：数据类型</h1>
                 </div>
             </div>
         </div>
@@ -428,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spark/">
-                                <span class="chip bg-color">Spark</span>
+                            <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">Python学习笔记</span>
                             </a>
                         
                     </div>
@@ -440,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                大数据
+                            <a href="/categories/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -453,28 +455,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-03
+                    2020-03-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-07
+                    2020-03-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    761
+                    361
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -490,85 +492,53 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。</p>
-<h2 id="1-Spark安装与配置"><a href="#1-Spark安装与配置" class="headerlink" title="1. Spark安装与配置"></a>1. Spark安装与配置</h2><h3 id="1-1-Spark安装"><a href="#1-1-Spark安装" class="headerlink" title="1.1 Spark安装"></a>1.1 Spark安装</h3><p>下载Spark安装包，下载地址：<a href="http://spark.apache.org/downloads.html" target="_blank" rel="noopener">http://spark.apache.org/downloads.html</a> ，这里我下载版本为<code>spark-2.4.4-bin-hadoop2.6</code>。</p>
+                <h2 id="1-基础部分"><a href="#1-基础部分" class="headerlink" title="1.基础部分"></a>1.基础部分</h2><p>Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。</p>
+<p>上述6种数据类型可分为两类：</p>
 <ul>
-<li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为spark</li>
+<li>不可变数据类型：数字、字符串、元组。</li>
+<li>可变数据类型：列表、集合、字典。</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf spark-2.4.4-bin-hadoop2.6.tar.gz -C /usr/local/
-<span class="token comment" spellcheck="true"># 将解压到/usr/local/目录下的文件夹重命名</span>
-<span class="token function">mv</span> spark-2.4.4-bin-hadoop2.6/ spark<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>同时，元组、列表、集合、字典也是容器类型，即可以存储不同类型的数据。</p>
+<h3 id="1-1-数字"><a href="#1-1-数字" class="headerlink" title="1.1 数字"></a>1.1 数字</h3><p>Python的数字类型中包括：整型（int）、浮点型（float）、布尔型（bool）、复数（complex）。其中，布尔型：表示真(True)、假(False)。0和空都表示False，如’ ‘、[ ]、{ }、None。非空表示True</p>
 <ul>
-<li>配置环境变量</li>
+<li>数值运算：加、减、乘、除、整除、求余（+、-、 *、 /、 //、 %）</li>
+<li>10、2、8、16进制表示与转换<ul>
+<li>二进制：用0b表示，如0b10表示10进制的2。</li>
+<li>八进制：用0o表示，如0o10表示10进制的8。</li>
+<li>十六进制：用0x表示，如0x10表示10进制的16。</li>
+<li>bin( )：转换为二进制。</li>
+<li>int( )：转换为十进制。</li>
+<li>hex( )：转换为十六进制。</li>
+<li>oct( )：转换为八进制。</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 打开配置文件 </span>
-vim /etc/profile 
-<span class="token comment" spellcheck="true"># 添加Spark环境变量 </span>
-<span class="token function">export</span> SPARK_HOME<span class="token operator">=</span>/usr/local/spark
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$SPARK_HOME</span>/bin:<span class="token variable">$SPARK_HOME</span>/sbin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>环境变量生效</li>
+</li>
+<li>内建函数（BIF）</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="1-2-Local模式运行"><a href="#1-2-Local模式运行" class="headerlink" title="1.2 Local模式运行"></a>1.2 Local模式运行</h3><p>Local 模式是单机运行，它采用单节点多线程方式运行，不用部署，开箱即用，适合日常测试开发。</p>
-<p>进入到/usr/local/spark/bin目录下，执行以下命令启动spark。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 启动spark-shell</span>
-spark-shell --master local<span class="token punctuation">[</span>2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li><strong>local</strong>：只启动一个工作线程；</li>
-<li><strong>local[k]</strong>：启动 k 个工作线程；</li>
-<li><strong>local[*]</strong>：启动跟 cpu 数目相同的工作线程数。</li>
-</ul>
-<p>可以通过 Web UI 查看作业的执行情况，访问地址：IP:4040</p>
-<h2 id="2-Scala安装与配置"><a href="#2-Scala安装与配置" class="headerlink" title="2.Scala安装与配置"></a>2.Scala安装与配置</h2><p>Spark 是基于 Scala 语言进行开发的，分别提供了基于 Scala、Java、Python 语言的 API。这里分别介绍在CentOS7和win10系统中安装Scala。</p>
-<h3 id="2-1-在CentOS7中安装Scala"><a href="#2-1-在CentOS7中安装Scala" class="headerlink" title="2.1 在CentOS7中安装Scala"></a>2.1 在CentOS7中安装Scala</h3><h4 id="2-1-1-前置条件"><a href="#2-1-1-前置条件" class="headerlink" title="2.1.1 前置条件"></a>2.1.1 前置条件</h4><p>Scala 的运行依赖于JDK，需要预先安装好JDK，我安装的JDK 1.8版本。JDK安装可参考<a href="https://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/">Hadoop单机环境搭建</a>中的介绍。</p>
-<h4 id="2-1-2-安装与配置"><a href="#2-1-2-安装与配置" class="headerlink" title="2.1.2 安装与配置"></a>2.1.2 安装与配置</h4><ul>
-<li>下载Scala，下载地址：<a href="https://www.scala-lang.org/download/" target="_blank" rel="noopener">https://www.scala-lang.org/download/</a></li>
-<li>将安装包移动到/usr/local目录下，解压，将解压文件夹重命名</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压</span>
-<span class="token function">tar</span> -zxvf scala-2.13.1.tgz
-<span class="token comment" spellcheck="true"># 重命名</span>
-<span class="token function">mv</span> scala-2.13.1/ scala<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>配置环境</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash">vim ~/.bash_profile
-<span class="token comment" spellcheck="true"># 添加scala配置</span>
-<span class="token function">export</span> SCALA_HOME<span class="token operator">=</span>/usr/local/scala
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$SCALA_HOME</span>/bin
-<span class="token comment" spellcheck="true"># 环境生效</span>
-<span class="token function">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>验证是否安装成功</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos local<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># scala</span>
-scala<span class="token operator">></span>
-<span class="token comment" spellcheck="true"># 退出</span>
-:quit  <span class="token comment" spellcheck="true"># 或 ctrl + D</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-2-在Win10中安装Scala"><a href="#2-2-在Win10中安装Scala" class="headerlink" title="2.2 在Win10中安装Scala"></a>2.2 在Win10中安装Scala</h3><h4 id="2-2-1-前置条件"><a href="#2-2-1-前置条件" class="headerlink" title="2.2.1 前置条件"></a>2.2.1 前置条件</h4><p>在Win10环境下安装好JDK环境，安装可参考Win10安装配置Java开发环境的介绍。</p>
-<h4 id="2-2-2-安装与配置"><a href="#2-2-2-安装与配置" class="headerlink" title="2.2.2 安装与配置"></a>2.2.2 安装与配置</h4><ul>
-<li>安装Scala插件</li>
-</ul>
-<p>我们使用IDEA作为开发工具，默认不支持 Scala 语言的开发，需要通过插件进行扩展，安装Scala插件。</p>
-<ul>
-<li>安装Scala SDK</li>
-</ul>
-<p>官网下载安装包进行安装，下载地址：<a href="https://www.scala-lang.org/download/" target="_blank" rel="noopener">https://www.scala-lang.org/download/</a></p>
-<p>这里我的系统是Win10，下载 scala-2.12.7msi 版本的安装包后，一直点击下一步进行安装，安装完成后会自动配置好环境变量。</p>
-<ul>
-<li>创建Scala项目</li>
-</ul>
-<p>新建项目，选择创建<code>Scala—IDEA</code>工程：</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Spark_20200203/1.png" style="zoom:50.5%;">
-
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Spark_20200203/2.png" style="zoom:46%;">
-
-
-
-
-
-<script>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>abs()</td>
+<td>取绝对值</td>
+</tr>
+<tr>
+<td>ceil() / floor()</td>
+<td>向上 / 向下取整</td>
+</tr>
+<tr>
+<td>round()</td>
+<td>四舍五入</td>
+</tr>
+<tr>
+<td>min() / max()</td>
+<td>最小值/最大值</td>
+</tr>
+</tbody></table>
+<h3 id="1-2-字符串"><a href="#1-2-字符串" class="headerlink" title="1.2 字符串"></a>1.2 字符串</h3><h3 id="1-3-列表"><a href="#1-3-列表" class="headerlink" title="1.3 列表"></a>1.3 列表</h3><h3 id="1-4-元组"><a href="#1-4-元组" class="headerlink" title="1.4 元组"></a>1.4 元组</h3><h3 id="1-5-集合"><a href="#1-5-集合" class="headerlink" title="1.5 集合"></a>1.5 集合</h3><h3 id="1-6-字典"><a href="#1-6-字典" class="headerlink" title="1.6 字典"></a>1.6 字典</h3><h2 id="2-拓展部分"><a href="#2-拓展部分" class="headerlink" title="2.拓展部分"></a>2.拓展部分</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -611,7 +581,7 @@ scala<span class="token operator">></span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.linwang93.cn/posts/f28d3f89.html">http://www.linwang93.cn/posts/f28d3f89.html</a>
+                    <a href="http://www.linwang93.cn/posts/3b438966.html">http://www.linwang93.cn/posts/3b438966.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -649,8 +619,8 @@ scala<span class="token operator">></span>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Spark/">
-                                    <span class="chip bg-color">Spark</span>
+                                <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">Python学习笔记</span>
                                 </a>
                             
                         </div>
@@ -821,7 +791,7 @@ scala<span class="token operator">></span>
         repo: 'gitalk',
         owner: 'weylin0714',
         admin: "weylin0714",
-        id: '2020-02-03T23-24-12',
+        id: '2020-03-31T10-19-56',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -842,45 +812,51 @@ scala<span class="token operator">></span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/620e2f13.html">
+                <a href="/posts/3b438966.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/620e2f13.jpg" class="responsive-img" alt="Linux环境Sqoop的安装与配置">
                         
-                        <span class="card-title">Linux环境Sqoop的安装与配置</span>
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Python学习笔记（三）：数据类型">
+                        
+                        <span class="card-title">Python学习笔记（三）：数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Sqoop是Hdoop与关系型数据库之间传递数据的工具，可以实现Mysql等关系型数据库与Hadoop的HDFS、HIVE、HBASE等数据存储系统间数据互传。Sqoop有Sqoop1和Sqoop2两个版本，但它们不兼容，并且官方并不建议在
+                            1.基础部分Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。
+上述6种数据类型可分为两类：
+
+不可变数据类型：数字、字符串
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                    大数据
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Sqoop/">
-                        <span class="chip bg-color">Sqoop</span>
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Python学习笔记</span>
                     </a>
                     
                 </div>
@@ -894,31 +870,32 @@ scala<span class="token operator">></span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/73be190e.html">
+                <a href="/posts/e8a303d6.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/73be190e.jpg" class="responsive-img" alt="大数据学习环境搭建(三)--Hive单机环境搭建">
+                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/e8a303d6.jpg" class="responsive-img" alt="Python学习笔记（二）：基础语法">
                         
-                        <span class="card-title">大数据学习环境搭建(三)--Hive单机环境搭建</span>
+                        <span class="card-title">Python学习笔记（二）：基础语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hive是一个架构在Hadoop之上的数据仓库工具，可以将结构化的数据文件映射成为一张数据库表，并提供类SQL的查询功能，为大数据查询和分析提供方便。这里在阿里云服务器上搭建Hive单机伪分布环境。
-1. Hive安装与配置1.1 下载与安
+                            1. 基础语法1.1 缩进大部分的编程语言都是使用“{}”来表示一个代码段，而 Python 用缩进层次来组织代码块，默认一个缩进使用“四个空格”表示。
+1.2. 编码
+Python3中有两种表示字符序列的类型：bytes和str，其中by
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                    大数据
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -928,8 +905,8 @@ scala<span class="token operator">></span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hive/">
-                        <span class="chip bg-color">Hive</span>
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Python学习笔记</span>
                     </a>
                     
                 </div>
