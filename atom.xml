@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-04-05T14:03:52.366Z</updated>
+  <updated>2020-04-05T14:14:24.119Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Python学习笔记（五）：数据类型-字典与集合</title>
     <link href="http://www.linwang93.cn/posts/72801a55.html"/>
     <id>http://www.linwang93.cn/posts/72801a55.html</id>
-    <published>2020-04-05T07:27:46.000Z</published>
-    <updated>2020-04-05T14:03:52.366Z</updated>
+    <published>2020-04-05T14:10:32.000Z</published>
+    <updated>2020-04-05T14:14:24.119Z</updated>
     
     <summary type="html">
     
@@ -29,17 +29,17 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;h2 id=&quot;1-字典&quot;&gt;&lt;a href=&quot;#1-字典&quot; class=&quot;headerlink&quot; title=&quot;1. 字典&quot;&gt;&lt;/a&gt;1. 字典&lt;/h2&gt;&lt;h2 id=&quot;2-集合&quot;&gt;&lt;a href=&quot;#2-集合&quot; class=&quot;headerlink&quot; title=&quot;2.
         
       
     
     </summary>
     
     
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
