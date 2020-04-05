@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux环境Sqoop的安装与配置, 简若">
-    <meta name="description" content="Sqoop是Hdoop与关系型数据库之间传递数据的工具，可以实现Mysql等关系型数据库与Hadoop的HDFS、HIVE、HBASE等数据存储系统间数据互传。Sqoop有Sqoop1和Sqoop2两个版本，但它们不兼容，并且官方并不建议在">
+    <meta name="keywords" content="Python学习笔记（四）：数据类型-列表与元组, 简若">
+    <meta name="description" content="1. 列表1.1 定义列表是一个容器序列类型，列表中的元素可以是字符串、数字、布尔等各种类型，同时列表中元素有序的，都有各自的索引，默认是从0开始，可以进行切片等操作。列表中的元素以逗号&#34;,&#34;分隔，用[]将元素括起来。
+2. 元组
+    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Linux环境Sqoop的安装与配置 | 简若</title>
+    <title>Python学习笔记（四）：数据类型-列表与元组 | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/620e2f13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/92f2c1f8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux环境Sqoop的安装与配置</h1>
+                    <h1 class="description center-align post-title">Python学习笔记（四）：数据类型-列表与元组</h1>
                 </div>
             </div>
         </div>
@@ -427,8 +429,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Sqoop/">
-                                <span class="chip bg-color">Sqoop</span>
+                            <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">Python学习笔记</span>
                             </a>
                         
                     </div>
@@ -439,8 +441,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                大数据
+                            <a href="/categories/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -452,28 +454,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-07
+                    2020-04-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-07
+                    2020-04-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    452
+                    145
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -489,50 +491,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Sqoop是Hdoop与关系型数据库之间传递数据的工具，可以实现Mysql等关系型数据库与Hadoop的HDFS、HIVE、HBASE等数据存储系统间数据互传。Sqoop有Sqoop1和Sqoop2两个版本，但它们不兼容，并且官方并不建议在生产环境中使用sqoop2。我们这里用的是Sqoop1，在CentOS7系统中安装配置Sqoop。</p>
-<h2 id="1-Sqoop安装与配置"><a href="#1-Sqoop安装与配置" class="headerlink" title="1. Sqoop安装与配置"></a>1. Sqoop安装与配置</h2><h3 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h3><p>下载Sqoop安装包，这里我下载的是CDH版本，下载地址为：<a href="http://archive.cloudera.com/cdh5/cdh/5/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/</a></p>
-<ul>
-<li>将安装包移动到/usr/local/src目录下，解压到/usr/local/目录下，重命名为sqoop</li>
-</ul>
-<pre class="line-numbers language-shell"><code class="language-shell"># 解压
-tar -zxvf sqoop-1.4.6-cdh5.16.2.tar.gz -C /usr/local/
-# 重命名
-mv sqoop-1.4.6-cdh5.16.2 sqoop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>配置环境变量</li>
-</ul>
-<p>打开环境变量配置文件，添加以下内容：</p>
-<pre class="line-numbers language-shell"><code class="language-shell"># 打开配置文件 
-vim /etc/profile 
-# 添加Sqoop环境变量 
-export SQOOP_HOME=/usr/local/sqoop
-export PATH=$PATH:$SQOOP_HOME/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>环境变量生效</li>
-</ul>
-<pre class="line-numbers language-shell"><code class="language-shell">source /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="1-2-配置"><a href="#1-2-配置" class="headerlink" title="1.2 配置"></a>1.2 配置</h3><ul>
-<li>修改Sqoop配置文件sqoop-env.sh</li>
-</ul>
-<p>进入到/usr/local/sqoop/conf目录下，拷贝sqoop-env-template.sh为sqoop-env.sh。编辑sqoop-env.sh，添加以下配置：</p>
-<pre class="line-numbers language-shell"><code class="language-shell">export HADOOP_COMMON_HOME=/usr/local/hadoop
-export HADOOP_MAPRED_HOME=/usr/local/hadoop
-export HBASE_HOME=/usr/local/hbase
-export HIVE_HOME=/usr/local/hive<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>将JDBC驱动移动到/usr/local/sqoop/lib目录下</li>
-</ul>
-<p>下载<a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" rel="noopener">JDBC驱动</a>，我下载的版本包是mysql-connector-java-5.1.48.tar.gz。</p>
-<pre class="line-numbers language-shell"><code class="language-shell"># 解压 
-tar -zxvf mysql-connector-java-5.1.48.tar.gz 
-# 进入到解压目录，将mysql-connector-java-5.1.48.jar移动到/usr/local/sqoop/lib目录下 
-cd mysql-connector-java-5.1.48 
-cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>验证</li>
-</ul>
-<pre class="line-numbers language-shell"><code class="language-shell">sqoop help<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<script>
+                <h2 id="1-列表"><a href="#1-列表" class="headerlink" title="1. 列表"></a>1. 列表</h2><h3 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h3><p>列表是一个容器序列类型，列表中的元素可以是字符串、数字、布尔等各种类型，同时列表中元素有序的，都有各自的索引，默认是从0开始，可以进行切片等操作。列表中的元素以逗号<code>","</code>分隔，用<code>[]</code>将元素括起来。</p>
+<h2 id="2-元组"><a href="#2-元组" class="headerlink" title="2. 元组"></a>2. 元组</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -565,7 +525,7 @@ cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.linwang93.cn" rel="external nofollow noreferrer">Lin</a>
+                    <a href="http://www.linwang93.cn" rel="external nofollow noreferrer">lin</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -575,7 +535,7 @@ cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.linwang93.cn/posts/620e2f13.html">http://www.linwang93.cn/posts/620e2f13.html</a>
+                    <a href="http://www.linwang93.cn/posts/92f2c1f8.html">http://www.linwang93.cn/posts/92f2c1f8.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -588,7 +548,7 @@ cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true"
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://www.linwang93.cn" target="_blank">Lin</a>
+                    <a href="http://www.linwang93.cn" target="_blank">lin</a>
                     !
                 </span>
             </div>
@@ -613,8 +573,8 @@ cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true"
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Sqoop/">
-                                    <span class="chip bg-color">Sqoop</span>
+                                <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">Python学习笔记</span>
                                 </a>
                             
                         </div>
@@ -785,7 +745,7 @@ cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true"
         repo: 'gitalk',
         owner: 'weylin0714',
         admin: "weylin0714",
-        id: '2020-02-07T21-18-16',
+        id: '2020-04-05T15-27-02',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -810,43 +770,35 @@ cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true"
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/73248e8e.html">
+                <a href="/posts/72801a55.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/73248e8e.jpg" class="responsive-img" alt="Hive入门教程">
                         
-                        <span class="card-title">Hive入门教程</span>
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Python学习笔记（五）：数据类型-字典与集合">
+                        
+                        <span class="card-title">Python学习笔记（五）：数据类型-字典与集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、简介Hive是一个构建在Hadoop之上的数据仓库基础架构，它可以将结构化的数据文件映射成表，并提供类SQL查询功能。可以将SQL语句转化为MapReduce任务，并在Hadoop上进行运行，以此来完成整个的数据的提取、转化和加载（Ex
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-05
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                    大数据
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Lin
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Hive/">
-                        <span class="chip bg-color">Hive</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -858,31 +810,34 @@ cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true"
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/f28d3f89.html">
+                <a href="/posts/3b438966.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/f28d3f89.jpg" class="responsive-img" alt="大数据学习环境搭建(四)--Spark单机环境搭建">
+                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/3b438966.jpg" class="responsive-img" alt="Python学习笔记（三）：数据类型-数字与字符串">
                         
-                        <span class="card-title">大数据学习环境搭建(四)--Spark单机环境搭建</span>
+                        <span class="card-title">Python学习笔记（三）：数据类型-数字与字符串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。
-1. Spark安装与配置1.1 Spark安装下载
+                            Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。
+上述6种数据类型可分为两类：
+
+不可变数据类型：数字、字符串、元组。
+可
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                    大数据
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -892,8 +847,8 @@ cp mysql-connector-java-5.1.48.jar /usr/local/sqoop/lib/<span aria-hidden="true"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spark/">
-                        <span class="chip bg-color">Spark</span>
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Python学习笔记</span>
                     </a>
                     
                 </div>

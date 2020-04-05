@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-04-05T07:21:54.411Z</updated>
+  <updated>2020-04-05T14:03:52.366Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python学习笔记（五）：数据类型-字典与集合</title>
+    <link href="http://www.linwang93.cn/posts/72801a55.html"/>
+    <id>http://www.linwang93.cn/posts/72801a55.html</id>
+    <published>2020-04-05T07:27:46.000Z</published>
+    <updated>2020-04-05T14:03:52.366Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记（四）：数据类型-列表与元组</title>
+    <link href="http://www.linwang93.cn/posts/92f2c1f8.html"/>
+    <id>http://www.linwang93.cn/posts/92f2c1f8.html</id>
+    <published>2020-04-05T07:27:02.000Z</published>
+    <updated>2020-04-05T14:04:41.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-列表&quot;&gt;&lt;a href=&quot;#1-列表&quot; class=&quot;headerlink&quot; title=&quot;1. 列表&quot;&gt;&lt;/a&gt;1. 列表&lt;/h2&gt;&lt;h3 id=&quot;1-1-定义&quot;&gt;&lt;a href=&quot;#1-1-定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python学习笔记（三）：数据类型-数字与字符串</title>
     <link href="http://www.linwang93.cn/posts/3b438966.html"/>
     <id>http://www.linwang93.cn/posts/3b438966.html</id>
     <published>2020-03-31T02:19:56.000Z</published>
-    <updated>2020-04-05T07:21:54.411Z</updated>
+    <updated>2020-04-05T08:56:23.849Z</updated>
     
     <summary type="html">
     
@@ -511,63 +565,6 @@
       <category term="Hexo" scheme="http://www.linwang93.cn/tags/Hexo/"/>
     
       <category term="Next" scheme="http://www.linwang93.cn/tags/Next/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Typora使用教程</title>
-    <link href="http://www.linwang93.cn/posts/64297bf3.html"/>
-    <id>http://www.linwang93.cn/posts/64297bf3.html</id>
-    <published>2019-05-01T12:11:12.000Z</published>
-    <updated>2020-03-07T08:18:27.007Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;  说明：Markdown是一种&lt;strong&gt;轻量级&lt;/strong&gt;标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;1-基本操作&quot;&gt;&lt;a href=&quot;#1-基本操作&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="教程" scheme="http://www.linwang93.cn/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Win10平台下MySQL5.7安装和配置</title>
-    <link href="http://www.linwang93.cn/posts/e8fca04b.html"/>
-    <id>http://www.linwang93.cn/posts/e8fca04b.html</id>
-    <published>2019-04-29T06:53:40.000Z</published>
-    <updated>2020-03-07T08:20:42.755Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;  本文介绍在Win10系统下MySQL数据库管理系统的下载、安装和配置，并利用Navicat连接MySQL。&lt;/p&gt;
-&lt;h2 id=&quot;1-下载MySQL5-7安装文件&quot;&gt;&lt;a href=&quot;#1-下载MySQL5-7安装文件&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="http://www.linwang93.cn/tags/MySQL/"/>
     
   </entry>
   
