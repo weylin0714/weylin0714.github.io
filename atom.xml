@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-03-31T13:46:10.675Z</updated>
+  <updated>2020-04-05T07:04:44.680Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Python学习笔记（三）：数据类型</title>
+    <title>Python学习笔记（三）：数据类型-数字与字符串</title>
     <link href="http://www.linwang93.cn/posts/3b438966.html"/>
     <id>http://www.linwang93.cn/posts/3b438966.html</id>
     <published>2020-03-31T02:19:56.000Z</published>
-    <updated>2020-03-31T13:46:10.675Z</updated>
+    <updated>2020-04-05T07:04:44.680Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,10 @@
       
         
         
-          &lt;h2 id=&quot;1-基础部分&quot;&gt;&lt;a href=&quot;#1-基础部分&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。&lt;/p&gt;
+&lt;p&gt;上述6种数据类型可分为两类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不可变数据类型：数字、字符串、元组。
         
       
     
@@ -48,7 +51,7 @@
     <link href="http://www.linwang93.cn/posts/e8a303d6.html"/>
     <id>http://www.linwang93.cn/posts/e8a303d6.html</id>
     <published>2020-03-28T06:24:47.000Z</published>
-    <updated>2020-03-31T02:06:38.535Z</updated>
+    <updated>2020-04-03T16:22:32.662Z</updated>
     
     <summary type="html">
     
@@ -56,7 +59,7 @@
       
         
         
-          &lt;h2 id=&quot;1-基础语法&quot;&gt;&lt;a href=&quot;#1-基础语法&quot; class=&quot;headerlink&quot; title=&quot;1. 基础语法&quot;&gt;&lt;/a&gt;1. 基础语法&lt;/h2&gt;&lt;h3 id=&quot;1-1-缩进&quot;&gt;&lt;a href=&quot;#1-1-缩进&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;Python是一种动态的、强类型语言。所谓&lt;strong&gt;动态类型&lt;/strong&gt;是指类型检查操作是发生在程序执行阶段，像Python、JavaScript都属于这类型。其中，类型检查主要是验证类型约束的过程，查看变量及其类型，判断表达式是否合理。如果类型检查发生在编译阶
         
       
     
