@@ -547,10 +547,7 @@
 <li>非转义的原始字符串：字符串前加<code>r</code>，例如：<code>print(r'hello\nworld')</code>，换行符<code>\n</code>也会被输出，而不会产生换行。</li>
 <li>unicode字符串：在字符串前加<code>u</code>，对字符串进行unicode编码。在Python3中，字符串默认是unicode编码，中文字符串前无需加<code>u</code>，而对于Python2，默认编码是ascii，在中文前需要加<code>u</code>。</li>
 </ul>
-<h4 id="1-2-2-常用操作"><a href="#1-2-2-常用操作" class="headerlink" title="1.2.2 常用操作"></a>1.2.2 常用操作</h4><ul>
-<li>字符串拼接/合并</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># +: 合并少数几个字符串</span>
+<h4 id="1-2-2-常用操作"><a href="#1-2-2-常用操作" class="headerlink" title="1.2.2 常用操作"></a>1.2.2 常用操作</h4><h5 id="1-2-2-1-字符串拼接-合并"><a href="#1-2-2-1-字符串拼接-合并" class="headerlink" title="1.2.2.1 字符串拼接/合并"></a>1.2.2.1 字符串拼接/合并</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># +: 合并少数几个字符串</span>
 s <span class="token operator">=</span> <span class="token string">"hello"</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> <span class="token string">"world!"</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
@@ -563,17 +560,11 @@ s2 <span class="token operator">=</span> <span class="token punctuation">[</span
 Out<span class="token punctuation">:</span>
     p_y_t_h_o_n
     I_love_python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>字符串复制</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'python'</span>
+<h5 id="1-2-2-2-字符串复制"><a href="#1-2-2-2-字符串复制" class="headerlink" title="1.2.2.2 字符串复制"></a>1.2.2.2 字符串复制</h5><pre class="line-numbers language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'python'</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     pythonpythonpython<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>字符串索引/切片</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 通过下标索引，默认从0开始</span>
+<h5 id="1-2-2-3-字符串索引-切片"><a href="#1-2-2-3-字符串索引-切片" class="headerlink" title="1.2.2.3 字符串索引/切片"></a>1.2.2.3 字符串索引/切片</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 通过下标索引，默认从0开始</span>
 s <span class="token operator">=</span> <span class="token string">'python'</span>
 result <span class="token operator">=</span> s<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
@@ -589,10 +580,7 @@ r5 <span class="token operator">=</span> s<span class="token punctuation">[</spa
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'r1=%s, r2=%s, r3=%s, r4=%s, r5=%s'</span><span class="token operator">%</span> <span class="token punctuation">(</span>r1<span class="token punctuation">,</span> r2<span class="token punctuation">,</span> r3<span class="token punctuation">,</span> r4<span class="token punctuation">,</span> r5<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 格式化输出</span>
 Out<span class="token punctuation">:</span>
     r1<span class="token operator">=</span>ython<span class="token punctuation">,</span> r2<span class="token operator">=</span>pyt<span class="token punctuation">,</span> r3<span class="token operator">=</span>yt<span class="token punctuation">,</span> r4<span class="token operator">=</span>python<span class="token punctuation">,</span> r5<span class="token operator">=</span>nohtyp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>字符串的替换–replace()</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h5 id="1-2-2-4-字符串的替换"><a href="#1-2-2-4-字符串的替换" class="headerlink" title="1.2.2.4 字符串的替换"></a>1.2.2.4 字符串的替换</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 功能：将字符串str中的子字符串old用新子字符串new替换。
 语法：str.replace(old, new[, max])
 参数：str为原始字符串，old为将被替换的子字符串，new为新字符串，max表示最多替换的次数，可选。
@@ -608,10 +596,7 @@ r <span class="token operator">=</span> s<span class="token punctuation">.</span
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     ABcABcABcabc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>字符串的匹配查找–find()/index()</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h5 id="1-2-2-5-字符串的匹配查找"><a href="#1-2-2-5-字符串的匹配查找" class="headerlink" title="1.2.2.5 字符串的匹配查找"></a>1.2.2.5 字符串的匹配查找</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 功能：检测字符串中是否包含子字符串
 语法：str.find(substr, beg=0, end=len(string))
 参数：substr为待查找的字符串，beg为开始索引，默认为0，end为结束索引，默认为字符串的长度。
@@ -638,10 +623,7 @@ Out<span class="token punctuation">:</span>
 r2 <span class="token operator">=</span> s<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">'Road'</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 异常</span>
 ValueError<span class="token punctuation">:</span> substring <span class="token operator">not</span> found<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>去除字符串两侧指定字符，默认为空格–strip()/lstrip()/rstrip()</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h5 id="1-2-2-6-去除字符串两侧指定字符"><a href="#1-2-2-6-去除字符串两侧指定字符" class="headerlink" title="1.2.2.6 去除字符串两侧指定字符"></a>1.2.2.6 去除字符串两侧指定字符</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 功能：用于移除字符串头尾指定的字符
 语法：str.strip([char])
 参数：chars为待移除的字符序列
@@ -658,10 +640,7 @@ r <span class="token operator">=</span> s<span class="token punctuation">.</span
 Out<span class="token punctuation">:</span>
     <span class="token string">'cdcd'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>与strip()类似的还有lstrip()、rstrip()两个函数，lstrip()用于去掉左侧的指定字符，rstrip()用于去掉右侧的指定字符。</p>
-<ul>
-<li>字符串按指定字符分隔–split()</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h5 id="1-2-2-7-字符串按指定字符分隔"><a href="#1-2-2-7-字符串按指定字符分隔" class="headerlink" title="1.2.2.7 字符串按指定字符分隔"></a>1.2.2.7 字符串按指定字符分隔</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 功能：通过指定分隔符对字符串进行切片。
 语法：str.split(substr="", num=str.count(substr))
 参数：substr为分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等，num为分隔次数，默认为-1，即分隔所有。
@@ -677,18 +656,12 @@ r <span class="token operator">=</span> s<span class="token punctuation">.</span
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     <span class="token punctuation">[</span><span class="token string">'ab'</span><span class="token punctuation">,</span> <span class="token string">'dab'</span><span class="token punctuation">,</span> <span class="token string">'dabcd'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>计算字符串的长度–len()</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'Always on the road.'</span>
+<h5 id="1-2-2-8-计算字符串的长度"><a href="#1-2-2-8-计算字符串的长度" class="headerlink" title="1.2.2.8 计算字符串的长度"></a>1.2.2.8 计算字符串的长度</h5><pre class="line-numbers language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'Always on the road.'</span>
 r <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     <span class="token number">19</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>统计指定字符串出现的次数–count()</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h5 id="1-2-2-9-统计指定字符串出现的次数"><a href="#1-2-2-9-统计指定字符串出现的次数" class="headerlink" title="1.2.2.9 统计指定字符串出现的次数"></a>1.2.2.9 统计指定字符串出现的次数</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 功能：用于统计字符串里某个字符出现的次数。
 语法：str.count(substr, start=0,end=len(str))
 参数：substr为待匹配的子字符串，start和end分别为字符串开始、结束搜索的位置。
@@ -699,19 +672,13 @@ r <span class="token operator">=</span> s<span class="token punctuation">.</span
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>判断指定子字符串是否在字符串中–in/not in</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'Always on the road.'</span>
+<h5 id="1-2-2-10-判断指定子字符串是否在字符串中"><a href="#1-2-2-10-判断指定子字符串是否在字符串中" class="headerlink" title="1.2.2.10 判断指定子字符串是否在字符串中"></a>1.2.2.10 判断指定子字符串是否在字符串中</h5><pre class="line-numbers language-python"><code class="language-python">s <span class="token operator">=</span> <span class="token string">'Always on the road.'</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'road'</span> <span class="token keyword">in</span> s<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'road'</span> <span class="token operator">not</span> <span class="token keyword">in</span> s<span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     <span class="token boolean">True</span>
     <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>字符串转换大小写–title()/upper()/lower()/capitalize()/swapcase()</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将每个单词首字母变为大写: title()</span>
+<h5 id="1-2-2-11-字符串转换大小写"><a href="#1-2-2-11-字符串转换大小写" class="headerlink" title="1.2.2.11 字符串转换大小写"></a>1.2.2.11 字符串转换大小写</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将每个单词首字母变为大写: title()</span>
 s <span class="token operator">=</span> <span class="token string">'I love python!'</span>
 r <span class="token operator">=</span> s<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
@@ -738,10 +705,7 @@ r <span class="token operator">=</span> s<span class="token punctuation">.</span
 <span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     ABCabc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>格式化字符串</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+<h5 id="1-2-2-11-格式化字符串"><a href="#1-2-2-11-格式化字符串" class="headerlink" title="1.2.2.11 格式化字符串"></a>1.2.2.11 格式化字符串</h5><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 %-格式化
 格式化符号：
 %s：格式化字符串
@@ -795,7 +759,7 @@ s2 <span class="token operator">=</span> <span class="token string">'world'</spa
 <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{s1+s2}'</span><span class="token punctuation">)</span>
 Out<span class="token punctuation">:</span>
     helloworld<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/3b438966/%E5%AD%97%E7%AC%A6%E4%B8%B2.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/3b438966/%E5%AD%97%E7%AC%A6%E4%B8%B2.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1344,7 +1308,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">31.9k</span>&nbsp;字
+                class="white-color">32k</span>&nbsp;字
             
             
             
