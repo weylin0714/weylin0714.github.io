@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>Git从入门到精通</title>
-      <link href="/posts/fa5ebc76.html"/>
-      <url>/posts/fa5ebc76.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Python学习笔记（五）：数据类型-字典与集合</title>
       <link href="/posts/72801a55.html"/>
       <url>/posts/72801a55.html</url>
