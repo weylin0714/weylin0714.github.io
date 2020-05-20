@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git安装配置与基本使用, 简若">
-    <meta name="description" content="Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。我们在CentOS7环境下安装配置Git，并学习Git的基本操作。
-1. Git安装配置1.1 Git安装1.1.1 检查是否安装[root@centos ~]#">
+    <meta name="keywords" content="Python进阶之路（二）-Python工程组织结构, 简若">
+    <meta name="description" content="
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Git安装配置与基本使用 | 简若</title>
+    <title>Python进阶之路（二）-Python工程组织结构 | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/c6c40a41.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git安装配置与基本使用</h1>
+                    <h1 class="description center-align post-title">Python进阶之路（二）-Python工程组织结构</h1>
                 </div>
             </div>
         </div>
@@ -426,25 +428,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                工具
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -453,28 +442,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-11
+                    2020-05-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-07
+                    2020-05-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    623
+                    52
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -490,79 +479,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。我们在CentOS7环境下安装配置Git，并学习Git的基本操作。</p>
-<h2 id="1-Git安装配置"><a href="#1-Git安装配置" class="headerlink" title="1. Git安装配置"></a>1. Git安装配置</h2><h3 id="1-1-Git安装"><a href="#1-1-Git安装" class="headerlink" title="1.1 Git安装"></a>1.1 Git安装</h3><h4 id="1-1-1-检查是否安装"><a href="#1-1-1-检查是否安装" class="headerlink" title="1.1.1 检查是否安装"></a>1.1.1 检查是否安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># git</span>
--bash: git: <span class="token function">command</span> not found  <span class="token comment" spellcheck="true"># 系统中未安装</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id="1-1-2-在线安装Git"><a href="#1-1-2-在线安装Git" class="headerlink" title="1.1.2 在线安装Git"></a>1.1.2 在线安装Git</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在线安装</span>
-yum <span class="token function">install</span> -y <span class="token function">git</span>
-<span class="token comment" spellcheck="true"># 查看安装版本</span>
-<span class="token function">git</span> --version
-<span class="token comment" spellcheck="true"># 通过该种方式安装的版本可能较旧，我们卸载git，用下面源码方式进行安装</span>
-yum remove <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="1-1-3-源码安装Git"><a href="#1-1-3-源码安装Git" class="headerlink" title="1.1.3 源码安装Git"></a>1.1.3 源码安装Git</h4><ul>
-<li>下载Git特定版本，我们下载v2.24.1。</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在线下载到/usr/local/src目录下</span>
-<span class="token function">wget</span> https://github.com/git/git/archive/v2.24.1.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>安装依赖</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash">yum -y <span class="token function">install</span> curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>安装Git</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压Git安装包到/usr/local/目录</span>
-<span class="token function">tar</span> -zxvf v2.24.1.tar.gz -C /usr/local
-<span class="token comment" spellcheck="true"># 进入到解压目录</span>
-<span class="token function">cd</span> git-2.24.1
-<span class="token comment" spellcheck="true"># 编译并安装Git，安装在/usr/local/git目录下</span>
-<span class="token function">make</span> prefix<span class="token operator">=</span>/usr/local/git all
-<span class="token function">sudo</span> <span class="token function">make</span> prefix<span class="token operator">=</span>/usr/local/git <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>配置环境变量</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 编辑环境配置文件</span>
-vim /etc/profile
-<span class="token comment" spellcheck="true"># 配置文件末尾添加</span>
-<span class="token function">export</span> PATH<span class="token operator">=</span>/usr/local/git/bin:<span class="token variable">$PATH</span>
-<span class="token comment" spellcheck="true"># 生效</span>
-<span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>验证安装是否成功</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="1-2-Git配置，生成授权证书"><a href="#1-2-Git配置，生成授权证书" class="headerlink" title="1.2 Git配置，生成授权证书"></a>1.2 Git配置，生成授权证书</h3><p>公钥是代码托管服务(CodeHub)识别用户身份的一种认证方式。通过公钥，可以将本地git项目与代码托管服务(CodeHub)建立联系，可以将本地代码上传到代码托管服务(CodeHub)或者将代码托管服务(CodeHub)代码下载到本地。</p>
-<ul>
-<li>配置用户名和邮箱</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"Github的用户名"</span>
-<span class="token function">git</span> config --global user.email <span class="token string">"Github的注册邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>查看设置的信息</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> config --list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>检查是否已经有ssh秘钥</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd ~/.ssh</span>
-<span class="token punctuation">[</span>root@centos .ssh<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ls</span>
-authorized_keys  id_rsa  id_rsa.pub  known_hosts
-<span class="token comment" spellcheck="true"># 如果有id_rsa和id_rsa.pub文件，不需要再创建ssh key，如果没有则执行下一步</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>创建ssh key</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"git的邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>将id_rsa.pub中的公钥添加到Github中</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 复制id_rsa.pub文件内容</span>
-<span class="token function">cat</span> ~/.ssh/id_rsa.pub
-<span class="token comment" spellcheck="true"># 添加到Github SSH keys：登录Github，点击Settings->点击New SSH key->添加ssh key</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>测试是否配置成功</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ssh</span> -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<script>
+                <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -605,7 +522,7 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.linwang93.cn/posts/c6c40a41.html">http://www.linwang93.cn/posts/c6c40a41.html</a>
+                    <a href="http://www.linwang93.cn/posts/ac1d1442.html">http://www.linwang93.cn/posts/ac1d1442.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -642,11 +559,7 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -815,7 +728,7 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
         repo: 'gitalk',
         owner: 'weylin0714',
         admin: "weylin0714",
-        id: '2020-02-11T19-46-34',
+        id: '2020-05-20T09-21-52',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -836,52 +749,42 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/8f56d411.html">
+                <a href="/posts/ac1d1442.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/8f56d411.jpg" class="responsive-img" alt="Superset开发环境搭建">
                         
-                        <span class="card-title">Superset开发环境搭建</span>
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Python进阶之路（二）-Python工程组织结构">
+                        
+                        <span class="card-title">Python进阶之路（二）-Python工程组织结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. Node.js安装配置方式一：
-
-下载源码，下载链接：https://nodejs.org/en/download/ ，这里我下载了最新版本：v12.16.0。
-
-# 进入到/usr/local/src目录下，执行下面命令，在线下载n
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    可视化工具
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Lin
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Superset/">
-                        <span class="chip bg-color">Superset</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -892,30 +795,33 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/357898e8.html">
+                <a href="/posts/3309c17c.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/357898e8.jpg" class="responsive-img" alt="HUE部署与使用">
+                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/3309c17c.jpg" class="responsive-img" alt="Python进阶之路（一）--枚举Enum">
                         
-                        <span class="card-title">HUE部署与使用</span>
+                        <span class="card-title">Python进阶之路（一）--枚举Enum</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HUE是一个开源的Apache Hadoop UI系统，基于Python Web框架Django实现。HUE是一个Web应用，设计初衷是简化用户和Hadoop集群间的交互。Hue几乎可以支持所有大数据框架：HDFS，HIVE，HBASE，Z
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                    大数据
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -925,8 +831,12 @@ authorized_keys  id_rsa  id_rsa.pub  known_hosts
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HUE/">
-                        <span class="chip bg-color">HUE</span>
+                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">Python学习笔记</span>
+                    </a>
+                    
+                    <a href="/tags/Python%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/">
+                        <span class="chip bg-color">Python进阶之路</span>
                     </a>
                     
                 </div>
