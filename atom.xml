@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-05-20T14:11:14.131Z</updated>
+  <updated>2020-05-21T01:07:19.470Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -21,34 +21,7 @@
     <link href="http://www.linwang93.cn/posts/ac1d1442.html"/>
     <id>http://www.linwang93.cn/posts/ac1d1442.html</id>
     <published>2020-05-20T01:21:52.000Z</published>
-    <updated>2020-05-20T14:11:14.131Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;待补充。。。&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python进阶之路（一）--枚举Enum</title>
-    <link href="http://www.linwang93.cn/posts/3309c17c.html"/>
-    <id>http://www.linwang93.cn/posts/3309c17c.html</id>
-    <published>2020-05-05T03:41:35.000Z</published>
-    <updated>2020-05-20T14:10:59.073Z</updated>
+    <updated>2020-05-21T01:07:19.470Z</updated>
     
     <summary type="html">
     
@@ -70,7 +43,36 @@
       <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
     
     
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Python进阶之路" scheme="http://www.linwang93.cn/tags/Python%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python进阶之路（一）--枚举Enum</title>
+    <link href="http://www.linwang93.cn/posts/3309c17c.html"/>
+    <id>http://www.linwang93.cn/posts/3309c17c.html</id>
+    <published>2020-05-05T03:41:35.000Z</published>
+    <updated>2020-05-21T01:07:10.777Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;待补充。。。&lt;/p&gt;
+&lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) {
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
     
       <category term="Python进阶之路" scheme="http://www.linwang93.cn/tags/Python%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     
