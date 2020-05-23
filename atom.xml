@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-05-21T01:07:19.470Z</updated>
+  <updated>2020-05-23T16:03:20.234Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Typora+PicGo+Github/Gitee搭建免费图床</title>
+    <link href="http://www.linwang93.cn/posts/9b15a04a.html"/>
+    <id>http://www.linwang93.cn/posts/9b15a04a.html</id>
+    <published>2020-05-23T02:17:01.000Z</published>
+    <updated>2020-05-23T16:03:20.234Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;从2020年开始了写博客之旅，并利用Hexo和Github搭建了个人博客，这里记录一下自认为比较好写文章的工具：使用Typora编写markdown博客文章，使用Github/Gitee作为图床，并使用新版本Typora联合PicGo软件实现图片自动上传。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
+    
+      <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
+    
+      <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>Python进阶之路（二）-Python工程组织结构</title>
@@ -300,7 +334,7 @@
     <link href="http://www.linwang93.cn/posts/d7a6b6fc.html"/>
     <id>http://www.linwang93.cn/posts/d7a6b6fc.html</id>
     <published>2020-05-03T07:09:43.000Z</published>
-    <updated>2020-05-20T16:03:10.840Z</updated>
+    <updated>2020-05-21T15:58:00.753Z</updated>
     
     <summary type="html">
     
@@ -308,7 +342,7 @@
       
         
         
-          &lt;h2 id=&quot;1-匿名函数&quot;&gt;&lt;a href=&quot;#1-匿名函数&quot; class=&quot;headerlink&quot; title=&quot;1.匿名函数&quot;&gt;&lt;/a&gt;1.匿名函数&lt;/h2&gt;&lt;h2 id=&quot;2-高阶函数&quot;&gt;&lt;a href=&quot;#2-高阶函数&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;1-匿名函数&quot;&gt;&lt;a href=&quot;#1-匿名函数&quot; class=&quot;headerlink&quot;
         
       
     
@@ -519,7 +553,7 @@
     <link href="http://www.linwang93.cn/posts/88213f00.html"/>
     <id>http://www.linwang93.cn/posts/88213f00.html</id>
     <published>2020-03-08T03:31:36.000Z</published>
-    <updated>2020-04-18T05:56:17.857Z</updated>
+    <updated>2020-05-23T15:55:33.041Z</updated>
     
     <summary type="html">
     
@@ -567,33 +601,6 @@
     
     
       <category term="集群环境" scheme="http://www.linwang93.cn/tags/%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS7下MySQL安装与卸载</title>
-    <link href="http://www.linwang93.cn/posts/a85997d6.html"/>
-    <id>http://www.linwang93.cn/posts/a85997d6.html</id>
-    <published>2020-02-18T06:30:56.000Z</published>
-    <updated>2020-02-18T14:12:54.803Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-MySQL数据库安装&quot;&gt;&lt;a href=&quot;#1-MySQL数据库安装&quot; class=&quot;headerlink&quot; title=&quot;1. MySQL数据库安装&quot;&gt;&lt;/a&gt;1. MySQL数据库安装&lt;/h2&gt;&lt;h3 id=&quot;1-1-安装前准备&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="http://www.linwang93.cn/tags/MySQL/"/>
     
   </entry>
   

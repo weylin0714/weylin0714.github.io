@@ -464,7 +464,7 @@ wget http://repo.my">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-18
+                    2020-05-21
                 </div>
                 
 
@@ -529,7 +529,7 @@ systemctl status mysqld.service<span aria-hidden="true" class="line-numbers-rows
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 获取临时密码 </span>
 <span class="token function">grep</span> <span class="token string">'temporary password'</span> /var/log/mysqld.log 
 <span class="token comment" spellcheck="true"># 用获取的密码登录</span>
-MySQL mysql -uroot -p 
+mysql -uroot -p 
 <span class="token comment" spellcheck="true"># 登陆MySQL后，修改密码。密码规则：至少包含1个大写字母、1个小写字母、1个数字、1个特殊字符，总长度不小于8 </span>
 ALTER USER <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED BY <span class="token string">'新密码'</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -538,7 +538,7 @@ ALTER USER <span class="token string">'root'</span>@<span class="token string">'
 <li>Navicat连接报错：Host ‘IP’ is not allowed to connect to this MySQL server，解决方法：</li>
 </ul>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用账号密码登陆</span>
-MySQL mysql -uroot -p 
+mysql -uroot -p 
 <span class="token comment" spellcheck="true"># 选择数据库 </span>
 use mysql<span class="token punctuation">;</span> 
 <span class="token comment" spellcheck="true"># 允许任何主机连接 </span>
@@ -1160,7 +1160,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.5k</span>&nbsp;字
+                class="white-color">50.4k</span>&nbsp;字
             
             
             
