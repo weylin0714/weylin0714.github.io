@@ -330,11 +330,38 @@
   </entry>
   
   <entry>
-    <title>Python学习笔记（九）：函数进阶-匿名函数|高阶函数|装饰器|闭包</title>
+    <title>Python学习笔记（九）：函数进阶-匿名函数|高阶函数|闭包|装饰器</title>
     <link href="http://www.linwang93.cn/posts/d7a6b6fc.html"/>
     <id>http://www.linwang93.cn/posts/d7a6b6fc.html</id>
     <published>2020-05-03T07:09:43.000Z</published>
-    <updated>2020-05-30T12:23:16.689Z</updated>
+    <updated>2020-05-30T12:39:08.685Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-匿名函数&quot;&gt;&lt;a href=&quot;#1-匿名函数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记（九）：函数进阶-匿名函数|高阶函数|闭包|装饰器</title>
+    <link href="http://www.linwang93.cn/posts/d7a6b6fc.html"/>
+    <id>http://www.linwang93.cn/posts/d7a6b6fc.html</id>
+    <published>2020-05-03T07:09:43.000Z</published>
+    <updated>2020-05-30T12:38:41.882Z</updated>
     
     <summary type="html">
     
@@ -573,34 +600,6 @@
     
     
       <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大数据分布式集群基础环境搭建</title>
-    <link href="http://www.linwang93.cn/posts/d5114645.html"/>
-    <id>http://www.linwang93.cn/posts/d5114645.html</id>
-    <published>2020-03-06T14:02:55.000Z</published>
-    <updated>2020-03-07T10:19:27.845Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在学习大数据时，需要搭建一套分布式集群环境供学习使用。在没有足够服务器资源的情况下，这里我通过VMware虚拟机搭建一套分布式集群基础环境。&lt;/p&gt;
-&lt;h2 id=&quot;1-VMware中安装CentOS7&quot;&gt;&lt;a href=&quot;#1-VMware中安装CentOS7&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    
-      <category term="集群环境" scheme="http://www.linwang93.cn/tags/%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
