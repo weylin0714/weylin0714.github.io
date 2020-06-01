@@ -459,14 +459,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-01
+                    2020-06-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.4k
                 </div>
                 
 
@@ -635,7 +635,38 @@ g <span class="token operator">=</span> <span class="token punctuation">(</span>
 <ul>
 <li>生成器函数</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果一个函数定义中包含<code>yield</code>关键字，则整个函数为生成器函数。在执行生成器函数过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 用生成器实现一个斐波那契数列。</span>
+<span class="token keyword">def</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> counter <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> counter <span class="token operator">&lt;</span> n<span class="token punctuation">:</span>
+        <span class="token keyword">yield</span> a
+        a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
+        counter <span class="token operator">+=</span> <span class="token number">1</span>
+
+f <span class="token operator">=</span> fibonacci<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>next<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>next<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">1</span>
+<span class="token number">1</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
+<span class="token number">5</span>
+<span class="token number">8</span>
+<span class="token number">13</span>
+<span class="token number">21</span>
+<span class="token number">34</span>
+<span class="token number">55</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可迭代对象、迭代器、生成器之间的关系：</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//iterator and generator.png" alt="iterator and generator" style="width:600px;">
+
+
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1182,7 +1213,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">55k</span>&nbsp;字
             
             
             
