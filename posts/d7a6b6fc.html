@@ -459,21 +459,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-30
+                    2020-05-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    15 分
                 </div>
                 
 
@@ -857,8 +857,64 @@ result('hello world')</code></pre><ul>
 </ul>
 <h3 id="4-2-装饰器应用"><a href="#4-2-装饰器应用" class="headerlink" title="4.2 装饰器应用"></a>4.2 装饰器应用</h3><ul>
 <li>身份认证</li>
+</ul>
+<p>装饰器可以用于检查是否被授权执行某种操作。比如访问一些博客时，在未登录博客网站的情况下也可以浏览文档，但是对于评论等进一步操作可能只有登录后才能有权限。这种情况就可以通过装饰器来实现身份认证的功能。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+
+<span class="token keyword">def</span> <span class="token function">authenticate</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    @wraps<span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        request <span class="token operator">=</span> args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> check_user_logged_in<span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 如果用户处于登录状态</span>
+            <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 执行函数post_comment() </span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'Authentication failed'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> wrapper
+
+@authenticate
+<span class="token keyword">def</span> <span class="token function">post_comment</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>日志记录</li>
+</ul>
+<p>日志记录是装饰器应用的另一个亮点。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+
+<span class="token keyword">def</span> <span class="token function">logit</span><span class="token punctuation">(</span>logfile<span class="token operator">=</span><span class="token string">'out.log'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">logging_decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        @wraps<span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            log_string <span class="token operator">=</span> func<span class="token punctuation">.</span>__name__ <span class="token operator">+</span> <span class="token string">" was called."</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>log_string<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># 打开logfile，并将日志写入到文件</span>
+            <span class="token keyword">with</span> open<span class="token punctuation">(</span>logfile<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> opened_file<span class="token punctuation">:</span>
+                opened_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span>log_string <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> wrapper
+    <span class="token keyword">return</span> logging_decorator
+
+@logit<span class="token punctuation">(</span>logfile<span class="token operator">=</span><span class="token string">"greet.log"</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">greet</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+greet<span class="token punctuation">(</span><span class="token string">"hello world!"</span><span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true"># 输出</span>
+greet was called<span class="token punctuation">.</span>    <span class="token comment" spellcheck="true"># 生成了一个名为greet.log的文件，内容为greet was called.</span>
+hello world!    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>输入合理性检查</li>
+</ul>
+<p>在工作中，很多情况下都会出现输入不合理的现象，往往会用装饰器对其输入进行合理性检查。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+
+<span class="token keyword">def</span> <span class="token function">validation_check</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    @wraps<span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span> 
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment" spellcheck="true"># 检查输入是否合法</span>
+
+@validation_check
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>缓存</li>
 </ul>
 <script>
@@ -1150,11 +1206,7 @@ result('hello world')</code></pre><ul>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            待补充。。。
-
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) {
+                            1.可迭代对象对于Python中的任意对象，只要定义了可以返回⼀个迭代器的__iter__⽅法，或者定义了以⽀持下标索引的__getitem__⽅法，则该对象为可迭代对象。在Python中，所有的容器，比如列表、元组、字典、集合等，都是可迭
                         
                     </div>
                     <div class="publish-info">
@@ -1414,7 +1466,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">53.2k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

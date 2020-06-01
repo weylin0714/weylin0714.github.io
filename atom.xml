@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-05-23T16:08:43.026Z</updated>
+  <updated>2020-05-31T11:12:10.811Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -17,11 +17,73 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>玩转PyCharm</title>
+    <link href="http://www.linwang93.cn/posts/f743df65.html"/>
+    <id>http://www.linwang93.cn/posts/f743df65.html</id>
+    <published>2020-05-31T02:24:18.000Z</published>
+    <updated>2020-05-31T11:12:10.811Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="PyCharm" scheme="http://www.linwang93.cn/tags/PyCharm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩转VS Code</title>
+    <link href="http://www.linwang93.cn/posts/4219d646.html"/>
+    <id>http://www.linwang93.cn/posts/4219d646.html</id>
+    <published>2020-05-31T02:23:55.000Z</published>
+    <updated>2020-05-31T11:10:26.907Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="VS Code" scheme="http://www.linwang93.cn/tags/VS-Code/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Typora+PicGo+Github/Gitee搭建免费图床</title>
     <link href="http://www.linwang93.cn/posts/9b15a04a.html"/>
     <id>http://www.linwang93.cn/posts/9b15a04a.html</id>
     <published>2020-05-23T02:17:01.000Z</published>
-    <updated>2020-05-23T16:08:43.026Z</updated>
+    <updated>2020-05-31T15:52:28.564Z</updated>
     
     <summary type="html">
     
@@ -303,7 +365,7 @@
     <link href="http://www.linwang93.cn/posts/4360111c.html"/>
     <id>http://www.linwang93.cn/posts/4360111c.html</id>
     <published>2020-05-03T07:28:43.000Z</published>
-    <updated>2020-05-30T12:30:59.324Z</updated>
+    <updated>2020-06-01T04:22:32.061Z</updated>
     
     <summary type="html">
     
@@ -311,11 +373,7 @@
       
         
         
-          &lt;p&gt;待补充。。。&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {
+          &lt;h2 id=&quot;1-可迭代对象&quot;&gt;&lt;a href=&quot;#1-可迭代对象&quot; class=&quot;headerlink&quot;
         
       
     
@@ -334,7 +392,7 @@
     <link href="http://www.linwang93.cn/posts/d7a6b6fc.html"/>
     <id>http://www.linwang93.cn/posts/d7a6b6fc.html</id>
     <published>2020-05-03T07:09:43.000Z</published>
-    <updated>2020-05-30T12:38:41.882Z</updated>
+    <updated>2020-05-30T16:14:49.488Z</updated>
     
     <summary type="html">
     
@@ -545,62 +603,6 @@
     
     
       <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（一）：Python全栈学习知识提纲与路线</title>
-    <link href="http://www.linwang93.cn/posts/88213f00.html"/>
-    <id>http://www.linwang93.cn/posts/88213f00.html</id>
-    <published>2020-03-08T03:31:36.000Z</published>
-    <updated>2020-05-23T15:55:33.041Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;工作中Python作为主要开发语言，学习过一些基础，但比较零散，也常常忘记。工作中往往是有啥实现需求再去搜索相关内容。一直希望能够系统深入的学习Python及其应用，这里，简要梳理了Python的学习路线与核心知识提纲。&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>大数据分布式集群基础环境搭建</title>
-    <link href="http://www.linwang93.cn/posts/d5114645.html"/>
-    <id>http://www.linwang93.cn/posts/d5114645.html</id>
-    <published>2020-03-06T14:02:55.000Z</published>
-    <updated>2020-03-07T10:19:27.845Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在学习大数据时，需要搭建一套分布式集群环境供学习使用。在没有足够服务器资源的情况下，这里我通过VMware虚拟机搭建一套分布式集群基础环境。&lt;/p&gt;
-&lt;h2 id=&quot;1-VMware中安装CentOS7&quot;&gt;&lt;a href=&quot;#1-VMware中安装CentOS7&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="大数据" scheme="http://www.linwang93.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    
-      <category term="集群环境" scheme="http://www.linwang93.cn/tags/%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
