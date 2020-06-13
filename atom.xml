@@ -334,7 +334,7 @@
     <link href="http://www.linwang93.cn/posts/b9ae55.html"/>
     <id>http://www.linwang93.cn/posts/b9ae55.html</id>
     <published>2020-05-03T07:29:47.000Z</published>
-    <updated>2020-05-20T14:09:31.337Z</updated>
+    <updated>2020-06-13T09:37:12.058Z</updated>
     
     <summary type="html">
     
@@ -342,11 +342,8 @@
       
         
         
-          &lt;p&gt;待补充。。。&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {
+          &lt;p&gt;面向对象中的两个基本概念就是类和对象。类用于定义抽象数据类型，而对象是类的一个实例。&lt;/p&gt;
+&lt;h2 id=&quot;1-类与实例对象&quot;&gt;&lt;a href=&quot;#1-类与实例对象&quot; class=&quot;headerlink&quot; title=&quot;1. 类与实例对象&quot;&gt;&lt;/a&gt;1.
         
       
     
