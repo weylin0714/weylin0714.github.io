@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-05-31T11:12:10.811Z</updated>
+  <updated>2020-06-28T04:08:29.802Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL必知必会</title>
+    <link href="http://www.linwang93.cn/posts/8cd1b536.html"/>
+    <id>http://www.linwang93.cn/posts/8cd1b536.html</id>
+    <published>2020-06-21T03:07:12.000Z</published>
+    <updated>2020-06-28T04:08:29.802Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>玩转PyCharm</title>
@@ -241,7 +268,7 @@
     <link href="http://www.linwang93.cn/posts/1331ceb4.html"/>
     <id>http://www.linwang93.cn/posts/1331ceb4.html</id>
     <published>2020-05-03T07:36:45.000Z</published>
-    <updated>2020-05-20T14:10:26.719Z</updated>
+    <updated>2020-06-29T12:46:09.563Z</updated>
     
     <summary type="html">
     
@@ -249,11 +276,7 @@
       
         
         
-          &lt;p&gt;待补充。。。&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {
+          &lt;h2 id=&quot;1-正则表达式必知必会&quot;&gt;&lt;a href=&quot;#1-正则表达式必知必会&quot; class=&quot;headerlink&quot; title=&quot;1. 正则表达式必知必会&quot;&gt;&lt;/a&gt;1. 正则表达式必知必会&lt;/h2&gt;&lt;h3 id=&quot;1-1-简介&quot;&gt;&lt;a href=&quot;#1-1-简介&quot;
         
       
     
@@ -261,6 +284,8 @@
     
     
       <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+      <category term="正则表达式" scheme="http://www.linwang93.cn/categories/Python/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
     
       <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
@@ -563,33 +588,6 @@
 &lt;p&gt;上述6种数据类型可分为两类：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;不可变数据类型：数字、字符串、元组。
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（二）：基础语法</title>
-    <link href="http://www.linwang93.cn/posts/e8a303d6.html"/>
-    <id>http://www.linwang93.cn/posts/e8a303d6.html</id>
-    <published>2020-03-28T06:24:47.000Z</published>
-    <updated>2020-04-03T16:22:32.662Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Python是一种动态的、强类型语言。所谓&lt;strong&gt;动态类型&lt;/strong&gt;是指类型检查操作是发生在程序执行阶段，像Python、JavaScript都属于这类型。其中，类型检查主要是验证类型约束的过程，查看变量及其类型，判断表达式是否合理。如果类型检查发生在编译阶
         
       
     

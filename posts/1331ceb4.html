@@ -5,11 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python学习笔记（十四）：正则表达式与JSON, 简若">
-    <meta name="description" content="待补充。。。
-
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {">
+    <meta name="description" content="1. 正则表达式必知必会1.1 简介正则表达式：是一些用来匹配和处理文本的字符串。
+正则表达式的使用场景主要以下两种情况：一是查找特定的信息（搜索），二是查找并编辑特定的信息（替换）。
+用模式（pattern）表示实际的正则表达式。
+1.2">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -447,6 +446,10 @@
                                 Python
                             </a>
                         
+                            <a href="/categories/Python/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-category">
+                                正则表达式
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -463,21 +466,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-06-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    55
+                    4.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    16 分
                 </div>
                 
 
@@ -493,7 +496,350 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>待补充。。。</p>
+                <h2 id="1-正则表达式必知必会"><a href="#1-正则表达式必知必会" class="headerlink" title="1. 正则表达式必知必会"></a>1. 正则表达式必知必会</h2><h3 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h3><p>正则表达式：是一些用来匹配和处理文本的字符串。</p>
+<p>正则表达式的使用场景主要以下两种情况：一是查找特定的信息（搜索），二是查找并编辑特定的信息（替换）。</p>
+<p>用模式（pattern）表示实际的正则表达式。</p>
+<h3 id="1-2-匹配单个字符"><a href="#1-2-匹配单个字符" class="headerlink" title="1.2 匹配单个字符"></a>1.2 匹配单个字符</h3><ul>
+<li><p>匹配普通文本：正则表达式为待匹配的文本。</p>
+</li>
+<li><p>匹配任意字符：<code>.</code>字符（英文句号）可以匹配任意单个字符，如字符、字母、数字，甚至是<code>.</code>字符本身。</p>
+</li>
+<li><p>匹配特殊字符：使用<code>\</code>转义地字符，如<code>\.</code>。</p>
+</li>
+</ul>
+<h3 id="1-3-匹配一组字符"><a href="#1-3-匹配一组字符" class="headerlink" title="1.3 匹配一组字符"></a>1.3 匹配一组字符</h3><ul>
+<li>匹配多个字符中的某一个</li>
+</ul>
+<p>使用<code>[]</code>定义一个字符集合，对于连续字符使用<code>-</code>连字符来定义字符区间。集合内字符是<code>OR</code>关系，匹配其中之一。</p>
+<p>[A-Z]：匹配从A到Z的所有大写字母。</p>
+<p>[a-z]：匹配从a到z的所有小写字母。</p>
+<p>[0-9]：匹配从0到9的所有数字。</p>
+<ul>
+<li>排除</li>
+</ul>
+<p>使用元字符<code>^</code>来排除字符集合里指定的那些字符，如<code>[^0-9]</code>。注意，^的效果将作用于给定字符集合里的所有字符或字符区间。</p>
+<h3 id="1-4-使用元字符"><a href="#1-4-使用元字符" class="headerlink" title="1.4 使用元字符"></a>1.4 使用元字符</h3><h4 id="1-4-1-元字符转义"><a href="#1-4-1-元字符转义" class="headerlink" title="1.4.1 元字符转义"></a>1.4.1 元字符转义</h4><p>元字符：在正则表达式里有特殊含义的字符。</p>
+<p>转义：元字符可以通过在前面加上一个反斜杠（<code>\</code>）进行转义，这样匹配的就是该字符本身而不是特殊的元字符含义。</p>
+<h4 id="1-4-2-匹配空白字符"><a href="#1-4-2-匹配空白字符" class="headerlink" title="1.4.2 匹配空白字符"></a>1.4.2 匹配空白字符</h4><p>元字符大概可以分为两种：一种是用来匹配文本的（如<code>.</code>），另一种是正则表达式语法的组成部分（如<code>[]</code>）。</p>
+<p>空白元字符：换页符（\f）、换行符（\n）、回车符（\r）、制表符（\t）。</p>
+<p>一般来说，需要匹配\r、\n和\t等空白字符的情况比较多见。\r\n匹配一个回车+换行组合。</p>
+<h4 id="1-4-3-匹配特定的字符类型"><a href="#1-4-3-匹配特定的字符类型" class="headerlink" title="1.4.3 匹配特定的字符类型"></a>1.4.3 匹配特定的字符类型</h4><ul>
+<li><strong>匹配数字与非数字：</strong></li>
+</ul>
+<p>\d：任何一个数字字符（等价于[0-9]）</p>
+<p>\D：任何一个非数字字符（等价于<code>[^0-9]</code>）</p>
+<ul>
+<li><strong>匹配字母数字或下划线：</strong></li>
+</ul>
+<p>\w：任何一个字母数字或下划线字符（等价于[a-zA-Z0-9_]）</p>
+<p>\W：任何一个非字母数字或非下划线字符（等价于<code>[^a-zA-Z0-9_]</code>）</p>
+<ul>
+<li><strong>匹配空白字符与非空白字符：</strong></li>
+</ul>
+<p>\s：任何一个空白字符（等价于[\f\n\r\t\v]）</p>
+<p>\S：任何一个非空白字符（等价于<code>[^\f\n\r\t\v]</code>）</p>
+<h3 id="1-5-重复匹配"><a href="#1-5-重复匹配" class="headerlink" title="1.5 重复匹配"></a>1.5 重复匹配</h3><ul>
+<li><strong>匹配一个或多个字符：</strong></li>
+</ul>
+<p><code>+</code>匹配一个或多个字符，在一个给定字符集合加上+后缀时，必须放在整个字符集合的外面，如<code>[0-9]+</code>。</p>
+<p>一般来说，当在字符集合使用时，像.和+这样的元字符被解释为普通字符，不需要转义，但转义也不影响。</p>
+<ul>
+<li><strong>匹配零个或多个字符：</strong></li>
+</ul>
+<p><code>*</code>用来匹配字符或字符集合出现零次或多次的情况。</p>
+<ul>
+<li><strong>匹配零个或一个字符：</strong></li>
+</ul>
+<p><code>?</code>可以匹配某个字符或字符集合的零次或一次。</p>
+<p><code>[]</code>的常规用法是把多个字符定义为一个集合，但不少程序员喜欢把一个字符也定义为一个集合，好处是可以增加可读性和避免产生误解。同时使用[]和?时，要把?放在字符集合的外面。</p>
+<ul>
+<li><strong>具体的匹配次数：</strong></li>
+</ul>
+<p>设置具体的匹配次数，把数字写在<code>{}</code>中，如<code>{3}</code>。</p>
+<p>可以为重复匹配的次数设定一个区间范围，<strong>设置最小次数和最大次数</strong>，如<code>{3, 5}</code>。</p>
+<p>也可以指定至少要匹配的次数，如<code>{3, }</code>。</p>
+<ul>
+<li><strong>防止过度匹配：</strong></li>
+</ul>
+<p>在使用重复匹配如果没有上限值，则有时会导致过度匹配的现象。</p>
+<p>像<code>*</code>和<code>+</code>这些都是“贪婪型”元字符，其匹配行为是多多益善和不是适可而止，会尽可能从一段文本的开头一直匹配到末尾，而不会碰到第一个匹配时就停止。</p>
+<p><code>+、*、?</code>这些叫做量词，量词是<strong>贪婪</strong>的。</p>
+<p>为了防止过度匹配，我们可以使用量词的“懒惰型”版本（匹配尽可能少的字符，而非尽可能多地去匹配），<strong>懒惰型量词地写法是在贪婪型量词后加<code>?</code>。</strong></p>
+<h3 id="1-6-位置匹配"><a href="#1-6-位置匹配" class="headerlink" title="1.6 位置匹配"></a>1.6 位置匹配</h3><p>位置匹配用于指定应该在文本什么地方进行匹配操作。位置匹配需要用到边界，即一些用于指定模式前后位置（或边界）的特殊元字符。</p>
+<ul>
+<li>单词边界</li>
+</ul>
+<p>由<code>\b</code>指定单词边界，用来匹配一个单词的开头或结尾。<code>\b</code>匹配的是字符之间的一个位置：一边是单词（能够被<code>\w</code>匹配的字母数字和下划线），另一边是其他内容（能够被<code>\W</code>匹配的字符）。注意：<code>\b</code>匹配的是一个位置，而不是任何实际的字符。</p>
+<p>如果我们想匹配一个完整的单词，就必须在匹配的文本前后加上<code>\b</code>。如果不想匹配单词边界，可以使用<code>\B</code>。</p>
+<ul>
+<li>字符串边界</li>
+</ul>
+<p>字符串边界元字符有两个：<code>^</code>表示字符串开头，<code>$</code>表示字符串结尾。</p>
+<p>注意：有些元字符有多种用途，如<code>^</code>。如果<code>^</code>出现在字符集合<code>[]</code>里且紧跟在左方括号<code>[</code>后面时，它才表示排除该字符集合。如果<code>^</code>出现在字符集合之外并且位于模式的开头，<code>^</code>将匹配字符串的起始位置。</p>
+<ul>
+<li>多行模式</li>
+</ul>
+<p>多行模式影响的是<code>^</code>和<code>$</code>的匹配规则：在默认模式下，<code>^</code>和<code>$</code>匹配的是整个字符串的起始位置和结束位置，但是在多行模式下，它们也<strong>能匹配字符串内部某一行文本的起始位置和结束位置</strong>。多行模式迫使正则表达式引擎<strong>将换行符视为字符串分隔符</strong>，这样一来，<code>^</code>既可以匹配字符串开头，也可匹配换行符之后的起始位置（新行）；<code>$</code>不仅能匹配字符串结尾，也能匹配换行符之后的结束位置。</p>
+<p>启用多行模式，使用<code>(?m)</code>，并且其必须出现在整个模式最前面。</p>
+<h3 id="1-7-子表达式"><a href="#1-7-子表达式" class="headerlink" title="1.7 子表达式"></a>1.7 子表达式</h3><p>子表达式是更长的表达式的一部分。划分子表达式的目的是为了将其视为单一的实体来使用。子表达式使用<code>()</code>进行定义，并用于对表达式进行分组。</p>
+<ul>
+<li>指定子表达式的重复次数</li>
+</ul>
+<p>匹配IP：<code>(\d{1, 3}\.){3}\d{1, 3}</code></p>
+<ul>
+<li>与模式里的<code>|</code>（或）连用</li>
+</ul>
+<p><code>(19|20)\d{2}</code>，匹配19或20开头的年份。</p>
+<ul>
+<li>子表达式的嵌套</li>
+</ul>
+<p>匹配一个有效的IP：</p>
+<p><code>(((25[0-5])|(2[0-4]\d)|(1\d{2})|(\d{1, 2}))\.){3}(((25[0-5])|(2[0-4]\d)|(1\d{2})|(\d{1, 2})))</code></p>
+<h3 id="1-8-反向引用"><a href="#1-8-反向引用" class="headerlink" title="1.8 反向引用"></a>1.8 反向引用</h3><p>反向引用：指的是这些实体引用的是先前的子表达式。</p>
+<p>使用小括号<code>()</code>指定一个子表达式后，匹配这个子表达式的文本(也就是此分组捕获的内容)可以在表达式或其它程序中作进一步的处理。</p>
+<ul>
+<li>默认组号</li>
+</ul>
+<p>默认情况下，每个分组会自动拥有一个组号，规则是：从左向右，以分组的左括号为标志，第一个出现的分组的组号为1，第二个为2，以此类推。<code>\1</code>是引用匹配模式中使用的第一个子表达式，<code>\2</code>匹配模式中的第二个子表达式，以此类推。<code>\0</code>可以用来匹配整个表达式。</p>
+<ul>
+<li>自定义子表达式的组名</li>
+</ul>
+<p><code>(?&lt;name&gt;exp)</code>或<code>(?'name'exp)</code>：匹配exp,并捕获文本到名称为name的组里。</p>
+<ul>
+<li>匹配但不捕获，也不分配组号</li>
+</ul>
+<p><code>(?:exp)</code>：匹配exp,不捕获匹配的文本，也不给此分组分配组号。</p>
+<h3 id="1-9-环视"><a href="#1-9-环视" class="headerlink" title="1.9 环视"></a>1.9 环视</h3><ul>
+<li>向前查看</li>
+</ul>
+<p>向前查看指定了一个必须匹配但不用在结果中返回的模式。向前查看是查看以匹配文本之后的内容，但不消耗这些内容。向前查看是一个子表达式，以<code>?=</code>开头，需要匹配的文本跟在<code>=</code>的后面。例如：<code>.+(?=:)</code>可以匹配<code>http://www.baidu.com，https://www.baidu.com/</code>中的<code>http</code>和<code>https</code>。</p>
+<ul>
+<li>向后查看</li>
+</ul>
+<p>向后查看是查看以匹配文本之前的内容，操作符为<code>?&lt;=</code>。</p>
+<p>以上两个都属于肯定式查看，与之相对应的是否定式查看，即否定式向前查看和否定式向后查看。</p>
+<ul>
+<li>否定式向前查看</li>
+</ul>
+<p>否定式向前查看会向前查看不匹配指定模式的文本，操作符为<code>?!</code>。</p>
+<ul>
+<li>否定式向后查看</li>
+</ul>
+<p>否定式向后查看是向后查看不匹配指定模式的文本，操作符为<code>?&lt;!</code>。</p>
+<h3 id="1-10-嵌入式条件"><a href="#1-10-嵌入式条件" class="headerlink" title="1.10 嵌入式条件"></a>1.10 嵌入式条件</h3><p>正则表达式里的条件用<code>?</code>来定义。嵌入式条件主要以下两种情况：一是根据反向引用来进行条件处理，二是根据环视来进行条件处理。</p>
+<ul>
+<li>反向引用条件</li>
+</ul>
+<p>反向引用条件仅在一个前面的子表达式得以匹配的情况下才允许使用另一个表达式。定义这种条件的语法是<code>(?(backreference)true)</code>，其中?表明这是一个条件，括号里的backreference是一个反向引用。</p>
+<p>条件还可以使用else表达式，定义这种条件的语法：<code>(?(backreference)true|false)</code>。</p>
+<p>示例：<code>(\()?\d{3}(?(1)\)|-)\d{3}-\d{4}</code></p>
+<ul>
+<li>环视条件</li>
+</ul>
+<p>环视条件允许根据向前查看或向后查看操作是否成功来决定要不要执行表达式。</p>
+<p>示例：<code>\d{5}(?(?=-))-\d{4}</code></p>
+<h3 id="1-11-正则表达式测试网站"><a href="#1-11-正则表达式测试网站" class="headerlink" title="1.11 正则表达式测试网站"></a>1.11 正则表达式测试网站</h3><p><a href="http://www.pyregex.com/" target="_blank" rel="noopener">http://www.pyregex.com/</a></p>
+<p><a href="https://regex101.com/" target="_blank" rel="noopener">https://regex101.com/</a></p>
+<p><a href="https://c.runoob.com/front-end/854" target="_blank" rel="noopener">https://c.runoob.com/front-end/854</a></p>
+<h3 id="1-12-常见问题的正则表达式解决方案"><a href="#1-12-常见问题的正则表达式解决方案" class="headerlink" title="1.12 常见问题的正则表达式解决方案"></a>1.12 常见问题的正则表达式解决方案</h3><h2 id="2-Python中的正则表达式"><a href="#2-Python中的正则表达式" class="headerlink" title="2 Python中的正则表达式"></a>2 Python中的正则表达式</h2><p>在Python中，标准库中的模块<code>re</code>提供了正则表达式操作。</p>
+<h3 id="2-1-re模块中的函数"><a href="#2-1-re模块中的函数" class="headerlink" title="2.1 re模块中的函数"></a>2.1 re模块中的函数</h3><h4 id="2-1-1-re-complie"><a href="#2-1-1-re-complie" class="headerlink" title="2.1.1 re.complie()"></a>2.1.1 re.complie()</h4><p>将正则表达式的样式编译为一个 <a href="https://docs.python.org/zh-cn/3/library/re.html#re-objects" target="_blank" rel="noopener">正则表达式对象</a> （正则对象），正则表达式对象支持match()、search() 等方法。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+语法：re.compile(pattern, flags)
+参数：pattern为一个字符串形式的正则表达式，flags为可选参数，表示匹配模式，具体参数为：
+re.I：忽略大小写
+re.M：多行模式
+re.S：让‘.’匹配任何字符，包括换行符
+re.X：为了增加可读性，忽略空格和#后面的注释
+"""</span>
+<span class="token keyword">import</span> re
+
+pattern <span class="token operator">=</span> re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>r<span class="token string">'\d+'</span><span class="token punctuation">)</span>
+res <span class="token operator">=</span> pattern<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'abc123def456'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># search：扫描整个字符串并返回第一个成功的匹配结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 匹配整体结果</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span>re<span class="token punctuation">.</span>Match object<span class="token punctuation">;</span> span<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> match<span class="token operator">=</span><span class="token string">'123'</span><span class="token operator">></span>
+<span class="token number">123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在re模块中，也提供了一些和match()、search()这些方法功能一致的函数。</p>
+<h4 id="2-1-2-re-match"><a href="#2-1-2-re-match" class="headerlink" title="2.1.2 re.match()"></a>2.1.2 re.match()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+ 尝试从字符串的起始位置匹配一个模式，如果起始位置匹配失败，则返回None。
+ 语法：re.match(pattern, string, flags=0)
+ 参数：pattern为正则表达式样式，string为待匹配的字符串，flags为匹配模式。
+ 返回值：如果匹配成功则返回一个匹配对象，否则返回None。
+"""</span>
+<span class="token keyword">import</span> re
+
+res1 <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span>r<span class="token string">'\d+'</span><span class="token punctuation">,</span> <span class="token string">'abc123def456'</span><span class="token punctuation">)</span>
+res2 <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span>r<span class="token string">'\d+'</span><span class="token punctuation">,</span> <span class="token string">'123abc456def'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res2<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res2<span class="token punctuation">.</span>groups<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+None
+<span class="token number">123</span>
+<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>匹配对象有两个主要的方法：group() 和 groups() 。</p>
+<ul>
+<li>group(num=0)：group()和group(0)返回整个匹配对象，group(1)、group(2)，…，返回特定组的匹配结果。</li>
+<li>groups()：返回所有匹配子组的元组，组号从1开始。</li>
+</ul>
+<p>除此之外，匹配对象还支持其他方法：</p>
+<ul>
+<li>start()：返回匹配的开始位置</li>
+<li>end()：返回匹配的结束位置</li>
+<li>span()：以元组形式返回匹配的范围</li>
+</ul>
+<h4 id="2-1-3-re-search"><a href="#2-1-3-re-search" class="headerlink" title="2.1.3 re.search()"></a>2.1.3 re.search()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+扫描整个字符串并返回第一个成功的匹配。
+语法：re.search(pattern, string, flags=0)
+返回值：如果匹配成功则返回一个匹配对象，否则返回None。
+"""</span>
+<span class="token keyword">import</span> re
+
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>r<span class="token string">'\d+'</span><span class="token punctuation">,</span> <span class="token string">'abc123def456'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-1-4-re-findall"><a href="#2-1-4-re-findall" class="headerlink" title="2.1.4 re.findall()"></a>2.1.4 re.findall()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+在字符串中找到正则表达式所匹配的所有子串，并返回一个列表，如果没有找到匹配的，则返回空列表。
+语法：findall(string, start_pos, end_pos)
+参数：string为待匹配的字符串，start_pos指定字符串的起始位置（可选），默认为0，end_pos指定字符串的结束位置（可选），默认为字符串的长度。
+返回值：以列表形式返回所有匹配结果
+"""</span>
+<span class="token keyword">import</span> re
+
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'\d+'</span><span class="token punctuation">,</span> <span class="token string">'abc123def456'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">[</span><span class="token string">'123'</span><span class="token punctuation">,</span> <span class="token string">'456'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意：re.findall()返回的结果是一个匹配结果的列表，不支持group()和groups()这些方法。</p>
+<h4 id="2-1-5-re-finditer"><a href="#2-1-5-re-finditer" class="headerlink" title="2.1.5 re.finditer()"></a>2.1.5 re.finditer()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+和findall类似，在字符串中找到正则表达式所匹配的所有子串，并把它们作为一个迭代器返回。
+语法：re.finditer(pattern, string, flags=0)
+返回值：返回所有匹配对象构成的迭代器。
+"""</span>
+<span class="token keyword">import</span> re
+
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>finditer<span class="token punctuation">(</span>r<span class="token string">"\d+"</span><span class="token punctuation">,</span><span class="token string">"abc123def456"</span><span class="token punctuation">)</span> 
+<span class="token keyword">for</span> match <span class="token keyword">in</span> res<span class="token punctuation">:</span> 
+    <span class="token keyword">print</span><span class="token punctuation">(</span>match<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 迭代器中的每个元素都为匹配对象，支持group()</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>match<span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span>re<span class="token punctuation">.</span>Match object<span class="token punctuation">;</span> span<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> match<span class="token operator">=</span><span class="token string">'123'</span><span class="token operator">></span>
+<span class="token number">123</span>
+<span class="token operator">&lt;</span>re<span class="token punctuation">.</span>Match object<span class="token punctuation">;</span> span<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">,</span> match<span class="token operator">=</span><span class="token string">'456'</span><span class="token operator">></span>
+<span class="token number">456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-1-6-re-split"><a href="#2-1-6-re-split" class="headerlink" title="2.1.6 re.split()"></a>2.1.6 re.split()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+按照能够匹配的子串将字符串分割后返回列表。
+语法：re.split(pattern, string[, maxsplit=0, flags=0])
+参数：maxsplit为最大分隔次数，默认为0，即不限次数，flags为匹配模式。
+返回值：返回以匹配子串分隔的字符串列表。
+"""</span>
+<span class="token keyword">import</span> re
+
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>split<span class="token punctuation">(</span>r<span class="token string">"\W+"</span><span class="token punctuation">,</span><span class="token string">"abc,123,def,456"</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">[</span><span class="token string">'abc'</span><span class="token punctuation">,</span> <span class="token string">'123'</span><span class="token punctuation">,</span> <span class="token string">'def'</span><span class="token punctuation">,</span> <span class="token string">'456'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-1-7-re-sub"><a href="#2-1-7-re-sub" class="headerlink" title="2.1.7 re.sub()"></a>2.1.7 re.sub()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+替换字符串中的匹配项。
+语法：re.sub(pattern, repl, string, count=0, flags=0)
+参数：repl为替换的字符串或函数，string为待匹配的原始字符串，count为替换的最大次数，默认为0，表示替换所有的匹配。
+返回值：返回替换后的字符串。
+"""</span>
+<span class="token keyword">import</span> re
+
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span>r<span class="token string">"\d"</span><span class="token punctuation">,</span> <span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token string">"abc123def456"</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+abc<span class="token operator">**</span><span class="token operator">*</span><span class="token keyword">def</span><span class="token operator">**</span><span class="token operator">*</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-1-8-re-subn"><a href="#2-1-8-re-subn" class="headerlink" title="2.1.8 re.subn()"></a>2.1.8 re.subn()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+与sub()相同, 但返回一个元组, 其中包含新字符串和替换次数。
+"""</span>
+<span class="token keyword">import</span> re
+
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>subn<span class="token punctuation">(</span>r<span class="token string">"\d"</span><span class="token punctuation">,</span> <span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token string">"abc123def456"</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">(</span><span class="token string">'abc***def***'</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-2-元字符"><a href="#2-2-元字符" class="headerlink" title="2.2 元字符"></a>2.2 元字符</h3><p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//yuanzifu.png" alt="yuanzifu"></p>
+<h2 id="3-JSON"><a href="#3-JSON" class="headerlink" title="3. JSON"></a>3. JSON</h2><h3 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1 简介"></a>3.1 简介</h3><p>JSON是一种轻量级的数据交换格式。符合JSON格式的字符串称为JSON字符串。JSON优点：</p>
+<ul>
+<li><p>易于阅读</p>
+</li>
+<li><p>易于解析</p>
+</li>
+<li><p>网络传输效率高</p>
+</li>
+<li><p>跨语言交换数据</p>
+</li>
+</ul>
+<p>JSON对象类似于Python中的字典，由键值对组成。键必须是字符串，值可以是字符串, 数字, 对象, 数组, 布尔值或 null。需注意，JSON对象中的字符串必须用<strong>双引号(“ “)</strong>。</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span><span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span> <span class="token property">"age"</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"Shanghai"</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="3-2-序列化"><a href="#3-2-序列化" class="headerlink" title="3.2 序列化"></a>3.2 序列化</h3><p>序列化：将python数据类型向json字符串转换的过程。</p>
+<h4 id="3-2-1-json-dumps"><a href="#3-2-1-json-dumps" class="headerlink" title="3.2.1 json.dumps()"></a>3.2.1 json.dumps()</h4><p>dumps()函数中有一些参数需要了解：</p>
+<ul>
+<li>ensure_ascii：指定输出内容的编码，默认是ascii编码，如果需要输出中文，设置<code>ensure_ascii=False</code>。</li>
+<li>skipkeys：如果要将字典转换为json字符串，则字典键只能是基本数据类型(<code>str</code>, <code>unicode</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>bool</code>, <code>None</code>)，否则会抛出异常。将skipkeys设置为True，则会跳过哪些类型不是基本类型的键。</li>
+<li>indent：根据数据格式缩进显示。</li>
+<li>sort_keys：sort_keys设置为True，输出内容按键进行排序。</li>
+<li>separators：作用是去掉<code>','</code>和<code>':'</code>后面的空格。</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json
+
+stu <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token string">'school'</span><span class="token punctuation">:</span> <span class="token string">'Harvard University'</span><span class="token punctuation">}</span>
+stu_arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token string">'school'</span><span class="token punctuation">:</span> <span class="token string">'Harvard University'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+           <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Henry'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">27</span><span class="token punctuation">,</span> <span class="token string">'school'</span><span class="token punctuation">:</span> <span class="token string">'清华大学'</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>stu<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>stu<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>stu_arr<span class="token punctuation">,</span> ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span>
+<span class="token punctuation">{</span><span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token string">"school"</span><span class="token punctuation">:</span> <span class="token string">"Harvard University"</span><span class="token punctuation">}</span>
+<span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span>
+    <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span>
+    <span class="token string">"school"</span><span class="token punctuation">:</span> <span class="token string">"Harvard University"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Henry"</span><span class="token punctuation">,</span>
+    <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">27</span><span class="token punctuation">,</span>
+    <span class="token string">"school"</span><span class="token punctuation">:</span> <span class="token string">"清华大学"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-2-2-json-dump"><a href="#3-2-2-json-dump" class="headerlink" title="3.2.2 json.dump()"></a>3.2.2 json.dump()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
+将Python对象转换为json对象并保存到文件中
+"""</span>
+<span class="token keyword">import</span> json
+
+stu <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token string">'school'</span><span class="token punctuation">:</span> <span class="token string">'Harvard University'</span><span class="token punctuation">}</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'student_info.json'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>stu<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-3-反序列化"><a href="#3-3-反序列化" class="headerlink" title="3.3 反序列化"></a>3.3 反序列化</h3><p>反序列化：将json字符串转换为python中的数据类型。</p>
+<pre><code>json可以转换为python对应的类型
+json                      python
+object                    dict
+array                     list
+string                    str
+number                    int/float
+true                      True
+false                     False
+null                      None</code></pre><h4 id="3-3-1-json-loads"><a href="#3-3-1-json-loads" class="headerlink" title="3.3.1 json.loads()"></a>3.3.1 json.loads()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json
+
+stu <span class="token operator">=</span> <span class="token string">'{"name": "Tom", "age": 28, "school": "Harvard University"}'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>stu<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>stu<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'dict'</span><span class="token operator">></span>
+<span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token string">'school'</span><span class="token punctuation">:</span> <span class="token string">'Harvard University'</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-3-2-json-load"><a href="#3-3-2-json-load" class="headerlink" title="3.3.2 json.load()"></a>3.3.2 json.load()</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json
+
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'student_info.json'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    data <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span> <span class="token string">'school'</span><span class="token punctuation">:</span> <span class="token string">'Harvard University'</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1044,7 +1390,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">62k</span>&nbsp;字
+                class="white-color">66.2k</span>&nbsp;字
             
             
             
