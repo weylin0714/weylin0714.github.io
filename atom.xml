@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-06-29T13:11:34.543Z</updated>
+  <updated>2020-07-15T14:28:42.175Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>玩转Git</title>
+    <link href="http://www.linwang93.cn/posts/afa3f4a0.html"/>
+    <id>http://www.linwang93.cn/posts/afa3f4a0.html</id>
+    <published>2020-07-03T13:55:13.000Z</published>
+    <updated>2020-07-15T14:28:42.175Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-集中式与分布式VCS&quot;&gt;&lt;a href=&quot;#1-集中式与分布式VCS&quot; class=&quot;headerlink&quot; title=&quot;1. 集中式与分布式VCS&quot;&gt;&lt;/a&gt;1. 集中式与分布式VCS&lt;/h2&gt;&lt;h3 id=&quot;1-1-集中式VCS（CVCS）&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Git" scheme="http://www.linwang93.cn/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL必知必会</title>
@@ -133,9 +160,9 @@
       <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
-    
       <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
+    
+      <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
     
       <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
     
@@ -179,7 +206,7 @@
     <link href="http://www.linwang93.cn/posts/a3085160.html"/>
     <id>http://www.linwang93.cn/posts/a3085160.html</id>
     <published>2020-05-03T08:20:14.000Z</published>
-    <updated>2020-05-03T08:25:54.877Z</updated>
+    <updated>2020-07-02T14:26:10.208Z</updated>
     
     <summary type="html">
     
@@ -301,7 +328,7 @@
     <link href="http://www.linwang93.cn/posts/38a64c6a.html"/>
     <id>http://www.linwang93.cn/posts/38a64c6a.html</id>
     <published>2020-05-03T07:31:42.000Z</published>
-    <updated>2020-07-02T12:57:12.763Z</updated>
+    <updated>2020-07-02T13:02:36.302Z</updated>
     
     <summary type="html">
     
@@ -557,33 +584,6 @@
 &lt;p&gt;上述6种数据类型可分为两类：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;不可变数据类型：数字、字符串、元组。
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（二）：基础语法</title>
-    <link href="http://www.linwang93.cn/posts/e8a303d6.html"/>
-    <id>http://www.linwang93.cn/posts/e8a303d6.html</id>
-    <published>2020-03-28T06:24:47.000Z</published>
-    <updated>2020-04-03T16:22:32.662Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Python是一种动态的、强类型语言。所谓&lt;strong&gt;动态类型&lt;/strong&gt;是指类型检查操作是发生在程序执行阶段，像Python、JavaScript都属于这类型。其中，类型检查主要是验证类型约束的过程，查看变量及其类型，判断表达式是否合理。如果类型检查发生在编译阶
         
       
     

@@ -1,0 +1,1598 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="玩转Git, 简若">
+    <meta name="description" content="1. 集中式与分布式VCS1.1 集中式VCS（CVCS）集中式版本控制系统（Centralized Version Control System，简称 CVCS），有集中管理的服务器，保存所有文件的修订版本，必须通过客户端连到管理服务器，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>玩转Git | 简若</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">简若</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">简若</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/weylin0714/weylin0714.github.io.git" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #1E90FF;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/weylin0714/weylin0714.github.io.git" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">玩转Git</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #1E90FF;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #1E90FF;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #1E90FF;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                工具
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-07-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    20 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1-集中式与分布式VCS"><a href="#1-集中式与分布式VCS" class="headerlink" title="1. 集中式与分布式VCS"></a>1. 集中式与分布式VCS</h2><h3 id="1-1-集中式VCS（CVCS）"><a href="#1-1-集中式VCS（CVCS）" class="headerlink" title="1.1 集中式VCS（CVCS）"></a>1.1 集中式VCS（CVCS）</h3><p>集中式版本控制系统（Centralized Version Control System，简称 CVCS），有集中管理的服务器，保存所有文件的修订版本，必须通过客户端连到管理服务器，获取最新的文件或者提交更新。SVN是一个典型的CVCS。</p>
+<ul>
+<li><p>有集中的版本管理服务器</p>
+</li>
+<li><p>具备文件版本管理和分支管理能力</p>
+</li>
+<li><p>客户端必须时刻和服务器相连。</p>
+</li>
+</ul>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//CVCS.png" style="width:300px;">
+
+<h3 id="1-2-分布式VCS"><a href="#1-2-分布式VCS" class="headerlink" title="1.2 分布式VCS"></a>1.2 分布式VCS</h3><p>分布式版本控制系统（Distributed Version Control System，简称 DVCS），客户端并不只提取最新版本的文件快照， 而是把代码仓库完整地镜像下来，包括完整的历史记录。Git是一个典型的DVCS。</p>
+<ul>
+<li><p>服务端和客户端都有完整的版本库</p>
+</li>
+<li><p>脱离服务端，客户端照样可以管理版本</p>
+</li>
+<li><p>查看历史和版本比较等多数操作，都不需要访问服务器，比集中式VCS更能提高版本管理效率。</p>
+</li>
+</ul>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//DVCS.png" style="width:400px;">
+
+<h2 id="2-Git安装与配置"><a href="#2-Git安装与配置" class="headerlink" title="2. Git安装与配置"></a>2. Git安装与配置</h2><h3 id="2-1-Git安装"><a href="#2-1-Git安装" class="headerlink" title="2.1 Git安装"></a>2.1 Git安装</h3><p>CentOS7下安装Git：<a href="https://www.linwang93.cn/posts/c6c40a41.html">https://www.linwang93.cn/posts/c6c40a41.html</a></p>
+<p>win10下安装Git：下载地址：<a href="https://git-scm.com/download/win，选择合适版本的Git" target="_blank" rel="noopener">https://git-scm.com/download/win，选择合适版本的Git</a> for Windows Setup。</p>
+<h3 id="2-2-Git配置"><a href="#2-2-Git配置" class="headerlink" title="2.2 Git配置"></a>2.2 Git配置</h3><p>Git自带Git config命令查配置信息。config有三个作用域：local、global和system。</p>
+<ul>
+<li>git config –local：只对某个仓库有效，读取当前使用仓库的 Git 目录中的 config 文件（即 <code>.git/config</code>）。</li>
+</ul>
+<ul>
+<li>git config –global：对当前用户的所有仓库有效，读取<code>~/.gitconfig</code>中的配置信息。</li>
+</ul>
+<ul>
+<li>git config –system：对系统所有登录的用户有效（不常用），读取的是<code>/etc/gitconfig</code> 文件中的配置信息。</li>
+</ul>
+<p>要想显示config的配置，加<code>--list</code>，如<code>git config --global --list</code>。</p>
+<p>示例：配置user信息：user.name和user.email</p>
+<pre class="line-numbers language-shell"><code class="language-shell"># 配置全局用户
+git config --global user.name 'your_name'
+git config --global user.email 'your_email'
+# 删除全局配置
+$ git config --global --unset alias.xxx
+$ git config --global --unset user.xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-Git基础"><a href="#3-Git基础" class="headerlink" title="3. Git基础"></a>3. Git基础</h2><h3 id="3-1-Git简介"><a href="#3-1-Git简介" class="headerlink" title="3.1 Git简介"></a>3.1 Git简介</h3><p>Git与其他版本控制系统（如Subversion, CVS）最大的区别就是对待数据的方法，<strong>Git是直接记录快照，而非差异比较</strong>。</p>
+<p>大部分版本控制系统是以文件变更列表的方式存储信息，将它们存储的信息看作是一组基本文件和每个文件随时间逐步累积的差异 （通常称作<strong>基于差异</strong>的版本控制）。</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//1-1594560709722.png" style="zoom:50%;">
+
+<p> 在 Git 中，每当你提交更新或保存项目状态时，它基本上就会对当时的全部文件<strong>创建一个快照并保存这个快照的索引</strong>。 为了效率，如果文件没有修改，Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。 Git 对待数据更像是一个快照流。</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//2.png" style="zoom:50%;">
+
+<p>Git 中所有的数据在存储前都<strong>计算校验和</strong>，然后以校验和来引用。Git 用以计算校验和的机制叫做 SHA-1 散列（hash，哈希）。 这是一个由 40 个十六进制字符（0-9 和 a-f）组 成的字符串，基于 Git 中文件的内容或目录结构计算出来。 Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名。</p>
+<p>Git仓库中的对象：<strong>提交（commit）</strong>对象、<strong>树（tree）</strong>对象和<strong>blob</strong>对象（保存着文件快照）。</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//3.png" style="zoom: 50%;">
+
+<p>上图是执行commit操作后，Git仓库中对象的示意图。在进行提交操作时，Git 会保存一个提交对象（哈希值：98ca9），该对象会包含指向树对象的指针、作者信息、父对象等信息。树对象（92ec2）记录着目录结构和blob对象索引，blob对象会保存着文件快照。注意：首次提交产生的提交对象没有父对象，普通提交操作产生的提交对象有一个父对象， 而由多个分支合并产生的提交对象有多个父对象。</p>
+<p>当再次修改后提交，产生的提交对象会包含一个指向上次提交对象（父对象）的指针。</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//4-1594566565272.png" style="zoom:50%;">
+
+<p>Git的特点：最优的存储能力、非凡的性能、开源、很容易做备份、支持离线操作、很容易定制工作流程。</p>
+<h3 id="3-2-创建Git仓库的场景"><a href="#3-2-创建Git仓库的场景" class="headerlink" title="3.2 创建Git仓库的场景"></a>3.2 创建Git仓库的场景</h3><ul>
+<li>将已有的项目代码纳入Git管理</li>
+</ul>
+<pre><code>cd 项目代码所在文件夹
+git init</code></pre><p>执行<code>git init</code>命令将创建一个名为 <code>.git</code> 的子目录，这个子目录含有初始化Git 仓库中所有的必须文件。此时项目目录中的文件还未纳入跟踪管理，</p>
+<pre class="line-numbers language-shell"><code class="language-shell">git status  # 查看状态
+# 输出
+On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行<code>git add、git commit</code>命令，将文件纳入跟踪：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">touch readme.md  # 新建一个readme.md文件
+git add readme.md  # 添加到暂存区
+git commit -m 'readme' # 添加到本地仓库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>克隆现有的仓库</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git clone <url>
+# 在克隆远程仓库时，自定义本地仓库名
+git clone <url> new_directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-3-Git三大分区"><a href="#3-3-Git三大分区" class="headerlink" title="3.3 Git三大分区"></a>3.3 Git三大分区</h3><p> Git 有三种状态，文件可能处于其中之一： 已提交（committed）、已修改（modified） 和 已暂存（staged）。</p>
+<ul>
+<li>已修改：表示修改了文件，但还没保存到数据库中。</li>
+<li>已暂存：表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</li>
+<li>已提交：表示数据已经安全地保存在本地数据库中。</li>
+</ul>
+<p>这会让我们的 Git 项目拥有三个阶段：工作区、暂存区以及 Git仓库。</p>
+<ul>
+<li>工作区：本地项目代码目录</li>
+<li>暂存区：英文叫stage或index，是一个文件，保存了将要提交的文件列表信息，在.git目录下。</li>
+<li>本地库：用来保存项目的元数据和对象数据库。</li>
+</ul>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//image-20200707234337713.png" style="zoom:50%;">
+
+<p>基本的 Git 工作流程如下：</p>
+<ul>
+<li>在工作区中编辑修改文件。</li>
+<li>将你想要下次提交的更改选择性地暂存，这样只会将更改的部分添加到暂存区。</li>
+<li>提交更新，找到暂存区的文件，将快照永久性存储到 Git 目录。</li>
+</ul>
+<h3 id="3-4-提交更新"><a href="#3-4-提交更新" class="headerlink" title="3.4 提交更新"></a>3.4 提交更新</h3><ul>
+<li>提交到暂存区</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git add file1 file2 ...  # 添加指定文件到暂存区（追踪新增的指定文件）
+git add folder  # 添加指定目录到暂存区，包括子目录
+git add .  # 添加当前目录的所有文件到暂存区（追踪所有新增的文件）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>提交到本地仓库</li>
+</ul>
+<p>提交前，需要确认是否有修改或新建的文件尚未<code>git add</code>添加到暂存区的，否则提交时不会记录这些尚未暂存的变化。每次提交前，执行git status检查，然后再提交。</p>
+<pre class="line-numbers language-shell"><code class="language-shell">git status  # 检查
+git commit -m '提交信息说明' # 提交暂存区的文件
+git commit -am '提交信息说明' # 提交暂存区或跟踪过的文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-5-删除文件"><a href="#3-5-删除文件" class="headerlink" title="3.5 删除文件"></a>3.5 删除文件</h3><pre class="line-numbers language-shell"><code class="language-shell">git rm filename  # 删除工作区和暂存区的文件
+git rm --cached filename # 只删除暂存区的文件，不删除工作区的文件
+rm filename  # 仅删除工作区的文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>注意：<code>rm</code>仅仅是物理删除，并没有将其从 git 的记录中剔除，而<code>git rm</code>删除文件的同时，还会将这个删除操作记录下来。</p>
+<h3 id="3-6-重命名文件"><a href="#3-6-重命名文件" class="headerlink" title="3.6 重命名文件"></a>3.6 重命名文件</h3><pre class="line-numbers language-shell"><code class="language-shell">git mv file-original file-renamed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="3-7-查看提交历史"><a href="#3-7-查看提交历史" class="headerlink" title="3.7 查看提交历史"></a>3.7 查看提交历史</h3><pre class="line-numbers language-shell"><code class="language-shell">git log --online  # 将日志记录一行行显示
+git log --num     # 显示最近num次提交历史
+git log --all     # 将所有记录都详细的显示出来
+git log --graph   # 图形化显示
+git log -p        # 按补丁格式显示每个提交引入的差异
+git log --pretty=format:"xxx" # 自定义显示格式
+git log --stat    # 显示每次提交的文件修改统计信息
+git log --online --all 
+git log --all --graph<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过图形界面工具查看版本历史：<code>gitk --all</code></p>
+<h3 id="3-8-撤销操作"><a href="#3-8-撤销操作" class="headerlink" title="3.8 撤销操作"></a>3.8 撤销操作</h3><ul>
+<li>git commit –amend</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git commit --amend   # 编辑器会弹出上一次提交的信息，可以在这里修改提交信息
+git commit --amend -m '本次提交说明'  # 修复提交，同时修改提交信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>git reset HEAD file</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git reset HEAD file_name  # 取消暂存的某个文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="3-9-远程仓库"><a href="#3-9-远程仓库" class="headerlink" title="3.9 远程仓库"></a>3.9 远程仓库</h3><h4 id="3-9-1-查看远程仓库"><a href="#3-9-1-查看远程仓库" class="headerlink" title="3.9.1 查看远程仓库"></a>3.9.1 查看远程仓库</h4><pre class="line-numbers language-shell"><code class="language-shell">git remote  # 查看已经配置的远程仓库服务器
+git remote -v # 显示需要读写远程仓库使用的Git保存的简写与其对应的URL。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p> 如果是克隆的仓库，使用<code>git remote</code>可以看到 origin，即克隆的仓库服务器的默认名字。如果想要查看某一个远程仓库的更多信息，可以使用以下命令：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">git remote show <remote>  # <remote>为远程仓库名
+git remote show origin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="3-9-2-添加远程仓库"><a href="#3-9-2-添加远程仓库" class="headerlink" title="3.9.2 添加远程仓库"></a>3.9.2 添加远程仓库</h4><pre class="line-numbers language-shell"><code class="language-shell"> git remote add <shortname> <url> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>注意，本地库可能关联多个远程库，远程库的简写名shortname不能重复。有了shortname，后续拉取和推送数据，</p>
+<h4 id="3-9-3-推送到远程仓库"><a href="#3-9-3-推送到远程仓库" class="headerlink" title="3.9.3 推送到远程仓库"></a>3.9.3 推送到远程仓库</h4><pre class="line-numbers language-shell"><code class="language-shell"># 将本地仓库的文件推送到远程分支
+# 如果远程仓库没有这个分支，会新建一个同名的远程分支
+# 如果省略远程分支名，则表示两者同名
+git push <远程主机名> <本地分支名>:<远程分支名> 
+git push origin brancename
+# 如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。
+git push origin :master
+# 将本地所有分支推送到远程仓库
+git push --all origin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-9-4-从远程仓库拉取"><a href="#3-9-4-从远程仓库拉取" class="headerlink" title="3.9.4 从远程仓库拉取"></a>3.9.4 从远程仓库拉取</h4><pre class="line-numbers language-shell"><code class="language-shell"># 从远程仓库下载新分支与数据
+git fetch  <remote> 
+# 从远端仓库提取数据并尝试合并到当前分支
+git merge <remote> /branchName
+# 拉取并合并项目的一个分支
+git fetch origin branchName
+git merge origin/branchName
+# 等价于
+git pull origin branchname
+# 拉取所有远程分支到本地仓库中
+git pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>必须注意 git fetch 命令只会将数据下载到你的本地仓库，它并不会自动合并或修改你当前的工作。如果想合并，需要通过git merge命令。</p>
+<h4 id="3-9-5-远程仓库重命名与移除"><a href="#3-9-5-远程仓库重命名与移除" class="headerlink" title="3.9.5 远程仓库重命名与移除"></a>3.9.5 远程仓库重命名与移除</h4><pre class="line-numbers language-shell"><code class="language-shell"># 远程仓库重命名
+git remote rename <原仓库名> <重命名的仓库名>
+# 移除远程仓库
+git remote remove <仓库名>
+git remote rm <仓库名><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-10-打标签"><a href="#3-10-打标签" class="headerlink" title="3.10 打标签"></a>3.10 打标签</h3><h4 id="3-10-1-列出标签"><a href="#3-10-1-列出标签" class="headerlink" title="3.10.1 列出标签"></a>3.10.1 列出标签</h4><pre class="line-numbers language-shell"><code class="language-shell"># 列出所有标签
+git tag
+# 查看单个标签具体信息
+git show <tagname>
+# 查找指定模式匹配的标签
+git tag l 'v1.1*'  # 查看所有1.1开头的标签<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-10-2-创建标签"><a href="#3-10-2-创建标签" class="headerlink" title="3.10.2 创建标签"></a>3.10.2 创建标签</h4><p>Git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）。</p>
+<ul>
+<li>创建附注标签</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"> # -a指定标签名，-m指定说明文字
+ git tag -a v1.0 -m "version 1.0 released"
+ git show   # 查看标签信息和与之对应的提交信息 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>创建轻量标签</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git tag v1.1  # <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>后期打标签</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"># 可以对过去的commit打标签，需指定commit id
+git tag -a v1.3 <commit id><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="3-10-3-共享标签"><a href="#3-10-3-共享标签" class="headerlink" title="3.10.3 共享标签"></a>3.10.3 共享标签</h4><p>默认情况下，git push 命令并不会传送标签到远程仓库服务器上。 在创建完标签后你必须显式地推送标签到 共享服务器上。</p>
+<pre class="line-numbers language-shell"><code class="language-shell"># 推送一个本地标签到远程
+git push origin <tagname>
+#  推送全部未推送过的本地标签到远程
+git push origin --tags<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-10-4-删除标签"><a href="#3-10-4-删除标签" class="headerlink" title="3.10.4 删除标签"></a>3.10.4 删除标签</h4><pre class="line-numbers language-shell"><code class="language-shell"># 删除本地标签
+git tag -d <tagname>
+# 删除远程标签
+# 方式一：先删除本地，再删除远程
+git tag -d <tagname>
+git push <remote> :refs/tags/<tagname> #将冒号前面的空值推送到远程标签名，从而高效地删除它
+# 方式二：直接删除远程标签
+git push <remote> --delete <tagname><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-11-Git别名"><a href="#3-11-Git别名" class="headerlink" title="3.11 Git别名"></a>3.11 Git别名</h3><pre class="line-numbers language-shell"><code class="language-shell">$ git config --global alias.co checkout
+$ git config --global alias.ss status
+$ git config --global alias.cm commit
+$ git config --global alias.br branch
+$ git config --global alias.rg reflog
+$ git config --global alias.last 'log -1 HEAD'  # 执行git last 即可查看最后一次提交<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看出，Git 只是简单地将别名替换为对应的命令。 然而，如果想要执行外部命令，需要在命令前面加入 <code>!</code> 符号。</p>
+<pre class="line-numbers language-shell"><code class="language-shell"> git config --global alias.visual '!gitk'
+ git visual # 打开gitk<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="3-12-对比文件差异"><a href="#3-12-对比文件差异" class="headerlink" title="3.12 对比文件差异"></a>3.12 对比文件差异</h3><ul>
+<li>比较暂存区与HEAD文件差异</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"># 比较暂存区与HEAD文件的差异，即与当前分支最新提交的对比
+git diff --cached/--staged<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>比较工作区与暂存区</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"># 查看工作区和暂存区所有文件的对比
+git diff
+# 查看工作区和暂存区单个文件的对比
+git diff -- filename
+查看工作区和暂存区所有文件的对比，并显示出所有有差异的文件列表
+git diff --stat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意：如果修改了某个文件，但是没有提交到暂存区，这时候会有对比的内容。但是修改内容一旦提交到暂存区，就不会有对比的内容(因为暂存区已经更新)。如果你新建了一个文件，但是没有提交到暂存区，这时候 diff 是没有结果的。</p>
+<ul>
+<li>查看工作区与HEAD的对比</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git diff HEAD<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>查看工作区与最新提交到本地仓库的快照的对比</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git diff branchname<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>不同提交的文件差异比较</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"># 查看两个本地分支中某一个文件的对比
+git diff branchname1 branchname2 -- filename
+# 查看两个 commit中某一文件的对比
+git diff commit1 commit2 -- filename<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>不同分支比较</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"># 查看两个本地分支所有的对比
+git diff branchname1 branchname2
+# 查看远程分支和本地分支的对比
+git diff origin/branchname branchname<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-13-文件恢复与取消"><a href="#3-13-文件恢复与取消" class="headerlink" title="3.13 文件恢复与取消"></a>3.13 文件恢复与取消</h3><ul>
+<li>暂存区恢复成和HEAD一样</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"># 恢复暂存区
+git reset HEAD<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>工作区文件恢复成和暂存区一样</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"># 恢复工作区的文件
+git checkout -- filename<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>取消暂存区部分文件的更改</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git reset HEAD -- filename1 filename2 ...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>取消最近几次提交</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git reset --hard <commit_id>  # 慎用<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="4-Git分支"><a href="#4-Git分支" class="headerlink" title="4. Git分支"></a>4. Git分支</h2><h3 id="4-1-分支简介"><a href="#4-1-分支简介" class="headerlink" title="4.1 分支简介"></a>4.1 分支简介</h3><p><strong>Git分支</strong>：本质上是指向提交对象的可变指针。Git默认分支名字是 master，会在每次提交时自动向前移动，指向最后的提交对象。注意：master分支并不是一个特殊分支，和其他分支完全没有区别，之所以几乎每一 个仓库都有 master 分支，是因为<code>git init</code> 命令默认创建它。</p>
+<pre class="line-numbers language-shell"><code class="language-shell"># 创建新分支
+git branch testing  # 在当前所在的提交对象上创建一个指针<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//5.png" style="zoom: 30%;">
+
+<p>从上图可以看到，master和testing都指向同一个commit对象，<strong>HEAD指向的分支为当前所在的分支</strong>。我们可以通过 git log 命令查看各个分支当前所指的对象：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">git log --oneline --decorate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>要切换到一个已存在的分支，你需要使用 git checkout 命令：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">git checkout testing  # HEAD指向testing分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//image-20200712233210665.png" alt="image-20200712233210665"></p>
+<p>上图左图是在testing分支上再次提交，右图是再次切换回master分支。从左图可以看到testing分支向前移动，而master没有。右图可以看到切回master后，HEAD指向了master。注意，切换到master后，将工作目录恢复成 master 分支所指向的快照内容。 也就是说，现在做修改的话，项目将始于一个较旧的版本。<u>在切换分支时，一定要注意你工作目录里的文件会被改变。 如果是切换到一个较旧的分支， 你的工作目录会恢复到该分支最后一次提交时的样子。</u> </p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//8.png" style="zoom:50%;">
+
+<p>上图展示的是在master分支上修改文件后再次提交，产生了分叉历史。我们可以使用 git log 命令查看分叉历史：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">git log --oneline --decorate --graph --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4-2-新建分支"><a href="#4-2-新建分支" class="headerlink" title="4.2 新建分支"></a>4.2 新建分支</h3><pre class="line-numbers language-shell"><code class="language-shell"> # 在创建一个新分支后立即切换过去
+ git checkout -b <branchname>
+ # 等价于以下两个命令
+ git branch <branchname>
+ git checkout <branchname><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在别的分支下新建一个分支，新分支会复制当前分支的内容。注意：如果当前分支有修改，但是没有提交到仓库，此时修改的内容是不会被复制到新分支的。</p>
+<h3 id="4-3-删除分支"><a href="#4-3-删除分支" class="headerlink" title="4.3 删除分支"></a>4.3 删除分支</h3><pre class="line-numbers language-shell"><code class="language-shell"># 删除本地分支,会阻止删除包含未合并更改的分支
+$ git brnach -d branchname
+# 强制删除一个本地分支，即使包含未合并更改的分支
+$ git branch -D branchname
+# 删除远程分支
+$ git push origin  :远程分支名  # 推送一个空分支到远程分支，其实就相当于删除远程分支
+$ git push origin --delete 远程分支名 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-4-分支合并"><a href="#4-4-分支合并" class="headerlink" title="4.4 分支合并"></a>4.4 分支合并</h3><pre class="line-numbers language-shell"><code class="language-shell">git merge <brancename><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>有时在合并时会遇到冲突，此时可以通过<code>git status</code>命令查看因包含合并冲突而处于未合并 （unmerged）状态的文件。任何因包含合并冲突而有待解决的文件，都会以未合并状态标识出来。解决文件合并冲突方式：</p>
+<ul>
+<li>可手动合并这些冲突内容，在解决了所有文件的冲突之后，对每个文件使用 <code>git add</code> 命令来将其标记为冲突已解决。</li>
+<li>使用图形化工具来解决冲突，执行 <code>git mergetool</code>。</li>
+</ul>
+<h3 id="4-5-查看分支"><a href="#4-5-查看分支" class="headerlink" title="4.5 查看分支"></a>4.5 查看分支</h3><ul>
+<li>查看所有分支列表</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell"># 查看本地分支
+git branch  # # 如果分支前有*号，则表示当前所在分支
+git branch -l
+# 查看远程分支
+git branch -r
+# 查看所有分支（本地分支+远程分支）
+git branch -a
+# 查看每一个分支的最后一次提交
+git branch -v 
+# 查看所有分支并带上最新的提交信息
+git branch -av
+# 查看本地分支对应的远程分支
+git branch -vv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看合并与未合并的分支</li>
+</ul>
+<pre class="line-numbers language-shell"><code class="language-shell">git branch --merged   # 查看已经合并到当前分支的所有分支
+git branch  --no-merged # 查看所有包含未合并工作的分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="4-6-分支开发工作流"><a href="#4-6-分支开发工作流" class="headerlink" title="4.6 分支开发工作流"></a>4.6 分支开发工作流</h3><h4 id="4-6-1-长期分支"><a href="#4-6-1-长期分支" class="headerlink" title="4.6.1 长期分支"></a>4.6.1 长期分支</h4><p>在整个项目开发周期的不同阶段，我们可以同时拥有多个开放的分支，可以定期把某些主题分支合并到其他分支中。比如，在项目开发中，在master分支上保留完全稳定的代码（可能仅 仅是已经发布或即将发布的代码），而在develop分支上做后续的一些开发，develop分支不能保持绝对稳定，但是一旦达到稳定状态，它们就可以被合并入 master 分支了。</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//1-1594650692073.png" style="zoom:50%;">
+
+<p>随着你的提交而不断右移的指针， 稳定分支的指针总是在提交历史中落后一大截， 而前沿分支的指针往往比较靠前。注意：使用多个长期分支的方法并非必要，但是这么做通常很有帮助，尤其是当你在一 个非常庞大或者复杂的项目中工作时。</p>
+<h4 id="4-6-2-主题分支"><a href="#4-6-2-主题分支" class="headerlink" title="4.6.2 主题分支"></a>4.6.2 主题分支</h4><p>主题分支对任何规模的项目都适用。 主题分支是一种短期分支，它被用来<strong>实现单一特性或其相关工作</strong>。在一些主题分支上提交一些更新后，可以合并入主干分支，并删除它们。</p>
+<h3 id="4-7-远程分支"><a href="#4-7-远程分支" class="headerlink" title="4.7 远程分支"></a>4.7 远程分支</h3><p>远程引用是对远程仓库的引用（指针），包括分支、标签等等。<strong>远程跟踪分支</strong>是远程分支状态的引用，以 <code>&lt;remote&gt;/&lt;branch&gt;</code> 的形式命名。</p>
+<p>示例：从一个Git服务器（ git.ourcompany.com）克隆项目，<code>clone</code> 命令会自动将其命名为 <code>origin</code>，拉取它的所有数据， 创建一个指向它的 <code>master</code> 分支的指针，并且在本地将其命名为<code>origin/master</code>。 Git 也会给你一个与 <code>origin</code> 的 <code>master</code> 分支在指向同一个地方的本地 <code>master</code> 分支。</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//1-1594655195620.png" style="zoom: 40%;">
+
+<p>如果在本地做了一些修改，在同一段时间内有其他人推送提交到 git.ourcompany.com 并且更新了它的 master 分支，我们同步远程仓库数据后，产生两个不同走向的分支。</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//2-1594655337945.png" style="zoom:40%;">
+
+<h4 id="4-7-1-推送分支"><a href="#4-7-1-推送分支" class="headerlink" title="4.7.1 推送分支"></a>4.7.1 推送分支</h4><pre class="line-numbers language-shell"><code class="language-shell">git push <remote> <branch>
+git push <remote> <local_brance>:<remote_branch> # 将本地local_brance分支推送到远程remote_branch分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="4-7-2-跟踪分支"><a href="#4-7-2-跟踪分支" class="headerlink" title="4.7.2 跟踪分支"></a>4.7.2 跟踪分支</h4><p>从一个远程跟踪分支检出一个本地分支会自动创建所谓的“跟踪分支”。跟踪分支是与远程分支有直接关系的本地分支。当克隆一个仓库时，它通常会自动地创建一个跟踪 <code>origin/master</code> 的 <code>master</code> 分支。</p>
+<pre class="line-numbers language-shell"><code class="language-shell"> # 创建一个跟踪分支
+ git checkout -b <branch> <remote>/<branch> 
+ git checkout --track <remote>/<branch>
+ git branch -vv # 查看跟踪分支，即查看本地分支对应的远程分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-7-3-拉取数据"><a href="#4-7-3-拉取数据" class="headerlink" title="4.7.3 拉取数据"></a>4.7.3 拉取数据</h4><p> <code>git fetch</code> 命令从服务器上抓取本地没有的数据时，它并不会修改工作目录中的内容，只会获取数据然 后让你自己合并。 <code>git pull</code>则相当于 <code>git fetch</code>和<code>git merge</code>，会查找当前分支所跟踪的服务器与分支， 从服务器上抓取数据然后尝试合并入那个远程分支。</p>
+<h4 id="4-7-4-删除远程分支"><a href="#4-7-4-删除远程分支" class="headerlink" title="4.7.4 删除远程分支"></a>4.7.4 删除远程分支</h4><pre class="line-numbers language-shell"><code class="language-shell"> git push <remote> --delete <branch><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4-8变基"><a href="#4-8变基" class="headerlink" title="4.8变基"></a>4.8变基</h3><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//1-1594734805333.png" style="zoom:40%;">
+
+<p>在 Git 中整合来自不同分支的修改主要有两种方法：<code>merge</code> 以及 <code>rebase</code>。 如果我们想将分支master和experiment的更新合并，常用的一种方式是使用<code>merge</code>合并，即把两个分支的最新快照（C3 和 C4）以及二者最近的 共同祖先（C2）进行三方合并，合并的结果是生成一个新的快照（并提交），如下图所示。</p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//2-1594734977961.png" style="zoom:50%;">
+
+
+
+<p>除了上面这种方式，还有一种方式：提取在 C4 中引入的补丁和修改，然后在 C3 的基础上应用一次，这种操作叫<strong>变基（rebase）</strong>。</p>
+<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//image-20200714220118779.png" alt="image-20200714220118779"></p>
+<pre class="line-numbers language-shell"><code class="language-shell"># 以检出 experiment 分支，然后将它变基到 master 分支上
+git checkout experiment
+git rebase master
+# 在回到 master 分支，进行一次快进合并
+git checkout master
+git merge experiment<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.linwang93.cn" rel="external nofollow noreferrer">Lin</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.linwang93.cn/posts/afa3f4a0.html">http://www.linwang93.cn/posts/afa3f4a0.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.linwang93.cn" target="_blank">Lin</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '60961d5b5123175ae775',
+        clientSecret: 'ebda23c9758d4b26ea4b438580ae79620384442e',
+        repo: 'gitalk',
+        owner: 'weylin0714',
+        admin: "weylin0714",
+        id: '2020-07-03T21-55-13',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/afa3f4a0.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="玩转Git">
+                        
+                        <span class="card-title">玩转Git</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. 集中式与分布式VCS1.1 集中式VCS（CVCS）集中式版本控制系统（Centralized Version Control System，简称 CVCS），有集中管理的服务器，保存所有文件的修订版本，必须通过客户端连到管理服务器，
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/8cd1b536.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="SQL必知必会">
+                        
+                        <span class="card-title">SQL必知必会</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SQL/">
+                        <span class="chip bg-color">SQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 简若<br />'
+            + '文章作者: Lin<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="http://www.linwang93.cn" target="_blank">Lin</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">72.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "2";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/weylin0714" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1424158077@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1424158077" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1424158077" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="/wechat.jpg" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?27b2193bd56374883530e68916a31549";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
