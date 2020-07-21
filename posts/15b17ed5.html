@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="大数据学习环境搭建(二)--HBase单机环境搭建, 简若">
-    <meta name="description" content="HBase是一种分布式存储的数据库，技术上来讲，它更像是分布式存储而不是分布式数据库。HBase的运行有三种模式：单机模式、伪分布式模式、分布式模式。出于学习目的，我们只在一台阿里云服务器上部署单机伪分布环境。
-1. HBase安装前配置H">
+    <meta name="keywords" content="CentOS7下重新安装Python与yum, 简若">
+    <meta name="description" content="1.查看内核版本
+cat /etc/redhat-release
+2.删除现有Python
+rpm -qa|grep python|xargs rpm -ev --allmatches --nodeps
+whereis python |xa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>大数据学习环境搭建(二)--HBase单机环境搭建 | 简若</title>
+    <title>CentOS7下重新安装Python与yum | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/a32d9546.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">大数据学习环境搭建(二)--HBase单机环境搭建</h1>
+                    <h1 class="description center-align post-title">CentOS7下重新安装Python与yum</h1>
                 </div>
             </div>
         </div>
@@ -428,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hbase/">
-                                <span class="chip bg-color">Hbase</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -440,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                大数据
+                            <a href="/categories/%E9%85%8D%E7%BD%AE/" class="post-category">
+                                -配置
                             </a>
                         
                     </div>
@@ -453,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-03
+                    2020-07-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-07
+                    2020-07-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    684
+                    170
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -490,76 +493,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>HBase是一种分布式存储的数据库，技术上来讲，它更像是分布式存储而不是分布式数据库。HBase的运行有三种模式：单机模式、伪分布式模式、分布式模式。出于学习目的，我们只在一台阿里云服务器上部署单机伪分布环境。</p>
-<h2 id="1-HBase安装前配置"><a href="#1-HBase安装前配置" class="headerlink" title="1. HBase安装前配置"></a>1. HBase安装前配置</h2><p>HBase 需要依赖JDK环境，JDK安装可参考<a href="https://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/">Hadoop单机环境搭建</a>中的介绍。</p>
-<h2 id="2-HBase安装与配置"><a href="#2-HBase安装与配置" class="headerlink" title="2. HBase安装与配置"></a>2. HBase安装与配置</h2><p>安装HBase前，需要预先安装 Hadoop。Hadoop 的安装方式可参考<a href="https://www.linwang93.cn/2020/02/03/da-shu-ju-xue-xi-huan-jing-da-jian-yi-hadoop-dan-ji-huan-jing-da-jian/">Hadoop单机环境搭建</a>。</p>
-<h3 id="2-1-下载与安装"><a href="#2-1-下载与安装" class="headerlink" title="2.1 下载与安装"></a>2.1 下载与安装</h3><p>下载HBase安装包，HBase版本要与 Hadoop 的版本兼容，不然会出现各种 Jar 包冲突。这里我安装的 Hadoop 版本为 <code>hadoop-2.6.0-cdh5.16.2</code>，为保持版本一致，选择的 HBase 版本为 <code>hbase-1.2.0-cdh5.16.2</code>，下载地址为：<a href="http://archive.cloudera.com/cdh5/cdh/5/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/</a></p>
-<ul>
-<li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为hbase</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf hbase-1.2.0-cdh5.16.2.tar.gz -C /usr/local/
-<span class="token comment" spellcheck="true"># 将解压到/usr/local/目录下的文件夹重命名</span>
-<span class="token function">mv</span> hbase-1.2.0-cdh5.16.2/ hbase<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>配置环境变量</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 打开配置文件 </span>
-vim /etc/profile 
-<span class="token comment" spellcheck="true"># 添加HBase环境变量 </span>
-<span class="token function">export</span> HBASE_HOME<span class="token operator">=</span>/usr/local/hbase
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$HBASE_HOME</span>/bin:<span class="token variable">$PATH</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>环境变量生效</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>查看HBase版本，确定hbase安装成功</li>
-</ul>
-<pre class="line-numbers language-bash"><code class="language-bash">hbase version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="2-2-单机伪集群配置"><a href="#2-2-单机伪集群配置" class="headerlink" title="2.2 单机伪集群配置"></a>2.2 单机伪集群配置</h3><h4 id="2-2-1-修改配置"><a href="#2-2-1-修改配置" class="headerlink" title="2.2.1 修改配置"></a>2.2.1 修改配置</h4><ul>
-<li>hbase-env.sh</li>
-</ul>
-<p>修改/usr/local/hbase/conf/目录下的hbase-env.sh文件，添加如下环境变量</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/usr/local/java
-<span class="token function">export</span> HBASE_HOME<span class="token operator">=</span>/usr/local/hbase
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$HBASE_HOME</span>/bin
-<span class="token function">export</span> HBASE_MANAGES_ZK<span class="token operator">=</span>true   <span class="token comment" spellcheck="true"># Hbase自带zookeeper</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>hbase-site.xml</li>
-</ul>
-<p>配置/usr/local/hbase/conf/hbase-site.xml，打开并编辑hbase-site.xml</p>
-<pre class="line-numbers language-bash"><code class="language-bash">vim /usr/local/hbase/conf/hbase-site.xml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--指定HBase以分布式模式运行--></span>   
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.cluster.distributed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--指定HBase数据存储路径为HDFS上的hbase目录,hbase目录不需要预先创建，程序会自动创建--></span>   
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hbase.rootdir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://localhost:8020/hbase<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-2-2-启动"><a href="#2-2-2-启动" class="headerlink" title="2.2.2 启动"></a>2.2.2 启动</h4><p>切换至/usr/local/hbase/bin目录，执行以下命令：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">start-hbase.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="2-2-3-验证是否启动成功"><a href="#2-2-3-验证是否启动成功" class="headerlink" title="2.2.3 验证是否启动成功"></a>2.2.3 验证是否启动成功</h4><ul>
-<li>使用<code>jps</code>命令查看进程</li>
-</ul>
-<p>HBase的进程:  HMaster，HRegionServer，HBase内置的Zookeeper的进程: HQuorumPeer，其余的为 HDFS 和 YARN 的进程。</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># jps</span>
-3168 ResourceManager
-2178 NameNode
-5302 Jps
-3254 NodeManager
-2759 DataNode
-4844 HMaster
-2445 SecondaryNameNode
-4974 HRegionServer
-4767 HQuorumPeer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>访问HBase Web UI界面，访问地址：IP:60010</li>
-</ul>
+                <p>1.查看内核版本</p>
+<pre class="line-numbers language-shell"><code class="language-shell">cat /etc/redhat-release<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.删除现有Python</p>
+<pre class="line-numbers language-shell"><code class="language-shell">rpm -qa|grep python|xargs rpm -ev --allmatches --nodeps
+whereis python |xargs rm -frv
+whereis python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>3.删除现有的yum</p>
+<pre class="line-numbers language-shell"><code class="language-shell">rpm -qa|grep yum|xargs rpm -ev --allmatches --nodeps
+whereis yum |xargs rm -frv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>4.下载Python和yum程序包及其依赖包</p>
+<p><a href="http://vault.centos.org/" target="_blank" rel="noopener">http://vault.centos.org/</a></p>
+<p><a href="http://mirrors.163.com/centos/" target="_blank" rel="noopener">http://mirrors.163.com/centos/</a></p>
+<p>5.安装python以及yum的rpm包</p>
+<pre class="line-numbers language-shell"><code class="language-shell">rpm -Uvh --replacepkgs lvm2-python-libs*.rpm --nodeps --force
+rpm -Uvh --replacepkgs libxml2-python*.rpm --nodeps --force
+rpm -Uvh --replacepkgs python*.rpm --nodeps --force
+rpm -Uvh --replacepkgs rpm-python*.rpm yum*.rpm --nodeps --force<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -603,7 +553,7 @@ vim /etc/profile
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.linwang93.cn/posts/a32d9546.html">http://www.linwang93.cn/posts/a32d9546.html</a>
+                    <a href="http://www.linwang93.cn/posts/15b17ed5.html">http://www.linwang93.cn/posts/15b17ed5.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -641,8 +591,8 @@ vim /etc/profile
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hbase/">
-                                    <span class="chip bg-color">Hbase</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -813,7 +763,7 @@ vim /etc/profile
         repo: 'gitalk',
         owner: 'weylin0714',
         admin: "weylin0714",
-        id: '2020-02-03T23-22-40',
+        id: '2020-07-19T11-55-25',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -834,46 +784,52 @@ vim /etc/profile
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/73be190e.html">
+                <a href="/posts/15b17ed5.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/73be190e.jpg" class="responsive-img" alt="大数据学习环境搭建(三)--Hive单机环境搭建">
                         
-                        <span class="card-title">大数据学习环境搭建(三)--Hive单机环境搭建</span>
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="CentOS7下重新安装Python与yum">
+                        
+                        <span class="card-title">CentOS7下重新安装Python与yum</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hive是一个架构在Hadoop之上的数据仓库工具，可以将结构化的数据文件映射成为一张数据库表，并提供类SQL的查询功能，为大数据查询和分析提供方便。这里在阿里云服务器上搭建Hive单机伪分布环境。
-1. Hive安装与配置1.1 下载与安
+                            1.查看内核版本
+cat /etc/redhat-release
+2.删除现有Python
+rpm -qa|grep python|xargs rpm -ev --allmatches --nodeps
+whereis python |xa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                    大数据
+                            <a href="/categories/%E9%85%8D%E7%BD%AE/" class="post-category">
+                                    -配置
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hive/">
-                        <span class="chip bg-color">Hive</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -887,30 +843,31 @@ vim /etc/profile
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/6dd29b8f.html">
+                <a href="/posts/afa3f4a0.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/6dd29b8f.jpg" class="responsive-img" alt="大数据学习环境搭建(一)--Hadoop单机环境搭建">
                         
-                        <span class="card-title">大数据学习环境搭建(一)--Hadoop单机环境搭建</span>
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="玩转Git">
+                        
+                        <span class="card-title">玩转Git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hadoop有三种运行模式：单机模式、伪分布式模式、全分布式集群模式。单机模式：Hadoop的默认模式（非分布式模式），无需进行其他配置即可运行。非分布式即单Java进程，用于开发和调试。伪分布式模式：Hadoop可以在单节点上以伪分布式的
+                            1. 集中式与分布式VCS1.1 集中式VCS（CVCS）集中式版本控制系统（Centralized Version Control System，简称 CVCS），有集中管理的服务器，保存所有文件的修订版本，必须通过客户端连到管理服务器，
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                    大数据
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
                                 </a>
                             
                             
@@ -920,8 +877,8 @@ vim /etc/profile
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hadoop/">
-                        <span class="chip bg-color">Hadoop</span>
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
                 </div>

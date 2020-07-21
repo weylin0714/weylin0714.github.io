@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-07-15T15:56:46.846Z</updated>
+  <updated>2020-07-19T14:13:24.139Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS7下重新安装Python与yum</title>
+    <link href="http://www.linwang93.cn/posts/15b17ed5.html"/>
+    <id>http://www.linwang93.cn/posts/15b17ed5.html</id>
+    <published>2020-07-19T03:55:25.000Z</published>
+    <updated>2020-07-19T14:13:24.139Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;1.查看内核版本&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;cat /etc/redhat-release&lt;span aria-hidden=&quot;true&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="-配置" scheme="http://www.linwang93.cn/categories/%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>玩转Git</title>
@@ -554,36 +582,6 @@
         
         
           &lt;h2 id=&quot;1-列表&quot;&gt;&lt;a href=&quot;#1-列表&quot; class=&quot;headerlink&quot; title=&quot;1. 列表&quot;&gt;&lt;/a&gt;1. 列表&lt;/h2&gt;&lt;h3 id=&quot;1-1-定义&quot;&gt;&lt;a href=&quot;#1-1-定义&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（三）：数据类型-数字与字符串</title>
-    <link href="http://www.linwang93.cn/posts/3b438966.html"/>
-    <id>http://www.linwang93.cn/posts/3b438966.html</id>
-    <published>2020-03-31T02:19:56.000Z</published>
-    <updated>2020-04-18T04:22:35.347Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。&lt;/p&gt;
-&lt;p&gt;上述6种数据类型可分为两类：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;不可变数据类型：数字、字符串、元组。
         
       
     
