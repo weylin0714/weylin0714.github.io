@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-07-19T14:13:24.139Z</updated>
+  <updated>2020-07-21T13:55:18.558Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.linwang93.cn/posts/15b17ed5.html"/>
     <id>http://www.linwang93.cn/posts/15b17ed5.html</id>
     <published>2020-07-19T03:55:25.000Z</published>
-    <updated>2020-07-19T14:13:24.139Z</updated>
+    <updated>2020-07-21T13:55:18.558Z</updated>
     
     <summary type="html">
     
@@ -234,7 +234,7 @@
     <link href="http://www.linwang93.cn/posts/a3085160.html"/>
     <id>http://www.linwang93.cn/posts/a3085160.html</id>
     <published>2020-05-03T08:20:14.000Z</published>
-    <updated>2020-07-02T14:26:10.208Z</updated>
+    <updated>2020-07-28T15:53:15.830Z</updated>
     
     <summary type="html">
     
@@ -242,11 +242,8 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;p&gt;在我们计算机中，我们可以同时运行多个软件，比如一边听音乐一遍浏览网页。这些看似很正常，但仔细想想，为什么计算机可以做到这么多软件同时运行呢？这就涉及到计算机中的两个重要概念：多进程和多线程。&lt;/p&gt;
+&lt;h2 id=&quot;1-进程&quot;&gt;&lt;a href=&quot;#1-进程&quot;
         
       
     
