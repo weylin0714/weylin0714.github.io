@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="大数据分布式集群基础环境搭建, 简若">
-    <meta name="description" content="在学习大数据时，需要搭建一套分布式集群环境供学习使用。在没有足够服务器资源的情况下，这里我通过VMware虚拟机搭建一套分布式集群基础环境。
-1.VMware中安装CentOS7首选需要在本地电脑上安装VMware，然后在VMware中安装">
+    <meta name="keywords" content="SQL实战, 简若">
+    <meta name="description" content="
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>大数据分布式集群基础环境搭建 | 简若</title>
+    <title>SQL实战 | 简若</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//c3111d3e.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">大数据分布式集群基础环境搭建</h1>
+                    <h1 class="description center-align post-title">SQL实战</h1>
                 </div>
             </div>
         </div>
@@ -428,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83/">
-                                <span class="chip bg-color">集群环境</span>
+                            <a href="/tags/SQL/">
+                                <span class="chip bg-color">SQL</span>
                             </a>
                         
                     </div>
@@ -440,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
-                                大数据
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
                             </a>
                         
                     </div>
@@ -453,28 +455,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-06
+                    2020-08-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-07
+                    2020-08-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    654
+                    52
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -490,65 +492,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在学习大数据时，需要搭建一套分布式集群环境供学习使用。在没有足够服务器资源的情况下，这里我通过VMware虚拟机搭建一套分布式集群基础环境。</p>
-<h2 id="1-VMware中安装CentOS7"><a href="#1-VMware中安装CentOS7" class="headerlink" title="1.VMware中安装CentOS7"></a>1.VMware中安装CentOS7</h2><p>首选需要在本地电脑上安装VMware，然后在VMware中安装CentOS。这里仅仅介绍如何在VMware中安装CentOS7。我使用的VMware版本为15.5.0，CentOS版本为：CentOS-7-x86_64-DVD-1908。</p>
-<h3 id="1-1-下载CentOS镜像文件"><a href="#1-1-下载CentOS镜像文件" class="headerlink" title="1.1 下载CentOS镜像文件"></a>1.1 下载CentOS镜像文件</h3><p>进入<a href="https://www.centos.org/" target="_blank" rel="noopener">CentOS官网</a>，依次点击【Get CentOS Now】-&gt;【CentOS Linux DVD ISO】，进入到CentOS操作系统最新版的下载页面。如果想下载CentOS的历史版本，访问<a href="http://vault.centos.org/" target="_blank" rel="noopener">历史版本下载网站</a>，选择所需的版本下载。</p>
-<h3 id="1-2-新建虚拟机"><a href="#1-2-新建虚拟机" class="headerlink" title="1.2 新建虚拟机"></a>1.2 新建虚拟机</h3><ul>
-<li>Step 01：在VMware中，选择【文件】-&gt;【新建虚拟机】，打开【新建虚拟机向导】，选择【典型】配置，并进入下一步。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-2-1.png" style="zoom: 40%;">
-
-<ul>
-<li>Step 02：在新窗口中选择【稍后安装操作系统】，并进入下一步。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-2-2.png" style="zoom:40%;">
-
-<ul>
-<li>Step 03：选择客户机操作系统为【Linux】，系统版本为【CentOS 7 64位】，进入下一步。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-2-3.png" style="zoom:40%;">
-
-<ul>
-<li>Step 04：设置虚拟机名称和位置，并进入下一步。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-2-4.png" style="zoom:40%;">
-
-<ul>
-<li>Step 05：设置磁盘容量，默认为20 GB，可以根据需要调整。选择【将虚拟磁盘拆分成多个文件】，并进入下一步。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-2-5.png" style="zoom:40%;">
-
-<ul>
-<li>Step 06：在新窗口中，显示当前虚拟机的配置信息。可以单击【自定义硬件】对内存等配置进行调整。点击【完成】后，进入到新建的虚拟机主窗口。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d51146451-2-6.png" style="zoom:40%;">
-
-<ul>
-<li>Step 07：点击【编辑虚拟机设置】，选择【CD/DVD】，加载ISO映像文件，然后点击【确定】。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-2-7.png" style="zoom:27%;">
-
-<h3 id="1-3-安装CentOS操作系统"><a href="#1-3-安装CentOS操作系统" class="headerlink" title="1.3 安装CentOS操作系统"></a>1.3 安装CentOS操作系统</h3><ul>
-<li>Step 01：开启虚拟机，选择【Install CentOS 7】选项，回车开始进行安装。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-3-1.png" style="zoom:40%;">
-
-<ul>
-<li>Step 02：在语言选择窗口，选择【中文】。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-3-2.png" style="zoom:40%;">
-
-<ul>
-<li>Step 03：在安装信息摘要窗口，设置【安装位置】，这里我选择【自动配置分区】。【软件选择】这里选择了【GNOME桌面】，右侧的附加选项可以根据需要进行勾选，这里我选择了【开发工具】。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-3-3.png" style="zoom:40%;">
-
-<ul>
-<li>Step 04：用户设置窗口，设置了ROOT密码，并创建了一个管理员用户。配置完成后，点击【重启】，重启操作系统。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/d5114645/1-3-6.png" style="zoom:40%;">
-
-<h2 id="2-CentOS7集群基础环境配置"><a href="#2-CentOS7集群基础环境配置" class="headerlink" title="2.CentOS7集群基础环境配置"></a>2.CentOS7集群基础环境配置</h2><h4 id="2-1-系统环境配置"><a href="#2-1-系统环境配置" class="headerlink" title="2.1 系统环境配置"></a>2.1 系统环境配置</h4><h4 id="2-2-安装JDK"><a href="#2-2-安装JDK" class="headerlink" title="2.2 安装JDK"></a>2.2 安装JDK</h4><h4 id="2-3-克隆虚拟机"><a href="#2-3-克隆虚拟机" class="headerlink" title="2.3 克隆虚拟机"></a>2.3 克隆虚拟机</h4><script>
+                <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -591,7 +535,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.linwang93.cn/posts/d5114645.html">http://www.linwang93.cn/posts/d5114645.html</a>
+                    <a href="http://www.linwang93.cn/posts/c3111d3e.html">http://www.linwang93.cn/posts/c3111d3e.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -629,8 +573,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83/">
-                                    <span class="chip bg-color">集群环境</span>
+                                <a href="/tags/SQL/">
+                                    <span class="chip bg-color">SQL</span>
                                 </a>
                             
                         </div>
@@ -801,7 +745,7 @@
         repo: 'gitalk',
         owner: 'weylin0714',
         admin: "weylin0714",
-        id: '2020-03-06T22-02-55',
+        id: '2020-08-10T23-17-25',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -822,46 +766,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/88213f00.html">
+                <a href="/posts/c3111d3e.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/88213f00.jpg" class="responsive-img" alt="Python学习笔记（一）：Python全栈学习知识提纲与路线">
+                        <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//c3111d3e.jpg" class="responsive-img" alt="SQL实战">
                         
-                        <span class="card-title">Python学习笔记（一）：Python全栈学习知识提纲与路线</span>
+                        <span class="card-title">SQL实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            工作中Python作为主要开发语言，学习过一些基础，但比较零散，也常常忘记。工作中往往是有啥实现需求再去搜索相关内容。一直希望能够系统深入的学习Python及其应用，这里，简要梳理了Python的学习路线与核心知识提纲。
-一、Python全
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">Python学习笔记</span>
+                    <a href="/tags/SQL/">
+                        <span class="chip bg-color">SQL</span>
                     </a>
                     
                 </div>
@@ -875,28 +823,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/a85997d6.html">
+                <a href="/posts/88991843.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_card_img/a85997d6.jpg" class="responsive-img" alt="CentOS7下MySQL安装与卸载">
+                        <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//88991843.jpg" class="responsive-img" alt="SQL进阶">
                         
-                        <span class="card-title">CentOS7下MySQL安装与卸载</span>
+                        <span class="card-title">SQL进阶</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. MySQL数据库安装1.1 安装前准备
-下载并安装MySQL yum仓库
-
-访问MySQL Yum 仓库下载页，选择合适得版本下载。
-# 进入/usr/local/src目录下，在线下载rpm包
-wget http://repo.my
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-10
                             </span>
                         <span class="publish-author">
                             
@@ -913,8 +859,8 @@ wget http://repo.my
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/SQL/">
+                        <span class="chip bg-color">SQL</span>
                     </a>
                     
                 </div>
