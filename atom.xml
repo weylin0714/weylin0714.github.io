@@ -132,68 +132,6 @@
   </entry>
   
   <entry>
-    <title>玩转PyCharm</title>
-    <link href="http://www.linwang93.cn/posts/f743df65.html"/>
-    <id>http://www.linwang93.cn/posts/f743df65.html</id>
-    <published>2020-05-31T02:24:18.000Z</published>
-    <updated>2020-05-31T11:12:10.811Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="PyCharm" scheme="http://www.linwang93.cn/tags/PyCharm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>玩转VS Code</title>
-    <link href="http://www.linwang93.cn/posts/4219d646.html"/>
-    <id>http://www.linwang93.cn/posts/4219d646.html</id>
-    <published>2020-05-31T02:23:55.000Z</published>
-    <updated>2020-05-31T11:10:26.907Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="VS Code" scheme="http://www.linwang93.cn/tags/VS-Code/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Typora+PicGo+Github/Gitee搭建免费图床</title>
     <link href="http://www.linwang93.cn/posts/9b15a04a.html"/>
     <id>http://www.linwang93.cn/posts/9b15a04a.html</id>
@@ -581,6 +519,63 @@
         
         
           &lt;h2 id=&quot;1-字典&quot;&gt;&lt;a href=&quot;#1-字典&quot; class=&quot;headerlink&quot; title=&quot;1. 字典&quot;&gt;&lt;/a&gt;1. 字典&lt;/h2&gt;&lt;h3 id=&quot;1-1-定义&quot;&gt;&lt;a href=&quot;#1-1-定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记（四）：数据类型-列表与元组</title>
+    <link href="http://www.linwang93.cn/posts/92f2c1f8.html"/>
+    <id>http://www.linwang93.cn/posts/92f2c1f8.html</id>
+    <published>2020-04-05T07:27:02.000Z</published>
+    <updated>2020-05-03T06:37:57.399Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-列表&quot;&gt;&lt;a href=&quot;#1-列表&quot; class=&quot;headerlink&quot; title=&quot;1. 列表&quot;&gt;&lt;/a&gt;1. 列表&lt;/h2&gt;&lt;h3 id=&quot;1-1-定义&quot;&gt;&lt;a href=&quot;#1-1-定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记（三）：数据类型-数字与字符串</title>
+    <link href="http://www.linwang93.cn/posts/3b438966.html"/>
+    <id>http://www.linwang93.cn/posts/3b438966.html</id>
+    <published>2020-03-31T02:19:56.000Z</published>
+    <updated>2020-04-18T04:22:35.347Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。&lt;/p&gt;
+&lt;p&gt;上述6种数据类型可分为两类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不可变数据类型：数字、字符串、元组。
         
       
     
