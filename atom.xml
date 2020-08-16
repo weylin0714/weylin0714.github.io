@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-08-12T10:23:43.639Z</updated>
+  <updated>2020-08-16T15:51:09.951Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sphinx + GitHub + ReadtheDocs 创建电子书</title>
+    <link href="http://www.linwang93.cn/posts/38fc55dd.html"/>
+    <id>http://www.linwang93.cn/posts/38fc55dd.html</id>
+    <published>2020-08-15T09:38:37.000Z</published>
+    <updated>2020-08-16T15:51:09.951Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-创建电子书&quot;&gt;&lt;a href=&quot;#1-创建电子书&quot; class=&quot;headerlink&quot; title=&quot;1. 创建电子书&quot;&gt;&lt;/a&gt;1. 创建电子书&lt;/h2&gt;&lt;h3 id=&quot;1-1-安装Sphinx&quot;&gt;&lt;a href=&quot;#1-1-安装Sphinx&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="电子书" scheme="http://www.linwang93.cn/categories/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+    
+      <category term="Sphinx" scheme="http://www.linwang93.cn/tags/Sphinx/"/>
+    
+      <category term="ReadtheDocs" scheme="http://www.linwang93.cn/tags/ReadtheDocs/"/>
+    
+      <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL必知必会</title>
@@ -155,13 +186,13 @@
       <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
+      <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
     
       <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
     
-      <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
+      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
     
-      <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
+      <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
     
   </entry>
   
@@ -546,36 +577,6 @@
         
         
           &lt;h2 id=&quot;1-列表&quot;&gt;&lt;a href=&quot;#1-列表&quot; class=&quot;headerlink&quot; title=&quot;1. 列表&quot;&gt;&lt;/a&gt;1. 列表&lt;/h2&gt;&lt;h3 id=&quot;1-1-定义&quot;&gt;&lt;a href=&quot;#1-1-定义&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（三）：数据类型-数字与字符串</title>
-    <link href="http://www.linwang93.cn/posts/3b438966.html"/>
-    <id>http://www.linwang93.cn/posts/3b438966.html</id>
-    <published>2020-03-31T02:19:56.000Z</published>
-    <updated>2020-04-18T04:22:35.347Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。&lt;/p&gt;
-&lt;p&gt;上述6种数据类型可分为两类：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;不可变数据类型：数字、字符串、元组。
         
       
     
