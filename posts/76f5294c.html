@@ -5,10 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python学习笔记（十五）：日期与时间, 简若">
-    <meta name="description" content="
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return">
+    <meta name="description" content="在Python中，与时间和日期处理相关模块有：time 模块、datetime 模块和 calendar 模块。
+1. time模块time 模块提供时间相关的类和函数。
+1.1 获取当前时间import time
+
+seconds = t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -462,21 +463,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-06-29
+                    2020-08-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    52
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
 
@@ -492,7 +493,203 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <p>在Python中，与时间和日期处理相关模块有：<code>time</code> 模块、<code>datetime</code> 模块和 <code>calendar</code> 模块。</p>
+<h2 id="1-time模块"><a href="#1-time模块" class="headerlink" title="1. time模块"></a>1. time模块</h2><p>time 模块提供时间相关的类和函数。</p>
+<h3 id="1-1-获取当前时间"><a href="#1-1-获取当前时间" class="headerlink" title="1.1 获取当前时间"></a>1.1 获取当前时间</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> time
+
+seconds <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+local_time <span class="token operator">=</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span>seconds<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 时间浮点数转换为时间元组</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>seconds<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>local_time<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">1598181396.107466</span>
+time<span class="token punctuation">.</span>struct_time<span class="token punctuation">(</span>tm_year<span class="token operator">=</span><span class="token number">2020</span><span class="token punctuation">,</span> tm_mon<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> tm_mday<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">,</span> tm_hour<span class="token operator">=</span><span class="token number">19</span><span class="token punctuation">,</span> tm_min<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">,</span> tm_sec<span class="token operator">=</span><span class="token number">36</span><span class="token punctuation">,</span> tm_wday<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> tm_yday<span class="token operator">=</span><span class="token number">236</span><span class="token punctuation">,</span> tm_isdst<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-2-格式化时间字符串"><a href="#1-2-格式化时间字符串" class="headerlink" title="1.2 格式化时间字符串"></a>1.2 格式化时间字符串</h3><p><code>time</code> 类 <code>strftime</code> 方法，可以按照时间格式要求格式化 <code>struct_time</code> 为时间字符串。</p>
+<p>常用的时间格式：</p>
+<p><code>%Y</code>：四位数的年份表示（0000-9999）</p>
+<p><code>%m</code>：月份（01-12）</p>
+<p><code>%d</code>：月内中的一天（0-31）</p>
+<p><code>%H</code>：24小时制小时数（0-23）</p>
+<p><code>%M</code>：分钟数（00-59）</p>
+<p><code>%S</code>：秒（00-59）</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> time
+
+local_time <span class="token operator">=</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span>
+format_time <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%Y-%m-%d %H:%M:%S'</span><span class="token punctuation">,</span> local_time<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>format_time<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">23</span> <span class="token number">19</span><span class="token punctuation">:</span><span class="token number">41</span><span class="token punctuation">:</span><span class="token number">08</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-3-时间字符串转时间元组"><a href="#1-3-时间字符串转时间元组" class="headerlink" title="1.3 时间字符串转时间元组"></a>1.3 时间字符串转时间元组</h3><p><code>time</code> 类 <code>strptime</code> 方法，解析 (<code>parse</code>) 时间字符串为 <code>struct_time</code> 类型的时间。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> time
+
+format_time <span class="token operator">=</span> <span class="token string">'2020-08-23 19:41:08'</span>
+str_to_struct <span class="token operator">=</span> time<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>format_time<span class="token punctuation">,</span> <span class="token string">'%Y-%m-%d %H:%M:%S'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>str_to_struct<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+time<span class="token punctuation">.</span>struct_time<span class="token punctuation">(</span>tm_year<span class="token operator">=</span><span class="token number">2020</span><span class="token punctuation">,</span> tm_mon<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> tm_mday<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">,</span> tm_hour<span class="token operator">=</span><span class="token number">19</span><span class="token punctuation">,</span> tm_min<span class="token operator">=</span><span class="token number">41</span><span class="token punctuation">,</span> tm_sec<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> tm_wday<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> tm_yday<span class="token operator">=</span><span class="token number">236</span><span class="token punctuation">,</span> tm_isdst<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意，使用<code>strptime</code>时，第二个参数的时间格式，要匹配上第一个参数的时间格式。</p>
+<h2 id="2-datetime模块"><a href="#2-datetime模块" class="headerlink" title="2. datetime模块"></a>2. datetime模块</h2><p>datetime模块提供了 4 种对日期和时间进行处理的类：<strong>date</strong>、<strong>time</strong>、<strong>datetime</strong> 和 <strong>timedelta</strong>。</p>
+<h3 id="2-1-date"><a href="#2-1-date" class="headerlink" title="2.1 date"></a>2.1 date</h3><p><code>date</code> 类可以表示包含年、月、日等信息的日期值。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> date
+
+<span class="token comment" spellcheck="true">## 当前日期</span>
+now_date <span class="token operator">=</span> date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+str_date <span class="token operator">=</span> date<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span>now_date<span class="token punctuation">,</span><span class="token string">'%Y-%m-%d'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>now_date<span class="token punctuation">)</span><span class="token punctuation">,</span> now_date<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>str_date<span class="token punctuation">)</span><span class="token punctuation">,</span> str_date<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'year={now_date.year}, month={now_date.month}, day={now_date.day}'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'datetime.date'</span><span class="token operator">></span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">23</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">23</span>
+year<span class="token operator">=</span><span class="token number">2020</span><span class="token punctuation">,</span> month<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> day<span class="token operator">=</span><span class="token number">23</span>
+
+<span class="token comment" spellcheck="true">## 指定日期</span>
+date1 <span class="token operator">=</span> date<span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">)</span>
+str_date <span class="token operator">=</span> date<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span>date1<span class="token punctuation">,</span><span class="token string">'%Y-%m-%d'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>str_date<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">23</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-2-time"><a href="#2-2-time" class="headerlink" title="2.2 time"></a>2.2 time</h3><p><code>time</code> 类可以表示包含时、分、秒、微秒、时区等信息的时间对象。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> time
+
+tm <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>tm<span class="token punctuation">)</span><span class="token punctuation">,</span> tm<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'datetime.time'</span><span class="token operator">></span> <span class="token number">12</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-3-datetime"><a href="#2-3-datetime" class="headerlink" title="2.3 datetime"></a>2.3 datetime</h3><p><code>datetime</code> 类可以表示完整的日期和时间，类似 <code>time</code> 类和 <code>date</code> 类的结合。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
+
+dt <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 获取当前的日期时间</span>
+str_dt <span class="token operator">=</span> datetime<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span>dt<span class="token punctuation">,</span><span class="token string">'%Y-%m-%d %H:%M:%S'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dt<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>str_dt<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dt<span class="token punctuation">.</span>date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 返回日期部分</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dt<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 返回时间部分</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dt<span class="token punctuation">.</span>year<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 年</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dt<span class="token punctuation">.</span>isoweekday<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 星期几</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">23</span> <span class="token number">20</span><span class="token punctuation">:</span><span class="token number">48</span><span class="token punctuation">:</span><span class="token number">59.848876</span>
+<span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">23</span> <span class="token number">20</span><span class="token punctuation">:</span><span class="token number">48</span><span class="token punctuation">:</span><span class="token number">59</span>
+<span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">23</span>
+<span class="token number">20</span><span class="token punctuation">:</span><span class="token number">48</span><span class="token punctuation">:</span><span class="token number">59.848876</span>
+<span class="token number">2020</span>
+<span class="token number">7</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在处理含有字符串日期的数据集时，我们需要一种自动解析字符串的方法，无论它是什么格式的，都可以将其转化为 datetime 对象。 可以使用dateutil 中的 parser 模块来实现这个需求。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> dateutil <span class="token keyword">import</span> parser
+
+str_date <span class="token operator">=</span> <span class="token string">'2020-06-25'</span>
+dt <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse<span class="token punctuation">(</span>str_date<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>dt<span class="token punctuation">)</span><span class="token punctuation">,</span> dt<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'datetime.datetime'</span><span class="token operator">></span> <span class="token number">2020</span><span class="token operator">-</span><span class="token number">06</span><span class="token operator">-</span><span class="token number">25</span> <span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-4-timedelta"><a href="#2-4-timedelta" class="headerlink" title="2.4 timedelta"></a>2.4 timedelta</h3><p><code>timedelta</code> 类表示某个特定长度的时间段，即两个日期或时间之间的间隔。两个 <code>datetime</code> 相减会得到 <code>timedelta</code> 对象，也可以用 <code>datetime</code> 加上或者减去 <code>timedelta</code> 得到新的时间值。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime<span class="token punctuation">,</span> timedelta
+
+dt1 <span class="token operator">=</span> datetime<span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+dt2 <span class="token operator">=</span> dt1 <span class="token operator">+</span> timedelta<span class="token punctuation">(</span>hours<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">,</span> minutes<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span>
+dt3 <span class="token operator">=</span> dt1 <span class="token operator">+</span> timedelta<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+dt4 <span class="token operator">=</span> dt1 <span class="token operator">+</span> timedelta<span class="token punctuation">(</span>weeks<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dt2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dt3<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>dt4<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token number">12</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">:</span><span class="token number">00</span>
+<span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">11</span> <span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span>
+<span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">15</span> <span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-calendar模块"><a href="#3-calendar模块" class="headerlink" title="3. calendar模块"></a>3. calendar模块</h2><h3 id="3-1-绘制年日历图"><a href="#3-1-绘制年日历图" class="headerlink" title="3.1 绘制年日历图"></a>3.1 绘制年日历图</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> calendar
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> date
+
+now_date <span class="token operator">=</span> date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span>
+year_calendar_str <span class="token operator">=</span> calendar<span class="token punctuation">.</span>calendar<span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"{now_date.year}年的日历图：{year_calendar_str}\n"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">2020</span>年的日历图：                                  <span class="token number">2020</span>
+
+      January                   February                   March
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+       <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>                      <span class="token number">1</span>  <span class="token number">2</span>                         <span class="token number">1</span>
+ <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span>       <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span>       <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>
+<span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span>      <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span>       <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span>
+<span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span>      <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span>      <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span>
+<span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span> <span class="token number">31</span>            <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span>         <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span>
+                                                    <span class="token number">30</span> <span class="token number">31</span>
+
+       April                      May                       June
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+       <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>                   <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>       <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>
+ <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span>       <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span>       <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span>
+<span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span>      <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span> <span class="token number">17</span>      <span class="token number">15</span> <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span>
+<span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span>      <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span> <span class="token number">24</span>      <span class="token number">22</span> <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span>
+<span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span>               <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span> <span class="token number">31</span>      <span class="token number">29</span> <span class="token number">30</span>
+
+        July                     August                  September
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+       <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>                      <span class="token number">1</span>  <span class="token number">2</span>          <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>
+ <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span>       <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span>       <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span>
+<span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span>      <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span>      <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span>
+<span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span>      <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span>      <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span>
+<span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span> <span class="token number">31</span>            <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span>      <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span>
+                          <span class="token number">31</span>
+
+      October                   November                  December
+Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su      Mo Tu We Th Fr Sa Su
+          <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>                         <span class="token number">1</span>          <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>
+ <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span>       <span class="token number">2</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>       <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span>
+<span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span>       <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span>      <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span>
+<span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span>      <span class="token number">16</span> <span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span>      <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span>
+<span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span> <span class="token number">31</span>         <span class="token number">23</span> <span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span>      <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span> <span class="token number">31</span>
+                          <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2-绘制月日历图"><a href="#3-2-绘制月日历图" class="headerlink" title="3.2 绘制月日历图"></a>3.2 绘制月日历图</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> calendar
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> date
+
+now_date <span class="token operator">=</span> date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span>
+month_calendar_str <span class="token operator">=</span> calendar<span class="token punctuation">.</span>month<span class="token punctuation">(</span>now_date<span class="token punctuation">.</span>year<span class="token punctuation">,</span> now_date<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"{month_calendar_str}"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+August <span class="token number">2020</span>
+Mo Tu We Th Fr Sa Su
+                <span class="token number">1</span>  <span class="token number">2</span>
+ <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span>
+<span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span> <span class="token number">13</span> <span class="token number">14</span> <span class="token number">15</span> <span class="token number">16</span>
+<span class="token number">17</span> <span class="token number">18</span> <span class="token number">19</span> <span class="token number">20</span> <span class="token number">21</span> <span class="token number">22</span> <span class="token number">23</span>
+<span class="token number">24</span> <span class="token number">25</span> <span class="token number">26</span> <span class="token number">27</span> <span class="token number">28</span> <span class="token number">29</span> <span class="token number">30</span>
+<span class="token number">31</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-3-判断是否为闰年"><a href="#3-3-判断是否为闰年" class="headerlink" title="3.3 判断是否为闰年"></a>3.3 判断是否为闰年</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> calendar
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> date
+
+now_date <span class="token operator">=</span> date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span>
+is_leap <span class="token operator">=</span> calendar<span class="token punctuation">.</span>isleap<span class="token punctuation">(</span>now_date<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
+<span class="token keyword">if</span> is_leap<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s年是闰年"</span><span class="token operator">%</span>now_date<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%s年不是闰年"</span><span class="token operator">%</span>now_date<span class="token punctuation">.</span>year<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">2020</span>年是闰年<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-4-判断月有几天"><a href="#3-4-判断月有几天" class="headerlink" title="3.4 判断月有几天"></a>3.4 判断月有几天</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> calendar
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> date
+
+now_date <span class="token operator">=</span> date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span>
+weekday<span class="token punctuation">,</span> days <span class="token operator">=</span> calendar<span class="token punctuation">.</span>monthrange<span class="token punctuation">(</span>now_date<span class="token punctuation">.</span>year<span class="token punctuation">,</span> now_date<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{now_date.year}年-{now_date.month}月的第一天是那一周的第{weekday}天'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{now_date.year}年-{now_date.month}月共有{days}天'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">2020</span>年<span class="token operator">-</span><span class="token number">8</span>月的第一天是那一周的第<span class="token number">5</span>天
+<span class="token number">2020</span>年<span class="token operator">-</span><span class="token number">8</span>月共有<span class="token number">31</span>天<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-5-月的第一天和最后一天"><a href="#3-5-月的第一天和最后一天" class="headerlink" title="3.5 月的第一天和最后一天"></a>3.5 月的第一天和最后一天</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> date
+<span class="token keyword">import</span> calendar
+
+<span class="token comment" spellcheck="true"># 月的第一天</span>
+now_date <span class="token operator">=</span> date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span>
+month_first_day <span class="token operator">=</span> date<span class="token punctuation">(</span>now_date<span class="token punctuation">.</span>year<span class="token punctuation">,</span> now_date<span class="token punctuation">.</span>month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"当月第一天:{month_first_day}"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 月的最后一天</span>
+_<span class="token punctuation">,</span> days <span class="token operator">=</span> calendar<span class="token punctuation">.</span>monthrange<span class="token punctuation">(</span>now_date<span class="token punctuation">.</span>year<span class="token punctuation">,</span> now_date<span class="token punctuation">.</span>month<span class="token punctuation">)</span>
+month_last_day <span class="token operator">=</span> date<span class="token punctuation">(</span>now_date<span class="token punctuation">.</span>year<span class="token punctuation">,</span> now_date<span class="token punctuation">.</span>month<span class="token punctuation">,</span> days<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"当月最后一天:{month_last_day}"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+当月第一天<span class="token punctuation">:</span><span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span>
+当月最后一天<span class="token punctuation">:</span><span class="token number">2020</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">31</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1042,7 +1239,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">84.9k</span>&nbsp;字
+                class="white-color">88.9k</span>&nbsp;字
             
             
             

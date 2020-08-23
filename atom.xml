@@ -188,42 +188,11 @@
     
       <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
     
-      <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
-    
       <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
     
+      <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
       <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python进阶之路（一）--枚举Enum</title>
-    <link href="http://www.linwang93.cn/posts/3309c17c.html"/>
-    <id>http://www.linwang93.cn/posts/3309c17c.html</id>
-    <published>2020-05-05T03:41:35.000Z</published>
-    <updated>2020-05-21T01:07:10.777Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;待补充。。。&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python进阶之路" scheme="http://www.linwang93.cn/tags/Python%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     
   </entry>
   
@@ -260,7 +229,7 @@
     <link href="http://www.linwang93.cn/posts/76f5294c.html"/>
     <id>http://www.linwang93.cn/posts/76f5294c.html</id>
     <published>2020-05-03T07:37:39.000Z</published>
-    <updated>2020-06-29T13:04:28.463Z</updated>
+    <updated>2020-08-23T14:27:14.365Z</updated>
     
     <summary type="html">
     
@@ -268,11 +237,8 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;p&gt;在Python中，与时间和日期处理相关模块有：&lt;code&gt;time&lt;/code&gt; 模块、&lt;code&gt;datetime&lt;/code&gt; 模块和 &lt;code&gt;calendar&lt;/code&gt; 模块。&lt;/p&gt;
+&lt;h2 id=&quot;1-time模块&quot;&gt;&lt;a
         
       
     
@@ -320,7 +286,7 @@
     <link href="http://www.linwang93.cn/posts/142a13a2.html"/>
     <id>http://www.linwang93.cn/posts/142a13a2.html</id>
     <published>2020-05-03T07:35:15.000Z</published>
-    <updated>2020-05-20T14:10:13.498Z</updated>
+    <updated>2020-08-22T15:50:38.885Z</updated>
     
     <summary type="html">
     
@@ -328,11 +294,7 @@
       
         
         
-          &lt;p&gt;待补充。。。&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {
+          &lt;h2 id=&quot;1-文件操作&quot;&gt;&lt;a href=&quot;#1-文件操作&quot; class=&quot;headerlink&quot; title=&quot;1. 文件操作&quot;&gt;&lt;/a&gt;1. 文件操作&lt;/h2&gt;&lt;h3 id=&quot;1-1-文件读写操作&quot;&gt;&lt;a href=&quot;#1-1-文件读写操作&quot;
         
       
     
@@ -577,6 +539,36 @@
         
         
           &lt;h2 id=&quot;1-列表&quot;&gt;&lt;a href=&quot;#1-列表&quot; class=&quot;headerlink&quot; title=&quot;1. 列表&quot;&gt;&lt;/a&gt;1. 列表&lt;/h2&gt;&lt;h3 id=&quot;1-1-定义&quot;&gt;&lt;a href=&quot;#1-1-定义&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记（三）：数据类型-数字与字符串</title>
+    <link href="http://www.linwang93.cn/posts/3b438966.html"/>
+    <id>http://www.linwang93.cn/posts/3b438966.html</id>
+    <published>2020-03-31T02:19:56.000Z</published>
+    <updated>2020-04-18T04:22:35.347Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Python中有6种标准的数据类型：数字（Number）、字符串（String）、列表（List）、元组（Tuple）、集合（Set）、字典（Dictionary）。&lt;/p&gt;
+&lt;p&gt;上述6种数据类型可分为两类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不可变数据类型：数字、字符串、元组。
         
       
     

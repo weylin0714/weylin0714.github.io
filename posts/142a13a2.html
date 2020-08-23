@@ -5,11 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python学习笔记（十三）：文件操作与异常处理, 简若">
-    <meta name="description" content="待补充。。。
+    <meta name="description" content="1. 文件操作1.1 文件读写操作文件读、写操作比较常见。这里，学习在python中如何进行文件读写。
+1.1.1文件读操作读取文件，要先判断文件是否存在。如果文件存在，则正常进行读取，否则抛出文件不存在的异常。
 
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {">
+打开文件
+
+open(f">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -463,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    55
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    11 分
                 </div>
                 
 
@@ -493,7 +494,272 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>待补充。。。</p>
+                <h2 id="1-文件操作"><a href="#1-文件操作" class="headerlink" title="1. 文件操作"></a>1. 文件操作</h2><h3 id="1-1-文件读写操作"><a href="#1-1-文件读写操作" class="headerlink" title="1.1 文件读写操作"></a>1.1 文件读写操作</h3><p>文件读、写操作比较常见。这里，学习在python中如何进行文件读写。</p>
+<h4 id="1-1-1文件读操作"><a href="#1-1-1文件读操作" class="headerlink" title="1.1.1文件读操作"></a>1.1.1文件读操作</h4><p>读取文件，要先判断文件是否存在。如果文件存在，则正常进行读取，否则抛出文件不存在的异常。</p>
+<ul>
+<li>打开文件</li>
+</ul>
+<pre><code>open(file, mode='r', encoding=None, ...)</code></pre><p>参数说明：</p>
+<p><code>file</code>: 必需，文件路径（相对或者绝对路径）。</p>
+<p><code>mode</code>: 可选，文件打开模式。</p>
+<p><code>encoding</code>: 编码方式，一般使用utf8。</p>
+<p>常用的mode参数：</p>
+<p><strong>mode=’r’：</strong>以只读方式打开文件，文件的指针将会放在文件的开头。（默认模式）</p>
+<p><strong>mode=’w’：</strong>打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</p>
+<p><strong>mode=’a’：</strong>打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</p>
+<p><strong>mode=’+’：</strong>可读写模式，可与其他模式等配合使用，如’r+’、’w+’、’a+’等。</p>
+<ul>
+<li>读取文件内容</li>
+</ul>
+<p>使用<code>open()</code>打开文件，返回一个<strong>文件对象</strong><code>fileObject</code>。</p>
+<p><code>fileObject.readlines()</code>：一次性读取文件所有内容，并返回一个列表。</p>
+<pre class="line-numbers language-python"><code class="language-python">f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"E:/WorkSpace/test.txt"</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+lines <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lines<span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出   由每行字符串构成列表</span>
+<span class="token punctuation">[</span><span class="token string">'Beautiful is better than ugly.\n'</span><span class="token punctuation">,</span> <span class="token string">'Explicit is better than implicit.\n'</span><span class="token punctuation">,</span> <span class="token string">'Simple is better than complex.\n'</span><span class="token punctuation">,</span> <span class="token string">'Complex is better than complicated.\n'</span><span class="token punctuation">,</span> <span class="token string">'Flat is better than nested.\n'</span><span class="token punctuation">,</span> <span class="token string">'Sparse is better than dense.\n'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>fileObject.readline()</code>：一次读取文件一行，能解决大文件读取内存溢出问题。</p>
+<pre class="line-numbers language-python"><code class="language-python">f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"E:/WorkSpace/test.txt"</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    line <span class="token operator">=</span> f<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> line<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">,</span> line<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span> Beautiful <span class="token keyword">is</span> better than ugly<span class="token punctuation">.</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span> Explicit <span class="token keyword">is</span> better than implicit<span class="token punctuation">.</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span> Simple <span class="token keyword">is</span> better than complex<span class="token punctuation">.</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span> Complex <span class="token keyword">is</span> better than complicated<span class="token punctuation">.</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span> Flat <span class="token keyword">is</span> better than nested<span class="token punctuation">.</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span> Sparse <span class="token keyword">is</span> better than dense<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>fileObject.read()</code>：读取整个文件，将文件内容放到一个字符串变量中。</p>
+<pre class="line-numbers language-python"><code class="language-python">f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"E:/WorkSpace/test.txt"</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+text <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">,</span> text<span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'str'</span><span class="token operator">></span> Beautiful <span class="token keyword">is</span> better than ugly<span class="token punctuation">.</span>
+Explicit <span class="token keyword">is</span> better than implicit<span class="token punctuation">.</span>
+Simple <span class="token keyword">is</span> better than complex<span class="token punctuation">.</span>
+Complex <span class="token keyword">is</span> better than complicated<span class="token punctuation">.</span>
+Flat <span class="token keyword">is</span> better than nested<span class="token punctuation">.</span>
+Sparse <span class="token keyword">is</span> better than dense<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>fileObject.close()</code>：用于关闭一个已打开的文件，关闭后的文件不能再进行读写操作。</p>
+<h4 id="1-1-2-文件写操作"><a href="#1-1-2-文件写操作" class="headerlink" title="1.1.2 文件写操作"></a>1.1.2 文件写操作</h4><p>如果想向文件中写入内容，打开文件<code>open()</code>的模式<code>mode</code>可以设置为<code>'w'</code>或<code>'w+'</code>。</p>
+<ul>
+<li>fileObject.write(str)：用于向文件中写入指定字符串，返回的是写入的字符长度。</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python">f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"E:/WorkSpace/test.txt"</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
+content <span class="token operator">=</span> <span class="token string">"Simple is better than complex"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">29</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>fileObject.writelines()：向文件写入一个序列字符串列表，如果需要换行则要自己加入每行的换行符<code>\n</code>。</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python">f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">"E:/WorkSpace/test.txt"</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
+str_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Simple is better than complex\n'</span><span class="token punctuation">,</span> <span class="token string">'Explicit is better than implicit'</span><span class="token punctuation">]</span>
+f<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span>str_list<span class="token punctuation">)</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-3-with语句读取文件"><a href="#1-3-with语句读取文件" class="headerlink" title="1.3 with语句读取文件"></a>1.3 with语句读取文件</h4><p>在读写文件时，我们经常使用with语句，可以保证在文件操作后会自动关闭打开的文件。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">"E:/WorkSpace/test.txt"</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+Simple <span class="token keyword">is</span> better than complex
+Explicit <span class="token keyword">is</span> better than implicit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-2-os模块中文件-目录方法"><a href="#1-2-os模块中文件-目录方法" class="headerlink" title="1.2 os模块中文件/目录方法"></a>1.2 os模块中文件/目录方法</h3><h4 id="1-2-1-os-getcwd"><a href="#1-2-1-os-getcwd" class="headerlink" title="1.2.1 os.getcwd()"></a>1.2.1 os.getcwd()</h4><p>返回当前工作目录。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+E<span class="token punctuation">:</span>\WorkSpace<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-2-os-chdir-path"><a href="#1-2-2-os-chdir-path" class="headerlink" title="1.2.2 os.chdir(path)"></a>1.2.2 os.chdir(path)</h4><p>用于改变当前工作目录到指定的路径。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 当前目录</span>
+os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">'E:\WorkSpace\EffectivePython'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 切换到新路径</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 新路径</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+E<span class="token punctuation">:</span>\WorkSpace
+E<span class="token punctuation">:</span>\WorkSpace\EffectivePython<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-3-os-listdir-path"><a href="#1-2-3-os-listdir-path" class="headerlink" title="1.2.3 os.listdir(path)"></a>1.2.3 os.listdir(path)</h4><p>返回path路径下包含的文件或文件夹的名字的列表。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+path <span class="token operator">=</span> <span class="token string">"E:/WorkSpace/EffectivePython"</span>
+dirs <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+<span class="token keyword">for</span> file <span class="token keyword">in</span> dirs<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">.</span>git
+<span class="token punctuation">.</span>gitignore
+<span class="token punctuation">.</span>vscode
+build
+make<span class="token punctuation">.</span>bat
+Makefile
+README<span class="token punctuation">.</span>md
+source<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-4-os-mkdir-path"><a href="#1-2-4-os-mkdir-path" class="headerlink" title="1.2.4 os.mkdir(path)"></a>1.2.4 os.mkdir(path)</h4><p>创建单层目录，如果该目录已存在抛出异常。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span><span class="token string">'E:/WorkSpace'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+FileExistsError<span class="token punctuation">:</span> <span class="token punctuation">[</span>WinError <span class="token number">183</span><span class="token punctuation">]</span> 当文件已存在时，无法创建该文件。<span class="token punctuation">:</span> <span class="token string">'E:/WorkSpace'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span><span class="token string">'E:/WorkSpace/subWorkSpace'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-5-os-makedirs-path"><a href="#1-2-5-os-makedirs-path" class="headerlink" title="1.2.5 os.makedirs(path)"></a>1.2.5 os.makedirs(path)</h4><p>用于递归创建多层目录，如果该目录已存在抛出异常。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span><span class="token string">'E:/WorkSpace/subWorkSpace1/subWorkSpace2'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-6-os-remove-path"><a href="#1-2-6-os-remove-path" class="headerlink" title="1.2.6 os.remove(path)"></a>1.2.6 os.remove(path)</h4><p>用于删除指定路径的文件。如果指定的路径是一个目录，将抛出 <code>OSError</code>。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+os<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'E:/WorkSpace/test.txt'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-7-os-rmdir-path"><a href="#1-2-7-os-rmdir-path" class="headerlink" title="1.2.7 os.rmdir(path)"></a>1.2.7 os.rmdir(path)</h4><p>用于删除单层目录，仅当这文件夹是空的才可以, 否则, 抛出OSError。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+os<span class="token punctuation">.</span>rmdir<span class="token punctuation">(</span><span class="token string">'E:/WorkSpace/subWorkSpace1/subWorkSpace2'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 仅删除subWorkSpace2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-8-os-removedirs-path"><a href="#1-2-8-os-removedirs-path" class="headerlink" title="1.2.8 os.removedirs(path)"></a>1.2.8 os.removedirs(path)</h4><p>递归删除目录，从子目录到父目录逐层尝试删除，遇到目录非空则抛出异常。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+os<span class="token punctuation">.</span>removedirs<span class="token punctuation">(</span><span class="token string">'E:/WorkSpace/subWorkSpace1/subWorkSpace2'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 删除/subWorkSpace1/subWorkSpace2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-9-os-rename-src-dst"><a href="#1-2-9-os-rename-src-dst" class="headerlink" title="1.2.9 os.rename(src, dst)"></a>1.2.9 os.rename(src, dst)</h4><p>用于命名文件或目录，从 src 到 dst,如果dst是一个存在的目录, 将抛出OSError。<strong>src</strong> 为要修改的目录名，<strong>dst</strong>是修改后的目录名。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span><span class="token string">'./subWorkSpace1/subWorkSpace2'</span><span class="token punctuation">,</span> <span class="token string">'./subWorkSpace1/subWorkSpace3'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># subWorkSpace2重命名为subWorkSpace3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-10-os-path模块"><a href="#1-2-10-os-path模块" class="headerlink" title="1.2.10 os.path模块"></a>1.2.10 os.path模块</h4><p>该模块主要用于获取文件的属性。</p>
+<ul>
+<li>os.path.basename(path)：返回文件名</li>
+<li>os.path.abspath(path)：返回绝对路径</li>
+<li>os.path.dirname(path)：返回文件路径</li>
+<li>os.path.exists(path)：判断指定路径（目录或文件）是否存在。</li>
+<li>os.path.isabs(path)：判断是否为绝对路径</li>
+<li>os.path.isfile(path)：判断路径是否为文件</li>
+<li>os.path.isdir(path)：判断路径是否为目录</li>
+<li>os.path.samefile(path1, path2)： 判断path1和path2是否相同</li>
+<li>os.path.join(path1[, path2[, …]])：将 <code>path1</code>和<code>path2</code> 各部分组合成一个路径名</li>
+<li>os.path.split(path)：把路径path分割成<u>文件路径</u>和<u>文件名</u>，并返回一个<code>(file_path, file_name)</code>元组。如果完全使用目录，它会将最后一个目录作为文件名分离，且不会判断文件或者目录是否存在。</li>
+<li>os.path.splitext(path)：分离文件名与扩展名，返回路径名和文件扩展名的元组。</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>basename<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2\test.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2\test.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2\test.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2\test1.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isabs<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isfile<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2\test.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>samefile<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2'</span><span class="token punctuation">,</span> r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace3'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace3'</span><span class="token punctuation">,</span> <span class="token string">'test.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>split<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2\test.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>splitext<span class="token punctuation">(</span>r<span class="token string">'E:\WorkSpace\subWorkSpace1\subWorkSpace2\test.txt'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+test<span class="token punctuation">.</span>txt
+E<span class="token punctuation">:</span>\WorkSpace\subWorkSpace1\subWorkSpace2\test<span class="token punctuation">.</span>txt
+E<span class="token punctuation">:</span>\WorkSpace\subWorkSpace1\subWorkSpace2
+<span class="token boolean">False</span>
+<span class="token boolean">True</span>
+<span class="token boolean">True</span>
+<span class="token boolean">True</span>
+<span class="token boolean">False</span>
+E<span class="token punctuation">:</span>\WorkSpace\subWorkSpace1\subWorkSpace3\test<span class="token punctuation">.</span>txt
+<span class="token punctuation">(</span><span class="token string">'E:\\WorkSpace\\subWorkSpace1\\subWorkSpace2'</span><span class="token punctuation">,</span> <span class="token string">'test.txt'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">'E:\\WorkSpace\\subWorkSpace1\\subWorkSpace2\\test'</span><span class="token punctuation">,</span> <span class="token string">'.txt'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-异常处理"><a href="#2-异常处理" class="headerlink" title="2. 异常处理"></a>2. 异常处理</h2><p>异常就是运行期检测到的错误。</p>
+<h3 id="2-1-Python-标准异常总结"><a href="#2-1-Python-标准异常总结" class="headerlink" title="2.1  Python 标准异常总结"></a>2.1  Python 标准异常总结</h3><ul>
+<li>BaseException：所有异常的<strong>基类</strong></li>
+<li>Exception：所有异常类的基类，但继承BaseException</li>
+<li>AssertionError ：断言语句（assert）失败</li>
+<li>AttributeError：尝试访问未知的对象属性</li>
+<li>IOError：输入/输出操作失败</li>
+<li>OSError：操作系统产生的异常</li>
+<li>KeyboardInterrupt：用户中断执行</li>
+<li>ImportError：导入模块失败的时候</li>
+<li>IndexError：索引超出序列的范围</li>
+<li>KeyError：字典中查找一个不存在的关键字</li>
+<li>MemoryError：内存溢出（可通过删除对象释放内存）</li>
+<li>NameError：尝试访问一个不存在的变量</li>
+<li>SyntaxError：语法错误导致的异常</li>
+<li>IndentationError：缩进错误导致的异常</li>
+<li>TypeError：不同类型间的无效操作</li>
+<li>ValueError：传入无效的参数</li>
+<li>UnicodeError：Unicode相关的异常（ValueError的子类）</li>
+<li>UnicodeEncodeError：Unicode编码错误导致的异常（UnicodeError的子类）</li>
+<li>UnicodeDecodeError：Unicode解码时的异常（UnicodeError的子类）</li>
+<li>ZeroDivisionError：除数为零</li>
+</ul>
+<h3 id="2-2-Python标准警告总结"><a href="#2-2-Python标准警告总结" class="headerlink" title="2.2 Python标准警告总结"></a>2.2 Python标准警告总结</h3><ul>
+<li>Warning：警告的基类</li>
+<li>DeprecationWarning：关于被弃用的特征的警告</li>
+<li>PendingDeprecationWarning：关于特性将会被废弃的警告</li>
+<li>RuntimeWarning：可疑的运行时行为(runtime behavior)的警告</li>
+<li>SyntaxWarning：可疑语法的警告</li>
+<li>ImportWarning：用于在导入模块过程中触发的警告</li>
+<li>UnicodeWarning：与Unicode相关的警告</li>
+<li>BytesWarning：与字节或字节码相关的警告</li>
+<li>ResourceWarning：与资源使用相关的警告</li>
+</ul>
+<h3 id="2-3-异常处理"><a href="#2-3-异常处理" class="headerlink" title="2.3 异常处理"></a>2.3 异常处理</h3><h4 id="2-3-1-try-except"><a href="#2-3-1-try-except" class="headerlink" title="2.3.1 try - except"></a>2.3.1 try - except</h4><pre><code>try:
+    执行代码
+except Exception as error:
+    发生异常时执行的代码</code></pre><p>工作方式：</p>
+<ul>
+<li>首先，执行<code>try</code>子句。如果没有异常发生，忽略<code>except</code>子句，<code>try</code>子句执行后结束。</li>
+<li>如果在执行<code>try</code>子句的过程中发生了异常，那么<code>try</code>子句余下的部分将被忽略。与异常类型对应的except子句将被执行。</li>
+<li>如果一个异常没有与任何的<code>except</code>匹配，那么这个异常将会传递给上层的<code>try</code>中。</li>
+</ul>
+<h4 id="2-3-2-try-except-else"><a href="#2-3-2-try-except-else" class="headerlink" title="2.3.2 try-except-else"></a>2.3.2 try-except-else</h4><pre><code>try:
+    执行代码
+except Exception as error:
+    发生异常时执行的代码
+else:
+    没有异常时执行的代码</code></pre><p>比如，判断文件是否可以打开，如果打开文件时没有发生异常则执行 else 部分的语句，读取文件内容，并关闭打开的文件。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'E:/WorkSpace/test.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> err<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"err: %s"</span><span class="token operator">%</span>err<span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    content <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-3-3-try-except-finally"><a href="#2-3-3-try-except-finally" class="headerlink" title="2.3.3 try - except - finally"></a>2.3.3 try - except - finally</h4><pre><code>try:
+    执行代码
+except Exception as error:
+    发生异常时执行的代码
+else:
+    没有异常时执行的代码
+finally:
+    不管有没有异常都会执行的代码</code></pre><p>如果一个异常在<code>try</code>子句里被抛出，而又没有任何的<code>except</code>把它截住，那么这个异常会在<code>finally</code>子句执行后被抛出。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">divide</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        result <span class="token operator">=</span> x <span class="token operator">/</span> y
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"result is"</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span>
+    <span class="token keyword">except</span> ZeroDivisionError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"division by zero!"</span><span class="token punctuation">)</span>
+    <span class="token keyword">finally</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"executing finally clause"</span><span class="token punctuation">)</span>
+
+divide<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+result <span class="token keyword">is</span> <span class="token number">0.5</span>
+executing <span class="token keyword">finally</span> clause
+
+divide<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+division by zero!
+executing <span class="token keyword">finally</span> clause
+
+divide<span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'4'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+executing <span class="token keyword">finally</span> clause
+TypeError<span class="token punctuation">:</span> unsupported operand type<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">for</span> <span class="token operator">/</span><span class="token punctuation">:</span> <span class="token string">'str'</span> <span class="token operator">and</span> <span class="token string">'str'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-3-4-抛出异常"><a href="#2-3-4-抛出异常" class="headerlink" title="2.3.4 抛出异常"></a>2.3.4 抛出异常</h4><p>使用<code>raise</code>语句抛出一个指定的异常。</p>
+<pre><code>raise [Exception [, args [, traceback]]]</code></pre><p>Exception 是异常的类型（例如，NameError）参数标准异常中任一种，args 是自已提供的异常参数。最后一个参数是可选的（在实践中很少使用），如果存在，是跟踪异常对象。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1045,7 +1311,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">84.9k</span>&nbsp;字
+                class="white-color">88.9k</span>&nbsp;字
             
             
             
