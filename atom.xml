@@ -75,37 +75,6 @@
   </entry>
   
   <entry>
-    <title>SQL实战</title>
-    <link href="http://www.linwang93.cn/posts/c3111d3e.html"/>
-    <id>http://www.linwang93.cn/posts/c3111d3e.html</id>
-    <published>2020-08-10T15:17:25.000Z</published>
-    <updated>2020-08-12T12:42:18.013Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="SQL" scheme="http://www.linwang93.cn/tags/SQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CentOS7下重新安装Python与yum</title>
     <link href="http://www.linwang93.cn/posts/15b17ed5.html"/>
     <id>http://www.linwang93.cn/posts/15b17ed5.html</id>
@@ -188,9 +157,9 @@
     
       <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
     
-      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
-    
       <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
     
       <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
     
@@ -569,6 +538,33 @@
 &lt;p&gt;上述6种数据类型可分为两类：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;不可变数据类型：数字、字符串、元组。
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
+    
+    
+      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记（二）：基础语法</title>
+    <link href="http://www.linwang93.cn/posts/e8a303d6.html"/>
+    <id>http://www.linwang93.cn/posts/e8a303d6.html</id>
+    <published>2020-03-28T06:24:47.000Z</published>
+    <updated>2020-04-03T16:22:32.662Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Python是一种动态的、强类型语言。所谓&lt;strong&gt;动态类型&lt;/strong&gt;是指类型检查操作是发生在程序执行阶段，像Python、JavaScript都属于这类型。其中，类型检查主要是验证类型约束的过程，查看变量及其类型，判断表达式是否合理。如果类型检查发生在编译阶
         
       
     
