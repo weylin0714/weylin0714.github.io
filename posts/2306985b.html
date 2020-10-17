@@ -504,29 +504,31 @@
 <h3 id="2-3-配置SSH-key"><a href="#2-3-配置SSH-key" class="headerlink" title="2.3 配置SSH key"></a>2.3 配置SSH key</h3><ul>
 <li>创建一个SSH key。（在Git bash命令行输入）</li>
 </ul>
-<pre><code>$ cd ~/. ssh    # 检查本机是否已存在ssh密钥</code></pre><p>如果提示：No such file or directory，则说明是第一次使用Git。然后，在命令行输入以下命令</p>
-<pre><code>$ ssh-keygen -t rsa -C "邮箱地址"</code></pre><p>连续三次回车，在用户目录下生成一个密钥文件（.ssh\id_rsa.pub）。</p>
+<pre><code>$ cd ~/. ssh    # 检查本机是否已存在ssh密钥
+</code></pre><p>如果提示：No such file or directory，则说明是第一次使用Git。然后，在命令行输入以下命令</p>
+<pre><code>$ ssh-keygen -t rsa -C "邮箱地址"
+</code></pre><p>连续三次回车，在用户目录下生成一个密钥文件（.ssh\id_rsa.pub）。</p>
 <ul>
 <li>添加密钥到github</li>
 </ul>
 <p>  复制id_rsa.pub文件中的内容并添加到github。打开github个人主页，进入Settings -&gt; SSH and GPG keys -&gt; New SSH key:</p>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Hexo_20190505/1.png" style="zoom:50%;">
-
+<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Hexo_20190505/1.png" style="zoom:50%;"></p>
 <ul>
 <li>测试是否添加成功</li>
 </ul>
 <pre><code>$ ssh -T git@github.com
-$ yes</code></pre><p>返回”You’ve successfully authenticated”，则说明添加成功。</p>
+$ yes
+</code></pre><p>返回”You’ve successfully authenticated”，则说明添加成功。</p>
 <h3 id="2-4-绑定域名"><a href="#2-4-绑定域名" class="headerlink" title="2.4 绑定域名"></a>2.4 绑定域名</h3><p>  可以不绑定域名，直接用默认的username.github.io来访问，也可以购买一个属于自己的域名。首先，需要注册一个域名，可以到<a href="https://sg.godaddy.com/zh/offers/domains/godaddycom?isc=gennbacn07&amp;countryview=1&amp;currencyType=CNY&amp;utm_source=Baidu&amp;utm_medium=cpc&amp;utm_term=Title&amp;utm_campaign=2019Brandzone%5FPC&amp;utm_content=Brandzone%5FPC&amp;gclid=CNql2LbdheICFYNOvAod4QMBcA&amp;gclsrc=ds" target="_blank" rel="noopener">godaddy</a>网站注册，也可以使用国内的<a href="https://wanwang.aliyun.com/?spm=5176.8142029.735711.62.3dbd6d3e5uxczh" target="_blank" rel="noopener">阿里云</a>，价格也比较便宜。我个人是使用的阿里云注册域名。</p>
 <p>  然后，需要绑定域名。域名配置常用的两种方式：CNAME和A记录。</p>
 <ul>
-<li><p>添加CNAME记录指向&lt;github账号名称&gt;.github.io</p>
+<li><p>添加CNAME记录指向<github账号名称>.github.io</github账号名称></p>
 <p>类型选择为CNAME；</p>
 <p>主机记录即域名前缀为：www;</p>
-<p>记录值填写为&lt;github账号名称&gt;.github.io</p>
+<p>记录值填写为<github账号名称>.github.io</github账号名称></p>
 <p>解析线路，TTL默认即可。</p>
 </li>
-<li><p>添加A记录指向&lt;github账号名称&gt;.github.io对应的IP地址，可以通过CMD命令行输入：ping  &lt;github账号名称&gt;.github.io来查看。</p>
+<li><p>添加A记录指向<github账号名称>.github.io对应的IP地址，可以通过CMD命令行输入：ping  <github账号名称>.github.io来查看。</github账号名称></github账号名称></p>
 <p>类型选择为A；</p>
 <p>主机记录及域名前缀为：@；</p>
 <p>记录值填写IP；</p>
@@ -541,10 +543,12 @@ $ yes</code></pre><p>返回”You’ve successfully authenticated”，则说明
 </li>
 </ul>
 <h3 id="2-5-安装Hexo"><a href="#2-5-安装Hexo" class="headerlink" title="2.5 安装Hexo"></a>2.5 安装Hexo</h3><p>   在命令行（即Git Bash）运行一下命令：</p>
-<pre><code>npm install -g hexo-cli</code></pre><p>初始化Hexo，在命令行运行以下命令：</p>
+<pre><code>npm install -g hexo-cli
+</code></pre><p>初始化Hexo，在命令行运行以下命令：</p>
 <pre><code>$ hexo init &lt;folder&gt;  # &lt;folder&gt;为存放Hexo初始化文件的路径，即站点目录，如我的目录为E：\hexo
 $ cd &lt;folder&gt;
-$ npm install</code></pre><p>运行结束后，在路径下生成hexo文件夹，文件夹目录：</p>
+$ npm install
+</code></pre><p>运行结束后，在路径下生成hexo文件夹，文件夹目录：</p>
 <pre><code>.
 ├── _config.yml
 ├── package.json
@@ -552,39 +556,47 @@ $ npm install</code></pre><p>运行结束后，在路径下生成hexo文件夹�
 ├── source
 |   ├── _drafts
 |   └── _posts
-└── themes</code></pre><p>注：</p>
+└── themes
+</code></pre><p>注：</p>
 <ul>
 <li>站点配置文件：站点目录下的<code>_config.yml</code>，路径为<code>&lt;folder&gt;\_config.yml</code></li>
 <li>主题配置文件：站点目录下themes文件夹下的，主题文件夹下的<code>_config.yml</code>，路径为<code>&lt;folder&gt;\themes\&lt;主题文件夹&gt;\_config.yml</code></li>
 </ul>
 <p>  在命令行（即Git Bash）运行以下命令：</p>
 <pre><code>$ hexo g # 生成
-$ hexo s # 启动服务</code></pre><p>执行以上命令之后，会在public文件夹生成相关html文件，这些文件将来都是要提交到github。</p>
+$ hexo s # 启动服务
+</code></pre><p>执行以上命令之后，会在public文件夹生成相关html文件，这些文件将来都是要提交到github。</p>
 <p>打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可看到博客内容。</p>
 <p>至此，Hexo已初步搭建在本地。</p>
 <h3 id="2-6-上传到Github"><a href="#2-6-上传到Github" class="headerlink" title="2.6 上传到Github"></a>2.6 上传到Github</h3><p>配置_config.yml中有关deploy部分</p>
 <pre><code>deploy:
   type: git
   repo: git@github.com:&lt;Github账号名称&gt;/&lt;Github账号名称&gt;.github.io.git
-  branch: master</code></pre><p>还需要安装一个插件，运行以下命令：</p>
-<pre><code>$ npm install hexo-deployer-git --save</code></pre><h3 id="2-7-常用hexo命令"><a href="#2-7-常用hexo命令" class="headerlink" title="2.7 常用hexo命令"></a>2.7 常用hexo命令</h3><pre><code>hexo new "postName"               #新建文章
+  branch: master
+</code></pre><p>还需要安装一个插件，运行以下命令：</p>
+<pre><code>$ npm install hexo-deployer-git --save
+</code></pre><h3 id="2-7-常用hexo命令"><a href="#2-7-常用hexo命令" class="headerlink" title="2.7 常用hexo命令"></a>2.7 常用hexo命令</h3><pre><code>hexo new "postName"               #新建文章
 hexo new page "pageName"          #新建页面
 hexo generate                     #生成静态页面至public目录
 hexo server                       #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）
 hexo deploy                       #部署到GitHub
 hexo help                         #查看帮助
-hexo version                      #查看Hexo的版本</code></pre><p>命令缩写：</p>
+hexo version                      #查看Hexo的版本
+</code></pre><p>命令缩写：</p>
 <pre><code>hexo new = hexo n
 hexo generate = hexo g
 hexo server = hexo s
-hexo deploy = hexo d</code></pre><p>本地修改，添加文章后，执行以下命令发布到github仓库</p>
+hexo deploy = hexo d
+</code></pre><p>本地修改，添加文章后，执行以下命令发布到github仓库</p>
 <pre><code>hexo clean
 hexo g
-hexo d</code></pre><h2 id="3-主题配置与优化"><a href="#3-主题配置与优化" class="headerlink" title="3. 主题配置与优化"></a>3. 主题配置与优化</h2><p>  在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+hexo d
+</code></pre><h2 id="3-主题配置与优化"><a href="#3-主题配置与优化" class="headerlink" title="3. 主题配置与优化"></a>3. 主题配置与优化</h2><p>  在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
 <h3 id="3-1-主题安装"><a href="#3-1-主题安装" class="headerlink" title="3.1 主题安装"></a>3.1 主题安装</h3><p>  Hexo博客支持很多主题风格，其中<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a>主题是Github上Star最多的主题。我主要是基于Next6主题进行的配置与优化。</p>
 <p>*　下载Ｎext主题</p>
 <p>在hexo站点目录下，启动Git Bash，运行以下命令：</p>
-<pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code></pre><p>Next主题被下载到站点目录中themes文件夹下。</p>
+<pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre><p>Next主题被下载到站点目录中themes文件夹下。</p>
 <ul>
 <li>启用Next主题</li>
 </ul>
@@ -593,7 +605,8 @@ hexo d</code></pre><h2 id="3-主题配置与优化"><a href="#3-主题配置与�
 # Plugins: https://hexo.io/plugins/
 # Themes: https://hexo.io/themes/
 theme: next
-# plugins: hexo-generate-feed</code></pre><h3 id="3-2-基本信息配置"><a href="#3-2-基本信息配置" class="headerlink" title="3.2 基本信息配置"></a>3.2 基本信息配置</h3><ul>
+# plugins: hexo-generate-feed
+</code></pre><h3 id="3-2-基本信息配置"><a href="#3-2-基本信息配置" class="headerlink" title="3.2 基本信息配置"></a>3.2 基本信息配置</h3><ul>
 <li><blockquote>
 <p>基本信息：博客标题、作者、描述、语言等等。</p>
 </blockquote>
@@ -606,12 +619,14 @@ description: 描述
 keywords: 关键词
 author: 作者
 language: 语言（简体中文是zh-CN）
-timezone: 网站时区（Hexo 默认使用您电脑的时区）</code></pre><h3 id="3-3-主题配置"><a href="#3-3-主题配置" class="headerlink" title="3.3 主题配置"></a>3.3 主题配置</h3><h4 id="3-3-1-Next主题设定"><a href="#3-3-1-Next主题设定" class="headerlink" title="3.3.1 Next主题设定"></a>3.3.1 Next主题设定</h4><p>  Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持四种 Scheme:</p>
+timezone: 网站时区（Hexo 默认使用您电脑的时区）
+</code></pre><h3 id="3-3-主题配置"><a href="#3-3-主题配置" class="headerlink" title="3.3 主题配置"></a>3.3 主题配置</h3><h4 id="3-3-1-Next主题设定"><a href="#3-3-1-Next主题设定" class="headerlink" title="3.3.1 Next主题设定"></a>3.3.1 Next主题设定</h4><p>  Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持四种 Scheme:</p>
 <pre><code>## Schemes
 #scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-scheme: Gemini</code></pre><ul>
+scheme: Gemini
+</code></pre><ul>
 <li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
 <li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
 <li>Pisces - 双栏 Scheme，小家碧玉似的清新</li>
@@ -634,7 +649,8 @@ scheme: Gemini</code></pre><ul>
 # Enable / Disable menu icons / item badges.    
 menu_settings:
   icons: true       # 是否显示各个页面的图标
-  badges: true      # 是否显示分类/标签/归档页的内容量</code></pre><p>设置的菜单名称并不直接用于界面上的展示。Hexo 在生成的时候将使用这个名称查找对应的语言翻译，并提取显示文本。这些翻译文本放在 NexT 主题目录下<code>languages/{language}.yml</code>。</p>
+  badges: true      # 是否显示分类/标签/归档页的内容量
+</code></pre><p>设置的菜单名称并不直接用于界面上的展示。Hexo 在生成的时候将使用这个名称查找对应的语言翻译，并提取显示文本。这些翻译文本放在 NexT 主题目录下<code>languages/{language}.yml</code>。</p>
 <h4 id="3-3-3-侧栏设置"><a href="#3-3-3-侧栏设置" class="headerlink" title="3.3.3 侧栏设置"></a>3.3.3 侧栏设置</h4><blockquote>
 <p>侧栏设置：位置、显示与否、文章间距、返回顶部按钮等等</p>
 </blockquote>
@@ -662,25 +678,30 @@ back2top:
   # Back to top in sidebar.
   sidebar: true
   # Scroll percent label in b2t button.
-  scrollpercent: true   # 返回顶部按钮的百分比</code></pre><h3 id="3-4-主题优化"><a href="#3-4-主题优化" class="headerlink" title="3.4 主题优化"></a>3.4 主题优化</h3><h4 id="3-4-1-设置菜单页面"><a href="#3-4-1-设置菜单页面" class="headerlink" title="3.4.1 设置菜单页面"></a>3.4.1 设置菜单页面</h4><ul>
+  scrollpercent: true   # 返回顶部按钮的百分比
+</code></pre><h3 id="3-4-主题优化"><a href="#3-4-主题优化" class="headerlink" title="3.4 主题优化"></a>3.4 主题优化</h3><h4 id="3-4-1-设置菜单页面"><a href="#3-4-1-设置菜单页面" class="headerlink" title="3.4.1 设置菜单页面"></a>3.4.1 设置菜单页面</h4><ul>
 <li>添加分类模块</li>
 </ul>
-<pre><code>$ hexo n page categories</code></pre><p>执行上述命令，在站点目录的source文件夹下生成一个categories文件夹，打开categories文件夹中的index.md文件，将title设置为title:分类，type设置为type: categories。同时，参考3.3.2，将categories注释取消。</p>
+<pre><code>$ hexo n page categories
+</code></pre><p>执行上述命令，在站点目录的source文件夹下生成一个categories文件夹，打开categories文件夹中的index.md文件，将title设置为title:分类，type设置为type: categories。同时，参考3.3.2，将categories注释取消。</p>
 <ul>
 <li>添加标签模块</li>
 </ul>
-<pre><code>$ hexo new page tags</code></pre><p>执行上述命令，在source文件夹下生成一个tags文件夹，打开tags文件夹中的index.md文件，将title设置为title: 标签，type设置为type: tags。参考3.3.2，将tags注释取消。</p>
+<pre><code>$ hexo new page tags
+</code></pre><p>执行上述命令，在source文件夹下生成一个tags文件夹，打开tags文件夹中的index.md文件，将title设置为title: 标签，type设置为type: tags。参考3.3.2，将tags注释取消。</p>
 <ul>
 <li>添加关于模块</li>
 </ul>
-<pre><code>$ hexo new page about</code></pre><p>执行上述命令，在source文件夹下生成一个about文件夹，打开index.md文件，可以添加信息。参考3.3.2，取消about注释。</p>
+<pre><code>$ hexo new page about
+</code></pre><p>执行上述命令，在source文件夹下生成一个about文件夹，打开index.md文件，可以添加信息。参考3.3.2，取消about注释。</p>
 <ul>
 <li><p>添加搜索功能</p>
 <ul>
 <li>安装插件</li>
 </ul>
 <p>在站点目录下，启动Git Bash，运行以下命令：</p>
-<pre><code>$ npm install hexo-generator-searchdb --save</code></pre><ul>
+<pre><code>$ npm install hexo-generator-searchdb --save
+</code></pre><ul>
 <li>修改站点配置文件</li>
 </ul>
 <p>在站点配置文件中，添加以下内容：</p>
@@ -689,7 +710,8 @@ search:
   path: search.xml
   field: post
   format: html
-  limit: 10000</code></pre><ul>
+  limit: 10000
+</code></pre><ul>
 <li>修改主题配置文件</li>
 </ul>
 <p>在主题配置文件中，搜索local_search字段，将enable修改为true。</p>
@@ -701,25 +723,30 @@ search:
   # Show top n results per article, show all results by setting to -1
   top_n_per_article: 1
   # Unescape html strings to the readable one.
-  unescape: false</code></pre></li>
+  unescape: false
+</code></pre></li>
 </ul>
 <h4 id="3-4-2-设置头像"><a href="#3-4-2-设置头像" class="headerlink" title="3.4.2 设置头像"></a>3.4.2 设置头像</h4><p>  编辑<strong>主题配置文件</strong>，修改字段avatar，值设置成头像的链接地址。其中头像的链接地址可以是</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">地址</th>
-<th align="left">值</th>
+<th style="text-align:left">地址</th>
+<th style="text-align:left">值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">完整的互联网URI</td>
-<td align="left"><code>http://example.com/avatar.png</code></td>
+<tbody>
+<tr>
+<td style="text-align:left">完整的互联网URI</td>
+<td style="text-align:left"><code>http://example.com/avatar.png</code></td>
 </tr>
 <tr>
-<td align="left">站点内的地址</td>
-<td align="left">将头像放置主题目录下的 <code>source/uploads/</code> （新建 uploads 目录若不存在） <br>配置为：<code>avatar: /uploads/avatar.png</code><br>或者放置在 <code>source/images/</code> 目录下  <br>配置为：<code>avatar: /images/avatar.png</code></td>
+<td style="text-align:left">站点内的地址</td>
+<td style="text-align:left">将头像放置主题目录下的 <code>source/uploads/</code> （新建 uploads 目录若不存在） <br>配置为：<code>avatar: /uploads/avatar.png</code><br>或者放置在 <code>source/images/</code> 目录下  <br>配置为：<code>avatar: /images/avatar.png</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <pre><code>avatar:
   url: /images/avatar.gif     # 头像路径
   # If true, the avatar would be dispalyed in circle.
@@ -727,10 +754,12 @@ search:
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
   opacity: 1
   # If true, the avatar would be rotated with the cursor.
-  rotated: false   # 鼠标移动到头像上，是否发生旋转</code></pre><h4 id="3-4-3-设置RSS"><a href="#3-4-3-设置RSS" class="headerlink" title="3.4.3 设置RSS"></a>3.4.3 设置RSS</h4><ol>
+  rotated: false   # 鼠标移动到头像上，是否发生旋转
+</code></pre><h4 id="3-4-3-设置RSS"><a href="#3-4-3-设置RSS" class="headerlink" title="3.4.3 设置RSS"></a>3.4.3 设置RSS</h4><ol>
 <li>安装hexo-generator-feed插件</li>
 </ol>
-<pre><code>$ npm install hexo-generator-feed --save</code></pre><ol start="2">
+<pre><code>$ npm install hexo-generator-feed --save
+</code></pre><ol>
 <li>打开<strong>站点配置文件</strong>，在Extensions之后添加：</li>
 </ol>
 <pre><code># RSS订阅
@@ -741,13 +770,16 @@ feed:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: ' '</code></pre><ol start="3">
+  content_limit_delim: ' '
+</code></pre><ol>
 <li>打开<strong>主题配置文件</strong>，找到rss，设置为</li>
 </ol>
-<pre><code>rss: /atom.xml</code></pre><h4 id="3-4-4-添加阅读全文按钮"><a href="#3-4-4-添加阅读全文按钮" class="headerlink" title="3.4.4 添加阅读全文按钮"></a>3.4.4 添加阅读全文按钮</h4><p>  在主页会显示多篇文章，如果想每篇文章只显示部分内容，其余内容需要点击<strong>阅读全文</strong>按钮来进一步查看，则需要在每篇文章中添加：</p>
+<pre><code>rss: /atom.xml
+</code></pre><h4 id="3-4-4-添加阅读全文按钮"><a href="#3-4-4-添加阅读全文按钮" class="headerlink" title="3.4.4 添加阅读全文按钮"></a>3.4.4 添加阅读全文按钮</h4><p>  在主页会显示多篇文章，如果想每篇文章只显示部分内容，其余内容需要点击<strong>阅读全文</strong>按钮来进一步查看，则需要在每篇文章中添加：</p>
 <pre><code>显示的内容
 &lt;!--more--&gt;
-不显示的内容</code></pre><h4 id="3-4-5-修改文章内链接样式"><a href="#3-4-5-修改文章内链接样式" class="headerlink" title="3.4.5 修改文章内链接样式"></a>3.4.5 修改文章内链接样式</h4><p>  打开themes\next\source\css_common\components\post\post.styl，在末尾添加</p>
+不显示的内容
+</code></pre><h4 id="3-4-5-修改文章内链接样式"><a href="#3-4-5-修改文章内链接样式" class="headerlink" title="3.4.5 修改文章内链接样式"></a>3.4.5 修改文章内链接样式</h4><p>  打开themes\next\source\css_common\components\post\post.styl，在末尾添加</p>
 <pre><code>// 文章内链接文本样式
 .post-body p a {
   color: #0593d3;
@@ -758,11 +790,12 @@ feed:
     border-bottom: none;
     border-bottom: 1px solid #fc6423;
   }
-}</code></pre><h4 id="3-4-6-添加评论系统—Valine"><a href="#3-4-6-添加评论系统—Valine" class="headerlink" title="3.4.6 添加评论系统—Valine"></a>3.4.6 添加评论系统—Valine</h4><ol>
+}
+</code></pre><h4 id="3-4-6-添加评论系统—Valine"><a href="#3-4-6-添加评论系统—Valine" class="headerlink" title="3.4.6 添加评论系统—Valine"></a>3.4.6 添加评论系统—Valine</h4><ol>
 <li>注册LeanCloud</li>
 </ol>
 <p>  注册后需要创建一个应用，名字可以随便起，我的应用名称为&lt;域名&gt;.counter。然后进入<strong>应用</strong>-&gt;<strong>设置</strong>-&gt;<strong>应用Key</strong>，获取<strong>App ID</strong>和<strong>App Key</strong>。</p>
-<ol start="2">
+<ol>
 <li>打开<strong>主题配置文件</strong>，</li>
 </ol>
 <pre><code>valine:
@@ -777,16 +810,16 @@ feed:
   pageSize: 10    # pagination size
   language:    # language, available values: en, zh-cn
   visitor: false
-  comment_count: true</code></pre><ol start="3">
+  comment_count: true
+</code></pre><ol>
 <li>添加域名</li>
 </ol>
 <p>  在LeanCloud中，选择<strong>设置</strong>-&gt;<strong>安全中心</strong>-&gt;<strong>Web安全域名</strong>，添加自己的博客域名。</p>
 <h4 id="3-4-7-添加文章阅读量"><a href="#3-4-7-添加文章阅读量" class="headerlink" title="3.4.7 添加文章阅读量"></a>3.4.7 添加文章阅读量</h4><ol>
 <li>利用LeanCloud的统计功能，基于3.4.6创建的应用，添加一个名为Counter的类（Class）。</li>
 </ol>
-<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Hexo_20190505/2.png" style="zoom:50%;">
-
-<ol start="2">
+<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Hexo_20190505/2.png" style="zoom:50%;"></p>
+<ol>
 <li>修改<strong>主题配置文件</strong>，找到leancloud配置项，添加app_id和app_key。</li>
 </ol>
 <pre><code>leancloud_visitors:
@@ -794,17 +827,20 @@ feed:
   app_id: 添加LeanCloud App ID
   app_key: 添加LeanCloud App Key
   security: false
-  betterPerformance: false</code></pre><h4 id="3-4-8-统计字数"><a href="#3-4-8-统计字数" class="headerlink" title="3.4.8 统计字数"></a>3.4.8 统计字数</h4><ol>
+  betterPerformance: false
+</code></pre><h4 id="3-4-8-统计字数"><a href="#3-4-8-统计字数" class="headerlink" title="3.4.8 统计字数"></a>3.4.8 统计字数</h4><ol>
 <li>打开站点目录，运行Git Bash，安装<code>hexo-symbols-count-time</code>插件</li>
 </ol>
-<pre><code>$ npm install hexo-symbols-count-time --save</code></pre><ol start="2">
+<pre><code>$ npm install hexo-symbols-count-time --save
+</code></pre><ol>
 <li>修改<strong>站点配置文件</strong>，找到<code>symbols_count_time</code>字段。</li>
 </ol>
 <pre><code>symbols_count_time:
   symbols: true
   time: true
   total_symbols: true
-  total_time: true</code></pre><ol start="3">
+  total_time: true
+</code></pre><ol>
 <li>打开<strong>主题配置文件</strong>，搜索<code>symbols_count_time</code>，按以下方式修改：</li>
 </ol>
 <pre><code>symbols_count_time:
@@ -812,7 +848,8 @@ feed:
   item_text_post: true    # 文章是否显示文字（本文字数|阅读时长）
   item_text_total: true   # 网页底部是否显示文字（站点总字数|站点阅读时长） 
   awl: 4
-  wpm: 275</code></pre><h4 id="3-4-9-添加动态背景"><a href="#3-4-9-添加动态背景" class="headerlink" title="3.4.9 添加动态背景"></a>3.4.9 添加动态背景</h4><p>  新版的Next已集成了该功能。打开<strong>主题配置文件</strong>，选择动态背景，enable设置为true。</p>
+  wpm: 275
+</code></pre><h4 id="3-4-9-添加动态背景"><a href="#3-4-9-添加动态背景" class="headerlink" title="3.4.9 添加动态背景"></a>3.4.9 添加动态背景</h4><p>  新版的Next已集成了该功能。打开<strong>主题配置文件</strong>，选择动态背景，enable设置为true。</p>
 <pre><code>canvas_nest:
   enable: true
   onmobile: true # display on mobile or not
@@ -839,10 +876,12 @@ canvas_ribbon:
   enable: false
   size: 300
   alpha: 0.6
-  zIndex: -1</code></pre><h4 id="3-4-10-添加页面宠物"><a href="#3-4-10-添加页面宠物" class="headerlink" title="3.4.10 添加页面宠物"></a>3.4.10 添加页面宠物</h4><ol>
+  zIndex: -1
+</code></pre><h4 id="3-4-10-添加页面宠物"><a href="#3-4-10-添加页面宠物" class="headerlink" title="3.4.10 添加页面宠物"></a>3.4.10 添加页面宠物</h4><ol>
 <li>安装hexo-helper-live2d插件</li>
 </ol>
-<pre><code>npm install -save hexo-helper-live2d</code></pre><ol start="2">
+<pre><code>npm install -save hexo-helper-live2d
+</code></pre><ol>
 <li>打开<strong>站点配置文件</strong>，添加：</li>
 </ol>
 <pre><code>live2d:
@@ -859,40 +898,48 @@ canvas_ribbon:
     width: 150
     height: 300
   mobile:
-    show: false #是否在手机端显示</code></pre><ol start="3">
+    show: false #是否在手机端显示
+</code></pre><ol>
 <li>下载<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">模型</a>，我安装的是live2d-widget-model-wanko。</li>
 </ol>
-<pre><code>$ npm install live2d-widget-model-wanko</code></pre><h4 id="3-4-11-文章末尾添加版权声明"><a href="#3-4-11-文章末尾添加版权声明" class="headerlink" title="3.4.11 文章末尾添加版权声明"></a>3.4.11 文章末尾添加版权声明</h4><p>  打开<strong>主题配置文件</strong>，找到creative_commons字段。</p>
+<pre><code>$ npm install live2d-widget-model-wanko
+</code></pre><h4 id="3-4-11-文章末尾添加版权声明"><a href="#3-4-11-文章末尾添加版权声明" class="headerlink" title="3.4.11 文章末尾添加版权声明"></a>3.4.11 文章末尾添加版权声明</h4><p>  打开<strong>主题配置文件</strong>，找到creative_commons字段。</p>
 <pre><code>creative_commons:
   license: by-nc-sa
   sidebar: false
   post: true
-  language:</code></pre><p>修改URL，在页面底端的本文链接修改为自己的博客域名。</p>
+  language:
+</code></pre><p>修改URL，在页面底端的本文链接修改为自己的博客域名。</p>
 <pre><code># URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://linwang93.cn
 root: /
 permalink: :year/:month/:day/:title/
-permalink_defaults:</code></pre><h4 id="3-4-12-点击图片实现全屏查看"><a href="#3-4-12-点击图片实现全屏查看" class="headerlink" title="3.4.12  点击图片实现全屏查看"></a>3.4.12  点击图片实现全屏查看</h4><ol>
+permalink_defaults:
+</code></pre><h4 id="3-4-12-点击图片实现全屏查看"><a href="#3-4-12-点击图片实现全屏查看" class="headerlink" title="3.4.12  点击图片实现全屏查看"></a>3.4.12  点击图片实现全屏查看</h4><ol>
 <li>切换到lib目录，路径：…/themes/next/source/lib</li>
 <li>下载fancybox插件</li>
 </ol>
-<pre><code>$ git clone https://github.com/theme-next/theme-next-fancybox3 fancybox</code></pre><ol start="3">
+<pre><code>$ git clone https://github.com/theme-next/theme-next-fancybox3 fancybox
+</code></pre><ol>
 <li>更改<strong>主题配置文件</strong>，找到fancybox字段，修改为true。</li>
 </ol>
-<pre><code>$ fancybox: true</code></pre><h4 id="3-4-13-设置代码块样式"><a href="#3-4-13-设置代码块样式" class="headerlink" title="3.4.13 设置代码块样式"></a>3.4.13 设置代码块样式</h4><p>  打开<strong>主题配置文件</strong>，修改代码样式。</p>
+<pre><code>$ fancybox: true
+</code></pre><h4 id="3-4-13-设置代码块样式"><a href="#3-4-13-设置代码块样式" class="headerlink" title="3.4.13 设置代码块样式"></a>3.4.13 设置代码块样式</h4><p>  打开<strong>主题配置文件</strong>，修改代码样式。</p>
 <pre><code># Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night   # normal</code></pre><h4 id="3-4-14-文章结束标志"><a href="#3-4-14-文章结束标志" class="headerlink" title="3.4.14 文章结束标志"></a>3.4.14 文章结束标志</h4><ol>
-<li>在…\themes\next\layout_macro路径下新建<code>passage-end-tag.swig</code>文件，并添加以下内容：</li>
+highlight_theme: night   # normal
+</code></pre><h4 id="3-4-14-文章结束标志"><a href="#3-4-14-文章结束标志" class="headerlink" title="3.4.14 文章结束标志"></a>3.4.14 文章结束标志</h4><ol>
+<li>在…\\themes\next\layout_macro路径下新建<code>passage-end-tag.swig</code>文件，并添加以下内容：</li>
 </ol>
 <pre><code>&lt;div&gt;
     {% if not is_index %}
         <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fa fa-paw"> </i>感谢您的阅读-------------</div>
     {% endif %}
-&lt;/div&gt;</code></pre><ol start="2">
-<li>打开…\themes\next\layout_macro路径下的post.wing文件，在<code>post-body</code> 之后(<code>END POST BODY</code>)， <code>post-footer</code> 之前添加如代码：</li>
+&lt;/div&gt;
+</code></pre><ol>
+<li>打开…\\themes\next\layout_macro路径下的post.wing文件，在<code>post-body</code> 之后(<code>END POST BODY</code>)， <code>post-footer</code> 之前添加如代码：</li>
 </ol>
 <pre><code>
 
@@ -901,12 +948,14 @@ highlight_theme: night   # normal</code></pre><h4 id="3-4-14-文章结束标志"
     {% if not is_index %}
       {% include 'passage-end-tag.swig' %}
     {% endif %}
-  &lt;/div&gt;</code></pre><ol start="3">
+  &lt;/div&gt;
+</code></pre><ol>
 <li>打开主题配置文件，添加如下内容：</li>
 </ol>
 <pre><code># 文章末尾添加“本文结束”标记
 passage_end_tag:
-  enabled: true</code></pre><h4 id="3-4-15-设置博客底部布局"><a href="#3-4-15-设置博客底部布局" class="headerlink" title="3.4.15 设置博客底部布局"></a>3.4.15 设置博客底部布局</h4><blockquote>
+  enabled: true
+</code></pre><h4 id="3-4-15-设置博客底部布局"><a href="#3-4-15-设置博客底部布局" class="headerlink" title="3.4.15 设置博客底部布局"></a>3.4.15 设置博客底部布局</h4><blockquote>
 <p>建站时间、作者、访客人数、访问量等等。</p>
 </blockquote>
 <ol>
@@ -932,7 +981,8 @@ passage_end_tag:
     # Theme &amp; scheme info link (Theme - NexT.scheme).
     enable: false
     # Version info of NexT after scheme info (vX.X.X).
-    version: false</code></pre><ol start="2">
+    version: false
+</code></pre><ol>
 <li>添加访客人数和访问量</li>
 </ol>
 <p>  NexT提供了busuanzi来统计。打开<strong>主题配置文件</strong>，找到busuanzi_count字段。</p>
@@ -943,7 +993,8 @@ passage_end_tag:
   total_views: true
   total_views_icon: eye
   post_views: true
-  post_views_icon: eye</code></pre><h4 id="3-4-16-给页面、侧边栏添加背景图片"><a href="#3-4-16-给页面、侧边栏添加背景图片" class="headerlink" title="3.4.16 给页面、侧边栏添加背景图片"></a>3.4.16 给页面、侧边栏添加背景图片</h4><p>  打开<code>theme/next/source/css/_custom/custom.styl</code>，添加以下代码：</p>
+  post_views_icon: eye
+</code></pre><h4 id="3-4-16-给页面、侧边栏添加背景图片"><a href="#3-4-16-给页面、侧边栏添加背景图片" class="headerlink" title="3.4.16 给页面、侧边栏添加背景图片"></a>3.4.16 给页面、侧边栏添加背景图片</h4><p>  打开<code>theme/next/source/css/_custom/custom.styl</code>，添加以下代码：</p>
 <pre><code>// Custom styles.
 body {
     background:url(/images/background.jpg);   # 背景图片
@@ -951,7 +1002,8 @@ body {
     background-attachment:fixed;
     background-position:50% 50%;
     background-size:cover;
-}</code></pre><h4 id="3-4-17-设置个人社交图标链接"><a href="#3-4-17-设置个人社交图标链接" class="headerlink" title="3.4.17 设置个人社交图标链接"></a>3.4.17 设置个人社交图标链接</h4><p>  打开<strong>主题配置文件</strong>，找到social字段，修改如下内容。这里仅展示了简书和E-mail两个，如果添加其他项，取消注释即可。</p>
+}
+</code></pre><h4 id="3-4-17-设置个人社交图标链接"><a href="#3-4-17-设置个人社交图标链接" class="headerlink" title="3.4.17 设置个人社交图标链接"></a>3.4.17 设置个人社交图标链接</h4><p>  打开<strong>主题配置文件</strong>，找到social字段，修改如下内容。这里仅展示了简书和E-mail两个，如果添加其他项，取消注释即可。</p>
 <pre><code>social:
   简书: https://www.jianshu.com/u/90e6990238e4
   #GitHub: https://github.com/yourname || github
@@ -970,17 +1022,19 @@ social_icons:
   enable: true
   icons_only: false
   transition: false
-  简书: book</code></pre><h4 id="3-4-18-设置左上角或右上角的fork-me-on-github效果"><a href="#3-4-18-设置左上角或右上角的fork-me-on-github效果" class="headerlink" title="3.4.18 设置左上角或右上角的fork me on github效果"></a>3.4.18 设置左上角或右上角的fork me on github效果</h4><p>  选择需要的<a href="https://github.blog/2008-12-19-github-ribbons/" target="_blank" rel="noopener">GitHub Ribbons</a>效果，复制所选择效果的代码。然后打开…/themes/next/layout/_layout.swig，将复制的代码粘贴到<code>&lt;div class="headband"&gt;&lt;/div&gt;</code>之间。</p>
+  简书: book
+</code></pre><h4 id="3-4-18-设置左上角或右上角的fork-me-on-github效果"><a href="#3-4-18-设置左上角或右上角的fork-me-on-github效果" class="headerlink" title="3.4.18 设置左上角或右上角的fork me on github效果"></a>3.4.18 设置左上角或右上角的fork me on github效果</h4><p>  选择需要的<a href="https://github.blog/2008-12-19-github-ribbons/" target="_blank" rel="noopener">GitHub Ribbons</a>效果，复制所选择效果的代码。然后打开…/themes/next/layout/_layout.swig，将复制的代码粘贴到<code>&lt;div class="headband"&gt;&lt;/div&gt;</code>之间。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Hexo_20190505/3.png" alt=""></p>
 <hr>
 <p><strong>到这里,Hexo博客的基础搭建与配置就介绍完了。具体效果可以访问我的博客：<a href="https://www.linwang93.cn/">https://www.linwang93.cn/</a></strong></p>
 <h2 id="4-Hexo多电脑同步"><a href="#4-Hexo多电脑同步" class="headerlink" title="4. Hexo多电脑同步"></a>4. Hexo多电脑同步</h2><p>  我们经常有一个需求：在不同电脑上撰写博客文章并发布，这就涉及了如何在多台电脑的同步问题。这里参考了一些博客，总结了Hexo的多电脑同步方法，并亲测了方法的有效。</p>
-<p>  主要思路:（1）Hexo私有仓库–保存Hexo源文件；（2）master公开仓库–保存Hexo生成的博客文件。</p>
+<p>  主要思路:（1）Hexo私有仓库—保存Hexo源文件；（2）master公开仓库—保存Hexo生成的博客文件。</p>
 <h3 id="4-1-创建私有仓库"><a href="#4-1-创建私有仓库" class="headerlink" title="4.1 创建私有仓库"></a>4.1 创建私有仓库</h3><p>  首先，已利用Hexo和github构建了博客，在本地有hexo配置源文件，在github中创建了仓库用于保存Hexo生成的博客文件。在github中再创建一个私有仓库，用于保存hexo配置源文件，我的仓库名为hexo-private。</p>
 <h3 id="4-2-建立本地git仓库"><a href="#4-2-建立本地git仓库" class="headerlink" title="4.2 建立本地git仓库"></a>4.2 建立本地git仓库</h3><ol>
 <li>删除已有的Hexo文件夹中的主题git配置，比如我使用的是Next主题，删除该主题文件夹中的.git文件夹。如果存在多个主题文件夹，则需要都删除。</li>
 </ol>
-<pre><code>rm -rf ./themes/next/.git/</code></pre><ol start="2">
+<pre><code>rm -rf ./themes/next/.git/
+</code></pre><ol>
 <li>创建一个.gitignore文件，并放在Hexo的根目录。.gitignore文件夹在Hexo根目录可能已经存在了，如果存在了，则无需再创建，检查.gitignore文件中的内容，内容为</li>
 </ol>
 <pre><code>.DS_Store
@@ -989,37 +1043,46 @@ db.json
 *.log
 node_modules/
 public/
-.deploy*/</code></pre><ol start="3">
+.deploy*/
+</code></pre><ol>
 <li>建立本地git仓库</li>
 </ol>
 <p>  进入Hexo根目录，执行如下命令：</p>
-<pre><code>git init</code></pre><h3 id="4-3-本地仓库push到私有仓库"><a href="#4-3-本地仓库push到私有仓库" class="headerlink" title="4.3 本地仓库push到私有仓库"></a>4.3 本地仓库push到私有仓库</h3><pre><code>git remote add origin git@github.com:&lt;yourname&gt;/hexo-private.git
+<pre><code>git init
+</code></pre><h3 id="4-3-本地仓库push到私有仓库"><a href="#4-3-本地仓库push到私有仓库" class="headerlink" title="4.3 本地仓库push到私有仓库"></a>4.3 本地仓库push到私有仓库</h3><pre><code>git remote add origin git@github.com:&lt;yourname&gt;/hexo-private.git
 git add .
 git commit -m "my first private hexo"
-git push -u origin master</code></pre><p>执行以上命令后，就完成了本地Hexo配置文件的备份。</p>
+git push -u origin master
+</code></pre><p>执行以上命令后，就完成了本地Hexo配置文件的备份。</p>
 <p><strong>注：</strong>Hexo根目录中的.gitignore文件没有忽略到theme这文件夹，但是使用的Next主题文件夹原来是用git管理的，里面还有一个.gitigore文件，把themes/next/source/lib目录下的很多文件忽略掉了，这就导致上传到私有仓库时，themes/next/source/lib目录下的很多必要文件给忽略掉了，并没有上传。当在新电脑中，将该私有仓库拉下来，执行hexo g、hexo s命令后，会发现页面不能正常显示。<u>为了解决这个问题，在新电脑中将私有仓库Hexo配置源文件clone下来后，需要将原电脑Hexo文件夹下themes/next/source/lib/目录下所有文件全部复制粘贴到新电脑对应的themes/next/source/lib/目录下，这样就可以正常预览了。</u></p>
 <h3 id="4-4-新电脑上Hexo配置"><a href="#4-4-新电脑上Hexo配置" class="headerlink" title="4.4 新电脑上Hexo配置"></a>4.4 新电脑上Hexo配置</h3><p>  在新电脑上使用Hexo撰写博客时，首先需要搭建并配置好node/npm/git/hexo等环境。node/npm/git等配置可百度查询安装配置。</p>
 <ol>
 <li>从私有仓库拉取Hexo配置源文件</li>
 </ol>
-<pre><code>git clone git@github.com:&lt;yourname&gt;/hexo-private.git</code></pre><ol start="2">
+<pre><code>git clone git@github.com:&lt;yourname&gt;/hexo-private.git
+</code></pre><ol>
 <li>在Hexo-private目录下，在命令行（Git bash）执行如下命令安装配置hexo所需的环境</li>
 </ol>
 <pre><code>npm install -g hexo-cli
-npm install</code></pre><ol start="3">
+npm install
+</code></pre><ol>
 <li>撰写博客并发布</li>
 </ol>
 <p>  在新电脑上撰写博客文章，在本地预览。</p>
 <pre><code>hexo g
-hexo s</code></pre><p>  在本地预览无误后，将博客文件推送到github博客公开仓库。</p>
-<pre><code>hexo d</code></pre><p>  执行git status检查更改的文件，并将配置源文件push到私有仓库，完成Hexo配置源文件私有仓库同步更新。</p>
+hexo s
+</code></pre><p>  在本地预览无误后，将博客文件推送到github博客公开仓库。</p>
+<pre><code>hexo d
+</code></pre><p>  执行git status检查更改的文件，并将配置源文件push到私有仓库，完成Hexo配置源文件私有仓库同步更新。</p>
 <pre><code>git status
 git add .
 git commit -m 'message自定义'
-git push</code></pre><p><strong>注：</strong>在用hexo d部署时，需要将新电脑上的ssh密钥添加到github中。</p>
+git push
+</code></pre><p><strong>注：</strong>在用hexo d部署时，需要将新电脑上的ssh密钥添加到github中。</p>
 <h3 id="4-5-Hexo仓库更新"><a href="#4-5-Hexo仓库更新" class="headerlink" title="4.5 Hexo仓库更新"></a>4.5 Hexo仓库更新</h3><p>  在其他电脑可能对私有仓库中的Hexo配置源文件作了修改，因此在新电脑上每次要先把远程私有仓库最新的配置源文件拉到本地。</p>
 <pre><code>git fetch --all #将git上所有文件拉取到本地
-git reset --hard origin/master  #强制将本地内容指向刚刚同步git云端内容</code></pre><hr>
+git reset --hard origin/master  #强制将本地内容指向刚刚同步git云端内容
+</code></pre><hr>
 <p>参考: </p>
 <p>[1] <a href="http://ricky.moe/2017/01/13/hexo-perfect-synchronize/" target="_blank" rel="noopener">http://ricky.moe/2017/01/13/hexo-perfect-synchronize/</a></p>
 <p>[2] <a href="https://www.alankeene.com/2019/0102/hexo-perfect-synchronize.html" target="_blank" rel="noopener">https://www.alankeene.com/2019/0102/hexo-perfect-synchronize.html</a></p>
@@ -1367,8 +1430,9 @@ git reset --hard origin/master  #强制将本地内容指向刚刚同步git云�
                               说明：Markdown是一种轻量级标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 HTML 文档。
 
 1. 基本操作1.1 内容目录[toc]
+
 1.2 标题＃　　　　　　　　　一级标题
-＃＃　　　　　　　　二级标题
+＃＃　　　　　　　　二级标
                         
                     </div>
                     <div class="publish-info">
@@ -1573,7 +1637,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">88.8k</span>&nbsp;字
+                class="white-color">89.1k</span>&nbsp;字
             
             
             

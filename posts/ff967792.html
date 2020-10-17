@@ -512,87 +512,94 @@
 <li>序列解包赋值给多个变量</li>
 </ul>
 <p>任意序列（如字符串、元组、列表等）或可迭代对象（迭代器、生成器等）支持通过解包方式赋值给一组变量，前提是左侧变量数量与右侧序列元素个数一致，否则会产生异常。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 元组解包</span>
-x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># x = 1, y =2, z =3</span>
-<span class="token comment" spellcheck="true"># 只关注部分变量赋值，其他用'_'占位</span>
-x<span class="token punctuation">,</span> _<span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># x = 1, z = 3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 元组解包
+x, y, z = (1, 2, 3)  # x = 1, y =2, z =3
+# 只关注部分变量赋值，其他用'_'占位
+x, _, z = (1, 2, 3)  # x = 1, z = 3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>星号<code>（*）</code>表达式处理变量与元素个数不一致</li>
 </ul>
 <p>星号（*）表达式用来接收不确定个数或任意个数元素的可迭代对象。星号表达式创建的变量是列表类型。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># *出现在结尾</span>
-lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
-x<span class="token punctuation">,</span> <span class="token operator">*</span>other <span class="token operator">=</span> lst   <span class="token comment" spellcheck="true"># x = 1, other = [2, 3, 4, 5]</span>
-<span class="token comment" spellcheck="true"># *出现在中间</span>
-x<span class="token punctuation">,</span> <span class="token operator">*</span>other<span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># x = 'a', other = [[1, 2, 3], 'b'], z = 'c'</span>
-<span class="token comment" spellcheck="true"># *出现在开头</span>
-<span class="token operator">*</span>other<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token string">'hello'</span> <span class="token comment" spellcheck="true"># other = ['h', 'e', 'l'], y = 'l', z = 'o'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-运算符"><a href="#2-运算符" class="headerlink" title="2. 运算符"></a>2. 运算符</h2><p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_img/%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt=""></p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># *出现在结尾
+lst = [1, 2, 3, 4, 5]
+x, *other = lst   # x = 1, other = [2, 3, 4, 5]
+# *出现在中间
+x, *other, z = ('a', [1, 2, 3], 'b', 'c')   # x = 'a', other = [[1, 2, 3], 'b'], z = 'c'
+# *出现在开头
+*other, y, z = 'hello' # other = ['h', 'e', 'l'], y = 'l', z = 'o'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-运算符"><a href="#2-运算符" class="headerlink" title="2. 运算符"></a>2. 运算符</h2><p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_img/运算符.png" alt=""></p>
 <p>运算符优先级（从高到低）：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">运算符</th>
-<th align="left">说明</th>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">**</td>
-<td align="left">幂运算</td>
+<tbody>
+<tr>
+<td style="text-align:left">**</td>
+<td style="text-align:left">幂运算</td>
 </tr>
 <tr>
-<td align="left">~</td>
-<td align="left">按位取反</td>
+<td style="text-align:left">~</td>
+<td style="text-align:left">按位取反</td>
 </tr>
 <tr>
-<td align="left">+ 、-</td>
-<td align="left">正、负</td>
+<td style="text-align:left">+ 、-</td>
+<td style="text-align:left">正、负</td>
 </tr>
 <tr>
-<td align="left">*、/、%、//</td>
-<td align="left">乘、除、取模、取整</td>
+<td style="text-align:left">*、/、%、//</td>
+<td style="text-align:left">乘、除、取模、取整</td>
 </tr>
 <tr>
-<td align="left">+、-</td>
-<td align="left">加、减</td>
+<td style="text-align:left">+、-</td>
+<td style="text-align:left">加、减</td>
 </tr>
 <tr>
-<td align="left">&lt;&lt;、&gt;&gt;</td>
-<td align="left">左移、右移</td>
+<td style="text-align:left">&lt;&lt;、&gt;&gt;</td>
+<td style="text-align:left">左移、右移</td>
 </tr>
 <tr>
-<td align="left">&amp;</td>
-<td align="left">按位与</td>
+<td style="text-align:left">&amp;</td>
+<td style="text-align:left">按位与</td>
 </tr>
 <tr>
-<td align="left">^</td>
-<td align="left">按位异或</td>
+<td style="text-align:left">^</td>
+<td style="text-align:left">按位异或</td>
 </tr>
 <tr>
-<td align="left">|</td>
-<td align="left">按位或</td>
+<td style="text-align:left">\</td>
+<td style="text-align:left"></td>
+<td>按位或</td>
 </tr>
 <tr>
-<td align="left">&gt;=、&gt;、&lt;=、&lt;、==、!=</td>
-<td align="left">比较运算符</td>
+<td style="text-align:left">&gt;=、&gt;、&lt;=、&lt;、==、!=</td>
+<td style="text-align:left">比较运算符</td>
 </tr>
 <tr>
-<td align="left">=、+=、-=、*=、/=、//=、%=</td>
-<td align="left">赋值运算符</td>
+<td style="text-align:left">=、+=、-=、*=、/=、//=、%=</td>
+<td style="text-align:left">赋值运算符</td>
 </tr>
 <tr>
-<td align="left">is、is not</td>
-<td align="left">身份运算符</td>
+<td style="text-align:left">is、is not</td>
+<td style="text-align:left">身份运算符</td>
 </tr>
 <tr>
-<td align="left">in、not in</td>
-<td align="left">成员运算符</td>
+<td style="text-align:left">in、not in</td>
+<td style="text-align:left">成员运算符</td>
 </tr>
 <tr>
-<td align="left">not、and、or</td>
-<td align="left">逻辑运算（从左到右，优先级减小）</td>
+<td style="text-align:left">not、and、or</td>
+<td style="text-align:left">逻辑运算（从左到右，优先级减小）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -895,7 +902,8 @@ if not lst:
 Out:
     列表为空列表！
 
-i
+
+
                         
                     </div>
                     <div class="publish-info">
@@ -1148,7 +1156,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">88.8k</span>&nbsp;字
+                class="white-color">89.1k</span>&nbsp;字
             
             
             

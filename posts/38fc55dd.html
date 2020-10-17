@@ -468,14 +468,14 @@ pip">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-16
+                    2020-09-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.9k
                 </div>
                 
 
@@ -499,7 +499,8 @@ pip">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-创建电子书"><a href="#1-创建电子书" class="headerlink" title="1. 创建电子书"></a>1. 创建电子书</h2><h3 id="1-1-安装Sphinx"><a href="#1-1-安装Sphinx" class="headerlink" title="1.1 安装Sphinx"></a>1.1 安装Sphinx</h3><p><a href="http://sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>是一个基于Python的文档生成项目，最早只是用来生成 Python 官方文档。随着工具的完善， 越来越多的知名的项目采用Sphinx来作为文档写作工具，甚至完全可以用来写电子书。</p>
-<pre><code>pip install sphinx sphinx-autobuild sphinx_rtd_theme -i https://pypi.doubanio.com/simple --trusted-host pypi.doubanio.com</code></pre><p>使用国内镜像源安装比较快。</p>
+<pre><code>pip install sphinx sphinx-autobuild sphinx_rtd_theme -i https://pypi.doubanio.com/simple --trusted-host pypi.doubanio.com
+</code></pre><p>使用国内镜像源安装比较快。</p>
 <h3 id="1-2-初始化"><a href="#1-2-初始化" class="headerlink" title="1.2 初始化"></a>1.2 初始化</h3><ul>
 <li>新建项目文件夹：Project_Name</li>
 </ul>
@@ -514,28 +515,37 @@ pip">
 <p>Project language [en]: zh-CN</p>
 <h3 id="1-3-更换主题"><a href="#1-3-更换主题" class="headerlink" title="1.3 更换主题"></a>1.3 更换主题</h3><p>打开config.py，修改<code>html_theme</code></p>
 <pre><code>html_theme = 'alabaster'替换为html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]</code></pre><h3 id="1-4-支持markdown编写"><a href="#1-4-支持markdown编写" class="headerlink" title="1.4 支持markdown编写"></a>1.4 支持markdown编写</h3><pre class="line-numbers language-undefined"><code class="language-undefined">pip install recommonmark<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+</code></pre><h3 id="1-4-支持markdown编写"><a href="#1-4-支持markdown编写" class="headerlink" title="1.4 支持markdown编写"></a>1.4 支持markdown编写</h3><pre class="line-numbers language-lang-undefined"><code class="language-lang-undefined">pip install recommonmark
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>配置文件config.py中添加</p>
 <pre><code>extensions = ['recommonmark']
-source_suffix = ['.rst', '.md']</code></pre><h3 id="1-5-其他配置"><a href="#1-5-其他配置" class="headerlink" title="1.5 其他配置"></a>1.5 其他配置</h3><p>在config.py文件中添加：</p>
-<pre class="line-numbers language-python"><code class="language-python">master_doc <span class="token operator">=</span> <span class="token string">'index'</span>
-pygments_style <span class="token operator">=</span> <span class="token string">'sphinx'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="1-6-托管到Github并发布到Read-the-Docs"><a href="#1-6-托管到Github并发布到Read-the-Docs" class="headerlink" title="1.6 托管到Github并发布到Read the Docs"></a>1.6 托管到Github并发布到Read the Docs</h3><p>将本地新建的项目push到Github上，然后再发布到Read the Docs上。</p>
+source_suffix = ['.rst', '.md']
+</code></pre><h3 id="1-5-其他配置"><a href="#1-5-其他配置" class="headerlink" title="1.5 其他配置"></a>1.5 其他配置</h3><p>在config.py文件中添加：</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">master_doc = 'index'
+pygments_style = 'sphinx'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="1-6-编译文件"><a href="#1-6-编译文件" class="headerlink" title="1.6 编译文件"></a>1.6 编译文件</h3><p>source目录就是存放文档源代码的目录，默认的索引页面为index.rst。在项目根目录下执行：</p>
+<pre><code>make clean   # 清空 
+make html    # 构建文档
+</code></pre><p>编译后，进入<code>build/html</code>目录后用浏览器打开<code>index.html</code>即可看到生成的文档。</p>
+<h3 id="1-7-托管到Github并发布到Read-the-Docs"><a href="#1-7-托管到Github并发布到Read-the-Docs" class="headerlink" title="1.7 托管到Github并发布到Read the Docs"></a>1.7 托管到Github并发布到Read the Docs</h3><p>将本地新建的项目push到Github上，然后再发布到Read the Docs上。</p>
 <p>具体操作步骤可参考：<a href="https://github.com/readthedocs/readthedocs.org" target="_blank" rel="noopener">https://github.com/readthedocs/readthedocs.org</a></p>
 <h2 id="2-reStructuredText-文档写作"><a href="#2-reStructuredText-文档写作" class="headerlink" title="2. reStructuredText 文档写作"></a>2. reStructuredText 文档写作</h2><p>reStructuredText是一种轻量级的文本标记语言，，是扩展名为.rst的纯文本文件，简称为：RST或reST。RST是Python编程语言的Docutils项目的一部分，能够从Python程序中提取注释和信息，格式化成程序文档，现也在被广泛的用于其他项目程序的文档撰写。</p>
 <h3 id="2-1-章节标题"><a href="#2-1-章节标题" class="headerlink" title="2.1 章节标题"></a>2.1 章节标题</h3><p>章节标题用特殊字符构成的下划线（或上划线）来创建，其中下划线的长度不能小于文本的长度。可以表示标题的符号有 <code>=、-、:、'、"、^、#、~</code>等。</p>
 <ul>
 <li>对于同一符号创建的标题，有上划线的为一级标题，没有上划线的为二级标题。</li>
 </ul>
-<pre class="line-numbers language-rst"><code class="language-rst">==================
+<pre class="line-numbers language-lang-rst"><code class="language-lang-rst">==================
 这是一级标题
 ==================
 这是二级标题
-==================<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+==================
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>如果想表示不同级别的标题H1-H6，可使用不同符号构成的下划线：</li>
 </ul>
-<pre class="line-numbers language-rst"><code class="language-rst">这是一级标题
+<pre class="line-numbers language-lang-rst"><code class="language-lang-rst">这是一级标题
 ===================
 这是二级标题
 -------------------
@@ -546,29 +556,34 @@ pygments_style <span class="token operator">=</span> <span class="token string">
 这是五级标题
 '''''''''''''''''''
 这是六级标题
-^^^^^^^^^^^^^^^^^^^<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+^^^^^^^^^^^^^^^^^^^
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>如果想表示同级别的标题，可使用同一符号构成的下划线：</li>
 </ul>
-<pre class="line-numbers language-rst"><code class="language-rst">3.1章节 
+<pre class="line-numbers language-lang-rst"><code class="language-lang-rst">3.1章节 
 -------------------
 3.2章节
--------------------<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+-------------------
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-2-段落"><a href="#2-2-段落" class="headerlink" title="2.2 段落"></a>2.2 段落</h3><p>段落是由<strong>空行分隔</strong>的一段文本，同一段落的所有行必须左对齐而且是同一级缩进。</p>
 <h3 id="2-3-行内标记"><a href="#2-3-行内标记" class="headerlink" title="2.3 行内标记"></a>2.3 行内标记</h3><ul>
 <li>斜体</li>
 </ul>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">*text*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">*text*
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>粗体</li>
 </ul>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">**text**<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">**text**
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>等宽</li>
 </ul>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">``text``<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">``text``
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="2-4-列表"><a href="#2-4-列表" class="headerlink" title="2.4 列表"></a>2.4 列表</h3><h4 id="2-4-1-符号列表"><a href="#2-4-1-符号列表" class="headerlink" title="2.4.1 符号列表"></a>2.4.1 符号列表</h4><p>符号列表可以使用<code>-、*、+</code> 来表示。不同的符号结尾需要加上空行，下级列表需要有空格缩进。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">符号列表：
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">符号列表：
 ------------------
 
 - 符号列表1
@@ -581,9 +596,9 @@ pygments_style <span class="token operator">=</span> <span class="token string">
   * 二级符号列表3
 
 * 符号列表3
-* 符号列表4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816192112646.png" style="zoom: 50%;">
-
+* 符号列表4
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816192112646.png" style="zoom: 50%;"></p>
 <h4 id="2-4-2-顺序列表"><a href="#2-4-2-顺序列表" class="headerlink" title="2.4.2 顺序列表"></a>2.4.2 顺序列表</h4><p>可以使用不同的符号来表示列表：</p>
 <ul>
 <li><p>阿拉伯数字: 1, 2, 3, … </p>
@@ -598,55 +613,58 @@ pygments_style <span class="token operator">=</span> <span class="token string">
 </li>
 </ul>
 <p>可以使用符号 <code>#</code> 自动加序号。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">1. 顺序列表1
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">1. 顺序列表1
 #. 顺序列表2
-#. 顺序列表3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+#. 顺序列表3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="2-4-3-定义列表"><a href="#2-4-3-定义列表" class="headerlink" title="2.4.3 定义列表"></a>2.4.3 定义列表</h4><p>条目和解释各占一行，解释要有缩进。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">功能
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">功能
     这是一个功能描述
 注意事项
-    这是注意事项描述<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816195325461.png" style="zoom:50%;">
-
-<h4 id="2-4-4-字段列表"><a href="#2-4-4-字段列表" class="headerlink" title="2.4.4 字段列表"></a>2.4.4 字段列表</h4><pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">个人简介：
+    这是注意事项描述
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816195325461.png" style="zoom:50%;"></p>
+<h4 id="2-4-4-字段列表"><a href="#2-4-4-字段列表" class="headerlink" title="2.4.4 字段列表"></a>2.4.4 字段列表</h4><pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">个人简介：
 
 :姓名: xxx
 
 :职业: xxx
 
-:年龄: xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816200025138.png" style="zoom:50%;">
-
-<h4 id="2-4-5-选项列表"><a href="#2-4-5-选项列表" class="headerlink" title="2.4.5 选项列表"></a>2.4.5 选项列表</h4><pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">-a  列出所有条目
--l  列出详细信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816200329834.png" style="zoom:50%;">
-
+:年龄: xxx
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816200025138.png" style="zoom:50%;"></p>
+<h4 id="2-4-5-选项列表"><a href="#2-4-5-选项列表" class="headerlink" title="2.4.5 选项列表"></a>2.4.5 选项列表</h4><pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">-a  列出所有条目
+-l  列出详细信息
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816200329834.png" style="zoom:50%;"></p>
 <h3 id="2-5-块"><a href="#2-5-块" class="headerlink" title="2.5 块"></a>2.5 块</h3><ul>
 <li><h4 id="文字块"><a href="#文字块" class="headerlink" title="文字块"></a>文字块</h4></li>
 </ul>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">::
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">::
 
-    使用::开头。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+    使用::开头。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>行块</li>
 </ul>
 <p>行块是以 <strong>|</strong> 开头，每一个行块可以是多段文本。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">下面是行块内容：
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">下面是行块内容：
  | 这是一段行块内容。
- | 这同样也是行块内容。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+ | 这同样也是行块内容。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>块引用</li>
 </ul>
 <p>块引用是通过缩进来实现的，引用块要在前面的段落基础上缩进。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">下面是引用的内容：
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">下面是引用的内容：
 
     引用内容
-        ---出处<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816211215709.png" style="zoom:50%;">
-
+        ---出处
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816211215709.png" style="zoom:50%;"></p>
 <h3 id="2-6-表格"><a href="#2-6-表格" class="headerlink" title="2.6 表格"></a>2.6 表格</h3><p>reStructuredText提供两种表格：网格表（Grid Tables），简单表（Simple Tables）。</p>
 <h4 id="2-6-1-网格表"><a href="#2-6-1-网格表" class="headerlink" title="2.6.1 网格表"></a>2.6.1 网格表</h4><p>网格表中使用的符号有：<code>-、=、|、+</code>。<strong>-</strong> 用来分隔行， <strong>=</strong> 用来分隔表头和表体行，<strong>|</strong> 用来分隔列，<strong>+</strong> 用来表示行和列相交的节点。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">+------------+------------+-----------+ 
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">+------------+------------+-----------+ 
 | Header 1   | Header 2   | Header 3  | 
 +============+============+===========+ 
 |    row 1   | column 2   | column 3  | 
@@ -656,11 +674,11 @@ pygments_style <span class="token operator">=</span> <span class="token string">
 |    row 3   | Cells may  | - Cells   | 
 +------------+ span rows. | - contain | 
 |    row 4   |            | - blocks. | 
-+------------+------------+-----------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816213001464.png" style="zoom:50%;">
-
++------------+------------+-----------+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816213001464.png" style="zoom:50%;"></p>
 <h4 id="2-6-2-简单表"><a href="#2-6-2-简单表" class="headerlink" title="2.6.2 简单表"></a>2.6.2 简单表</h4><p>简单表相对于网格表，少了 <code>|</code> 和 <code>+</code> 两个符号，只用 <code>-</code> 和 <code>=</code>表示。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">=====  =====  ====== 
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">=====  =====  ====== 
    Inputs     Output 
 ------------  ------ 
   A      B    A or B 
@@ -669,40 +687,44 @@ False  False  False
 True   False  True 
 False  True   True 
 True   True   True 
-=====  =====  ======<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816213439088.png" style="zoom:50%;">
-
+=====  =====  ======
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816213439088.png" style="zoom:50%;"></p>
 <h3 id="2-7-分隔线"><a href="#2-7-分隔线" class="headerlink" title="2.7 分隔线"></a>2.7 分隔线</h3><p>分隔线由至少4个<code>-</code>组成，上下需要添加换行。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">上面部分
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">上面部分
 
 ------------
 
-下面部分<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-8-引用"><a href="#2-8-引用" class="headerlink" title="2.8 引用"></a>2.8 引用</h3><pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">引用参考，[cite001]_, [cite002]_
+下面部分
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-8-引用"><a href="#2-8-引用" class="headerlink" title="2.8 引用"></a>2.8 引用</h3><pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">引用参考，[cite001]_, [cite002]_
 
 .. [cite001] 引用内容一
-.. [cite002] 引用内容二<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816220111951.png" style="zoom:50%;">
-
+.. [cite002] 引用内容二
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816220111951.png" style="zoom:50%;"></p>
 <h3 id="2-9-脚注"><a href="#2-9-脚注" class="headerlink" title="2.9 脚注"></a>2.9 脚注</h3><p>可使用手工序号（1, 2, …）、自动序号(填入#号会自动填充序号)。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">脚注参考 [1]_，这是第二个脚注 [#]_。
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">脚注参考 [1]_，这是第二个脚注 [#]_。
 
 ..  [1] 这是第一个注记的信息
-..  [#] 这是第二个注记的信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816221508117.png" style="zoom:50%;">
-
+..  [#] 这是第二个注记的信息
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816221508117.png" style="zoom:50%;"></p>
 <h3 id="2-10-替换"><a href="#2-10-替换" class="headerlink" title="2.10 替换"></a>2.10 替换</h3><p>替换引用就是用定义的指令替换对应的文字或图片。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">这是 |text|, 修改后的图片 |img|。
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">这是 |text|, 修改后的图片 |img|。
 
 .. |text| replace:: 替换后的文本
-.. |img| image:: 图片路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-11-超链接"><a href="#2-11-超链接" class="headerlink" title="2.11 超链接"></a>2.11 超链接</h3><pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">这个是第一个超链接， 百度_.
+.. |img| image:: 图片路径
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-11-超链接"><a href="#2-11-超链接" class="headerlink" title="2.11 超链接"></a>2.11 超链接</h3><pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">这个是第一个超链接， 百度_.
 
 ..  _百度: http://www.baidu.com
 
-这是第二个超链接，`知乎 <https://www.zhihu.com/>`_。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-12-图像"><a href="#2-12-图像" class="headerlink" title="2.12 图像"></a>2.12 图像</h3><pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">.. image:: 图像路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="2-13-强调"><a href="#2-13-强调" class="headerlink" title="2.13 强调"></a>2.13 强调</h3><pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">.. attention::  这是attention
+这是第二个超链接，`知乎 <https://www.zhihu.com/>`_。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-12-图像"><a href="#2-12-图像" class="headerlink" title="2.12 图像"></a>2.12 图像</h3><pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">.. image:: 图像路径
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-13-强调"><a href="#2-13-强调" class="headerlink" title="2.13 强调"></a>2.13 强调</h3><pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">.. attention::  这是attention
 
 .. caution::  这是caution 
 
@@ -718,51 +740,57 @@ True   True   True
 
 .. tip:: 这是tip
 
-.. warning:: 这是warning<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816225119930.png" style="zoom:33%;">
-
+.. warning:: 这是warning
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//image-20200816225119930.png" style="zoom:33%;"></p>
 <h3 id="2-14-注释"><a href="#2-14-注释" class="headerlink" title="2.14 注释"></a>2.14 注释</h3><p>注释以 <strong>..</strong> 开头，后面接注释内容即可，可以是多行内容，多行时每行开头要加一个空格。</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">..
- 这是一个注释。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="2-15-代码块"><a href="#2-15-代码块" class="headerlink" title="2.15 代码块"></a>2.15 代码块</h3><pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">.. code-block:: bash
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">..
+ 这是一个注释。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="2-15-代码块"><a href="#2-15-代码块" class="headerlink" title="2.15 代码块"></a>2.15 代码块</h3><pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">.. code-block:: bash
     代码块内容
 .. code-block:: python
     代码块内容
 .. code-block:: json
-    代码块内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    代码块内容
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-15-Sphinx标记结构"><a href="#2-15-Sphinx标记结构" class="headerlink" title="2.15 Sphinx标记结构"></a>2.15 Sphinx标记结构</h3><h4 id="2-15-1-toctree"><a href="#2-15-1-toctree" class="headerlink" title="2.15.1 toctree"></a>2.15.1 toctree</h4><p>RST本身并不支持同时与多个文档进行交互，或者说将一个文档保存到多个文件中。Sphinx提供了自定义指令toctree来支持实现这个功能。</p>
 <p><strong>.. toctree::</strong></p>
 <p>这个指令会在当前位置插入文档的目录树。关联文档的路径可以使用相对路径或者绝对路径。 相对路径是指相对于toctree指令所在文件的路径。</p>
 <p>首先，介绍几个重要参数：</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">:maxdepth:2             设置最大深度
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">:maxdepth:2             设置最大深度
 :numbered:              自动编号
 :name:                  名字
 :titlesonly:            只显示标题
 :glob:                  通配符
 :reversed:              反向编号
-:hidden:                隐藏<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+:hidden:                隐藏
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>示例：</p>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">.. toctree::
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">.. toctree::
     :maxdepth: 2
     :glob:
 
     preface
-       chapters/*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+       chapters/*
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用通配符*将chapters目录下所有的文档都插入到目录中。</p>
 <h4 id="2-15-2-显示代码"><a href="#2-15-2-显示代码" class="headerlink" title="2.15.2 显示代码"></a>2.15.2 显示代码</h4><ul>
 <li>显示行号</li>
 </ul>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">.. code-block:: python
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">.. code-block:: python
     :linenos:
 
-    代码块<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    代码块
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>突出特定行</li>
 </ul>
-<pre class="line-numbers language-reStructuredText"><code class="language-reStructuredText">.. code-block:: python
+<pre class="line-numbers language-lang-reStructuredText"><code class="language-lang-reStructuredText">.. code-block:: python
    :emphasize-lines: 5,10
 
-   代码块<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+   代码块
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>参考：<a href="https://my-study-restructuredtext.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">https://my-study-restructuredtext.readthedocs.io/en/latest/index.html</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1046,56 +1074,49 @@ True   True   True
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/38fc55dd.html">
+                <a href="/posts/a33ab33c.html">
                     <div class="card-image">
                         
-                        <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//38fc55dd.jpg" class="responsive-img" alt="Sphinx + GitHub + ReadtheDocs 创建电子书">
                         
-                        <span class="card-title">Sphinx + GitHub + ReadtheDocs 创建电子书</span>
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法学习之路--算法概述">
+                        
+                        <span class="card-title">算法学习之路--算法概述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 创建电子书1.1 安装SphinxSphinx是一个基于Python的文档生成项目，最早只是用来生成 Python 官方文档。随着工具的完善， 越来越多的知名的项目采用Sphinx来作为文档写作工具，甚至完全可以用来写电子书。
-pip
+                            1.1 算法与数据结构算法（Algorithm）：在计算机科学领域，算法指一系列程序指令，用于解决特定的运算和逻辑问题。
+衡量算法好坏的重要标准有两个：时间复杂度和空间复杂度。
+算法应用场景多种多样：运算、查找、排序、最优决策等。
+数据结构
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E5%AD%90%E4%B9%A6/" class="post-category">
-                                    电子书
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Sphinx/">
-                        <span class="chip bg-color">Sphinx</span>
-                    </a>
-                    
-                    <a href="/tags/ReadtheDocs/">
-                        <span class="chip bg-color">ReadtheDocs</span>
-                    </a>
-                    
-                    <a href="/tags/Github/">
-                        <span class="chip bg-color">Github</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">算法与数据结构</span>
                     </a>
                     
                 </div>
@@ -1325,7 +1346,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">88.8k</span>&nbsp;字
+                class="white-color">89.1k</span>&nbsp;字
             
             
             

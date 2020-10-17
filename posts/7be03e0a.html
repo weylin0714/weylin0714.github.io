@@ -505,12 +505,13 @@
 </ul>
 <p>在Python中，整数、字符串和字典都是一等对象。把函数视作一等对象简称为“一等函数”。</p>
 <p>定义一个函数：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func_name</span><span class="token punctuation">(</span>param_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func_name(param_list):
+    """
     函数说明
-    """</span>
+    """
     func_body
-    <span class="token keyword">return</span> value<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    return value
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>说明：</p>
 <ul>
 <li>函数用关键字def定义。</li>
@@ -521,22 +522,24 @@
 <li>return返回函数值，如不指定则返回None。函数可以返回多个结果的元组，调用函数后尽量用有意义的名称来接收函数的返回结果，避免直接元组索引来接收元组解包结果。</li>
 </ul>
 <p>def 是可执行语句，这意味着函数在被调用前，都是不存在的。当程序调用函数时，def 语句才会创建一个新的函数对象，并赋予其名字。需要注意，主程序调用函数时，必须保证这个函数此前已经定义过，不然就会报错。但是，如果我们在函数内部调用其他函数，函数间哪个声明在前、哪个在后就无所谓，因为 def 是可执行语句，函数在调用之前都不存在，我们只需保证调用时，所需的函数都已经声明定义。</p>
-<pre class="line-numbers language-python"><code class="language-python">demo<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 在定义前调用报错：NameError: name 'demo' is not defined</span>
-<span class="token keyword">def</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"This is a demo"</span><span class="token punctuation">)</span>  
-<span class="token comment" spellcheck="true"># 函数内部调用其他函数</span>
-<span class="token keyword">def</span> <span class="token function">my_func</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    my_sub_func<span class="token punctuation">(</span>message<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 调用my_sub_func()在其声明之前不影响程序执行</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">demo()  # 在定义前调用报错：NameError: name 'demo' is not defined
+def demo(): 
+    print("This is a demo")  
+# 函数内部调用其他函数
+def my_func(message):
+    my_sub_func(message) # 调用my_sub_func()在其声明之前不影响程序执行
 
-<span class="token keyword">def</span> <span class="token function">my_sub_func</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+def my_sub_func(message):
+    print(message)
 
-my_func<span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 输出</span>
-hello world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+my_func('hello world')
+# 输出
+hello world
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="1-2-参数"><a href="#1-2-参数" class="headerlink" title="1.2 参数"></a>1.2 参数</h2><p>函数的参数可以接受任何数据类型（数字、字符串、列表、字典等）。在Python中，不用考虑输入的参数数据类型，而是将其交给具体的代码去判断。在实际使用中，我们可以在开头加上数据的类型检查。</p>
 <h3 id="1-2-1-参数传递"><a href="#1-2-1-参数传递" class="headerlink" title="1.2.1 参数传递"></a>1.2.1 参数传递</h3><p>在 python 中，类型属于对象，变量是没有类型的：</p>
-<pre class="line-numbers language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># [1, 2, 3, 4, 5]是列表类型，而变量lst是没有类型的</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">lst = [1, 2, 3, 4, 5] # [1, 2, 3, 4, 5]是列表类型，而变量lst是没有类型的
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>函数的参数主要有两类：不可变类型（如数字、字符串、元组等），可变类型（列表、字典等）。</p>
 <ul>
 <li><p>不可变类型变量作为参数传入函数：类似于C++中的值传递，在函数内部修改这些参数值，不影响外部的变量值。</p>
@@ -544,170 +547,185 @@ hello world<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <li><p>可变类型变量作为参数传入函数：类似于C++中的引用传递，在函数内部修改参数值，也会影响外部的变量值。</p>
 </li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 传入不可变类型</span>
-<span class="token keyword">def</span> <span class="token function">print_message</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    message <span class="token operator">=</span> <span class="token string">'hello world.'</span> <span class="token comment" spellcheck="true"># 不可变类型不可修改，相当于重新创建了字符串</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 传入不可变类型
+def print_message(message): 
+    message = 'hello world.' # 不可变类型不可修改，相当于重新创建了字符串
+    print(message)
 
-message <span class="token operator">=</span> <span class="token string">'I love Python.'</span>
-print_message<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 输出</span>
-hello world<span class="token punctuation">.</span>
-I love Python<span class="token punctuation">.</span>  
-<span class="token comment" spellcheck="true"># 传入可变类型</span>
-<span class="token keyword">def</span> <span class="token function">print_message</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">:</span> 
-    message<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+message = 'I love Python.'
+print_message(message)
+print(message)
+# 输出
+hello world.
+I love Python.  
+# 传入可变类型
+def print_message(message): 
+    message.append(4)
+    print(message)
 
-message <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
-print_message<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 输出</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+message = [1, 2, 3]
+print_message(message)
+print(message)
+# 输出
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-2-2-参数类型详解"><a href="#1-2-2-参数类型详解" class="headerlink" title="1.2.2 参数类型详解"></a>1.2.2 参数类型详解</h3><p>在函数中，需要先了解下什么是形参和实参。形参是<strong>函数定义</strong>时传入的参数。而实参是<strong>函数调用</strong>时传入的参数值。在Python中，函数的参数形式主要可分为以下几类：位置参数、关键字参数、默认参数、可变参数、可变关键字参数。我们可以借助Python中的<code>inspect</code>模块来查看函数中参数的类型。</p>
 <h4 id="1-2-2-1-位置参数（必须参数）"><a href="#1-2-2-1-位置参数（必须参数）" class="headerlink" title="1.2.2.1 位置参数（必须参数）"></a>1.2.2.1 位置参数（必须参数）</h4><p>调用函数时，根据函数定义时的形参位置顺序传入参数，且实参与形参的个数相等。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span> x <span class="token operator">+</span> y
-    <span class="token keyword">return</span> result
-<span class="token comment" spellcheck="true"># 查看参数的类型</span>
-<span class="token keyword">from</span> inspect <span class="token keyword">import</span> signature
-<span class="token keyword">for</span> name<span class="token punctuation">,</span> val <span class="token keyword">in</span> signature<span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">.</span>parameters<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> val<span class="token punctuation">.</span>kind<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 输出</span>
-x POSITIONAL_OR_KEYWORD   <span class="token comment" spellcheck="true"># x, y 为位置或关键字参数   </span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(x, y):
+    result = x + y
+    return result
+# 查看参数的类型
+from inspect import signature
+for name, val in signature(func).parameters.items():
+    print(name, val.kind)
+# 输出
+x POSITIONAL_OR_KEYWORD   # x, y 为位置或关键字参数   
 y POSITIONAL_OR_KEYWORD
-<span class="token comment" spellcheck="true"># 调用函数</span>
-<span class="token comment" spellcheck="true"># 传入整数，x= 1, y =2</span>
-func<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 输出：3</span>
-<span class="token comment" spellcheck="true"># 传入2个列表</span>
-func<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 输出：[1, 2, 3, 4, 5, 6]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 调用函数
+# 传入整数，x= 1, y =2
+func(1, 2)  # 输出：3
+# 传入2个列表
+func([1, 2, 3], [4, 5, 6]) # 输出：[1, 2, 3, 4, 5, 6]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-2-2-关键字参数"><a href="#1-2-2-2-关键字参数" class="headerlink" title="1.2.2.2 关键字参数"></a>1.2.2.2 关键字参数</h4><p>函数调用时，不需考虑参数的顺序，直接指定参数值。有时，在函数中不能直接看出是位置参数还是关键字参数，主要取决于调用函数时的传参形式。如果在调用函数传入的参数是键值对（键=值），则为关键字参数。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span> x <span class="token operator">+</span> y
-    <span class="token keyword">return</span> result
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(x, y):
+    result = x + y
+    return result
 
-res <span class="token operator">=</span> func<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 传入参数的顺序可以和定义时不一致</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 输出 3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+res = func(y=2, x=1)   # 传入参数的顺序可以和定义时不一致
+print(res) # 输出 3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-2-3-默认参数"><a href="#1-2-2-3-默认参数" class="headerlink" title="1.2.2.3 默认参数"></a>1.2.2.3 默认参数</h4><p>定义函数时，如果形参直接赋值，则为默认参数。对于有默认值的形参，调用函数时，如果为该参数传值，则使用传入的值，否则使用默认值。设置默认参数时，非默认参数要放在前面，将其他默认参数放在后面。此外，默认参数通常应该定义成不可变类型。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 只有一个默认参数</span>
-<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>num<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'num:{num}'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 有两种调用方式</span>
-func<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 按照默认值调用，可省略参数。</span>
-func<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 修改默认值</span>
-<span class="token comment" spellcheck="true"># 参数列表有多个参数</span>
-<span class="token keyword">def</span> <span class="token function">student</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> school<span class="token operator">=</span><span class="token string">'苏州大学'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"{name}今年{age}岁了，在{school}读书。"</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 调用</span>
-stu1 <span class="token operator">=</span> student<span class="token punctuation">(</span><span class="token string">'小王'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span>
-student<span class="token punctuation">(</span><span class="token string">'小李'</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token string">'南京大学'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>stu1<span class="token punctuation">)</span>   
-<span class="token comment" spellcheck="true"># 输出</span>
-小王今年<span class="token number">20</span>岁了，在苏州大学读书。  
-小李今年<span class="token number">21</span>岁了，在南京大学读书。
-None  <span class="token comment" spellcheck="true"># 函数如果不指定返回值，默认返回None。stu1和stu2接收返回值。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 只有一个默认参数
+def func(num=0):
+    print(f'num:{num}')
+# 有两种调用方式
+func()  # 按照默认值调用，可省略参数。
+func(1) # 修改默认值
+# 参数列表有多个参数
+def student(name, age, school='苏州大学'):
+    print(f"{name}今年{age}岁了，在{school}读书。")
+# 调用
+stu1 = student('小王', 20)
+student('小李', 21, '南京大学')
+print(stu1)   
+# 输出
+小王今年20岁了，在苏州大学读书。  
+小李今年21岁了，在南京大学读书。
+None  # 函数如果不指定返回值，默认返回None。stu1和stu2接收返回值。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-2-4-可变参数"><a href="#1-2-2-4-可变参数" class="headerlink" title="1.2.2.4 可变参数"></a>1.2.2.4 可变参数</h4><p>可变参数是数量不定的参数，允许你传入0个或任意个参数，用<code>*args</code>来表示。函数调用时，<code>*args</code>会以元组的形式传入。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token operator">*</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    num_sum <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
-        num_sum <span class="token operator">+=</span> <span class="token number">1</span>
-    <span class="token keyword">return</span> num_sum 
-<span class="token comment" spellcheck="true"># 调用</span>
-lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
-seq <span class="token operator">=</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
-res1 <span class="token operator">=</span> add<span class="token punctuation">(</span><span class="token operator">*</span>lst<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 15</span>
-res2 <span class="token operator">=</span> add<span class="token punctuation">(</span><span class="token operator">*</span>seq<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 45</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def add(*nums):
+    num_sum = 0
+    for i in nums:
+        num_sum += 1
+    return num_sum 
+# 调用
+lst = [1, 2, 3, 4, 5]
+seq = range(10)
+res1 = add(*lst)   # 15
+res2 = add(*seq)  # 45
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-2-5-可变关键字参数"><a href="#1-2-2-5-可变关键字参数" class="headerlink" title="1.2.2.5 可变关键字参数"></a>1.2.2.5 可变关键字参数</h4><p>可变关键字参数是由一组键值对组成的参数集合，用<code>**kwargs</code>来表示。函数调用时，<code>**kwargs</code>会以字典的形式传入。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token operator">**</span>params<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> params<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{key}:{value}'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 调用</span>
-data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">}</span>  
-func<span class="token punctuation">(</span><span class="token operator">**</span>data<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 或者func(A=1,B=2,C=3)</span>
-<span class="token comment" spellcheck="true"># 输出</span>
-A<span class="token punctuation">:</span><span class="token number">1</span>
-B<span class="token punctuation">:</span><span class="token number">2</span>
-C<span class="token punctuation">:</span><span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(**params):
+    for key, value in params.items():
+        print(f'{key}:{value}')
+# 调用
+data = {'A':1, 'B':2, 'C':3}  
+func(**data) # 或者func(A=1,B=2,C=3)
+# 输出
+A:1
+B:2
+C:3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-2-3-参数使用规则"><a href="#1-2-3-参数使用规则" class="headerlink" title="1.2.3 参数使用规则"></a>1.2.3 参数使用规则</h3><p>Python中函数有多种参数形式可供灵活选择，但在使用时也应遵守一定的规则约束，否则函数调用时可能会出现各种各样的调用异常。</p>
 <ul>
 <li>不带默认值的位置参数都需要传入参数值</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span> param1 <span class="token operator">*</span> param2
-    <span class="token keyword">return</span> result
-<span class="token comment" spellcheck="true"># 调用</span>
-func<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># TypeError: func() missing 1 required positional argument: 'param2'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(param1, param2):
+    result = param1 * param2
+    return result
+# 调用
+func(1)  # TypeError: func() missing 1 required positional argument: 'param2'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>关键字参数必须在位置参数的右边</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span> param1 <span class="token operator">*</span> param2
-    <span class="token keyword">return</span> result
-<span class="token comment" spellcheck="true"># 调用</span>
-func<span class="token punctuation">(</span>param1<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#SyntaxError: positional argument follows keyword argument</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(param1, param2):
+    result = param1 * param2
+    return result
+# 调用
+func(param1=1,2)  #SyntaxError: positional argument follows keyword argument
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>同一个形参不能重复传值</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span>
-<span class="token comment" spellcheck="true"># 调用</span>
-func<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>a<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># SyntaxError: keyword argument repeated </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(a,*b):
+    pass
+# 调用
+func(a=1,a=2,3,4)  # SyntaxError: keyword argument repeated
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>默认参数放在其他参数后面</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token operator">*</span>b<span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'a:{a},b:{b},c:{c}'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 调用</span>
-func<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">*</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># a:1,b:(2, 3),c:1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(a,*b,c=1):
+    print(f'a:{a},b:{b},c:{c}')
+# 调用
+func(1,*[2,3]) # a:1,b:(2, 3),c:1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>可变位置参数不能传入关键字参数</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 调用</span>
-func<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># TypeError: func() got an unexpected keyword argument 'a'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(*args):
+    print(args)
+# 调用
+func(a=1) # TypeError: func() got an unexpected keyword argument 'a'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>可变关键字参数不能传入位置参数</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>kwargs<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 调用</span>
-func<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># TypeError: func() takes 0 positional arguments but 2 were given</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def func(**kwargs):
+    print(kwargs)
+# 调用
+func(1,2)  # TypeError: func() takes 0 positional arguments but 2 were given
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="1-3-作用域"><a href="#1-3-作用域" class="headerlink" title="1.3 作用域"></a>1.3 作用域</h2><p>在Python中，函数的变量与其他语言类似，是有作用域的。在函数外部定义的变量为全局变量，在函数内部定义的变量为局部变量。</p>
 <h3 id="1-3-1-局部变量"><a href="#1-3-1-局部变量" class="headerlink" title="1.3.1 局部变量"></a>1.3.1 局部变量</h3><p>在函数内部定义的变量默认为局部变量，除非有特殊的声明，如global声明的为全局变量。函数内的局部变量，外部不可以访问。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">testlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    x <span class="token operator">=</span> <span class="token number">10</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># NameError: name 'x' is not defined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">def testlocal():
+    x = 10
+print(x)  # NameError: name 'x' is not defined
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-3-2-全局变量"><a href="#1-3-2-全局变量" class="headerlink" title="1.3.2 全局变量"></a>1.3.2 全局变量</h3><p>全局变量则是定义在整个文件层次上的，可以在文件内的任何地方被访问。当然对于全局变量，在函数内部也是可以的，但是如果要在函数内部修改全局变量，需要借助关键字global来声明。</p>
-<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">2</span>  <span class="token comment" spellcheck="true"># 全局变量</span>
-<span class="token keyword">def</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">4</span>
-demo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 2</span>
-<span class="token comment" spellcheck="true"># 修改函数内变量为全局变量</span>
-a <span class="token operator">=</span> <span class="token number">2</span>
-<span class="token keyword">def</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">global</span> a
-    a <span class="token operator">=</span> <span class="token number">4</span>
-demo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">a = 2  # 全局变量
+def demo():
+    a = 4
+demo()
+print(a)  # 2
+# 修改函数内变量为全局变量
+a = 2
+def demo():
+    global a
+    a = 4
+demo()
+print(a)  # 4
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-3-3-非局部变量"><a href="#1-3-3-非局部变量" class="headerlink" title="1.3.3 非局部变量"></a>1.3.3 非局部变量</h3><p>对于嵌套函数来说，内部函数可以访问外部函数定义的变量，但是无法修改，若要修改，必须借助nonlocal关键字来声明。nonlocal是Python3引入的，nonlocal声明的变量必须是外层定义过的局部变量，否则会报错。</p>
-<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1</span>  <span class="token comment" spellcheck="true"># 全局变量</span>
-<span class="token keyword">def</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    a <span class="token operator">=</span> <span class="token number">2</span>
-    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">a = 1  # 全局变量
+def outer():
+    a = 2
+    def inner():
         nonlocal a 
-        <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-        a <span class="token operator">=</span> <span class="token number">3</span>
-    inner<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 调用</span>
-outer<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 输出</span>
-    <span class="token number">2</span>
-    <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        print(a)
+        a = 3
+    inner()
+    print(a)
+# 调用
+outer()
+# 输出
+    2
+    3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -997,7 +1015,7 @@ outer<span class="token punctuation">(</span><span class="token punctuation">)</
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.匿名函数Python中的函数，除了我们常见的def定义的函数，还有一种特殊的函数–匿名函数。def定义的函数是有具体函数名的，可以便于我们多次调用，而匿名函数是没有具体的函数名的，往往用于一次性实现某种功能的场合。在我们编码时，合理使用
+                            1.匿名函数Python中的函数，除了我们常见的def定义的函数，还有一种特殊的函数—匿名函数。def定义的函数是有具体函数名的，可以便于我们多次调用，而匿名函数是没有具体的函数名的，往往用于一次性实现某种功能的场合。在我们编码时，合理使用
                         
                     </div>
                     <div class="publish-info">
@@ -1058,7 +1076,8 @@ if not lst:
 Out:
     列表为空列表！
 
-i
+
+
                         
                     </div>
                     <div class="publish-info">
@@ -1263,7 +1282,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">88.8k</span>&nbsp;字
+                class="white-color">89.1k</span>&nbsp;字
             
             
             
