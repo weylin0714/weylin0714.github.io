@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-10-17T04:51:59.200Z</updated>
+  <updated>2020-10-24T04:51:36.167Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Selenium3 + Python3 自动化测试--环境搭建</title>
+    <link href="http://www.linwang93.cn/posts/e23ae58b.html"/>
+    <id>http://www.linwang93.cn/posts/e23ae58b.html</id>
+    <published>2020-10-24T03:28:13.000Z</published>
+    <updated>2020-10-24T04:51:36.167Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-自动化测试简介&quot;&gt;&lt;a href=&quot;#1-自动化测试简介&quot; class=&quot;headerlink&quot; title=&quot;1. 自动化测试简介&quot;&gt;&lt;/a&gt;1. 自动化测试简介&lt;/h2&gt;&lt;h3 id=&quot;1-1-自动化测试分类&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="自动化测试" scheme="http://www.linwang93.cn/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="Selenium" scheme="http://www.linwang93.cn/tags/Selenium/"/>
+    
+      <category term="自动化测试" scheme="http://www.linwang93.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Typora中编辑数学公式</title>
     <link href="http://www.linwang93.cn/posts/3ec761e7.html"/>
     <id>http://www.linwang93.cn/posts/3ec761e7.html</id>
     <published>2020-10-16T14:00:20.000Z</published>
-    <updated>2020-10-17T04:51:59.200Z</updated>
+    <updated>2020-10-17T04:58:35.840Z</updated>
     
     <summary type="html">
     
@@ -78,7 +107,7 @@
     <link href="http://www.linwang93.cn/posts/de246d4c.html"/>
     <id>http://www.linwang93.cn/posts/de246d4c.html</id>
     <published>2020-09-22T13:01:28.000Z</published>
-    <updated>2020-10-11T03:42:12.982Z</updated>
+    <updated>2020-10-24T15:44:06.740Z</updated>
     
     <summary type="html">
     
@@ -86,7 +115,7 @@
       
         
         
-          &lt;h2 id=&quot;1-数组&quot;&gt;&lt;a href=&quot;#1-数组&quot; class=&quot;headerlink&quot; title=&quot;1. 数组&quot;&gt;&lt;/a&gt;1. 数组&lt;/h2&gt;&lt;h2 id=&quot;2-链表&quot;&gt;&lt;a href=&quot;#2-链表&quot; class=&quot;headerlink&quot; title=&quot;2.
+          &lt;h2 id=&quot;1-数组&quot;&gt;&lt;a href=&quot;#1-数组&quot; class=&quot;headerlink&quot; title=&quot;1. 数组&quot;&gt;&lt;/a&gt;1.
         
       
     
@@ -105,7 +134,7 @@
     <link href="http://www.linwang93.cn/posts/a33ab33c.html"/>
     <id>http://www.linwang93.cn/posts/a33ab33c.html</id>
     <published>2020-09-21T13:19:16.000Z</published>
-    <updated>2020-10-11T03:42:12.980Z</updated>
+    <updated>2020-10-24T03:42:15.012Z</updated>
     
     <summary type="html">
     
@@ -150,11 +179,11 @@
       <category term="电子书" scheme="http://www.linwang93.cn/categories/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
     
     
+      <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
+    
       <category term="Sphinx" scheme="http://www.linwang93.cn/tags/Sphinx/"/>
     
       <category term="ReadtheDocs" scheme="http://www.linwang93.cn/tags/ReadtheDocs/"/>
-    
-      <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
     
   </entry>
   
@@ -267,13 +296,13 @@
       <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
-    
       <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
     
       <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
     
       <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
+    
+      <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
     
   </entry>
   
@@ -539,33 +568,6 @@
         
         
           &lt;h2 id=&quot;1-流程控制&quot;&gt;&lt;a href=&quot;#1-流程控制&quot; class=&quot;headerlink&quot; title=&quot;1.流程控制&quot;&gt;&lt;/a&gt;1.流程控制&lt;/h2&gt;&lt;h3 id=&quot;1-1-条件语句&quot;&gt;&lt;a href=&quot;#1-1-条件语句&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（六）：变量与运算符</title>
-    <link href="http://www.linwang93.cn/posts/ff967792.html"/>
-    <id>http://www.linwang93.cn/posts/ff967792.html</id>
-    <published>2020-05-03T06:53:38.000Z</published>
-    <updated>2020-05-08T15:40:59.512Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-变量&quot;&gt;&lt;a href=&quot;#1-变量&quot; class=&quot;headerlink&quot; title=&quot;1. 变量&quot;&gt;&lt;/a&gt;1. 变量&lt;/h2&gt;&lt;h3 id=&quot;1-1-变量的命名规则&quot;&gt;&lt;a href=&quot;#1-1-变量的命名规则&quot; class=&quot;headerlink&quot;
         
       
     

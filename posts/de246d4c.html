@@ -5,10 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="算法学习之路--数据结构基础, 简若">
-    <meta name="description" content="1. 数组2. 链表3.栈4.队列5.哈希表
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el">
+    <meta name="description" content="1. 数组数组：有限个相同类型的变量所组成的有序集合，数组中的每一个变量称为元素。
+数组特点：数组中的每一个元素都有自己的下标，下标从0开始，一直到数组长度-1。数组的另一个特点是在内存中顺序存储。
+内存是由一个个连续的内存单元组成的，每一">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -308,7 +307,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//2020-09-22-1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -462,21 +461,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-11
+                    2020-10-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    67
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    15 分
                 </div>
                 
 
@@ -492,7 +491,353 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1. 数组"></a>1. 数组</h2><h2 id="2-链表"><a href="#2-链表" class="headerlink" title="2. 链表"></a>2. 链表</h2><h2 id="3-栈"><a href="#3-栈" class="headerlink" title="3.栈"></a>3.栈</h2><h2 id="4-队列"><a href="#4-队列" class="headerlink" title="4.队列"></a>4.队列</h2><h2 id="5-哈希表"><a href="#5-哈希表" class="headerlink" title="5.哈希表"></a>5.哈希表</h2><script>
+                <h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1. 数组"></a>1. 数组</h2><p><strong>数组：</strong>有限个相同类型的变量所组成的有序集合，数组中的每一个变量称为元素。</p>
+<p><strong>数组特点：</strong>数组中的每一个元素都有自己的<strong>下标</strong>，下标从0开始，一直到数组长度-1。数组的另一个特点是在内存中<strong>顺序存储</strong>。</p>
+<p>内存是由一个个连续的内存单元组成的，每一个内存都有自己的地址。数组中的每一个元素都存储在一个个小小的内存单元中，并且元素之间紧密排列。</p>
+<h3 id="1-1-数组的基本操作"><a href="#1-1-数组的基本操作" class="headerlink" title="1.1 数组的基本操作"></a>1.1 数组的基本操作</h3><h4 id="1-1-1-读取元素"><a href="#1-1-1-读取元素" class="headerlink" title="1.1.1 读取元素"></a>1.1.1 读取元素</h4><p>由于数组在内存中顺序存储，所以只要给出一个数组下标，就可以快速读取到对应的元素。</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">lst = [3, 1, 2, 4, 6, 5, 7]
+print(lst[3])
+# 输出
+4
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>时间复杂度为 $O(1)$。</strong></p>
+<h4 id="1-1-2-更新元素"><a href="#1-1-2-更新元素" class="headerlink" title="1.1.2 更新元素"></a>1.1.2 更新元素</h4><pre class="line-numbers language-lang-python"><code class="language-lang-python">lst = [3, 1, 2, 4, 6, 5, 7]
+lst[2] = 10
+print(lst)
+# 输出
+[3, 1, 10, 4, 6, 5, 7]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>时间复杂度为 $O(1)$。</strong></p>
+<h4 id="1-1-3-插入元素"><a href="#1-1-3-插入元素" class="headerlink" title="1.1.3 插入元素"></a>1.1.3 插入元素</h4><p>插入数组元素的操作存在3种情况：尾部插入、中间插入、超范围插入。</p>
+<ul>
+<li>尾部插入</li>
+</ul>
+<p>直接将元素放在数组尾部，等同于更新数组元素的操作。</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">lst = [3, 1, 2, 4, 6, 5, 7]
+lst.append(8)
+print(lst)
+# 输出
+[3, 1, 2, 4, 6, 5, 7, 8]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>中间插入</li>
+</ul>
+<p>在数组中间插入元素时，需要<u>先把插入位置及其后面的元素向后移动</u>，腾出位置，再<u>把要插入的元素放到对应的数组位置上</u>。</p>
+<p>在 python 中 insert() 函数可以实现元素插入。为了理解数组工作方式，我们实现一段插入操作的代码。</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class MyArray():
+    def __init__(self, capacity):
+        self.array = [None] * capacity
+        self.size = 0
+
+    def insert(self, index, element):
+        # 判断访问下标是否超出范围
+        if index < 0 or index > self.size:
+            raise Exception('超出数组实际元素范围！')
+        # 依次将插入位置右侧的元素向右移动一位
+        for i in range(self.size-1, index-1, -1):
+            if i >= len(self.array)-1:
+                raise Exception('数组索引超出范围')
+            else:
+                self.array[i+1] = self.array[i]
+        # 腾出的位置放入新元素
+        self.array[index] = element
+        self.size += 1
+
+    def output(self):
+        print(self.array)
+
+array = MyArray(5)
+array.insert(0, 5)
+array.insert(0, 6)
+array.insert(0, 7)
+array.insert(0, 8)
+array.insert(0, 9)
+array.output()
+# 输出
+[9, 8, 7, 6, 5]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>代码中的size为实际元素的数量。</p>
+<ul>
+<li>超范围插入</li>
+</ul>
+<p>如果数组中已装满了元素，还想继续插入元素，需要对数据进行扩容。可以创建一个新数组，长度是旧数组的2倍，再把旧数组中的元素复制过去，实现数组的扩容。</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class MyArray():
+    def __init__(self, capacity):
+        self.array = [None] * capacity
+        self.size = 0
+
+    def insert_v2(self, index, element):
+        # 判断访问下标是否超出范围
+        if index < 0 or index > self.size:
+            raise Exception('超出数组实际元素范围！')
+        # 如果实际元素达到数组容量上限，数组扩容
+        if self.size >= len(self.array):
+            self.resize()
+        # 依次将从右向左的元素向右移动一位
+        for i in range(self.size-1, index-1, -1):
+            if i >= len(self.array)-1:
+                raise Exception('数组索引超出范围')
+            else:
+                self.array[i+1] = self.array[i]
+        # 腾出的位置放入新元素
+        self.array[index] = element
+        self.size += 1
+
+    def resize(self):
+        array_new = [None] * len(self.array) * 2
+        # 从旧数组复制到新数组
+        for i in range(self.size):
+            array_new[i] = self.array[i]
+        self.array = array_new
+
+    def output(self):
+        print(self.array)
+
+array = MyArray(4)
+array.insert_v2(0, 5)
+array.insert_v2(0, 6)
+array.insert_v2(0, 7)
+array.insert_v2(0, 8)
+array.insert_v2(0, 9)
+array.output()
+# 输出
+[9, 8, 7, 6, 5, None, None, None]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>数组扩容的时间复杂度是 $O(n)$，插入并移动的时间复杂度也是 $O(n)$，综合起来插入操作的时间复杂度是 $O(n)$。</strong></p>
+<h4 id="1-1-4-删除元素"><a href="#1-1-4-删除元素" class="headerlink" title="1.1.4 删除元素"></a>1.1.4 删除元素</h4><p>如果删除的元素位于数组中间，其后的元素都要向前挪动一位。在 Python中，已经在底层实现了删除操作，使用 remove() 函数。</p>
+<p><strong>删除操作只涉及元素的移动，时间复杂度是 $O(n)$。</strong></p>
+<h3 id="1-2-数组的优劣势"><a href="#1-2-数组的优劣势" class="headerlink" title="1.2 数组的优劣势"></a>1.2 数组的优劣势</h3><p>优势：数组拥有非常高效的随机访问能力，只要给出下标，就可以用常量时间找到对应元素。二分查找就是利用这个优势。</p>
+<p>劣势：由于数组是连续紧密地存储在内存中，插入、删除元素都会导致大量元素被迫移动，影响效率。</p>
+<h2 id="2-链表"><a href="#2-链表" class="headerlink" title="2. 链表"></a>2. 链表</h2><p>链表是一种在物理上非连续、非顺序的数据结构，由若干节点（node）组成。</p>
+<p><strong>单向链表：</strong>每一个节点包含两部分，一部分是存放数据的变量 data，另一部分是指向下一个节点的指针 next。链表的第一个节点为头节点，最后一个节点为尾节点，尾节点的 next指针指向空。</p>
+<p><strong>双向链表：</strong>每一个节点除了有 data 和 next 指针，还有指向前置节点的 prev指针。</p>
+<p>链表存储：链表在内存中的存储方式是随机存储，采用了见缝插针的方式，链表的每一个节点分布在内存的不同位置，依靠 next 指针进行关联。这样可以有效地利用零散地内存空间。</p>
+<h3 id="2-1-链表的基本操作"><a href="#2-1-链表的基本操作" class="headerlink" title="2.1 链表的基本操作"></a>2.1 链表的基本操作</h3><h4 id="2-1-1-查找节点"><a href="#2-1-1-查找节点" class="headerlink" title="2.1.1 查找节点"></a>2.1.1 查找节点</h4><p>在查找元素时，从链表的头节点开始向后一个个节点逐一查找。链表中的数据只能按顺序进行访问，最坏的时间复杂度是 $O(n)$。</p>
+<h4 id="2-1-2-更新节点"><a href="#2-1-2-更新节点" class="headerlink" title="2.1.2 更新节点"></a>2.1.2 更新节点</h4><p>如果不考虑查找节点的过程，链表的更新很简单，直接把旧数据替换成新数据即可。</p>
+<p>链表更新的时间复杂度为 $O(1)$。</p>
+<h4 id="2-1-3-插入节点"><a href="#2-1-3-插入节点" class="headerlink" title="2.1.3 插入节点"></a>2.1.3 插入节点</h4><p>在链表中插入节点时，分为3种情况：尾部插入、头部插入、中间插入。</p>
+<ul>
+<li>尾部插入</li>
+</ul>
+<p>把最后一个节点的 next 指针指向新插入的节点即可。</p>
+<ul>
+<li>头部插入</li>
+</ul>
+<p>第一步是把新节点的 next 指针指向原先的头节点，第二步是把新节点变为链表的头节点。</p>
+<ul>
+<li>中间插入</li>
+</ul>
+<p>第一步是把新节点的 next 指针指向插入位置的节点，第二步是插入位置前置节点的 next 指针指向新节点。</p>
+<p>存粹的插入操作，时间复杂度为 $O(1)$。</p>
+<h4 id="2-1-4-删除节点"><a href="#2-1-4-删除节点" class="headerlink" title="2.1.4 删除节点"></a>2.1.4 删除节点</h4><p>链表的删除操作分为3种情况：尾部删除、头部删除、中间删除。</p>
+<ul>
+<li>尾部删除</li>
+</ul>
+<p>把倒数第2个节点的 next 指针指向空即可。</p>
+<ul>
+<li>头部删除</li>
+</ul>
+<p>把原先头节点的 next 指针指向的节点设为链表的头节点。</p>
+<ul>
+<li>中间删除</li>
+</ul>
+<p>把链表要删除节点的前置节点的 next 指针，指向要删除元素的下一个节点。</p>
+<p>在 Python 中，有自动化的垃圾回收机制，所以不用刻意去释放被删除的节点。只要没有外部引用指向它们，被删除的节点会被自动回收。</p>
+<p>存粹的删除操作，时间复杂度为 $O(1)$。</p>
+<h3 id="2-2-链表的代码实现"><a href="#2-2-链表的代码实现" class="headerlink" title="2.2 链表的代码实现"></a>2.2 链表的代码实现</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python">class Node():
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList():
+    def __init__(self):
+        self.size = 0
+        self.head = None
+        self.last = None
+
+    def get(self, index):
+        if index < 0 or index >= self.size:
+            raise Exception('超出链表的节点范围！')
+        p = self.head
+        for i in range(index):
+            p = p.next
+        return p
+
+    def insert(self, data, index):
+        if index < 0 or index > self.size:
+            raise Exception('超出链表的节点范围！')
+        node = Node(data)
+        if self.size == 0:
+            # 空链表
+            self.head = node
+            self.last = node
+        elif index == 0:
+            # 插入头部
+            node.next = self.head
+            self.head = node
+        elif self.size == index:
+            # 插入尾部
+            self.last.next  = node
+            self.last = node
+        else:
+            # 插入中间
+            prev_node = self.get(index-1)
+            node.next = prev_node.next
+            prev_node.next = node 
+        self.size += 1
+
+    def remove(self, index):
+        if index < 0 or index >= self.size:
+            raise Exception('超出链表的节点范围！')
+        if index == 0:
+            # 删除头节点
+            removed_node = self.head
+            self.head = self.head.next
+        elif index == self.size - 1:
+            # 删除尾节点
+            prev_node = self.get(index-1)
+            removed_node = prev_node.next
+            prev_node.next = None
+            self.last = prev_node
+        else:
+            # 删除中间节点
+            prev_node = self.get(index-1)
+            next_node = prev_node.next.next 
+            removed_node = prev_node.next
+            prev_node.next = next_node
+
+        self.size -= 1
+        return removed_node
+
+    def output(self):
+        p = self.head
+        while p is not None:
+            print(p.data)
+            p = p.next
+
+linkedList = LinkedList()
+linkedList.insert(3, 0)
+linkedList.insert(4, 0)
+linkedList.insert(6, 2)
+linkedList.insert(1, 1)
+linkedList.remove(0)
+linkedList.output()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-2-链表与数组的比较"><a href="#2-2-链表与数组的比较" class="headerlink" title="2.2 链表与数组的比较"></a>2.2 链表与数组的比较</h3><p>数组和链表都属于线性数据结构。两者的时间复杂度如下表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>查找</th>
+<th>更新</th>
+<th>插入</th>
+<th>删除</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数组</td>
+<td>$O(1)$</td>
+<td>$O(1)$</td>
+<td>$O(n)$</td>
+<td>$O(n)$</td>
+</tr>
+<tr>
+<td>链表</td>
+<td>$O(n)$</td>
+<td>$O(1)$</td>
+<td>$O(1)$</td>
+<td>$O(1)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>数组的优势在于能够快速定位元素，对于<strong>读操作多、写操作少</strong>的场景来说，用数组更合适。</p>
+<p>链表的优势在于能够灵活地插入和删除操作，如果需要<strong>频繁的插入、删除元素</strong>，用链表更合适一些。</p>
+<p>常用的数据结构有很多，但大多都是以数组或链表作为存储方式。数组和链表可以被看做是数据存储的<strong>物理结构</strong>。除了物理结构，还有一类依赖物理结构而存在的结构，即<strong>逻辑结构</strong>。</p>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" style="zoom: 25%;"></p>
+<h2 id="3-栈"><a href="#3-栈" class="headerlink" title="3.栈"></a>3.栈</h2><h3 id="3-1-什么是栈"><a href="#3-1-什么是栈" class="headerlink" title="3.1 什么是栈"></a>3.1 什么是栈</h3><p><strong>栈：</strong>线性数据结构，元素只能<strong>先进后出</strong>。最早进入的元素存放的位置为<strong>栈底</strong>，最后进入的元素存放的位置叫做<strong>栈顶</strong>。栈这种数据结构既可以用数组来实现，也可以用链表来实现。</p>
+<p>栈的数组实现示意结构：</p>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%A0%88%E7%9A%84%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.png" style="zoom: 25%;"></p>
+<p>栈的链表实现示意结构：</p>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%A0%88%E7%9A%84%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9E%84.png" style="zoom:25%;"></p>
+<h3 id="3-2-栈的基本操作"><a href="#3-2-栈的基本操作" class="headerlink" title="3.2 栈的基本操作"></a>3.2 栈的基本操作</h3><ul>
+<li><strong>入栈：</strong>把新元素放入栈中，只允许从栈顶一侧放入元素，新元素的位置将会称为新的栈顶。</li>
+<li><strong>出栈：</strong>把元素从栈中弹出，只有栈顶元素才允许出栈，出栈元素的前一个元素将成为新的栈顶。</li>
+</ul>
+<p>在 Python 语言中，列表很好地实现了栈地功能，append 方法相当于入栈，pop 方法相当于出栈。</p>
+<p><strong>入栈和出栈地时间复杂度都是 $O(1)$。</strong></p>
+<h2 id="4-队列"><a href="#4-队列" class="headerlink" title="4.队列"></a>4.队列</h2><h3 id="4-1-什么是队列"><a href="#4-1-什么是队列" class="headerlink" title="4.1 什么是队列"></a>4.1 什么是队列</h3><p><strong>队列：</strong>一种线性数据结构，元素只能<strong>先进先出</strong>。队列的出口端叫作<strong>队头</strong>，队列的入口端叫作<strong>队尾</strong>。</p>
+<p>队列的数组结构：</p>
+<p>用数组实现队列时，为了入队操作的方便，把队尾位置规定尾最后入队元素的<strong>下一个位置</strong>。</p>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.png" style="zoom:25%;"></p>
+<p>队列的链表结构：</p>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9E%84.png" style="zoom:25%;"></p>
+<h3 id="4-2-队列地基本操作"><a href="#4-2-队列地基本操作" class="headerlink" title="4.2 队列地基本操作"></a>4.2 队列地基本操作</h3><ul>
+<li><strong>入队：</strong>把新元素放入队列中，只允许在队尾的位置放入元素，新元素的下一个位置将会成为队尾。</li>
+<li><strong>出队：</strong>把新元素移出队列，只允许在队头一侧移出元素，出队元素的后一个位置将会成为新的队头。</li>
+</ul>
+<h3 id="4-3-循环队列"><a href="#4-3-循环队列" class="headerlink" title="4.3 循环队列"></a>4.3 循环队列</h3><p>用数组实现队列时，如果左侧不断出队，队头左侧的空间将失去作用，队列的容量也越来越小。为了维持对量容量的恒定，我们可以采用<strong>循环队列</strong>的方式。</p>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97.png" style="zoom:25%;"></p>
+<p>在数组不做扩容的前提下，当有新元素入队时，我们可以利用已出队元素留下的空间，让队尾指针重新指回数组的首位。在物理结构上，队尾的位置可以在队头之前。当再有元素入队时，将其放在上一个队尾位置，队尾继续后移。一直到<strong><u>（队尾的下标+1）%数组长度 = 队头下标</u></strong>时，代表此队列已满。需要注意，队尾的指针指向的位置永远空出一位，所以队列最大容量比数组长度小1。</p>
+<p>在 Python 中提供了多种队列工具，如 collections.deque，queue.Queue等。为了加深理解，自己尝试实现一个队列：</p>
+<pre class="line-numbers language-lang-python"><code class="language-lang-python">class MyQueue():
+    def __init__(self, capacity):
+        self.list = [None] * capacity
+        self.front = 0
+        self.rear = 0
+
+    def enqueue(self, element):
+        if (self.rear + 1) % len(self.list) == self.front:
+            raise Exception("队列已满!")
+        self.list[self.rear] = element
+        self.rear = (self.rear + 1) % len(self.list)
+
+    def dequeue(self):
+        if (self.rear + 1) % len(self.list) == self.front:
+            raise Exception("队列已满!")
+        dequeue_element = self.list[self.front]
+        self.front = (self.front + 1) % len(self.list)
+        return dequeue_element
+
+    def output(self):
+        i = self.front
+        while i != self.rear:
+            print(self.list[i])
+            i = (i + 1) % len(self.list)
+
+myQueue = MyQueue(6)
+myQueue.enqueue(3)
+myQueue.enqueue(6)
+myQueue.enqueue(9)
+myQueue.dequeue()
+myQueue.enqueue(5)
+myQueue.output()
+# 输出
+6
+9
+5
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>入队和出队的时间复杂度为$O(1)$。</strong></p>
+<h2 id="5-哈希表"><a href="#5-哈希表" class="headerlink" title="5.哈希表"></a>5.哈希表</h2><p><strong>哈希表：</strong>也叫做散列表，这种数据结构提供了<strong>键</strong>和<strong>值</strong>的映射关系。</p>
+<h3 id="5-1-哈希函数"><a href="#5-1-哈希函数" class="headerlink" title="5.1 哈希函数"></a>5.1 哈希函数</h3><p>哈希函数：将哈希表键通过某种方式转换为数组下标。</p>
+<p>在 Python 语言中， 哈希表对应的集合叫作<strong>字典</strong>。在 Python 及大多数面向对象的语言中，每一个对象都有属于自己的 hash 值，这个 hash 值是区分不同对象的标识。无论对象自身的类型是什么，它们 hash 值都是一个整型变量。将键转化为数组下标最简单的方式是按照数组长度取模运算：</p>
+<p>index = hash(key) % size</p>
+<p>实际上，Python 中的哈希函数没有直接利用取模运算，而是利用了位运算的方式来优化性能。</p>
+<p>示例：我们想根据 Key2 获取到对应的值 Value2。首先，利用哈希函数将 Key2 转化为数组下标 2，然后根据下标从数组中获取对应下标的值。</p>
+<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0.png" style="zoom:25%;"></p>
+<h3 id="5-2-哈希表的读写操作"><a href="#5-2-哈希表的读写操作" class="headerlink" title="5.2 哈希表的读写操作"></a>5.2 哈希表的读写操作</h3><h4 id="5-2-1-写操作"><a href="#5-2-1-写操作" class="headerlink" title="5.2.1 写操作"></a>5.2.1 写操作</h4><p>写操作就是在哈希表中插入新的键值对。</p>
+<p>第1步，通过哈希函数，把 Key 转化成数组下标。</p>
+<p>第2步，如果数组下标对应的位置没有元素，就把这个这个 Entry 填充到数组下标对应的位置。</p>
+<p>但是，由于数组长度是有限的，当插入的 Entry 越来越多时，不同的 Key 通过哈希函数获得的下标有可能是相同的。这种情况，就叫作<strong>哈希冲突</strong>。</p>
+<p><strong>解决哈希冲突的方法主要有两种：一种是开放寻址法，一种是链表法。</strong></p>
+<p><strong>开放寻址法的基本思路：</strong>当一个 Key 通过哈希函数获得对应的数组下标已被占用，则寻找下一个空档位置，直至找到没有被占用的位置。</p>
+<p><strong>链表法基本思路：</strong>哈希表数组的每一个元素不仅是一个 Entry 对象，还是一个链表的头节点。每一个 Entry 对象通过 next 指针指向它的下一个 Entry 节点。当新来的 Entry 映射到与之冲突的数组位置时，只需要插入对应的链表中即可。</p>
+<h4 id="5-2-2-读操作"><a href="#5-2-2-读操作" class="headerlink" title="5.2.2 读操作"></a>5.2.2 读操作</h4><p>以链表法为例：</p>
+<p>第1步，通过哈希函数，把 Key 转化成数组下标。</p>
+<p>第2步，找到数组下标对应的元素，如果这个元素的 Key 是要找到就结束；如果这个 Key 不是要找的也没关系，由于数组的每一个元素都与一个链表对应，我们可以顺着这个链表继续往下找，看看能否找到与 Key 相匹配的节点。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -829,8 +1174,7 @@ LEFT JOIN Address a ON p.PersonId = a.PersonId;
                 <a href="/posts/a33ab33c.html">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法学习之路--算法概述">
+                        <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//2020-09-21-1.jpg" class="responsive-img" alt="算法学习之路--算法概述">
                         
                         <span class="card-title">算法学习之路--算法概述</span>
                     </div>
@@ -1046,7 +1390,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">89.1k</span>&nbsp;字
+                class="white-color">93.3k</span>&nbsp;字
             
             
             
