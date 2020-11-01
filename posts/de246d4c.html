@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="算法学习之路--数据结构基础, 简若">
     <meta name="description" content="1. 数组数组：有限个相同类型的变量所组成的有序集合，数组中的每一个变量称为元素。
 数组特点：数组中的每一个元素都有自己的下标，下标从0开始，一直到数组长度-1。数组的另一个特点是在内存中顺序存储。
@@ -30,11 +30,11 @@
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -495,114 +495,109 @@
 <p><strong>数组特点：</strong>数组中的每一个元素都有自己的<strong>下标</strong>，下标从0开始，一直到数组长度-1。数组的另一个特点是在内存中<strong>顺序存储</strong>。</p>
 <p>内存是由一个个连续的内存单元组成的，每一个内存都有自己的地址。数组中的每一个元素都存储在一个个小小的内存单元中，并且元素之间紧密排列。</p>
 <h3 id="1-1-数组的基本操作"><a href="#1-1-数组的基本操作" class="headerlink" title="1.1 数组的基本操作"></a>1.1 数组的基本操作</h3><h4 id="1-1-1-读取元素"><a href="#1-1-1-读取元素" class="headerlink" title="1.1.1 读取元素"></a>1.1.1 读取元素</h4><p>由于数组在内存中顺序存储，所以只要给出一个数组下标，就可以快速读取到对应的元素。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">lst = [3, 1, 2, 4, 6, 5, 7]
-print(lst[3])
-# 输出
-4
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>时间复杂度为 $O(1)$。</strong></p>
-<h4 id="1-1-2-更新元素"><a href="#1-1-2-更新元素" class="headerlink" title="1.1.2 更新元素"></a>1.1.2 更新元素</h4><pre class="line-numbers language-lang-python"><code class="language-lang-python">lst = [3, 1, 2, 4, 6, 5, 7]
-lst[2] = 10
-print(lst)
-# 输出
-[3, 1, 10, 4, 6, 5, 7]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-1-2-更新元素"><a href="#1-1-2-更新元素" class="headerlink" title="1.1.2 更新元素"></a>1.1.2 更新元素</h4><pre class="line-numbers language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span>
+lst<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>时间复杂度为 $O(1)$。</strong></p>
 <h4 id="1-1-3-插入元素"><a href="#1-1-3-插入元素" class="headerlink" title="1.1.3 插入元素"></a>1.1.3 插入元素</h4><p>插入数组元素的操作存在3种情况：尾部插入、中间插入、超范围插入。</p>
 <ul>
 <li>尾部插入</li>
 </ul>
 <p>直接将元素放在数组尾部，等同于更新数组元素的操作。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">lst = [3, 1, 2, 4, 6, 5, 7]
-lst.append(8)
-print(lst)
-# 输出
-[3, 1, 2, 4, 6, 5, 7, 8]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span>
+lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>中间插入</li>
 </ul>
 <p>在数组中间插入元素时，需要<u>先把插入位置及其后面的元素向后移动</u>，腾出位置，再<u>把要插入的元素放到对应的数组位置上</u>。</p>
 <p>在 python 中 insert() 函数可以实现元素插入。为了理解数组工作方式，我们实现一段插入操作的代码。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class MyArray():
-    def __init__(self, capacity):
-        self.array = [None] * capacity
-        self.size = 0
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> capacity<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>array <span class="token operator">=</span> <span class="token punctuation">[</span>None<span class="token punctuation">]</span> <span class="token operator">*</span> capacity
+        self<span class="token punctuation">.</span>size <span class="token operator">=</span> <span class="token number">0</span>
 
-    def insert(self, index, element):
-        # 判断访问下标是否超出范围
-        if index < 0 or index > self.size:
-            raise Exception('超出数组实际元素范围！')
-        # 依次将插入位置右侧的元素向右移动一位
-        for i in range(self.size-1, index-1, -1):
-            if i >= len(self.array)-1:
-                raise Exception('数组索引超出范围')
-            else:
-                self.array[i+1] = self.array[i]
-        # 腾出的位置放入新元素
-        self.array[index] = element
-        self.size += 1
+    <span class="token keyword">def</span> <span class="token function">insert</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> index<span class="token punctuation">,</span> element<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 判断访问下标是否超出范围</span>
+        <span class="token keyword">if</span> index <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> index <span class="token operator">></span> self<span class="token punctuation">.</span>size<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'超出数组实际元素范围！'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 依次将插入位置右侧的元素向右移动一位</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>size<span class="token number">-1</span><span class="token punctuation">,</span> index<span class="token number">-1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> i <span class="token operator">>=</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'数组索引超出范围'</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># 腾出的位置放入新元素</span>
+        self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> element
+        self<span class="token punctuation">.</span>size <span class="token operator">+=</span> <span class="token number">1</span>
 
-    def output(self):
-        print(self.array)
+    <span class="token keyword">def</span> <span class="token function">output</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>array<span class="token punctuation">)</span>
 
-array = MyArray(5)
-array.insert(0, 5)
-array.insert(0, 6)
-array.insert(0, 7)
-array.insert(0, 8)
-array.insert(0, 9)
-array.output()
-# 输出
-[9, 8, 7, 6, 5]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+array <span class="token operator">=</span> MyArray<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>output<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>代码中的size为实际元素的数量。</p>
 <ul>
 <li>超范围插入</li>
 </ul>
 <p>如果数组中已装满了元素，还想继续插入元素，需要对数据进行扩容。可以创建一个新数组，长度是旧数组的2倍，再把旧数组中的元素复制过去，实现数组的扩容。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class MyArray():
-    def __init__(self, capacity):
-        self.array = [None] * capacity
-        self.size = 0
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> capacity<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>array <span class="token operator">=</span> <span class="token punctuation">[</span>None<span class="token punctuation">]</span> <span class="token operator">*</span> capacity
+        self<span class="token punctuation">.</span>size <span class="token operator">=</span> <span class="token number">0</span>
 
-    def insert_v2(self, index, element):
-        # 判断访问下标是否超出范围
-        if index < 0 or index > self.size:
-            raise Exception('超出数组实际元素范围！')
-        # 如果实际元素达到数组容量上限，数组扩容
-        if self.size >= len(self.array):
-            self.resize()
-        # 依次将从右向左的元素向右移动一位
-        for i in range(self.size-1, index-1, -1):
-            if i >= len(self.array)-1:
-                raise Exception('数组索引超出范围')
-            else:
-                self.array[i+1] = self.array[i]
-        # 腾出的位置放入新元素
-        self.array[index] = element
-        self.size += 1
+    <span class="token keyword">def</span> <span class="token function">insert_v2</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> index<span class="token punctuation">,</span> element<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 判断访问下标是否超出范围</span>
+        <span class="token keyword">if</span> index <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> index <span class="token operator">></span> self<span class="token punctuation">.</span>size<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'超出数组实际元素范围！'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 如果实际元素达到数组容量上限，数组扩容</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>size <span class="token operator">>=</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>array<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>resize<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 依次将从右向左的元素向右移动一位</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>size<span class="token number">-1</span><span class="token punctuation">,</span> index<span class="token number">-1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> i <span class="token operator">>=</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'数组索引超出范围'</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># 腾出的位置放入新元素</span>
+        self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> element
+        self<span class="token punctuation">.</span>size <span class="token operator">+=</span> <span class="token number">1</span>
 
-    def resize(self):
-        array_new = [None] * len(self.array) * 2
-        # 从旧数组复制到新数组
-        for i in range(self.size):
-            array_new[i] = self.array[i]
-        self.array = array_new
+    <span class="token keyword">def</span> <span class="token function">resize</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        array_new <span class="token operator">=</span> <span class="token punctuation">[</span>None<span class="token punctuation">]</span> <span class="token operator">*</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>array<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span>
+        <span class="token comment" spellcheck="true"># 从旧数组复制到新数组</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>self<span class="token punctuation">.</span>size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            array_new<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>array <span class="token operator">=</span> array_new
 
-    def output(self):
-        print(self.array)
+    <span class="token keyword">def</span> <span class="token function">output</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>array<span class="token punctuation">)</span>
 
-array = MyArray(4)
-array.insert_v2(0, 5)
-array.insert_v2(0, 6)
-array.insert_v2(0, 7)
-array.insert_v2(0, 8)
-array.insert_v2(0, 9)
-array.output()
-# 输出
-[9, 8, 7, 6, 5, None, None, None]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+array <span class="token operator">=</span> MyArray<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert_v2<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert_v2<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert_v2<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert_v2<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>insert_v2<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span>
+array<span class="token punctuation">.</span>output<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> None<span class="token punctuation">,</span> None<span class="token punctuation">,</span> None<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>数组扩容的时间复杂度是 $O(n)$，插入并移动的时间复杂度也是 $O(n)$，综合起来插入操作的时间复杂度是 $O(n)$。</strong></p>
 <h4 id="1-1-4-删除元素"><a href="#1-1-4-删除元素" class="headerlink" title="1.1.4 删除元素"></a>1.1.4 删除元素</h4><p>如果删除的元素位于数组中间，其后的元素都要向前挪动一位。在 Python中，已经在底层实现了删除操作，使用 remove() 函数。</p>
 <p><strong>删除操作只涉及元素的移动，时间复杂度是 $O(n)$。</strong></p>
@@ -644,87 +639,85 @@ array.output()
 <p>把链表要删除节点的前置节点的 next 指针，指向要删除元素的下一个节点。</p>
 <p>在 Python 中，有自动化的垃圾回收机制，所以不用刻意去释放被删除的节点。只要没有外部引用指向它们，被删除的节点会被自动回收。</p>
 <p>存粹的删除操作，时间复杂度为 $O(1)$。</p>
-<h3 id="2-2-链表的代码实现"><a href="#2-2-链表的代码实现" class="headerlink" title="2.2 链表的代码实现"></a>2.2 链表的代码实现</h3><pre class="line-numbers language-lang-python"><code class="language-lang-python">class Node():
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+<h3 id="2-2-链表的代码实现"><a href="#2-2-链表的代码实现" class="headerlink" title="2.2 链表的代码实现"></a>2.2 链表的代码实现</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>data <span class="token operator">=</span> data
+        self<span class="token punctuation">.</span>next <span class="token operator">=</span> None
 
-class LinkedList():
-    def __init__(self):
-        self.size = 0
-        self.head = None
-        self.last = None
+<span class="token keyword">class</span> <span class="token class-name">LinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>size <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>head <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>last <span class="token operator">=</span> None
 
-    def get(self, index):
-        if index < 0 or index >= self.size:
-            raise Exception('超出链表的节点范围！')
-        p = self.head
-        for i in range(index):
-            p = p.next
-        return p
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> index <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> index <span class="token operator">>=</span> self<span class="token punctuation">.</span>size<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'超出链表的节点范围！'</span><span class="token punctuation">)</span>
+        p <span class="token operator">=</span> self<span class="token punctuation">.</span>head
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            p <span class="token operator">=</span> p<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> p
 
-    def insert(self, data, index):
-        if index < 0 or index > self.size:
-            raise Exception('超出链表的节点范围！')
-        node = Node(data)
-        if self.size == 0:
-            # 空链表
-            self.head = node
-            self.last = node
-        elif index == 0:
-            # 插入头部
-            node.next = self.head
-            self.head = node
-        elif self.size == index:
-            # 插入尾部
-            self.last.next  = node
-            self.last = node
-        else:
-            # 插入中间
-            prev_node = self.get(index-1)
-            node.next = prev_node.next
-            prev_node.next = node 
-        self.size += 1
+    <span class="token keyword">def</span> <span class="token function">insert</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> index <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> index <span class="token operator">></span> self<span class="token punctuation">.</span>size<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'超出链表的节点范围！'</span><span class="token punctuation">)</span>
+        node <span class="token operator">=</span> Node<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>size <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 空链表</span>
+            self<span class="token punctuation">.</span>head <span class="token operator">=</span> node
+            self<span class="token punctuation">.</span>last <span class="token operator">=</span> node
+        <span class="token keyword">elif</span> index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 插入头部</span>
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>head
+            self<span class="token punctuation">.</span>head <span class="token operator">=</span> node
+        <span class="token keyword">elif</span> self<span class="token punctuation">.</span>size <span class="token operator">==</span> index<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 插入尾部</span>
+            self<span class="token punctuation">.</span>last<span class="token punctuation">.</span>next  <span class="token operator">=</span> node
+            self<span class="token punctuation">.</span>last <span class="token operator">=</span> node
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 插入中间</span>
+            prev_node <span class="token operator">=</span> self<span class="token punctuation">.</span>get<span class="token punctuation">(</span>index<span class="token number">-1</span><span class="token punctuation">)</span>
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> prev_node<span class="token punctuation">.</span>next
+            prev_node<span class="token punctuation">.</span>next <span class="token operator">=</span> node 
+        self<span class="token punctuation">.</span>size <span class="token operator">+=</span> <span class="token number">1</span>
 
-    def remove(self, index):
-        if index < 0 or index >= self.size:
-            raise Exception('超出链表的节点范围！')
-        if index == 0:
-            # 删除头节点
-            removed_node = self.head
-            self.head = self.head.next
-        elif index == self.size - 1:
-            # 删除尾节点
-            prev_node = self.get(index-1)
-            removed_node = prev_node.next
-            prev_node.next = None
-            self.last = prev_node
-        else:
-            # 删除中间节点
-            prev_node = self.get(index-1)
-            next_node = prev_node.next.next 
-            removed_node = prev_node.next
-            prev_node.next = next_node
+    <span class="token keyword">def</span> <span class="token function">remove</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> index <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">or</span> index <span class="token operator">>=</span> self<span class="token punctuation">.</span>size<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'超出链表的节点范围！'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 删除头节点</span>
+            removed_node <span class="token operator">=</span> self<span class="token punctuation">.</span>head
+            self<span class="token punctuation">.</span>head <span class="token operator">=</span> self<span class="token punctuation">.</span>head<span class="token punctuation">.</span>next
+        <span class="token keyword">elif</span> index <span class="token operator">==</span> self<span class="token punctuation">.</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 删除尾节点</span>
+            prev_node <span class="token operator">=</span> self<span class="token punctuation">.</span>get<span class="token punctuation">(</span>index<span class="token number">-1</span><span class="token punctuation">)</span>
+            removed_node <span class="token operator">=</span> prev_node<span class="token punctuation">.</span>next
+            prev_node<span class="token punctuation">.</span>next <span class="token operator">=</span> None
+            self<span class="token punctuation">.</span>last <span class="token operator">=</span> prev_node
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 删除中间节点</span>
+            prev_node <span class="token operator">=</span> self<span class="token punctuation">.</span>get<span class="token punctuation">(</span>index<span class="token number">-1</span><span class="token punctuation">)</span>
+            next_node <span class="token operator">=</span> prev_node<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next 
+            removed_node <span class="token operator">=</span> prev_node<span class="token punctuation">.</span>next
+            prev_node<span class="token punctuation">.</span>next <span class="token operator">=</span> next_node
 
-        self.size -= 1
-        return removed_node
+        self<span class="token punctuation">.</span>size <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> removed_node
 
-    def output(self):
-        p = self.head
-        while p is not None:
-            print(p.data)
-            p = p.next
+    <span class="token keyword">def</span> <span class="token function">output</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        p <span class="token operator">=</span> self<span class="token punctuation">.</span>head
+        <span class="token keyword">while</span> p <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+            p <span class="token operator">=</span> p<span class="token punctuation">.</span>next
 
-linkedList = LinkedList()
-linkedList.insert(3, 0)
-linkedList.insert(4, 0)
-linkedList.insert(6, 2)
-linkedList.insert(1, 1)
-linkedList.remove(0)
-linkedList.output()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+linkedList <span class="token operator">=</span> LinkedList<span class="token punctuation">(</span><span class="token punctuation">)</span>
+linkedList<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+linkedList<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+linkedList<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+linkedList<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+linkedList<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+linkedList<span class="token punctuation">.</span>output<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-2-链表与数组的比较"><a href="#2-2-链表与数组的比较" class="headerlink" title="2.2 链表与数组的比较"></a>2.2 链表与数组的比较</h3><p>数组和链表都属于线性数据结构。两者的时间复杂度如下表：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -735,8 +728,7 @@ linkedList.output()
 <th>删除</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>数组</td>
 <td>$O(1)$</td>
 <td>$O(1)$</td>
@@ -750,18 +742,19 @@ linkedList.output()
 <td>$O(1)$</td>
 <td>$O(1)$</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>数组的优势在于能够快速定位元素，对于<strong>读操作多、写操作少</strong>的场景来说，用数组更合适。</p>
 <p>链表的优势在于能够灵活地插入和删除操作，如果需要<strong>频繁的插入、删除元素</strong>，用链表更合适一些。</p>
 <p>常用的数据结构有很多，但大多都是以数组或链表作为存储方式。数组和链表可以被看做是数据存储的<strong>物理结构</strong>。除了物理结构，还有一类依赖物理结构而存在的结构，即<strong>逻辑结构</strong>。</p>
-<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" style="zoom: 25%;"></p>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" style="zoom: 25%;">
+
 <h2 id="3-栈"><a href="#3-栈" class="headerlink" title="3.栈"></a>3.栈</h2><h3 id="3-1-什么是栈"><a href="#3-1-什么是栈" class="headerlink" title="3.1 什么是栈"></a>3.1 什么是栈</h3><p><strong>栈：</strong>线性数据结构，元素只能<strong>先进后出</strong>。最早进入的元素存放的位置为<strong>栈底</strong>，最后进入的元素存放的位置叫做<strong>栈顶</strong>。栈这种数据结构既可以用数组来实现，也可以用链表来实现。</p>
 <p>栈的数组实现示意结构：</p>
-<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%A0%88%E7%9A%84%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.png" style="zoom: 25%;"></p>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%A0%88%E7%9A%84%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.png" style="zoom: 25%;">
+
 <p>栈的链表实现示意结构：</p>
-<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%A0%88%E7%9A%84%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9E%84.png" style="zoom:25%;"></p>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E6%A0%88%E7%9A%84%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9E%84.png" style="zoom:25%;">
+
 <h3 id="3-2-栈的基本操作"><a href="#3-2-栈的基本操作" class="headerlink" title="3.2 栈的基本操作"></a>3.2 栈的基本操作</h3><ul>
 <li><strong>入栈：</strong>把新元素放入栈中，只允许从栈顶一侧放入元素，新元素的位置将会称为新的栈顶。</li>
 <li><strong>出栈：</strong>把元素从栈中弹出，只有栈顶元素才允许出栈，出栈元素的前一个元素将成为新的栈顶。</li>
@@ -771,54 +764,56 @@ linkedList.output()
 <h2 id="4-队列"><a href="#4-队列" class="headerlink" title="4.队列"></a>4.队列</h2><h3 id="4-1-什么是队列"><a href="#4-1-什么是队列" class="headerlink" title="4.1 什么是队列"></a>4.1 什么是队列</h3><p><strong>队列：</strong>一种线性数据结构，元素只能<strong>先进先出</strong>。队列的出口端叫作<strong>队头</strong>，队列的入口端叫作<strong>队尾</strong>。</p>
 <p>队列的数组结构：</p>
 <p>用数组实现队列时，为了入队操作的方便，把队尾位置规定尾最后入队元素的<strong>下一个位置</strong>。</p>
-<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.png" style="zoom:25%;"></p>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E9%98%9F%E5%88%97%E7%9A%84%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.png" style="zoom:25%;">
+
 <p>队列的链表结构：</p>
-<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9E%84.png" style="zoom:25%;"></p>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E8%A1%A8%E7%BB%93%E6%9E%84.png" style="zoom:25%;">
+
 <h3 id="4-2-队列地基本操作"><a href="#4-2-队列地基本操作" class="headerlink" title="4.2 队列地基本操作"></a>4.2 队列地基本操作</h3><ul>
 <li><strong>入队：</strong>把新元素放入队列中，只允许在队尾的位置放入元素，新元素的下一个位置将会成为队尾。</li>
 <li><strong>出队：</strong>把新元素移出队列，只允许在队头一侧移出元素，出队元素的后一个位置将会成为新的队头。</li>
 </ul>
 <h3 id="4-3-循环队列"><a href="#4-3-循环队列" class="headerlink" title="4.3 循环队列"></a>4.3 循环队列</h3><p>用数组实现队列时，如果左侧不断出队，队头左侧的空间将失去作用，队列的容量也越来越小。为了维持对量容量的恒定，我们可以采用<strong>循环队列</strong>的方式。</p>
-<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97.png" style="zoom:25%;"></p>
-<p>在数组不做扩容的前提下，当有新元素入队时，我们可以利用已出队元素留下的空间，让队尾指针重新指回数组的首位。在物理结构上，队尾的位置可以在队头之前。当再有元素入队时，将其放在上一个队尾位置，队尾继续后移。一直到<strong><u>（队尾的下标+1）%数组长度 = 队头下标</u></strong>时，代表此队列已满。需要注意，队尾的指针指向的位置永远空出一位，所以队列最大容量比数组长度小1。</p>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97.png" style="zoom:25%;">
+
+<p>在数组不做扩容的前提下，当有新元素入队时，我们可以利用已出队元素留下的空间，让队尾指针重新指回数组的首位。在物理结构上，队尾的位置可以在队头之前。当再有元素入队时，将其放在上一个队尾位置，队尾继续后移。一直到**<u>（队尾的下标+1）%数组长度 = 队头下标</u>**时，代表此队列已满。需要注意，队尾的指针指向的位置永远空出一位，所以队列最大容量比数组长度小1。</p>
 <p>在 Python 中提供了多种队列工具，如 collections.deque，queue.Queue等。为了加深理解，自己尝试实现一个队列：</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class MyQueue():
-    def __init__(self, capacity):
-        self.list = [None] * capacity
-        self.front = 0
-        self.rear = 0
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> capacity<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>list <span class="token operator">=</span> <span class="token punctuation">[</span>None<span class="token punctuation">]</span> <span class="token operator">*</span> capacity
+        self<span class="token punctuation">.</span>front <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>rear <span class="token operator">=</span> <span class="token number">0</span>
 
-    def enqueue(self, element):
-        if (self.rear + 1) % len(self.list) == self.front:
-            raise Exception("队列已满!")
-        self.list[self.rear] = element
-        self.rear = (self.rear + 1) % len(self.list)
+    <span class="token keyword">def</span> <span class="token function">enqueue</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> element<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>list<span class="token punctuation">)</span> <span class="token operator">==</span> self<span class="token punctuation">.</span>front<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"队列已满!"</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>list<span class="token punctuation">[</span>self<span class="token punctuation">.</span>rear<span class="token punctuation">]</span> <span class="token operator">=</span> element
+        self<span class="token punctuation">.</span>rear <span class="token operator">=</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>list<span class="token punctuation">)</span>
 
-    def dequeue(self):
-        if (self.rear + 1) % len(self.list) == self.front:
-            raise Exception("队列已满!")
-        dequeue_element = self.list[self.front]
-        self.front = (self.front + 1) % len(self.list)
-        return dequeue_element
+    <span class="token keyword">def</span> <span class="token function">dequeue</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>rear <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>list<span class="token punctuation">)</span> <span class="token operator">==</span> self<span class="token punctuation">.</span>front<span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"队列已满!"</span><span class="token punctuation">)</span>
+        dequeue_element <span class="token operator">=</span> self<span class="token punctuation">.</span>list<span class="token punctuation">[</span>self<span class="token punctuation">.</span>front<span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>front <span class="token operator">=</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>front <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>list<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dequeue_element
 
-    def output(self):
-        i = self.front
-        while i != self.rear:
-            print(self.list[i])
-            i = (i + 1) % len(self.list)
+    <span class="token keyword">def</span> <span class="token function">output</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        i <span class="token operator">=</span> self<span class="token punctuation">.</span>front
+        <span class="token keyword">while</span> i <span class="token operator">!=</span> self<span class="token punctuation">.</span>rear<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            i <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>list<span class="token punctuation">)</span>
 
-myQueue = MyQueue(6)
-myQueue.enqueue(3)
-myQueue.enqueue(6)
-myQueue.enqueue(9)
-myQueue.dequeue()
-myQueue.enqueue(5)
-myQueue.output()
-# 输出
-6
-9
-5
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+myQueue <span class="token operator">=</span> MyQueue<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+myQueue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+myQueue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+myQueue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span>
+myQueue<span class="token punctuation">.</span>dequeue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+myQueue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+myQueue<span class="token punctuation">.</span>output<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">6</span>
+<span class="token number">9</span>
+<span class="token number">5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>入队和出队的时间复杂度为$O(1)$。</strong></p>
 <h2 id="5-哈希表"><a href="#5-哈希表" class="headerlink" title="5.哈希表"></a>5.哈希表</h2><p><strong>哈希表：</strong>也叫做散列表，这种数据结构提供了<strong>键</strong>和<strong>值</strong>的映射关系。</p>
 <h3 id="5-1-哈希函数"><a href="#5-1-哈希函数" class="headerlink" title="5.1 哈希函数"></a>5.1 哈希函数</h3><p>哈希函数：将哈希表键通过某种方式转换为数组下标。</p>
@@ -826,7 +821,8 @@ myQueue.output()
 <p>index = hash(key) % size</p>
 <p>实际上，Python 中的哈希函数没有直接利用取模运算，而是利用了位运算的方式来优化性能。</p>
 <p>示例：我们想根据 Key2 获取到对应的值 Value2。首先，利用哈希函数将 Key2 转化为数组下标 2，然后根据下标从数组中获取对应下标的值。</p>
-<p><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0.png" style="zoom:25%;"></p>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0.png" style="zoom:25%;">
+
 <h3 id="5-2-哈希表的读写操作"><a href="#5-2-哈希表的读写操作" class="headerlink" title="5.2 哈希表的读写操作"></a>5.2 哈希表的读写操作</h3><h4 id="5-2-1-写操作"><a href="#5-2-1-写操作" class="headerlink" title="5.2.1 写操作"></a>5.2.1 写操作</h4><p>写操作就是在哈希表中插入新的键值对。</p>
 <p>第1步，通过哈希函数，把 Key 转化成数组下标。</p>
 <p>第2步，如果数组下标对应的位置没有元素，就把这个这个 Entry 填充到数组下标对应的位置。</p>
@@ -1129,8 +1125,7 @@ myQueue.output()
                             1. 组合两个表SELECT p.FirstName, p.LastName, a.City, a.State
 FROM Person p
 LEFT JOIN Address a ON p.PersonId = a.PersonId;
-
-2
+2.
                         
                     </div>
                     <div class="publish-info">
@@ -1390,7 +1385,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1584,7 +1579,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

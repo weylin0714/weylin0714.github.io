@@ -3,14 +3,13 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="CentOS7下重新安装Python与yum, 简若">
     <meta name="description" content="1.查看内核版本
 cat /etc/redhat-release
-
 2.删除现有Python
 rpm -qa|grep python|xargs rpm -ev --allmatches --nodeps
-whereis python |x">
+whereis python |xa">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,11 +32,11 @@ whereis python |x">
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -499,26 +498,22 @@ whereis python |x">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>1.查看内核版本</p>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">cat /etc/redhat-release
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">cat /etc/redhat-release<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>2.删除现有Python</p>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">rpm -qa|grep python|xargs rpm -ev --allmatches --nodeps
+<pre class="line-numbers language-shell"><code class="language-shell">rpm -qa|grep python|xargs rpm -ev --allmatches --nodeps
 whereis python |xargs rm -frv
-whereis python
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+whereis python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>3.删除现有的yum</p>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">rpm -qa|grep yum|xargs rpm -ev --allmatches --nodeps
-whereis yum |xargs rm -frv
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">rpm -qa|grep yum|xargs rpm -ev --allmatches --nodeps
+whereis yum |xargs rm -frv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>4.下载Python和yum程序包及其依赖包</p>
 <p><a href="http://vault.centos.org/" target="_blank" rel="noopener">http://vault.centos.org/</a></p>
 <p><a href="http://mirrors.163.com/centos/" target="_blank" rel="noopener">http://mirrors.163.com/centos/</a></p>
 <p>5.安装python以及yum的rpm包</p>
-<pre class="line-numbers language-lang-shell"><code class="language-lang-shell">rpm -Uvh --replacepkgs lvm2-python-libs*.rpm --nodeps --force
+<pre class="line-numbers language-shell"><code class="language-shell">rpm -Uvh --replacepkgs lvm2-python-libs*.rpm --nodeps --force
 rpm -Uvh --replacepkgs libxml2-python*.rpm --nodeps --force
 rpm -Uvh --replacepkgs python*.rpm --nodeps --force
-rpm -Uvh --replacepkgs rpm-python*.rpm yum*.rpm --nodeps --force
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+rpm -Uvh --replacepkgs rpm-python*.rpm yum*.rpm --nodeps --force<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1065,7 +1060,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1259,7 +1254,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

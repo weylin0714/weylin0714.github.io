@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Typora+PicGo+Github/Gitee搭建免费图床, 简若">
     <meta name="description" content="从2020年开始了写博客之旅，并利用Hexo和Github搭建了个人博客，这里记录一下自认为比较好写文章的工具：使用Typora编写markdown博客文章，使用Github/Gitee作为图床，并使用新版本Typora联合PicGo软件实">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,11 +28,11 @@
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -427,6 +427,10 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/Github/">
+                                <span class="chip bg-color">Github</span>
+                            </a>
+                        
                             <a href="/tags/%E5%9B%BE%E5%BA%8A/">
                                 <span class="chip bg-color">图床</span>
                             </a>
@@ -437,10 +441,6 @@
                         
                             <a href="/tags/Gitee/">
                                 <span class="chip bg-color">Gitee</span>
-                            </a>
-                        
-                            <a href="/tags/Github/">
-                                <span class="chip bg-color">Github</span>
                             </a>
                         
                     </div>
@@ -503,7 +503,8 @@
             <div id="articleContent">
                 <p>从2020年开始了写博客之旅，并利用Hexo和Github搭建了个人博客，这里记录一下自认为比较好写文章的工具：使用Typora编写markdown博客文章，使用Github/Gitee作为图床，并使用新版本Typora联合PicGo软件实现图片自动上传。</p>
 <h2 id="1-安装与配置PicGo"><a href="#1-安装与配置PicGo" class="headerlink" title="1. 安装与配置PicGo"></a>1. 安装与配置PicGo</h2><h3 id="1-1-安装PicGo"><a href="#1-1-安装PicGo" class="headerlink" title="1.1 安装PicGo"></a>1.1 安装PicGo</h3><p>PicGo是一个用于快速上传图片并获取图片URL链接的工具，选择合适的版本进行<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">下载</a>，可访问PicGo的<a href="https://picgo.github.io/PicGo-Doc/zh/guide/" target="_blank" rel="noopener">官方文档</a>进一步了解其功能和用法。这里我是win10系统，下载的是<a href="https://github.com/Molunerfinn/PicGo/releases/download/v2.3.0-beta.0/PicGo-Setup-2.3.0-beta.0.exe" target="_blank" rel="noopener">最新的版本</a>。下载可能会很慢，可借助迅雷进行下载。下载后双击进行安装，注意不要安装在C盘。</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-1.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-1.png" style="width:600px">
+
 <h3 id="1-2-配置PicGo"><a href="#1-2-配置PicGo" class="headerlink" title="1.2 配置PicGo"></a>1.2 配置PicGo</h3><p>这里仅介绍PicGo的几种配置，详细的可以参考<a href="https://picgo.github.io/PicGo-Doc/zh/guide/" target="_blank" rel="noopener">官方指南</a>。</p>
 <ul>
 <li>自定义快捷键</li>
@@ -518,40 +519,49 @@
 <li>注册Github用户</li>
 <li>在Github上新建一个用于存储的仓库，点击New repository创建一个新仓库。</li>
 </ul>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-2.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-2.png" style="width:600px">
+
 <p>之前已创建了一个名为ImgHosting的仓库，这里仓库的名为ImgHosting_new避免冲突。</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-3.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-3.png" style="width:600px">
+
 <ul>
 <li>生成一个Personal access tokens</li>
 </ul>
 <p>在Github中依次点击<u>Settings-&gt;Developer settings-&gt;Personal access tokens-&gt;Generate new token</u>，勾选repo权限，填写描述，然后点击<code>Generate token</code>按钮，生成token。由于生成的token只会在第一次显示，建议保存下来备用，否则后续只能重新生成token。</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-4.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-4.png" style="width:600px">
+
 <h4 id="2-1-2-PicGo配置Github图床"><a href="#2-1-2-PicGo配置Github图床" class="headerlink" title="2.1.2 PicGo配置Github图床"></a>2.1.2 PicGo配置Github图床</h4><p>打开PicGo，点击图床设置，对Github图床进行设置。</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-5.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-5.png" style="width:600px">
+
 <p>配置说明如下：</p>
 <ul>
 <li>设定仓库名：按照照“用户名/仓库名”的格式填写，比如我的weylin/ImgHosting。</li>
 <li>设定分支名：默认主分支master即可。</li>
 <li>设定Token：将之前生成的token复制粘贴到这里。</li>
 <li>指定存储路径：图床仓库目录下的子目录，默认是根目录。</li>
-<li>设定自定义域名：自定义域名的作用是在上传图片后成功后，PiGo将以“自定义域名+子目录名+图片名”生成访问连接。这里我们的自定义域名为：<u><a href="https://cdn.jsdelivr.net/gh/用户名/仓库名" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/用户名/仓库名</a></u>，用的是cdn.jsdelivr.net提升图片的加载速度。</li>
+<li>设定自定义域名：自定义域名的作用是在上传图片后成功后，PiGo将以“自定义域名+子目录名+图片名”生成访问连接。这里我们的自定义域名为：<u><a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/用户名/仓库名</a></u>，用的是cdn.jsdelivr.net提升图片的加载速度。</li>
 </ul>
 <h3 id="2-2-搭建Gitee图床"><a href="#2-2-搭建Gitee图床" class="headerlink" title="2.2 搭建Gitee图床"></a>2.2 搭建Gitee图床</h3><h4 id="2-2-1-新建Gitee仓库并生成个人token"><a href="#2-2-1-新建Gitee仓库并生成个人token" class="headerlink" title="2.2.1 新建Gitee仓库并生成个人token"></a>2.2.1 新建Gitee仓库并生成个人token</h4><ul>
 <li>注册Gitee账号</li>
 <li>在Gitee上新建一个仓库，点击右上角+号新建仓库。</li>
 </ul>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-6.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-6.png" style="width:600px">
+
 <p>填写好新建仓库的信息，点击创建即可。</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-7.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-7.png" style="width:600px">
+
 <ul>
 <li>生成个人token</li>
 </ul>
 <p>在个人主页，找到安全设置栏的私人令牌，点击生成新令牌，填写描述信息，提交生成私人令牌。与Github生成token一样，只会显示依次，要注意保存备用。</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-8.png" style="width:600px"></p>
-<h4 id="2-2-2-PicGo配置Gitee图床"><a href="#2-2-2-PicGo配置Gitee图床" class="headerlink" title="2.2.2 PicGo配置Gitee图床"></a>2.2.2 PicGo配置Gitee图床</h4><p>PicGo图床配置默认是没有Gitee图床的，需要我们安装Gitee插件。在PicGo插件设置搜索Gitee，两个插件可以选择一个安装。注意：安装插件前本机需要已安装node.js，插件下载需要使用到 node.js 的npm。windows环境下安装node.js可以参考：安装node.js，参考：<a href="https://jingyan.baidu.com/article/48b37f8dd141b41a646488bc.html。" target="_blank" rel="noopener">https://jingyan.baidu.com/article/48b37f8dd141b41a646488bc.html。</a></p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-9.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-8.png" style="width:600px">
+
+<h4 id="2-2-2-PicGo配置Gitee图床"><a href="#2-2-2-PicGo配置Gitee图床" class="headerlink" title="2.2.2 PicGo配置Gitee图床"></a>2.2.2 PicGo配置Gitee图床</h4><p>PicGo图床配置默认是没有Gitee图床的，需要我们安装Gitee插件。在PicGo插件设置搜索Gitee，两个插件可以选择一个安装。注意：安装插件前本机需要已安装node.js，插件下载需要使用到 node.js 的npm。windows环境下安装node.js可以参考：安装node.js，参考：<a href="https://jingyan.baidu.com/article/48b37f8dd141b41a646488bc.html%E3%80%82" target="_blank" rel="noopener">https://jingyan.baidu.com/article/48b37f8dd141b41a646488bc.html。</a></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-9.png" style="width:600px">
+
 <p>返回到图床设置，开始设置Gitee图床。</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-10.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-10.png" style="width:600px">
+
 <p>配置说明如下：</p>
 <ul>
 <li>url：gitee地址，即<a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a></li>
@@ -563,9 +573,13 @@
 </ul>
 <p>在完成上述图床搭建操作后，我们就可以使用PicGo来上传图片到Github或Gitee，并生成图片访问链接了。我平时是使用Typora这个Markdown编辑器来写博客文章，之前插入图片是使用 PicGo上传到图床，然后将地址粘贴到Typora中。目前新版本的Typora已支持PicGo服务，可以通过设置Typora实现快速插入图片。</p>
 <h2 id="3-Typora配置PicGo"><a href="#3-Typora配置PicGo" class="headerlink" title="3. Typora配置PicGo"></a>3. Typora配置PicGo</h2><h3 id="3-1-Typora图像配置"><a href="#3-1-Typora图像配置" class="headerlink" title="3.1 Typora图像配置"></a>3.1 Typora图像配置</h3><p>依次打开Typora的文件-&gt;偏好设置-&gt;图像，进行配置：</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-11.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-11.png" style="width:600px">
+
 <p>然后，点击<u>验证图片上传选项</u>验证配置是否正确，由于我PicGo中PicGo-Server设置中的监听端口默认为36686，与下图中的36677不一致而验证失败，将PicGo中的端口设置为36677验证成功。</p>
-<p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-12.png" style="width:600px"></p>
+<img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//ImgHosting-12.png" style="width:600px">
+
+
+
 <p>到这里，我们已经成功将Typora+PicGo+Github/Gitee配置好了，可以愉快的文章写作啦！将图片复制到Typora中，点击上传图片，即可将图片上传到Gitee图床仓库中。</p>
 <h2 id="4-可能遇到的问题"><a href="#4-可能遇到的问题" class="headerlink" title="4. 可能遇到的问题"></a>4. 可能遇到的问题</h2><ul>
 <li>出现 Failed to fetch</li>
@@ -661,6 +675,10 @@
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/Github/">
+                                    <span class="chip bg-color">Github</span>
+                                </a>
+                            
                                 <a href="/tags/%E5%9B%BE%E5%BA%8A/">
                                     <span class="chip bg-color">图床</span>
                                 </a>
@@ -671,10 +689,6 @@
                             
                                 <a href="/tags/Gitee/">
                                     <span class="chip bg-color">Gitee</span>
-                                </a>
-                            
-                                <a href="/tags/Github/">
-                                    <span class="chip bg-color">Github</span>
                                 </a>
                             
                         </div>
@@ -1135,7 +1149,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1329,7 +1343,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

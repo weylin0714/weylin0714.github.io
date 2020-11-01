@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Win10安装配置Java开发环境, 简若">
     <meta name="description" content="本文介绍在Win10系统下安装Java JDK，并配置Java JDK环境变量。
 1. 下载并安装Java JDK进入Java JDK下载页面，选择JDK版本。我们选择下载JDK 8u241的Windows x64版本，需要选中上面的Acc">
@@ -29,11 +29,11 @@
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -492,27 +492,34 @@
             <div id="articleContent">
                 <p>本文介绍在Win10系统下安装Java JDK，并配置Java JDK环境变量。</p>
 <h2 id="1-下载并安装Java-JDK"><a href="#1-下载并安装Java-JDK" class="headerlink" title="1. 下载并安装Java JDK"></a>1. 下载并安装Java JDK</h2><p>进入<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Java JDK</a>下载页面，选择JDK版本。我们选择下载<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">JDK 8u241</a>的Windows x64版本，需要选中上面的Accept License Agreement后，点击jdk-8u241-windows-x64.exe下载。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-1.png" style="zoom:50%;"></p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-1.png" style="zoom:50%;">
+
 <p>下载完成后，找到下载文件，双击进行安装，具体操作步骤如下：</p>
 <p>步骤01：双击安装包，修改安装位置，默认在C盘。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-2.png" style="zoom:50%;"></p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-2.png" style="zoom:50%;">
+
 <p>步骤02：更改安装位置后，点击下一步进行安装，安装过程中弹出jre安装位置，更改jre安装位置，建议和jdk同路径下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-3.png" style="zoom:50%;"></p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-3.png" style="zoom:50%;">
+
 <p>步骤03：设置好jre位置后，点击下一步继续安装，直至完成。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-4.png" style="zoom:50%;"></p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/1-4.png" style="zoom:50%;">
+
 <h2 id="2-配置Java-JDK环境变量"><a href="#2-配置Java-JDK环境变量" class="headerlink" title="2. 配置Java JDK环境变量"></a>2. 配置Java JDK环境变量</h2><p>安装完Java JDK后不能直接使用，还需配置系统的环境变量。</p>
 <p>步骤01：选中此电脑，右击选择<strong>属性</strong>，选择<strong>高级系统设置</strong>，选择<strong>环境变量</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-1.png" style="zoom:40%;"></p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-1.png" style="zoom:40%;">
+
 <p>步骤02：在环境变量窗口，新建系统变量，变量名：<strong>JAVA_HOME</strong>，变量值为JDK的安装目录，点击确定。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-2.png" style="zoom:40%;"></p>
-<p>步骤03：修改系统变量中的Path变量，点击新建，添加新的变量值：<strong>%JAVA_HOME%\bin</strong>，<strong>%JAVA_HOME%\jre\bin</strong>，点击确定。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-3.png" style="zoom:50%;"></p>
-<p>步骤04：新建系统变量，变量名：<strong>CLASSPATH</strong>，变量值：<strong>.;%JAVA_HOME%\lib\dt.jar; %JAVA_HOME%\lib\tools.jar;</strong>，点击确定。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-4.png" style="zoom:50%;"></p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-2.png" style="zoom:40%;">
+
+<p>步骤03：修改系统变量中的Path变量，点击新建，添加新的变量值：**%JAVA_HOME%\bin<strong>，</strong>%JAVA_HOME%\jre\bin**，点击确定。</p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-3.png" style="zoom:50%;">
+
+<p>步骤04：新建系统变量，变量名：<strong>CLASSPATH</strong>，变量值：**.;%JAVA_HOME%\lib\dt.jar; %JAVA_HOME%\lib\tools.jar;**，点击确定。</p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-4.png" style="zoom:50%;">
+
 <p>步骤05：上述配置完成后，点击确定。</p>
 <p>步骤06：验证Java是否安装成功。WINDOWS+R键，输入cmd，进入命令行界面。在命令行界面，分别输入java -verison、java、javac，有如下输出，则说明配置成功。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-5.png" style="zoom:40%;"></p>
-<script>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Java_20200120/2-5.png" style="zoom:40%;"><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1054,7 +1061,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1248,7 +1255,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

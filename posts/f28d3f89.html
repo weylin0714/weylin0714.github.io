@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="大数据学习环境搭建(四)--Spark单机环境搭建, 简若">
     <meta name="description" content="Apache Spark 是一个大数据处理通用引擎，基于Hadoop环境，Hadoop YARN为Spark提供资源调度框架，Hadoop HDFS为Spark提供底层的分布式文件存储。
 1. Spark安装与配置1.1 Spark安装下载">
@@ -29,11 +29,11 @@
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -495,33 +495,29 @@
 <ul>
 <li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为spark</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">tar -zxvf spark-2.4.4-bin-hadoop2.6.tar.gz -C /usr/local/
-# 将解压到/usr/local/目录下的文件夹重命名
-mv spark-2.4.4-bin-hadoop2.6/ spark
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf spark-2.4.4-bin-hadoop2.6.tar.gz -C /usr/local/
+<span class="token comment" spellcheck="true"># 将解压到/usr/local/目录下的文件夹重命名</span>
+<span class="token function">mv</span> spark-2.4.4-bin-hadoop2.6/ spark<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置环境变量</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 打开配置文件 
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 打开配置文件 </span>
 vim /etc/profile 
-# 添加Spark环境变量 
-export SPARK_HOME=/usr/local/spark
-export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 添加Spark环境变量 </span>
+<span class="token function">export</span> SPARK_HOME<span class="token operator">=</span>/usr/local/spark
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$SPARK_HOME</span>/bin:<span class="token variable">$SPARK_HOME</span>/sbin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>环境变量生效</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">source /etc/profile
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-2-Local模式运行"><a href="#1-2-Local模式运行" class="headerlink" title="1.2 Local模式运行"></a>1.2 Local模式运行</h3><p>Local 模式是单机运行，它采用单节点多线程方式运行，不用部署，开箱即用，适合日常测试开发。</p>
 <p>进入到/usr/local/spark/bin目录下，执行以下命令启动spark。</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 启动spark-shell
-spark-shell --master local[2]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 启动spark-shell</span>
+spark-shell --master local<span class="token punctuation">[</span>2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>local</strong>：只启动一个工作线程；</li>
-<li><strong>local[k]</strong>：启动 k 个工作线程；</li>
-<li><strong>local[*]</strong>：启动跟 cpu 数目相同的工作线程数。</li>
+<li>**local[k]**：启动 k 个工作线程；</li>
+<li>*<em>local[</em>]**：启动跟 cpu 数目相同的工作线程数。</li>
 </ul>
 <p>可以通过 Web UI 查看作业的执行情况，访问地址：IP:4040</p>
 <h2 id="2-Scala安装与配置"><a href="#2-Scala安装与配置" class="headerlink" title="2.Scala安装与配置"></a>2.Scala安装与配置</h2><p>Spark 是基于 Scala 语言进行开发的，分别提供了基于 Scala、Java、Python 语言的 API。这里分别介绍在CentOS7和win10系统中安装Scala。</p>
@@ -530,29 +526,26 @@ spark-shell --master local[2]
 <li>下载Scala，下载地址：<a href="https://www.scala-lang.org/download/" target="_blank" rel="noopener">https://www.scala-lang.org/download/</a></li>
 <li>将安装包移动到/usr/local目录下，解压，将解压文件夹重命名</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 解压
-tar -zxvf scala-2.13.1.tgz
-# 重命名
-mv scala-2.13.1/ scala
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压</span>
+<span class="token function">tar</span> -zxvf scala-2.13.1.tgz
+<span class="token comment" spellcheck="true"># 重命名</span>
+<span class="token function">mv</span> scala-2.13.1/ scala<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置环境</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">vim ~/.bash_profile
-# 添加scala配置
-export SCALA_HOME=/usr/local/scala
-export PATH=$PATH:$SCALA_HOME/bin
-# 环境生效
-source ~/.bash_profile
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">vim ~/.bash_profile
+<span class="token comment" spellcheck="true"># 添加scala配置</span>
+<span class="token function">export</span> SCALA_HOME<span class="token operator">=</span>/usr/local/scala
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$SCALA_HOME</span>/bin
+<span class="token comment" spellcheck="true"># 环境生效</span>
+<span class="token function">source</span> ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>验证是否安装成功</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">[root@centos local]# scala
-scala>
-# 退出
-:quit  # 或 ctrl + D
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos local<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># scala</span>
+scala<span class="token operator">></span>
+<span class="token comment" spellcheck="true"># 退出</span>
+:quit  <span class="token comment" spellcheck="true"># 或 ctrl + D</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-2-在Win10中安装Scala"><a href="#2-2-在Win10中安装Scala" class="headerlink" title="2.2 在Win10中安装Scala"></a>2.2 在Win10中安装Scala</h3><h4 id="2-2-1-前置条件"><a href="#2-2-1-前置条件" class="headerlink" title="2.2.1 前置条件"></a>2.2.1 前置条件</h4><p>在Win10环境下安装好JDK环境，安装可参考Win10安装配置Java开发环境的介绍。</p>
 <h4 id="2-2-2-安装与配置"><a href="#2-2-2-安装与配置" class="headerlink" title="2.2.2 安装与配置"></a>2.2.2 安装与配置</h4><ul>
 <li>安装Scala插件</li>
@@ -567,8 +560,14 @@ scala>
 <li>创建Scala项目</li>
 </ul>
 <p>新建项目，选择创建<code>Scala—IDEA</code>工程：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Spark_20200203/1.png" style="zoom:50.5%;"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Spark_20200203/2.png" style="zoom:46%;"></p>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Spark_20200203/1.png" style="zoom:50.5%;">
+
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/Spark_20200203/2.png" style="zoom:46%;">
+
+
+
+
+
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1112,7 +1111,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1306,7 +1305,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

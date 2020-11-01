@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Python学习笔记（七）：流程控制与关键字, 简若">
     <meta name="description" content="1.流程控制1.1 条件语句
 if单独使用
@@ -18,8 +18,7 @@ if not lst:
 Out:
     列表为空列表！
 
-
-">
+i">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -42,11 +41,11 @@ Out:
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -480,14 +479,14 @@ Out:
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    505
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    9 分
                 </div>
                 
 
@@ -506,35 +505,33 @@ Out:
                 <h2 id="1-流程控制"><a href="#1-流程控制" class="headerlink" title="1.流程控制"></a>1.流程控制</h2><h3 id="1-1-条件语句"><a href="#1-1-条件语句" class="headerlink" title="1.1 条件语句"></a>1.1 条件语句</h3><ul>
 <li>if单独使用</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">"""
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 if condition:
     statement
-"""
-lst = []
-if not lst:
-    print("列表为空列表！")
-Out:
-    列表为空列表！
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"""</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token operator">not</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"列表为空列表！"</span><span class="token punctuation">)</span>
+Out<span class="token punctuation">:</span>
+    列表为空列表！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>if-else结构</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">"""
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 if condition:
     statement_1
 else:
     statement_2
-"""
-num = int(input("输入一个整数: "))
-if num % 2 == 0:
-    print("{}是偶数.".format(num))
-else:
-    print("{}是奇数.".format(num))
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"""</span>
+num <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"输入一个整数: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> num <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}是偶数."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}是奇数."</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>if-elif-else结构</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">"""
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 if condition_1:
     statement_1
 elif condition_2:
@@ -544,33 +541,30 @@ elif condition_i
     statement_i
 else:
     statement_n
-"""
-height = float(input("请输入你的身高："))  # 单位/ m
-weight = float(input("请输入你的体重："))  # 单位/ kg
-BMI = weight / height**2
-if BMI < 18.5:
-    print("过轻")
-elif BMI >= 18.5 and BMI < 25:
-    print("正常")
-elif BMI >= 25 and BMI < 28:
-    print("过重")
-elif BMI >= 28 and BMI < 32:
-    print("肥胖")
-else:
-    print("严重肥胖")
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"""</span>
+height <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入你的身高："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 单位/ m</span>
+weight <span class="token operator">=</span> float<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入你的体重："</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 单位/ kg</span>
+BMI <span class="token operator">=</span> weight <span class="token operator">/</span> height<span class="token operator">**</span><span class="token number">2</span>
+<span class="token keyword">if</span> BMI <span class="token operator">&lt;</span> <span class="token number">18.5</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"过轻"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> BMI <span class="token operator">>=</span> <span class="token number">18.5</span> <span class="token operator">and</span> BMI <span class="token operator">&lt;</span> <span class="token number">25</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正常"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> BMI <span class="token operator">>=</span> <span class="token number">25</span> <span class="token operator">and</span> BMI <span class="token operator">&lt;</span> <span class="token number">28</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"过重"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> BMI <span class="token operator">>=</span> <span class="token number">28</span> <span class="token operator">and</span> BMI <span class="token operator">&lt;</span> <span class="token number">32</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"肥胖"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"严重肥胖"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>三元操作符</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">"""
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 expression1 if condition else expression2
-"""
-# y = |x|
-x = -1
-y = x if x > 0 else -x
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"""</span>
+<span class="token comment" spellcheck="true"># y = |x|</span>
+x <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+y <span class="token operator">=</span> x <span class="token keyword">if</span> x <span class="token operator">></span> <span class="token number">0</span> <span class="token keyword">else</span> <span class="token operator">-</span>x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在进行条件判断时，我们可以省略判断条件来简化代码，省略判断条件的常见用法：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -578,8 +572,7 @@ y = x if x > 0 else -x
 <th>结果</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>String</td>
 <td>空字符串解析为False，其余为True</td>
 </tr>
@@ -599,99 +592,90 @@ y = x if x > 0 else -x
 <td>Object</td>
 <td>None为False，其余为True</td>
 </tr>
-</tbody>
-</table>
-</div>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">lst = [1, 2, 3, 4, 5]
-lst_new = []
-if lst:
-    lst_new = [item**2 for item in lst]
-print(lst_new)  # [1, 4, 9, 16, 25]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</tbody></table>
+<pre class="line-numbers language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+lst_new <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> lst<span class="token punctuation">:</span>
+    lst_new <span class="token operator">=</span> <span class="token punctuation">[</span>item<span class="token operator">**</span><span class="token number">2</span> <span class="token keyword">for</span> item <span class="token keyword">in</span> lst<span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst_new<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># [1, 4, 9, 16, 25]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-2-循环语句"><a href="#1-2-循环语句" class="headerlink" title="1.2 循环语句"></a>1.2 循环语句</h3><p>Python中循环语句有for循环和while循环两种，各有侧重与其适用场景。for循环主要用于遍历可迭代对象，并进行相应的操作，而while循环需要在满足某个条件前，不停地重复某些操作。</p>
-<h4 id="1-2-1-for循环"><a href="#1-2-1-for循环" class="headerlink" title="1.2.1 for循环"></a>1.2.1 for循环</h4><pre class="line-numbers language-lang-python"><code class="language-lang-python">"""
+<h4 id="1-2-1-for循环"><a href="#1-2-1-for循环" class="headerlink" title="1.2.1 for循环"></a>1.2.1 for循环</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 for item in iterable:
     statement
-"""
-# 取出所有偶数
-lst = list(range(10))
-lst_even = []
-for item in lst:
-    if item % 2 == 0:
-        lst_even.append(item)
-print(lst_even)  # [0, 2, 4, 6, 8]
-# 遍历字典的项
-d = {'name':'Tom', 'age':'18', 'gender':'male'}
-for k, v in d.items():
-    print('key: {}, value: {}'.format(k, v))
-Out:
-    key: name, value: Tom
-    key: age, value: 18
-    key: gender, value: male
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="1-2-2-while循环"><a href="#1-2-2-while循环" class="headerlink" title="1.2.2 while循环"></a>1.2.2 while循环</h4><pre class="line-numbers language-lang-python"><code class="language-lang-python">"""
+"""</span>
+<span class="token comment" spellcheck="true"># 取出所有偶数</span>
+lst <span class="token operator">=</span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+lst_even <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> item <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        lst_even<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst_even<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># [0, 2, 4, 6, 8]</span>
+<span class="token comment" spellcheck="true"># 遍历字典的项</span>
+d <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span><span class="token string">'18'</span><span class="token punctuation">,</span> <span class="token string">'gender'</span><span class="token punctuation">:</span><span class="token string">'male'</span><span class="token punctuation">}</span>
+<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> d<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'key: {}, value: {}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>k<span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">)</span>
+Out<span class="token punctuation">:</span>
+    key<span class="token punctuation">:</span> name<span class="token punctuation">,</span> value<span class="token punctuation">:</span> Tom
+    key<span class="token punctuation">:</span> age<span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token number">18</span>
+    key<span class="token punctuation">:</span> gender<span class="token punctuation">,</span> value<span class="token punctuation">:</span> male<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-2-while循环"><a href="#1-2-2-while循环" class="headerlink" title="1.2.2 while循环"></a>1.2.2 while循环</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 while condition:
     statement
-"""
-sum_total = 0
-num = 1 
-while num <= 100:
-    sum_total += num
-    num += 1
-print("1~100的和为{}".format(sum_total))  # 1~100的和为5050
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="1-2-3-for与if配合用于解析式"><a href="#1-2-3-for与if配合用于解析式" class="headerlink" title="1.2.3 for与if配合用于解析式"></a>1.2.3 for与if配合用于解析式</h4><pre class="line-numbers language-lang-python"><code class="language-lang-python">"""
+"""</span>
+sum_total <span class="token operator">=</span> <span class="token number">0</span>
+num <span class="token operator">=</span> <span class="token number">1</span> 
+<span class="token keyword">while</span> num <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">:</span>
+    sum_total <span class="token operator">+=</span> num
+    num <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1~100的和为{}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>sum_total<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 1~100的和为5050</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-3-for与if配合用于解析式"><a href="#1-2-3-for与if配合用于解析式" class="headerlink" title="1.2.3 for与if配合用于解析式"></a>1.2.3 for与if配合用于解析式</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 结构一：[expression_1 if condition else expression_2 for item in iterable]
 结构二：[expression for item in iterable if condition]
-"""
-lst = list(range(10))
-res = [item**2 if item % 2 == 0 else item*2 for item in lst]
-print(res)  # [0, 2, 4, 6, 16, 10, 36, 14, 64, 18]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"""</span>
+lst <span class="token operator">=</span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+res <span class="token operator">=</span> <span class="token punctuation">[</span>item<span class="token operator">**</span><span class="token number">2</span> <span class="token keyword">if</span> item <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">else</span> item<span class="token operator">*</span><span class="token number">2</span> <span class="token keyword">for</span> item <span class="token keyword">in</span> lst<span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># [0, 2, 4, 6, 16, 10, 36, 14, 64, 18]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-4-for循环和range-结合使用"><a href="#1-2-4-for循环和range-结合使用" class="headerlink" title="1.2.4 for循环和range()结合使用"></a>1.2.4 for循环和range()结合使用</h4><p>在实际工作中，我们可能需要根据序列的索引做一些条件判断。我们通常利用<code>range()</code> 这个函数获取索引，再去遍历访问序列中的元素。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">l = list(range(20))
-l_new = []
-for index in range(len(l)):
-    if index % 5 == 0:
-        l_new.append(l[index])
-print(l_new) # [0, 5, 10, 15]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">l <span class="token operator">=</span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+l_new <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> index <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> index <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        l_new<span class="token punctuation">.</span>append<span class="token punctuation">(</span>l<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l_new<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [0, 5, 10, 15]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-5-for循环和enumerate-结合使用"><a href="#1-2-5-for循环和enumerate-结合使用" class="headerlink" title="1.2.5 for循环和enumerate()结合使用"></a>1.2.5 for循环和enumerate()结合使用</h4><p>当我们在for循环遍历同时需要索引和元素时，Python内置函数enumerate()是一种很简洁的方式。结合该函数来遍历序列，不仅返回每个元素，并且还返回其对应的索引。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">l = list(range(20))
-l_new = []
-for index, value in enumerate(l):
-    if index % 5 == 0:
-        l_new.append(value)
-print(l_new)  # [0, 5, 10, 15]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">l <span class="token operator">=</span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+l_new <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> index<span class="token punctuation">,</span> value <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> index <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        l_new<span class="token punctuation">.</span>append<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l_new<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># [0, 5, 10, 15]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-3-控制语句"><a href="#1-3-控制语句" class="headerlink" title="1.3 控制语句"></a>1.3 控制语句</h3><p>在循环语句中，我们还常常搭配 <code>continue</code> 和 <code>break</code> 一起使用，使程序更加简洁、易读。</p>
 <ul>
 <li>continue语句：让程序跳过当前循环剩下的语句，继续执行下一轮的循环。</li>
 <li>break语句：停止执行，退出循环。对于嵌套循环，只会中止本层循环。</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python"># continue，取出列表中的奇数
-lst = [1, 2, 3, 4, 5]
-lst_odd = []
-for item in lst:
-    if item % 2 == 0:
-        continue
-    lst_odd.append(item)
-print(lst_odd)  # [1, 3, 5]
-# break，遇到空格退出循环
-s = 'hello world!'
-s_new = ''
-for letter in s:
-    if letter == ' ':
-        break
-    s_new += letter
-print(s_new)  # hello
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_img/流程控制.png" alt=""></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># continue，取出列表中的奇数</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+lst_odd <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> item <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">continue</span>
+    lst_odd<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst_odd<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># [1, 3, 5]</span>
+<span class="token comment" spellcheck="true"># break，遇到空格退出循环</span>
+s <span class="token operator">=</span> <span class="token string">'hello world!'</span>
+s_new <span class="token operator">=</span> <span class="token string">''</span>
+<span class="token keyword">for</span> letter <span class="token keyword">in</span> s<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> letter <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    s_new <span class="token operator">+=</span> letter
+<span class="token keyword">print</span><span class="token punctuation">(</span>s_new<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># hello</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_img/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6.png"></p>
 <h2 id="2-关键字"><a href="#2-关键字" class="headerlink" title="2.关键字"></a>2.关键字</h2><h3 id="2-1-关键字概览"><a href="#2-1-关键字概览" class="headerlink" title="2.1 关键字概览"></a>2.1 关键字概览</h3><p>在Python3.7中，共有35个关键字。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">import keyword
-print(keyword.kwlist)  # 输出关键字
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_img/关键字.png"></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> keyword
+<span class="token keyword">print</span><span class="token punctuation">(</span>keyword<span class="token punctuation">.</span>kwlist<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 输出关键字</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<img src="https://cdn.jsdelivr.net/gh/weylin0714/ImgHosting/article_img/关键字.png">
+
 <p>这里先重点介绍几个关键字的具体用法，后面也会陆续补充其他内容。</p>
 <h3 id="2-2-global与nonlocal"><a href="#2-2-global与nonlocal" class="headerlink" title="2.2 global与nonlocal"></a>2.2 global与nonlocal</h3><p>在Python中，只有变量在模块（module）、类（class）、函数（def, lambda）中定义时，才会产生作用域。其它的代码块（如 if-elif-else、try-except、for/while等）是不会引入新的作用域的，即这些语句内定义的变量，外部也可以访问。Python 的作用域一共有4种，分别是：</p>
 <ul>
@@ -705,95 +689,90 @@ print(keyword.kwlist)  # 输出关键字
 <li>局部变量(local)</li>
 </ul>
 <p>在函数内部定义的变量默认为局部变量，除非有特殊的声明，如global声明的为全局变量。函数内的局部变量，外部不可以访问。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">def testlocal():
-    x = 10
-print(x)  # NameError: name 'x' is not defined
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">testlocal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># NameError: name 'x' is not defined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>全局变量（global）</li>
 </ul>
 <p>global关键字修饰的变量为全局变量，可以用于任何地方。在函数内部，如果想对全局变量做改变，需要使用global进行变量声明。如果不修改全局变量，可不使用global关键字。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">a = 2  # 全局变量
-def demo():
-    a = 4
-demo()
-print(a)  # 2
-# 修改函数内变量为全局变量
-a = 2
-def demo():
-    global a
-    a = 4
-demo()
-print(a)  # 4
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">2</span>  <span class="token comment" spellcheck="true"># 全局变量</span>
+<span class="token keyword">def</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    a <span class="token operator">=</span> <span class="token number">4</span>
+demo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 2</span>
+<span class="token comment" spellcheck="true"># 修改函数内变量为全局变量</span>
+a <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token keyword">def</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> a
+    a <span class="token operator">=</span> <span class="token number">4</span>
+demo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>非局部变量（nonlocal）</li>
 </ul>
 <p>nonlocal是python3引入的，只能用于嵌套函数中，nonlocal声明的变量必须是外层定义过的局部变量，否则会报错。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">a = 1  # 全局变量
-def outer():
-    a = 2
-    def inner():
-        nonlocal a  # 不声明会报错：UnboundLocalError: local variable 'a' referenced before assignment
-        print(a)
-        a = 3
-    inner()
-    print(a)
-# 调用
-outer()
-Out:
-    2
-    3
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token number">1</span>  <span class="token comment" spellcheck="true"># 全局变量</span>
+<span class="token keyword">def</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    a <span class="token operator">=</span> <span class="token number">2</span>
+    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        nonlocal a  <span class="token comment" spellcheck="true"># 不声明会报错：UnboundLocalError: local variable 'a' referenced before assignment</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+        a <span class="token operator">=</span> <span class="token number">3</span>
+    inner<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 调用</span>
+outer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Out<span class="token punctuation">:</span>
+    <span class="token number">2</span>
+    <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-3-with…as"><a href="#2-3-with…as" class="headerlink" title="2.3 with…as"></a>2.3 with…as</h3><p>with…as是try…finally的一种简化操作，是<strong>上下文管理器</strong>的一种典型应用。上下文管理器，能够帮助你在执行操作完成后自动释放资源。上下文管理器，通常应用在文件的打开关闭和数据库的连接关闭等场景中，可以确保用过的资源得到迅速释放，有效提高了程序的安全性。一个很好的例子就是是文件处理，首先需要获取一个文件句柄，从文件中读取数据，然后关闭文件句柄。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">"""
+<pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">"""
 打开test.txt文件，写入内容（I love Python.），然后这个文件就会自动关闭，相应的资源也可以得到释放，防止资源泄露。
-"""
-with open('E:/test/test.txt', 'w') as f:
-    f.write('I love Python.')
-# 上述操作也可以用try-finally来实现
-f = open('E:/test/test.txt', 'w')
-try:
-    f.write('I love Python.')
-finally:
-    f.close()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"""</span>
+<span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'E:/test/test.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'I love Python.'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 上述操作也可以用try-finally来实现</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'E:/test/test.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">'I love Python.'</span><span class="token punctuation">)</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+    f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>比较with-as和try-finally可以看到with-as更简洁，也避免了资源泄露，一般也推荐使用这种方式。</p>
 <p>接下来，具体看看上下文管理器的内部原理。这里，定义一个上下文管理类 FileManager，模拟 Python 的打开、关闭文件操作，并模拟出现异常抛出。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">class FileManager:
-    def __init__(self, name, mode):
-        print('calling __init__ method')
-        self.name = name
-        self.mode = mode 
-        self.file = None
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">FileManager</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> mode<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'calling __init__ method'</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>mode <span class="token operator">=</span> mode 
+        self<span class="token punctuation">.</span>file <span class="token operator">=</span> None
 
-    def __enter__(self):
-        print('calling __enter__ method')
-        self.file = open(self.name, self.mode)
-        return self.file
+    <span class="token keyword">def</span> <span class="token function">__enter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'calling __enter__ method'</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>file <span class="token operator">=</span> open<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>mode<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>file
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        print('calling __exit__ method')
-        if self.file:
-            if exc_type:
-                print(f'exc_type: {exc_type}')            
-                print(f'exc_value: {exc_val}')            
-                print(f'exc_traceback: {exc_tb}')
-            self.file.close()
+    <span class="token keyword">def</span> <span class="token function">__exit__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> exc_type<span class="token punctuation">,</span> exc_val<span class="token punctuation">,</span> exc_tb<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'calling __exit__ method'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>file<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> exc_type<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'exc_type: {exc_type}'</span><span class="token punctuation">)</span>            
+                <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'exc_value: {exc_val}'</span><span class="token punctuation">)</span>            
+                <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'exc_traceback: {exc_tb}'</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>file<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-with FileManager('test.txt', 'w') as f:
-    print('ready to write to file')
-    f.wrote('hello world')  # write错写为wrote来验证异常处理
+<span class="token keyword">with</span> FileManager<span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'ready to write to file'</span><span class="token punctuation">)</span>
+    f<span class="token punctuation">.</span>wrote<span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># write错写为wrote来验证异常处理</span>
 
-## 输出
+<span class="token comment" spellcheck="true">## 输出</span>
 calling __init__ method
 calling __enter__ method
 ready to write to file
 calling __exit__ method
-exc_type: <class 'AttributeError'>
-exc_value: '_io.TextIOWrapper' object has no attribute 'wrote'
-exc_traceback: <traceback object at 0x000002A088A6AC08>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+exc_type<span class="token punctuation">:</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token string">'AttributeError'</span><span class="token operator">></span>
+exc_value<span class="token punctuation">:</span> <span class="token string">'_io.TextIOWrapper'</span> object has no attribute <span class="token string">'wrote'</span>
+exc_traceback<span class="token punctuation">:</span> <span class="token operator">&lt;</span>traceback object at <span class="token number">0x000002A088A6AC08</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上述脚本用类来创建了上下文管理器，并用 with 语句执行这个上下文管理器。从输出结果可以看到，首先初始化方法<code>__init__</code>被调用，初始化对象FileManager，然后调用<code>__enter__</code>方法，返回一个文件句柄赋值给f，接着执行<code>print('ready to write to file')</code>，并向文件中写入内容。由于f.wrote方法写错产生异常，<code>__exit__</code>方法被调用。</p>
 <p><strong>with-as使用的基本思想是：with后的对象必须包含<code>__enter__()</code>和<code>__exit__()</code>方法，紧跟with后面的对象被执行，对象的<code>__enter__()</code>方法被调用，并将返回值将被赋值给as后面的变量。如果执行过程中有异常抛出或执行结束，会调用对象的<code>__exit__()</code>方法。</strong>with真正强大之处是它可以处理异常，</p>
 <p>方法<code>__exit__()</code>中有3个参数：exc_type, exc_val, exc_tb，分别表示 exception_type、exception_value 和 traceback。当执行含有上下文管理器的 with 语句时，如果有异常抛出，异常的信息就会包含在这三个变量中，传给<code>__exit__()</code>方法。</p>
@@ -1357,7 +1336,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1551,7 +1530,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

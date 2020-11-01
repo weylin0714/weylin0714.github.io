@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="HUE部署与使用, 简若">
     <meta name="description" content="HUE是一个开源的Apache Hadoop UI系统，基于Python Web框架Django实现。HUE是一个Web应用，设计初衷是简化用户和Hadoop集群间的交互。Hue几乎可以支持所有大数据框架：HDFS，HIVE，HBASE，Z">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,11 +28,11 @@
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -466,14 +466,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    747
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 
@@ -491,214 +491,195 @@
             <div id="articleContent">
                 <p>HUE是一个开源的Apache Hadoop UI系统，基于Python Web框架Django实现。HUE是一个Web应用，设计初衷是简化用户和Hadoop集群间的交互。Hue几乎可以支持所有大数据框架：HDFS，HIVE，HBASE，Zookeeper，Sqoop2等。基于HUE图形化界面，可以操作HDFS的数据，执行Hive的SQL语句，浏览HBase数据库等等。Hue通过把这些大数据技术栈整合在一起，通过统一的Web UI来访问和管理，极大地提高了大数据用户和管理员的工作效率。</p>
 <h2 id="1-HUE安装与部署"><a href="#1-HUE安装与部署" class="headerlink" title="1. HUE安装与部署"></a>1. HUE安装与部署</h2><h3 id="1-1-安装依赖包"><a href="#1-1-安装依赖包" class="headerlink" title="1.1 安装依赖包"></a>1.1 安装依赖包</h3><p>HUE安装之前需要安装配置好Python、MySQL、Java等环境，并安装以下依赖包。我的部署系统为CentOS7。</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">sudo yum -y install ant asciidoc cyrus-sasl-devel cyrus-sasl-gssapi cyrus-sasl-plain gcc gcc-c++ krb5-devel libtidy libxml2-devel libxslt-devel openldap-devel python-devel sqlite-devel openssl-devel mysql-devel gmp-devel
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> yum -y <span class="token function">install</span> ant asciidoc cyrus-sasl-devel cyrus-sasl-gssapi cyrus-sasl-plain gcc gcc-c++ krb5-devel libtidy libxml2-devel libxslt-devel openldap-devel python-devel sqlite-devel openssl-devel mysql-devel gmp-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>maven安装</li>
 </ul>
 <p>HUE编译时会用到maven，可以单独下安装包进行安装，也可以使用yum来安装。这里，我们通过安装包进行安装。下载maven安装包，下载地址：<a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">https://maven.apache.org/download.cgi</a> ，我下载的版本为3.6.3。</p>
 <p>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为maven。</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 解压到/usr/local/目录下
-tar -zxvf apache-maven-3.6.3-bin.tar.gz -C /usr/local/
-# 在/usr/local目录下，重命名maven解压包
-mv apache-maven-3.6.3 maven
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压到/usr/local/目录下</span>
+<span class="token function">tar</span> -zxvf apache-maven-3.6.3-bin.tar.gz -C /usr/local/
+<span class="token comment" spellcheck="true"># 在/usr/local目录下，重命名maven解压包</span>
+<span class="token function">mv</span> apache-maven-3.6.3 maven<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>配置环境变量：</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 编辑/etc/profile文件
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 编辑/etc/profile文件</span>
 vim /etc/profile
-# 添加maven环境变量
-MAVEN_HOME=/usr/local/maven
-export PATH=$PATH:$MAVEN_HOME/bin
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 添加maven环境变量</span>
+MAVEN_HOME<span class="token operator">=</span>/usr/local/maven
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$MAVEN_HOME</span>/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>执行以下命令，使修改的环境变量文件生效。</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">source /etc/profile
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>验证是否配置成功：</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">[root@centos local]# mvn -v
-Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
-Maven home: /usr/local/maven
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos local<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mvn -v</span>
+Apache Maven 3.6.3 <span class="token punctuation">(</span>cecedd343002696d0abb50b32b541b8a6ba2883f<span class="token punctuation">)</span>
+Maven home: /usr/local/maven<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-2-安装HUE"><a href="#1-2-安装HUE" class="headerlink" title="1.2 安装HUE"></a>1.2 安装HUE</h3><p>下载HUE安装包，我这里下载的是CDH版本，下载地址：<a href="http://archive.cloudera.com/cdh5/cdh/5/" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/</a></p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 将安装包解压到/usrl/local目录下，并重命名为hue
-sudo tar -zxvf hue-3.9.0-cdh5.16.2.tar.gz -C /usr/local/
-# 重命名为hue
-sudo mv hue-3.9.0-cdh5.16.2 hue
-# 修改/usr/local/hue目录所有者，授予hue用户权限
-sudo chown -R hue:hue /usr/local/hue
-# 使用普通用户hue编译，进入到hue目录下，执行以下命令
-make apps
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 将安装包解压到/usrl/local目录下，并重命名为hue</span>
+<span class="token function">sudo</span> <span class="token function">tar</span> -zxvf hue-3.9.0-cdh5.16.2.tar.gz -C /usr/local/
+<span class="token comment" spellcheck="true"># 重命名为hue</span>
+<span class="token function">sudo</span> <span class="token function">mv</span> hue-3.9.0-cdh5.16.2 hue
+<span class="token comment" spellcheck="true"># 修改/usr/local/hue目录所有者，授予hue用户权限</span>
+<span class="token function">sudo</span> <span class="token function">chown</span> -R hue:hue /usr/local/hue
+<span class="token comment" spellcheck="true"># 使用普通用户hue编译，进入到hue目录下，执行以下命令</span>
+<span class="token function">make</span> apps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-3-HUE配置"><a href="#1-3-HUE配置" class="headerlink" title="1.3 HUE配置"></a>1.3 HUE配置</h3><h4 id="1-3-1-HUE自身配置"><a href="#1-3-1-HUE自身配置" class="headerlink" title="1.3.1 HUE自身配置"></a>1.3.1 HUE自身配置</h4><p>进入到/usr/local/hue/desktop/conf/目录下，编辑配置文件hue.ini，修改以下几个参数。</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># Set this to a random string, the longer the better.
-# This is used for secure hashing in the session store.
-secret_key=jFE93j;2[290-eiw.KEiwN2s3['d;/.q[eIW^y#e=+Iei*@Mn<qW5o
-# Webserver listens on this address and port
-http_host=0.0.0.0
-http_port=8888
-# Time zone name
-time_zone=Asia/Shanghai
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Set this to a random string, the longer the better.</span>
+<span class="token comment" spellcheck="true"># This is used for secure hashing in the session store.</span>
+secret_key<span class="token operator">=</span>jFE93j<span class="token punctuation">;</span>2<span class="token punctuation">[</span>290-eiw.KEiwN2s3<span class="token punctuation">[</span>'d<span class="token punctuation">;</span>/.q<span class="token punctuation">[</span>eIW^y<span class="token comment" spellcheck="true">#e=+Iei*@Mn&lt;qW5o</span>
+<span class="token comment" spellcheck="true"># Webserver listens on this address and port</span>
+http_host<span class="token operator">=</span>0.0.0.0
+http_port<span class="token operator">=</span>8888
+<span class="token comment" spellcheck="true"># Time zone name</span>
+time_zone<span class="token operator">=</span>Asia/Shanghai<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>secret_key需要设置，不能为空，可参考<a href="http://archive.cloudera.com/cdh5/cdh/5/hue-3.9.0-cdh5.16.2/admin-manual/manual.html#web-server-configuration" target="_blank" rel="noopener">Hue Administration Guide</a>中Specifying the Secret Key部分。</p>
 <h4 id="1-3-2-HUE与Hadoop集成配置"><a href="#1-3-2-HUE与Hadoop集成配置" class="headerlink" title="1.3.2 HUE与Hadoop集成配置"></a>1.3.2 HUE与Hadoop集成配置</h4><h5 id="1-3-2-1-修改Hadoop配置文件"><a href="#1-3-2-1-修改Hadoop配置文件" class="headerlink" title="1.3.2.1 修改Hadoop配置文件"></a>1.3.2.1 修改Hadoop配置文件</h5><ul>
 <li>配置hdfs-site.xml文件</li>
 </ul>
 <p>进入到/usr/local/hadoop/etc/hadoop目录下，编辑hdfs-site.xml，添加如下内容：</p>
-<pre class="line-numbers language-lang-xml"><code class="language-lang-xml"><property>
-    <name>dfs.webhdfs.enabled</name>
-    <value>true</value>
-</property>
-<property>
-    <name>dfs.permissions.enabled</name>
-    <value>false</value>
-</property>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.webhdfs.enabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.permissions.enabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置core-site.xml文件</li>
 </ul>
-<pre class="line-numbers language-lang-xml"><code class="language-lang-xml"><property>
-    <name>hadoop.proxyuser.hue.hosts</name>
-    <value>*</value>
-</property>
-<property>
-    <name>hadoop.proxyuser.hue.groups</name>
-    <value>*</value>
-</property>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.proxyuser.hue.hosts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.proxyuser.hue.groups<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置httpfs-site.xml文件</li>
 </ul>
-<pre class="line-numbers language-lang-xml"><code class="language-lang-xml"><property>
-    <name>httpfs.proxyuser.hue.hosts</name>
-    <value>*</value>
-</property>
-<property>
-    <name>httpfs.proxyuser.hue.groups</name>
-    <value>*</value>
-</property>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>httpfs.proxyuser.hue.hosts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>httpfs.proxyuser.hue.groups<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置yarn-site.xml文件</li>
 </ul>
-<pre class="line-numbers language-lang-xml"><code class="language-lang-xml"><property>
-    <name>yarn.log-aggregation-enable</name>
-    <value>true</value>
-</property>
-<property>
-    <name>yarn.log-aggregation.retain-seconds</name>
-    <value>432000</value>
-</property>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.log-aggregation-enable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.log-aggregation.retain-seconds<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>432000<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="1-3-2-2-修改HUE配置文件"><a href="#1-3-2-2-修改HUE配置文件" class="headerlink" title="1.3.2.2 修改HUE配置文件"></a>1.3.2.2 修改HUE配置文件</h5><p>修改HUE配置文件hue.ini，配置HDFS和YARN。</p>
 <ul>
 <li>配置HDFS</li>
 </ul>
-<pre class="line-numbers language-lang-ini"><code class="language-lang-ini">[hadoop]
+<pre class="line-numbers language-ini"><code class="language-ini"><span class="token selector">[hadoop]</span>
   # Configuration for HDFS NameNode
   # ------------------------------------------------------------------------
-  [[hdfs_clusters]]
+<span class="token selector">  [[hdfs_clusters]</span>]
     # HA support by using HttpFs
-    [[[default]]]
+<span class="token selector">    [[[default]</span>]]
       # Enter the filesystem uri
-      fs_defaultfs=hdfs://centos:8020   
+<span class="token constant">      fs_defaultfs</span><span class="token attr-value"><span class="token punctuation">=</span>hdfs://centos:8020   </span>
       # NameNode logical name.
-      ## logical_name=
+      ## logical_name<span class="token attr-value"><span class="token punctuation">=</span></span>
       # Use WebHdfs/HttpFs as the communication mechanism.
       # Domain should be the NameNode or HttpFs host.
       # Default port is 14000 for HttpFs.
-      webhdfs_url=http://centos:50070/webhdfs/v1
+<span class="token constant">      webhdfs_url</span><span class="token attr-value"><span class="token punctuation">=</span>http://centos:50070/webhdfs/v1</span>
       # Change this if your HDFS cluster is Kerberos-secured
-      ## security_enabled=false
+      ## security_enabled<span class="token attr-value"><span class="token punctuation">=</span>false</span>
       # In secure mode (HTTPS), if SSL certificates from YARN Rest APIs
       # have to be verified against certificate authority
-      ## ssl_cert_ca_verify=True
+      ## ssl_cert_ca_verify<span class="token attr-value"><span class="token punctuation">=</span>True</span>
       # Directory of the Hadoop configuration
-      hadoop_conf_dir=/usr/local/hadoop/etc/hadoop
-      hadoop_hdfs_home=/usr/local/hadoop
-      hadoop_bin=/usr/local/hadoop/bin
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token constant">      hadoop_conf_dir</span><span class="token attr-value"><span class="token punctuation">=</span>/usr/local/hadoop/etc/hadoop</span>
+<span class="token constant">      hadoop_hdfs_home</span><span class="token attr-value"><span class="token punctuation">=</span>/usr/local/hadoop</span>
+<span class="token constant">      hadoop_bin</span><span class="token attr-value"><span class="token punctuation">=</span>/usr/local/hadoop/bin</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置Yarn</li>
 </ul>
-<pre class="line-numbers language-lang-ini"><code class="language-lang-ini"># Configuration for YARN (MR2)
+<pre class="line-numbers language-ini"><code class="language-ini"># Configuration for YARN (MR2)
   # ------------------------------------------------------------------------
-  [[yarn_clusters]]
-    [[[default]]]
+<span class="token selector">  [[yarn_clusters]</span>]
+<span class="token selector">    [[[default]</span>]]
       # Enter the host on which you are running the ResourceManager
-      resourcemanager_host=centos
+<span class="token constant">      resourcemanager_host</span><span class="token attr-value"><span class="token punctuation">=</span>centos</span>
       # The port where the ResourceManager IPC listens on
-      resourcemanager_port=8032
+<span class="token constant">      resourcemanager_port</span><span class="token attr-value"><span class="token punctuation">=</span>8032</span>
       # Whether to submit jobs to this cluster
-      submit_to=True
+<span class="token constant">      submit_to</span><span class="token attr-value"><span class="token punctuation">=</span>True</span>
       # Resource Manager logical name (required for HA)
-      ## logical_name=
+      ## logical_name<span class="token attr-value"><span class="token punctuation">=</span></span>
       # Change this if your YARN cluster is Kerberos-secured
-      ## security_enabled=false
+      ## security_enabled<span class="token attr-value"><span class="token punctuation">=</span>false</span>
       # URL of the ResourceManager API
-      resourcemanager_api_url=http://centos:8088
+<span class="token constant">      resourcemanager_api_url</span><span class="token attr-value"><span class="token punctuation">=</span>http://centos:8088</span>
       # URL of the ProxyServer API
-      proxy_api_url=http://centos:8088
+<span class="token constant">      proxy_api_url</span><span class="token attr-value"><span class="token punctuation">=</span>http://centos:8088</span>
       # URL of the HistoryServer API
-      history_server_api_url=http://centos:19888
+<span class="token constant">      history_server_api_url</span><span class="token attr-value"><span class="token punctuation">=</span>http://centos:19888</span>
       # URL of the Spark History Server
-      ## spark_history_server_url=http://localhost:18088
+      ## spark_history_server_url<span class="token attr-value"><span class="token punctuation">=</span>http://localhost:18088</span>
       # In secure mode (HTTPS), if SSL certificates from YARN Rest APIs
       # have to be verified against certificate authority
-      ## ssl_cert_ca_verify=True
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      ## ssl_cert_ca_verify<span class="token attr-value"><span class="token punctuation">=</span>True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-3-3-HUE与Hive集成配置"><a href="#1-3-3-HUE与Hive集成配置" class="headerlink" title="1.3.3 HUE与Hive集成配置"></a>1.3.3 HUE与Hive集成配置</h4><p> 进入到/usr/local/hue/desktop/conf目录下，修改HUE配置文件hue.ini，修改内容如下：</p>
-<pre class="line-numbers language-lang-ini"><code class="language-lang-ini">###########################################################################
+<pre class="line-numbers language-ini"><code class="language-ini">###########################################################################
 # Settings to configure Beeswax with Hive
 ###########################################################################
-[beeswax]
+<span class="token selector">[beeswax]</span>
   # Host where HiveServer2 is running.
   # If Kerberos security is enabled, use fully-qualified domain name (FQDN).
-  hive_server_host=centos
+<span class="token constant">  hive_server_host</span><span class="token attr-value"><span class="token punctuation">=</span>centos</span>
   # Port where HiveServer2 Thrift server runs on.
-  hive_server_port=10000
+<span class="token constant">  hive_server_port</span><span class="token attr-value"><span class="token punctuation">=</span>10000</span>
   # Hive configuration directory, where hive-site.xml is located
-  hive_conf_dir=/usr/local/hive/conf
+<span class="token constant">  hive_conf_dir</span><span class="token attr-value"><span class="token punctuation">=</span>/usr/local/hive/conf</span>
   # Timeout in seconds for thrift calls to Hive service
-  ## server_conn_timeout=120
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  ## server_conn_timeout<span class="token attr-value"><span class="token punctuation">=</span>120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p> 启动hive服务：</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">nohup bin/hive --service metastore &
-nohup bin/hive --service hiveserver2 &
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">nohup</span> bin/hive --service metastore <span class="token operator">&amp;</span>
+<span class="token function">nohup</span> bin/hive --service hiveserver2 <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="1-3-4-HUE与MySQL集成配置"><a href="#1-3-4-HUE与MySQL集成配置" class="headerlink" title="1.3.4 HUE与MySQL集成配置"></a>1.3.4 HUE与MySQL集成配置</h4><p>修该HUE配置文件HUE.ini，修改内容如下：</p>
-<pre class="line-numbers language-lang-ini"><code class="language-lang-ini">## [[[mysql]]]
+<pre class="line-numbers language-ini"><code class="language-ini">## [[[mysql]]]
 # Name to show in the UI.
-engine=mysql
-host=IP
-port=3306
-user=hue
-password=Hue1234!
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token constant">engine</span><span class="token attr-value"><span class="token punctuation">=</span>mysql</span>
+<span class="token constant">host</span><span class="token attr-value"><span class="token punctuation">=</span>IP</span>
+<span class="token constant">port</span><span class="token attr-value"><span class="token punctuation">=</span>3306</span>
+<span class="token constant">user</span><span class="token attr-value"><span class="token punctuation">=</span>hue</span>
+<span class="token constant">password</span><span class="token attr-value"><span class="token punctuation">=</span>Hue1234!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-3-5-HUE与HBase集成配置"><a href="#1-3-5-HUE与HBase集成配置" class="headerlink" title="1.3.5 HUE与HBase集成配置"></a>1.3.5 HUE与HBase集成配置</h4><p>待补充。。。</p>
 <h4 id="1-3-6-HUE元数据库修改为MySQL"><a href="#1-3-6-HUE元数据库修改为MySQL" class="headerlink" title="1.3.6 HUE元数据库修改为MySQL"></a>1.3.6 HUE元数据库修改为MySQL</h4><p>HUE默认使用SQLite作为元数据库，不推荐在生产环境中使用这个数据库。这里介绍将MySQL作为元数据库。</p>
 <ul>
 <li>创建hue数据库</li>
 </ul>
 <p>在MySQL中创建一个hue数据库：</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">mysql> create database hue;
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">mysql<span class="token operator">></span> create database hue<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>修改配置文件HUE.ini</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">[[database]]
-    engine=mysql
-    host=IP
-    port=3306
-    user=hue
-    password=Hue1234!
-    name=hue
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span><span class="token punctuation">[</span>database<span class="token punctuation">]</span><span class="token punctuation">]</span>
+    engine<span class="token operator">=</span>mysql
+    host<span class="token operator">=</span>IP
+    port<span class="token operator">=</span>3306
+    user<span class="token operator">=</span>hue
+    password<span class="token operator">=</span>Hue1234<span class="token operator">!</span>
+    name<span class="token operator">=</span>hue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>初始化数据库</li>
 </ul>
 <p>进入到/usr/local/hue/build/env/bin目录下，执行以下命令：</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">./hue syncdb
-./hue migrate
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">./hue syncdb
+./hue migrate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>未完待续。。。</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1243,7 +1224,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1437,7 +1418,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

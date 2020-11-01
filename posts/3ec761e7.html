@@ -3,16 +3,15 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Typora中编辑数学公式, 简若">
     <meta name="description" content="Typora 对 LaTex 有很好的支持，本文学习利用 LaTex 进行公式编辑。
 1.常用公式代码1.1 上下标上标：使用 ^。例：$x^2$
 x^2
-
 下标：使用_。例：$x_2$
 x_2
-
-上下标组合：结合^和_。例：$x_1^2$">
+上下标组合：结合^和_。例：$x_1^2$
+x">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,11 +34,11 @@ x_2
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -312,7 +311,7 @@ x_2
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//2020-10-16-1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -466,21 +465,21 @@ x_2
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-17
+                    2020-11-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    913
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -498,324 +497,139 @@ x_2
             <div id="articleContent">
                 <p>Typora 对 LaTex 有很好的支持，本文学习利用 LaTex 进行公式编辑。</p>
 <h2 id="1-常用公式代码"><a href="#1-常用公式代码" class="headerlink" title="1.常用公式代码"></a>1.常用公式代码</h2><h3 id="1-1-上下标"><a href="#1-1-上下标" class="headerlink" title="1.1 上下标"></a>1.1 上下标</h3><p><strong>上标：</strong>使用 <code>^</code>。例：$x^2$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">x^2
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">x^2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>下标：</strong>使用<code>_</code>。例：$x_2$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">x_2
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">x_2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>上下标组合：</strong>结合<code>^</code>和<code>_</code>。例：$x_1^2$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">x_1^2
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">x_1^2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如果上下标的内容多于一个字符，需要用 <code>{}</code> 将这些内容括成一个整体。例：$x_{2n}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">x_{2n}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">x_<span class="token punctuation">{</span>2n<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-2-括号和分隔符"><a href="#1-2-括号和分隔符" class="headerlink" title="1.2 括号和分隔符"></a>1.2 括号和分隔符</h3><p><code>()</code>、<code>[]</code> 和 <code>|</code> 表示符号本身，使用 <code>\{\}</code> 来表示 <code>{}</code> 。当要显示大号的括号或分隔符时，要用 <code>\left</code> 和 <code>\right</code> 命令。例：$\left(x+y\right)$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\left(x+y\right)
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\left</span>(x+y<span class="token function selector">\right</span>)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-3-分式"><a href="#1-3-分式" class="headerlink" title="1.3 分式"></a>1.3 分式</h3><p>例：$\frac{a+c}{b+c}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\frac{a+c}{b+c}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\frac</span><span class="token punctuation">{</span>a+c<span class="token punctuation">}</span><span class="token punctuation">{</span>b+c<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-4-省略号"><a href="#1-4-省略号" class="headerlink" title="1.4 省略号"></a>1.4 省略号</h3><p>例：$\cdots$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\cdots
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\cdots</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-5-占位符"><a href="#1-5-占位符" class="headerlink" title="1.5 占位符"></a>1.5 占位符</h3><p><strong>两个 quad 空格：</strong>$a\qquad b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a\qquad b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">a<span class="token function selector">\qquad</span> b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>一个 quad 空格：</strong>$a\quad b$</p>
-<pre><code>a\quad b
-</code></pre><p><strong>大空格：</strong>$a\ b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a\ b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>中等空格：</strong>$a\;b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a\;b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>小空格：</strong>$a\,b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a\,b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>a\quad b</code></pre>
+<p><strong>大空格：</strong>$a\ b$</p>
+<pre class="line-numbers language-latex"><code class="language-latex">a<span class="token function selector">\ </span>b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>中等空格：</strong>$a;b$</p>
+<pre class="line-numbers language-latex"><code class="language-latex">a<span class="token function selector">\;</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>小空格：</strong>$a,b$</p>
+<pre class="line-numbers language-latex"><code class="language-latex">a<span class="token function selector">\,</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-6-开根号"><a href="#1-6-开根号" class="headerlink" title="1.6 开根号"></a>1.6 开根号</h3><p>例：$\sqrt{2}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\sqrt{2}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\sqrt</span><span class="token punctuation">{</span>2<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-7-加减乘除"><a href="#1-7-加减乘除" class="headerlink" title="1.7 加减乘除"></a>1.7 加减乘除</h3><p>加减：$x\pm y=z$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">x\pm y=z
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">x<span class="token function selector">\pm</span> y=z<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>叉乘、点乘、星乘：$x\times y=z$、$x\cdot y=z$、$x\ast y=z$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">x\times y=z、x\cdot y=z、x\ast y=z
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">x<span class="token function selector">\times</span> y=z、x<span class="token function selector">\cdot</span> y=z、x<span class="token function selector">\ast</span> y=z<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>除：$x\div y=z$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">x\div y=z
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">x<span class="token function selector">\div</span> y=z<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-8-累加累乘"><a href="#1-8-累加累乘" class="headerlink" title="1.8 累加累乘"></a>1.8 累加累乘</h3><p>累加：$\sum_{i=1}^{n}{a_i}$、$\sum \limits_{i=1}^n$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\sum_{i=1}^{n}{a_i}、\sum \limits_{i=1}^n
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\sum</span>_<span class="token punctuation">{</span>i=1<span class="token punctuation">}</span>^<span class="token punctuation">{</span>n<span class="token punctuation">}</span><span class="token punctuation">{</span>a_i<span class="token punctuation">}</span>、<span class="token function selector">\sum</span> <span class="token function selector">\limits</span>_<span class="token punctuation">{</span>i=1<span class="token punctuation">}</span>^n<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>累乘：$\prod_{i=1}^{n}{a_i}$、$\prod \limits_{i=1}^n$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\prod_{i=1}^{n}{a_i}、\prod \limits_{i=1}^n
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\prod</span>_<span class="token punctuation">{</span>i=1<span class="token punctuation">}</span>^<span class="token punctuation">{</span>n<span class="token punctuation">}</span><span class="token punctuation">{</span>a_i<span class="token punctuation">}</span>、<span class="token function selector">\prod</span> <span class="token function selector">\limits</span>_<span class="token punctuation">{</span>i=1<span class="token punctuation">}</span>^n<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-9-矢量"><a href="#1-9-矢量" class="headerlink" title="1.9 矢量"></a>1.9 矢量</h3><p>矢量：$\vec{a}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\vec{a}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="1-10-积分微分"><a href="#1-10-积分微分" class="headerlink" title="1.10 积分微分"></a>1.10 积分微分</h3><p>积分：$\int_1^2x\,dx$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\int_1^2x\,dx
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\vec</span><span class="token punctuation">{</span>a<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="1-10-积分微分"><a href="#1-10-积分微分" class="headerlink" title="1.10 积分微分"></a>1.10 积分微分</h3><p>积分：$\int_1^2x,dx$</p>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\int</span>_1^2x<span class="token function selector">\,</span>dx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>微分：$\frac {\partial x}{\partial y}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\frac {\partial x}{\partial y}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\frac</span> <span class="token punctuation">{</span><span class="token function selector">\partial</span> x<span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token function selector">\partial</span> y<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-11-极限"><a href="#1-11-极限" class="headerlink" title="1.11 极限"></a>1.11 极限</h3><p>极限：$\lim \limits_{n \to +\infty}\frac{1}{n(n+1)}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\lim \limits_{n \to +\infty}\frac{1}{n(n+1)}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\lim</span> <span class="token function selector">\limits</span>_<span class="token punctuation">{</span>n <span class="token function selector">\to</span> +<span class="token function selector">\infty</span><span class="token punctuation">}</span><span class="token function selector">\frac</span><span class="token punctuation">{</span>1<span class="token punctuation">}</span><span class="token punctuation">{</span>n(n+1)<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-12-三角函数"><a href="#1-12-三角函数" class="headerlink" title="1.12 三角函数"></a>1.12 三角函数</h3><p>三角函数：$\sin{\theta}$、$\cos{\theta}$、$\tan{\theta}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\sin{\theta}、\cos{\theta}、\tan{\theta}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\sin</span><span class="token punctuation">{</span><span class="token function selector">\theta</span><span class="token punctuation">}</span>、<span class="token function selector">\cos</span><span class="token punctuation">{</span><span class="token function selector">\theta</span><span class="token punctuation">}</span>、<span class="token function selector">\tan</span><span class="token punctuation">{</span><span class="token function selector">\theta</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-13-关系运算"><a href="#1-13-关系运算" class="headerlink" title="1.13 关系运算"></a>1.13 关系运算</h3><p>大于：$a\gt b$ </p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a\gt b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">a<span class="token function selector">\gt</span> b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>大于等于：$a\geq b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a\geq b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">a<span class="token function selector">\geq</span> b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>小于：$a\lt b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a\lt b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">a<span class="token function selector">\lt</span> b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>小于等于：$a\leq b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a\leq b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">a<span class="token function selector">\leq</span> b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>不等于：$a\neq b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>约等于：$a \approx b$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">a \approx b
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex">a <span class="token function selector">\approx</span> b<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-14-集合运算"><a href="#1-14-集合运算" class="headerlink" title="1.14 集合运算"></a>1.14 集合运算</h3><p>集合运算：$\emptyset、\in、\notin、\subset、\supset、\subseteq、\supseteq、\cup、\cap$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\emptyset、\in、\notin、\subset、\supset、\subseteq、\supseteq、\cup、\cap
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\emptyset</span>、<span class="token function selector">\in</span>、<span class="token function selector">\notin</span>、<span class="token function selector">\subset</span>、<span class="token function selector">\supset</span>、<span class="token function selector">\subseteq</span>、<span class="token function selector">\supseteq</span>、<span class="token function selector">\cup</span>、<span class="token function selector">\cap</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-15-对数"><a href="#1-15-对数" class="headerlink" title="1.15 对数"></a>1.15 对数</h3><p>对数：$\log、\lg、\ln$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\log、\lg、\ln
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\log</span>、<span class="token function selector">\lg</span>、<span class="token function selector">\ln</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-16-箭头"><a href="#1-16-箭头" class="headerlink" title="1.16 箭头"></a>1.16 箭头</h3><p>箭头：$\overrightarrow{a+b}、\overleftarrow{a+b}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\overrightarrow{a+b}、\overleftarrow{a+b}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\overrightarrow</span><span class="token punctuation">{</span>a+b<span class="token punctuation">}</span>、<span class="token function selector">\overleftarrow</span><span class="token punctuation">{</span>a+b<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-17-上下划线"><a href="#1-17-上下划线" class="headerlink" title="1.17 上下划线"></a>1.17 上下划线</h3><p>上划线、下划线：$\overline{a+b}、\underline{a+b}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\overline{a+b}、\underline{a+b}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\overline</span><span class="token punctuation">{</span>a+b<span class="token punctuation">}</span>、<span class="token function selector">\underline</span><span class="token punctuation">{</span>a+b<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-18-上下大括号"><a href="#1-18-上下大括号" class="headerlink" title="1.18 上下大括号"></a>1.18 上下大括号</h3><p>上大括号、下大括号：$\overbrace{a+b}^{Sample}、\underbrace{a+b}_{Sample}$</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\overbrace{a+b}^{Sample}、\underbrace{a+b}_{Sample}
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="1-19-希腊字母"><a href="#1-19-希腊字母" class="headerlink" title="1.19 希腊字母"></a>1.19 希腊字母</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">大写</th>
-<th style="text-align:left">Latex代码</th>
-<th style="text-align:left">小写</th>
-<th style="text-align:left">Latex代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><script type="math/tex">\Alpha</script></td>
-<td style="text-align:left">\Alpha</td>
-<td style="text-align:left">$\alpha$</td>
-<td style="text-align:left">\alpha</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Beta$</td>
-<td style="text-align:left">\Beta</td>
-<td style="text-align:left">$\beta$</td>
-<td style="text-align:left">\beta</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Gamma$</td>
-<td style="text-align:left">\Gamma</td>
-<td style="text-align:left">$\gamma$</td>
-<td style="text-align:left">\gamma</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Delta$</td>
-<td style="text-align:left">\Delta</td>
-<td style="text-align:left">$\delta$</td>
-<td style="text-align:left">\delta</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Epsilon$</td>
-<td style="text-align:left">\Epsilon</td>
-<td style="text-align:left">$\epsilon$</td>
-<td style="text-align:left">\epsilon</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Zeta$</td>
-<td style="text-align:left">\Zeta</td>
-<td style="text-align:left">$\zeta$</td>
-<td style="text-align:left">\zeta</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Eta$</td>
-<td style="text-align:left">\Eta</td>
-<td style="text-align:left">$\eta$</td>
-<td style="text-align:left">\eta</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Lambda$</td>
-<td style="text-align:left">\Lambda</td>
-<td style="text-align:left">$\lambda$</td>
-<td style="text-align:left">\lambda</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Mu$</td>
-<td style="text-align:left">\Mu</td>
-<td style="text-align:left">$\mu$</td>
-<td style="text-align:left">\mu</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Xi$</td>
-<td style="text-align:left">\Xi</td>
-<td style="text-align:left">$\xi$</td>
-<td style="text-align:left">\xi</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Pi $</td>
-<td style="text-align:left">\Pi</td>
-<td style="text-align:left">$\pi$</td>
-<td style="text-align:left">\pi</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Rho$</td>
-<td style="text-align:left">\Rho</td>
-<td style="text-align:left">$\rho$</td>
-<td style="text-align:left">\rho</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Sigma$</td>
-<td style="text-align:left">\Sigma</td>
-<td style="text-align:left">$\sigma$</td>
-<td style="text-align:left">\sigma</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Tau$</td>
-<td style="text-align:left">\Tau</td>
-<td style="text-align:left">$\tau$</td>
-<td style="text-align:left">\tau</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Phi$</td>
-<td style="text-align:left">\Phi</td>
-<td style="text-align:left">$\phi$</td>
-<td style="text-align:left">\phi</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Psi$</td>
-<td style="text-align:left">\Psi</td>
-<td style="text-align:left">$\psi$</td>
-<td style="text-align:left">\psi</td>
-</tr>
-<tr>
-<td style="text-align:left">$\Omega$</td>
-<td style="text-align:left">\Omega</td>
-<td style="text-align:left">$\omega$</td>
-<td style="text-align:left">\omega</td>
-</tr>
-</tbody>
-</table>
-</div>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\overbrace</span><span class="token punctuation">{</span>a+b<span class="token punctuation">}</span>^<span class="token punctuation">{</span>Sample<span class="token punctuation">}</span>、<span class="token function selector">\underbrace</span><span class="token punctuation">{</span>a+b<span class="token punctuation">}</span>_<span class="token punctuation">{</span>Sample<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="1-19-希腊字母"><a href="#1-19-希腊字母" class="headerlink" title="1.19 希腊字母"></a>1.19 希腊字母</h3><img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//20201101-1.png" style="zoom:67%;">
+
 <h3 id="1-20-矩阵"><a href="#1-20-矩阵" class="headerlink" title="1.20 矩阵"></a>1.20 矩阵</h3><p>使用<code>\begin{matrix}…\end{matrix}</code>生成， 每一行以<code>\\</code>结尾表示换行，元素间以<code>&amp;</code>间隔，使用<code>\tag{}</code>编号。</p>
 <p>大括号：</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\left\{
-\begin{matrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
-\end{matrix}
-\right\}\tag{1}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script type="math/tex; mode=display">
-\left\{
-\begin{matrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
-\end{matrix}
-\right\}\tag{1}</script><p>中括号：</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\left [
-\begin{matrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
-\end{matrix}
-\right ]\tag{2}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script type="math/tex; mode=display">
-\left [
-\begin{matrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
-\end{matrix}
-\right ] \tag{2}</script><p>小括号：</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\left (
-\begin{matrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
-\end{matrix}
-\right )\tag{3}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script type="math/tex; mode=display">
-\left (
-\begin{matrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
-\end{matrix}
-\right )\tag{3}</script><p> 包含希腊字母与省略号：行省略号<code>\cdots</code>，列省略号<code>\vdots</code>，斜向省略号（左上至右下）<code>\ddots</code>。</p>
-<pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\left\{
-\begin{matrix}
-     1      & 2        & \cdots & 5        \\
-     6      & 7        & \cdots & 10       \\
-     \vdots & \vdots   & \ddots & \vdots   \\
-     \alpha & \alpha+1 & \cdots & \alpha+4 
-\end{matrix}
-\right\}\tag{4}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script type="math/tex; mode=display">
-\left\{
- \begin{matrix}
-     1      & 2        & \cdots & 5        \\
-     6      & 7        & \cdots & 10       \\
-     \vdots & \vdots   & \ddots & \vdots   \\
-     \alpha & \alpha+1 & \cdots & \alpha+4 
- \end{matrix}
- \right\}\tag{4}</script><h2 id="2-复杂公式编辑"><a href="#2-复杂公式编辑" class="headerlink" title="2.复杂公式编辑"></a>2.复杂公式编辑</h2><h3 id="2-1-分段函数"><a href="#2-1-分段函数" class="headerlink" title="2.1 分段函数"></a>2.1 分段函数</h3><pre class="line-numbers language-lang-latex"><code class="language-lang-latex">f(n) =
-\begin{cases} 
-    n/2,  & \text{if }n\text{ is even} \\
-    3n+1, & \text{if }n\text{ is odd}
-\end{cases}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script type="math/tex; mode=display">
-f(n) =
-\begin{cases} 
-    n/2,  & \text{if }n\text{ is even} \\
-    3n+1, & \text{if }n\text{ is odd}
-\end{cases}</script><h3 id="2-2-方程组"><a href="#2-2-方程组" class="headerlink" title="2.2 方程组"></a>2.2 方程组</h3><pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\begin{cases}
-    a_1x+b_1y+c_1z=d_1\\
-    a_2x+b_2y+c_2z=d_2\\
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\left</span><span class="token function selector">\{</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+    1 <span class="token punctuation">&amp;</span> 2 <span class="token punctuation">&amp;</span> 3 <span class="token function selector">\\</span>
+    4 <span class="token punctuation">&amp;</span> 5 <span class="token punctuation">&amp;</span> 6 <span class="token function selector">\\</span>
+    7 <span class="token punctuation">&amp;</span> 8 <span class="token punctuation">&amp;</span> 9
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+<span class="token function selector">\right</span><span class="token function selector">\}</span><span class="token function selector">\tag</span><span class="token punctuation">{</span>1<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//20201101-2.png" style="zoom: 67%;">
+
+<p>中括号：</p>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\left</span> <span class="token punctuation">[</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+    1 <span class="token punctuation">&amp;</span> 2 <span class="token punctuation">&amp;</span> 3 <span class="token function selector">\\</span>
+    4 <span class="token punctuation">&amp;</span> 5 <span class="token punctuation">&amp;</span> 6 <span class="token function selector">\\</span>
+    7 <span class="token punctuation">&amp;</span> 8 <span class="token punctuation">&amp;</span> 9
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+<span class="token function selector">\right</span> <span class="token punctuation">]</span><span class="token function selector">\tag</span><span class="token punctuation">{</span>2<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//20201101-3.png" style="zoom:67%;">
+
+<p>小括号：</p>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\left</span> (
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+    1 <span class="token punctuation">&amp;</span> 2 <span class="token punctuation">&amp;</span> 3 <span class="token function selector">\\</span>
+    4 <span class="token punctuation">&amp;</span> 5 <span class="token punctuation">&amp;</span> 6 <span class="token function selector">\\</span>
+    7 <span class="token punctuation">&amp;</span> 8 <span class="token punctuation">&amp;</span> 9
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+<span class="token function selector">\right</span> )<span class="token function selector">\tag</span><span class="token punctuation">{</span>3<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//20201101-4.png" style="zoom:67%;">
+
+<p> 包含希腊字母与省略号：行省略号<code>\cdots</code>，列省略号<code>\vdots</code>，斜向省略号（左上至右下）<code>\ddots</code>。</p>
+<pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\left</span><span class="token function selector">\{</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+     1      <span class="token punctuation">&amp;</span> 2        <span class="token punctuation">&amp;</span> <span class="token function selector">\cdots</span> <span class="token punctuation">&amp;</span> 5        <span class="token function selector">\\</span>
+     6      <span class="token punctuation">&amp;</span> 7        <span class="token punctuation">&amp;</span> <span class="token function selector">\cdots</span> <span class="token punctuation">&amp;</span> 10       <span class="token function selector">\\</span>
+     <span class="token function selector">\vdots</span> <span class="token punctuation">&amp;</span> <span class="token function selector">\vdots</span>   <span class="token punctuation">&amp;</span> <span class="token function selector">\ddots</span> <span class="token punctuation">&amp;</span> <span class="token function selector">\vdots</span>   <span class="token function selector">\\</span>
+     <span class="token function selector">\alpha</span> <span class="token punctuation">&amp;</span> <span class="token function selector">\alpha</span>+1 <span class="token punctuation">&amp;</span> <span class="token function selector">\cdots</span> <span class="token punctuation">&amp;</span> <span class="token function selector">\alpha</span>+4 
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">matrix</span><span class="token punctuation">}</span>
+<span class="token function selector">\right</span><span class="token function selector">\}</span><span class="token function selector">\tag</span><span class="token punctuation">{</span>4<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//20201101-5.png" style="zoom:67%;">
+
+<h2 id="2-复杂公式编辑"><a href="#2-复杂公式编辑" class="headerlink" title="2.复杂公式编辑"></a>2.复杂公式编辑</h2><h3 id="2-1-分段函数"><a href="#2-1-分段函数" class="headerlink" title="2.1 分段函数"></a>2.1 分段函数</h3><pre class="line-numbers language-latex"><code class="language-latex">f(n) =
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">cases</span><span class="token punctuation">}</span> 
+    n/2,  <span class="token punctuation">&amp;</span> <span class="token function selector">\text</span><span class="token punctuation">{</span>if <span class="token punctuation">}</span>n<span class="token function selector">\text</span><span class="token punctuation">{</span> is even<span class="token punctuation">}</span> <span class="token function selector">\\</span>
+    3n+1, <span class="token punctuation">&amp;</span> <span class="token function selector">\text</span><span class="token punctuation">{</span>if <span class="token punctuation">}</span>n<span class="token function selector">\text</span><span class="token punctuation">{</span> is odd<span class="token punctuation">}</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">cases</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//20201101-6.png" style="zoom:67%;">
+
+<h3 id="2-2-方程组"><a href="#2-2-方程组" class="headerlink" title="2.2 方程组"></a>2.2 方程组</h3><pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">cases</span><span class="token punctuation">}</span>
+    a_1x+b_1y+c_1z=d_1<span class="token function selector">\\</span>
+    a_2x+b_2y+c_2z=d_2<span class="token function selector">\\</span>
     a_3x+b_3y+c_3z=d_3
-\end{cases}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script type="math/tex; mode=display">
-\begin{cases}
-    a_1x+b_1y+c_1z=d_1\\
-    a_2x+b_2y+c_2z=d_2\\
-    a_3x+b_3y+c_3z=d_3
-\end{cases}</script><h3 id="2-3-多行等式对齐"><a href="#2-3-多行等式对齐" class="headerlink" title="2.3 多行等式对齐"></a>2.3 多行等式对齐</h3><pre class="line-numbers language-lang-latex"><code class="language-lang-latex">\begin{aligned}
-a &= b + c \\
-  &= d + e + f \\
-  &= g + h + i + j
-\end{aligned}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script type="math/tex; mode=display">
-\begin{aligned}
-a &= b + c \\
-  &= d + e + f \\
-  &= g + h + i + j
-\end{aligned}</script><script>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">cases</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//20201101-7.png" style="zoom:67%;">
+
+<h3 id="2-3-多行等式对齐"><a href="#2-3-多行等式对齐" class="headerlink" title="2.3 多行等式对齐"></a>2.3 多行等式对齐</h3><pre class="line-numbers language-latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">aligned</span><span class="token punctuation">}</span>
+a <span class="token punctuation">&amp;</span>= b + c <span class="token function selector">\\</span>
+  <span class="token punctuation">&amp;</span>= d + e + f <span class="token function selector">\\</span>
+  <span class="token punctuation">&amp;</span>= g + h + i + j
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">aligned</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_img//20201101-8.png" style="zoom:67%;">
+
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1162,8 +976,7 @@ a &= b + c \\
                             1. 组合两个表SELECT p.FirstName, p.LastName, a.City, a.State
 FROM Person p
 LEFT JOIN Address a ON p.PersonId = a.PersonId;
-
-2
+2.
                         
                     </div>
                     <div class="publish-info">
@@ -1379,7 +1192,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1573,7 +1386,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

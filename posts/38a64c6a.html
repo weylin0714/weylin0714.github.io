@@ -3,10 +3,10 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="Python学习笔记（十二）：Python工程组织结构, 简若">
     <meta name="description" content="1. 组织结构
-Python项目的组织结构主要由包—模块—类这些部分构成。
+Python项目的组织结构主要由包–模块–类这些部分构成。
 包：可以看成文件夹，可以包含多个模块。如果让普通文件夹变成python的包，在该文件夹下必须包含init.py文件。__init__.py也是一个特殊的模块，模块名">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -30,11 +30,11 @@ Python项目的组织结构主要由包—模块—类这些部分构成。
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -492,82 +492,75 @@ Python项目的组织结构主要由包—模块—类这些部分构成。
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-组织结构"><a href="#1-组织结构" class="headerlink" title="1. 组织结构"></a>1. 组织结构</h2><ul>
-<li>Python项目的组织结构主要由<strong>包—模块—类</strong>这些部分构成。</li>
+<li>Python项目的组织结构主要由<strong>包–模块–类</strong>这些部分构成。</li>
 <li><strong>包：</strong>可以看成文件夹，可以包含多个模块。如果让普通文件夹变成python的包，在该文件夹下必须包含<strong>init</strong>.py文件。<code>__init__.py</code>也是一个特殊的模块，模块名就是包名。</li>
 <li><strong>模块：</strong>可以看成文件，对应python中的.py文件。一个模块下面也可以包含多个类。模块下面也可以直接写函数。</li>
 <li><strong>类：</strong>类中定义了变量和函数。</li>
 <li><strong>函数：</strong>用于实现特定功能，</li>
 </ul>
-<h2 id="2-模块导入"><a href="#2-模块导入" class="headerlink" title="2. 模块导入"></a>2. 模块导入</h2><p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//demo1.png" alt=""></p>
+<h2 id="2-模块导入"><a href="#2-模块导入" class="headerlink" title="2. 模块导入"></a>2. 模块导入</h2><p><img src="https://gitee.com//linwang0714/ImgHosting/raw/master/article_img//demo1.png"></p>
 <h3 id="2-1-import"><a href="#2-1-import" class="headerlink" title="2.1 import"></a>2.1 import</h3><p>import只能引入模块，不能直接引入变量或函数。</p>
 <p>示例：在main.py文件中导入包package1中的模块module1.py和module2.py。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">import package1.module1
-import package1.module2 as pm2   # 多层调用太长，可以重命名
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> package1<span class="token punctuation">.</span>module1
+<span class="token keyword">import</span> package1<span class="token punctuation">.</span>module2 <span class="token keyword">as</span> pm2   <span class="token comment" spellcheck="true"># 多层调用太长，可以重命名</span>
 
-print(package1.module1.var1)
-print(pm2.num1)
-# 输出
+<span class="token keyword">print</span><span class="token punctuation">(</span>package1<span class="token punctuation">.</span>module1<span class="token punctuation">.</span>var1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>pm2<span class="token punctuation">.</span>num1<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
 Python
-1
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-2-from…import"><a href="#2-2-from…import" class="headerlink" title="2.2 from…import"></a>2.2 from…import</h3><p>可以导入模块、变量或函数。</p>
 <ul>
 <li>导入模块</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">from package1 import module1
-from package1 import module2
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> package1 <span class="token keyword">import</span> module1
+<span class="token keyword">from</span> package1 <span class="token keyword">import</span> module2
 
-print(module1.var2)
-print(module2.num2)
-# 输出
+<span class="token keyword">print</span><span class="token punctuation">(</span>module1<span class="token punctuation">.</span>var2<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>module2<span class="token punctuation">.</span>num2<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
 Go
-2
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>导入变量或函数</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">from package1.module1 import var3
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> package1<span class="token punctuation">.</span>module1 <span class="token keyword">import</span> var3
 
-print(var3)
-# 输出
-Java
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>var3<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+Java<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>导入模块下所有内容</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">from package1.module2 import *   # 一般不建议使用*
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> package1<span class="token punctuation">.</span>module2 <span class="token keyword">import</span> <span class="token operator">*</span>   <span class="token comment" spellcheck="true"># 一般不建议使用*</span>
 
-print(num2)
-# 输出
-2
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>控制模块中对外暴露的内容</li>
 </ul>
 <p>在<code>module2.py</code>模块中定义了<code>__all__=['num1', 'num2']</code>，则导入模块<code>module2.py</code>时只可导入<code>num1, num2</code>，其他内容不可见。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">from package1.module2 import *
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> package1<span class="token punctuation">.</span>module2 <span class="token keyword">import</span> <span class="token operator">*</span>
 
-print(num3)
-# 输出
-NameError: name 'num3' is not defined
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num3<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+NameError<span class="token punctuation">:</span> name <span class="token string">'num3'</span> <span class="token keyword">is</span> <span class="token operator">not</span> defined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注意，<code>__all__</code>属性仅在使用<code>import *</code>时才有效。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">from package1.module2 import num3
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> package1<span class="token punctuation">.</span>module2 <span class="token keyword">import</span> num3
 
-print(num3)
-# 输出
-3
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num3<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 输出</span>
+<span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>导入模块换行</li>
 </ul>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python"># 使用 \
-from package1.module2 import num1, \
-    num2, num3
-# 使用()，推荐这种方式
-from package1.module2 import (num1,
-    num2, num3)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 使用 \</span>
+<span class="token keyword">from</span> package1<span class="token punctuation">.</span>module2 <span class="token keyword">import</span> num1<span class="token punctuation">,</span> \
+    num2<span class="token punctuation">,</span> num3
+<span class="token comment" spellcheck="true"># 使用()，推荐这种方式</span>
+<span class="token keyword">from</span> package1<span class="token punctuation">.</span>module2 <span class="token keyword">import</span> <span class="token punctuation">(</span>num1<span class="token punctuation">,</span>
+    num2<span class="token punctuation">,</span> num3<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-3-包和模块导入注意点"><a href="#2-3-包和模块导入注意点" class="headerlink" title="2.3 包和模块导入注意点"></a>2.3 包和模块导入注意点</h3><ul>
 <li><p>包和模块不会重复导入：在导入一个模块的时候，就会执行这个模块里的所有内容，但是多次导入只执行一次。</p>
 </li>
@@ -582,40 +575,35 @@ from package1.module2 import (num1,
 <li>python -m main.py 将入口文件当作一个模块执行，则可以使用相对路径导入模块。</li>
 </ul>
 <h3 id="2-5-模块搜索路径"><a href="#2-5-模块搜索路径" class="headerlink" title="2.5 模块搜索路径"></a>2.5 模块搜索路径</h3><p>当我们导入模块时，默认情况下python解析器会搜索当前目录、已安装的内置模块和第三方模块，搜索路径存放在<strong>sys模块的path</strong>中。sys.path返回一个列表</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">import sys
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys
 
-print(sys.path)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>当我们需要添加自定义的搜索目录时，使用如下命令：</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">import sys
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys
 
-sys.path.append('自定义模块的路径')
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-6-模块推荐导入顺序"><a href="#2-6-模块推荐导入顺序" class="headerlink" title="2.6 模块推荐导入顺序"></a>2.6 模块推荐导入顺序</h3><p>在文件中需要导入内置模块、第三方模块或自定义模块时，<strong>建议的导入顺序是：标准库模块—第三方模块—自定义模块</strong>。</p>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'自定义模块的路径'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-6-模块推荐导入顺序"><a href="#2-6-模块推荐导入顺序" class="headerlink" title="2.6 模块推荐导入顺序"></a>2.6 模块推荐导入顺序</h3><p>在文件中需要导入内置模块、第三方模块或自定义模块时，<strong>建议的导入顺序是：标准库模块–第三方模块–自定义模块</strong>。</p>
 <h2 id="3-init-py的用法"><a href="#3-init-py的用法" class="headerlink" title="3. __init__.py的用法"></a>3. <code>__init__.py</code>的用法</h2><ul>
 <li>用来标识该文件夹是一个包。</li>
 <li>导入包或包下的模块时，<code>__init__.py</code>文件被自动执行。</li>
 <li><code>__init__.py</code>文件中也可以利用<code>__all__</code>来限制导入的模块。</li>
 </ul>
 <p>例如，在<code>__init__.py</code>定义如下内容：</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">__all__ = ['module1']
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">__all__ <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'module1'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在main.py中导入模块module2.py。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">from package1 import *
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> package1 <span class="token keyword">import</span> <span class="token operator">*</span>
 
-print(module2.num1)  
-# 输出
-NameError: name 'module2' is not defined
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>module2<span class="token punctuation">.</span>num1<span class="token punctuation">)</span>  
+<span class="token comment" spellcheck="true"># 输出</span>
+NameError<span class="token punctuation">:</span> name <span class="token string">'module2'</span> <span class="token keyword">is</span> <span class="token operator">not</span> defined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>由于在<code>__init__.py</code>文件中限制了导入的模块，<code>module2.py</code>不能被导入。</p>
 <ul>
 <li>批量导入模块</li>
 </ul>
 <p>如果在项目中有模块是多个文件共用的，可以把这些模块在<code>__init__.py</code>导入。</p>
 <h2 id="4-入口文件"><a href="#4-入口文件" class="headerlink" title="4. 入口文件"></a>4. 入口文件</h2><p>Python 是脚本语言，和 C++、Java 最大的不同在于，不需要显式提供 main() 函数入口。在Python文件中，<code>__name__ == '__main__'</code>被用于定义入口文件。这些文件既可以作为模块被导入，也可以执行。</p>
-<pre class="line-numbers language-lang-python"><code class="language-lang-python">if __name__ == '__main__':
-    pass
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>如果文件作为模块被导入，<code>__name__</code>被赋值模块的名字。当文件执行被执行时，<code>__name__</code>为<code>__main__</code>。</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1165,7 +1153,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1359,7 +1347,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

@@ -3,13 +3,12 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="leetcode数据库-题库（一）, 简若">
     <meta name="description" content="1. 组合两个表SELECT p.FirstName, p.LastName, a.City, a.State
 FROM Person p
 LEFT JOIN Address a ON p.PersonId = a.PersonId;
-
-2">
+2.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,11 +31,11 @@ LEFT JOIN Address a ON p.PersonId = a.PersonId;
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -497,111 +496,96 @@ LEFT JOIN Address a ON p.PersonId = a.PersonId;
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-组合两个表"><a href="#1-组合两个表" class="headerlink" title="1. 组合两个表"></a><a href="https://leetcode-cn.com/problems/combine-two-tables/" target="_blank" rel="noopener">1. 组合两个表</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT p.FirstName, p.LastName, a.City, a.State
+                <h2 id="1-组合两个表"><a href="#1-组合两个表" class="headerlink" title="1. 组合两个表"></a><a href="https://leetcode-cn.com/problems/combine-two-tables/" target="_blank" rel="noopener">1. 组合两个表</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT p.FirstName, p.LastName, a.City, a.State
 FROM Person p
-LEFT JOIN Address a ON p.PersonId = a.PersonId;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+LEFT JOIN Address a ON p.PersonId = a.PersonId;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-第二高的薪水"><a href="#2-第二高的薪水" class="headerlink" title="2.第二高的薪水"></a><a href="https://leetcode-cn.com/problems/second-highest-salary" target="_blank" rel="noopener">2.第二高的薪水</a></h2><p>方法一：使用子查询和 <code>LIMIT</code> 子句</p>
 <p><code>LIMIT m OFFSET n</code>：跳过n行记录，开始取m条记录。</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT 
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 
 (SELECT DISTINCT Salary
     FROM Employee
     ORDER BY Salary DESC
     LIMIT 1 OFFSET 1
-) AS SecondHighestSalary;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+) AS SecondHighestSalary;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法二：使用 <code>IFNULL</code> 和 <code>LIMIT</code> 子句</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT 
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 
     IFNULL(
         (SELECT DISTINCT Salary
         FROM Employee
         ORDER BY Salary DESC
         LIMIT 1 OFFSET 1),
-    NULL) AS SecondHighestSalary
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    NULL) AS SecondHighestSalary<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用<code>IFNULL</code>函数处理查询结果为<code>NULL</code>的情况。</p>
 <p><code>IFNULL(expression, default_value)</code>：如果第一个参数的表达式 <code>expression</code> 为 <code>NULL</code>，则返回第二个默认值。</p>
 <p>采用上面同样的方式我们可以获取第N高的情况。</p>
 <h2 id="3-超过经理收入的员工"><a href="#3-超过经理收入的员工" class="headerlink" title="3.超过经理收入的员工"></a><a href="https://leetcode-cn.com/problems/employees-earning-more-than-their-managers/" target="_blank" rel="noopener">3.超过经理收入的员工</a></h2><p>方法一：使用 <code>where</code></p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT a.Name AS Employee
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT a.Name AS Employee
 FROM
     Employee AS a,
     Employee AS b
 WHERE
     a.ManagerId = b.Id
-        AND a.Salary > b.Salary
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        AND a.Salary > b.Salary<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法二：使用 <code>inner join</code></p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT 
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 
     e1.Name AS Employee
 FROM Employee e1 INNER JOIN Employee e2 
     ON e1.ManagerId = e2.Id 
-    AND e1.Salary > e2.Salary;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    AND e1.Salary > e2.Salary;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="4-查找重复的电子邮箱"><a href="#4-查找重复的电子邮箱" class="headerlink" title="4.查找重复的电子邮箱"></a><a href="https://leetcode-cn.com/problems/duplicate-emails/" target="_blank" rel="noopener">4.查找重复的电子邮箱</a></h2><p>方法一：使用 <code>GROUP BY</code> 和临时表</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">select Email from
+<pre class="line-numbers language-mysql"><code class="language-mysql">select Email from
 (
   select Email, count(Email) as cnt
   from Person
   group by Email
 ) temp
-where cnt > 1
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+where cnt > 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法二：使用 <code>GROUP BY</code> 和 <code>HAVING</code></p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT Email
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT Email
 FROM Person
 GROUP BY Email
-HAVING COUNT(Email) > 1;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+HAVING COUNT(Email) > 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5-从不订购的客户"><a href="#5-从不订购的客户" class="headerlink" title="5.从不订购的客户"></a><a href="https://leetcode-cn.com/problems/customers-who-never-order/" target="_blank" rel="noopener">5.从不订购的客户</a></h2><p>方法一：使用子查询和 NOT IN</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT Name AS Customers
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT Name AS Customers
 FROM Customers
 WHERE Id NOT IN (
     SELECT CustomerId
     FROM Orders
-) ;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+) ;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法二：使用 LEFT JOIN</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT c.Name AS Customers
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT c.Name AS Customers
 FROM Customers c LEFT JOIN Orders o
     ON c.Id = o.CustomerId
-WHERE o.CustomerId IS NULL;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="6-删除重复的电子邮箱"><a href="#6-删除重复的电子邮箱" class="headerlink" title="6.删除重复的电子邮箱"></a>6.删除重复的电子邮箱</h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">DELETE p1 
+WHERE o.CustomerId IS NULL;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-删除重复的电子邮箱"><a href="#6-删除重复的电子邮箱" class="headerlink" title="6.删除重复的电子邮箱"></a>6.删除重复的电子邮箱</h2><pre class="line-numbers language-mysql"><code class="language-mysql">DELETE p1 
 FROM Person p1,
      Person p2
 WHERE
-    p1.Email = p2.Email AND p1.Id > p2.Id
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="7-上升的温度"><a href="#7-上升的温度" class="headerlink" title="7.上升的温度"></a><a href="https://leetcode-cn.com/problems/rising-temperature/" target="_blank" rel="noopener">7.上升的温度</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT w1.Id
+    p1.Email = p2.Email AND p1.Id > p2.Id<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-上升的温度"><a href="#7-上升的温度" class="headerlink" title="7.上升的温度"></a><a href="https://leetcode-cn.com/problems/rising-temperature/" target="_blank" rel="noopener">7.上升的温度</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT w1.Id
 FROM Weather w1 JOIN Weather w2
      ON DATEDIFF(w1.RecordDate, w2.RecordDate) = 1
-     AND w1.Temperature > w2.Temperature;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+     AND w1.Temperature > w2.Temperature;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>MySQL 使用 <code>DATEDIFF</code> 来比较两个日期类型的值。</p>
-<h2 id="8-游戏玩法分析I"><a href="#8-游戏玩法分析I" class="headerlink" title="8.游戏玩法分析I"></a><a href="https://leetcode-cn.com/problems/game-play-analysis-i/" target="_blank" rel="noopener">8.游戏玩法分析I</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT player_id, MIN(event_date) AS first_login
+<h2 id="8-游戏玩法分析I"><a href="#8-游戏玩法分析I" class="headerlink" title="8.游戏玩法分析I"></a><a href="https://leetcode-cn.com/problems/game-play-analysis-i/" target="_blank" rel="noopener">8.游戏玩法分析I</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT player_id, MIN(event_date) AS first_login
 FROM Activity
-GROUP BY player_id;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="9-游戏玩法分析II"><a href="#9-游戏玩法分析II" class="headerlink" title="9.游戏玩法分析II"></a><a href="https://leetcode-cn.com/problems/game-play-analysis-ii/" target="_blank" rel="noopener">9.游戏玩法分析II</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">select player_id, device_id
+GROUP BY player_id;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="9-游戏玩法分析II"><a href="#9-游戏玩法分析II" class="headerlink" title="9.游戏玩法分析II"></a><a href="https://leetcode-cn.com/problems/game-play-analysis-ii/" target="_blank" rel="noopener">9.游戏玩法分析II</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">select player_id, device_id
 from Activity
 where (player_id, event_date) in (select player_id, min(event_date)
                                   from Activity
-                                  group by player_id);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="10-员工奖金"><a href="#10-员工奖金" class="headerlink" title="10.员工奖金"></a><a href="https://leetcode-cn.com/problems/employee-bonus/submissions/" target="_blank" rel="noopener">10.员工奖金</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT e.name, b.bonus
+                                  group by player_id);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="10-员工奖金"><a href="#10-员工奖金" class="headerlink" title="10.员工奖金"></a><a href="https://leetcode-cn.com/problems/employee-bonus/submissions/" target="_blank" rel="noopener">10.员工奖金</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT e.name, b.bonus
 FROM Employee e LEFT JOIN Bonus b
     ON e.empId = b.empId
 WHERE b.bonus < 1000
-    OR b.bonus IS NULL;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="11-寻找用户推荐人"><a href="#11-寻找用户推荐人" class="headerlink" title="11.寻找用户推荐人"></a><a href="https://leetcode-cn.com/problems/find-customer-referee/" target="_blank" rel="noopener">11.寻找用户推荐人</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT name
+    OR b.bonus IS NULL;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="11-寻找用户推荐人"><a href="#11-寻找用户推荐人" class="headerlink" title="11.寻找用户推荐人"></a><a href="https://leetcode-cn.com/problems/find-customer-referee/" target="_blank" rel="noopener">11.寻找用户推荐人</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT name
 FROM customer
-WHERE referee_id <> 2 OR referee_id IS NULL;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE referee_id <> 2 OR referee_id IS NULL;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="12-订单最多的客户"><a href="#12-订单最多的客户" class="headerlink" title="12.订单最多的客户"></a><a href="https://leetcode-cn.com/problems/customer-placing-the-largest-number-of-orders/solution/yong-chuang-kou-han-shu-jie-jue-bing-lie-di-yi-de-/" target="_blank" rel="noopener">12.订单最多的客户</a></h2><p>需考虑并列存在的情况</p>
 <p>方法一：使用子查询</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT customer_number
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT customer_number
 FROM orders
 GROUP BY customer_number
 HAVING COUNT(order_number) = (
@@ -609,62 +593,54 @@ HAVING COUNT(order_number) = (
     FROM orders
     GROUP BY customer_number
     ORDER BY COUNT(order_number) DESC
-    LIMIT 1);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    LIMIT 1);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法二：使用窗口函数</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT customer_number
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT customer_number
 FROM (    
     SELECT customer_number, RANK() (ORDER BY COUNT(order_number) DESC) AS order_rank
     FROM orders
     GROUP BY customer_number) temp
-WHERE order_rank = 1;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE order_rank = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="13-大的国家"><a href="#13-大的国家" class="headerlink" title="13.大的国家"></a><a href="https://leetcode-cn.com/problems/big-countries/" target="_blank" rel="noopener">13.大的国家</a></h2><p>方法一：使用 WHERE 子句和 OR</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT name, population, area
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT name, population, area
 FROM World
-WHERE population > 25000000 OR area > 3000000;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE population > 25000000 OR area > 3000000;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>方法二：使用 WHERE 子句和 UNION</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT name, population, area
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT name, population, area
 FROM World
 WHERE area > 3000000
 UNION
 SELECT name, population, area
 FROM World
-WHERE population > 25000000;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE population > 25000000;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="14-超过5名学生的课"><a href="#14-超过5名学生的课" class="headerlink" title="14.超过5名学生的课"></a><a href="https://leetcode-cn.com/problems/classes-more-than-5-students/" target="_blank" rel="noopener">14.超过5名学生的课</a></h2><p>方法一：使用 <code>GROUP BY</code> 子句和子查询</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT class
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT class
 FROM
 (
     SELECT class, COUNT(DISTINCT student) AS stu_num
     FROM courses
     GROUP BY class
 ) temp
-WHERE stu_num >= 5;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE stu_num >= 5;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法二：使用 GROUP BY 和 HAVING</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT class
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT class
 FROM courses
 GROUP BY class
-HAVING COUNT(DISTINCT student) >= 5;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="15-好友申请-I-：总体通过率"><a href="#15-好友申请-I-：总体通过率" class="headerlink" title="15.好友申请 I ：总体通过率"></a><a href="https://leetcode-cn.com/problems/friend-requests-i-overall-acceptance-rate" target="_blank" rel="noopener">15.好友申请 I ：总体通过率</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT
+HAVING COUNT(DISTINCT student) >= 5;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="15-好友申请-I-：总体通过率"><a href="#15-好友申请-I-：总体通过率" class="headerlink" title="15.好友申请 I ：总体通过率"></a><a href="https://leetcode-cn.com/problems/friend-requests-i-overall-acceptance-rate" target="_blank" rel="noopener">15.好友申请 I ：总体通过率</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT
 ROUND(
     IFNULL(
     (SELECT COUNT(DISTINCT requester_id, accepter_id) FROM request_accepted)
     /
     (SELECT COUNT(DISTINCT sender_id, send_to_id ) FROM friend_request),
     0)
-    , 2) AS accept_rate;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="16-连续空余座位"><a href="#16-连续空余座位" class="headerlink" title="16.连续空余座位"></a><a href="https://leetcode-cn.com/problems/consecutive-available-seats" target="_blank" rel="noopener">16.连续空余座位</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT DISTINCT c1.seat_id
+    , 2) AS accept_rate;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="16-连续空余座位"><a href="#16-连续空余座位" class="headerlink" title="16.连续空余座位"></a><a href="https://leetcode-cn.com/problems/consecutive-available-seats" target="_blank" rel="noopener">16.连续空余座位</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT DISTINCT c1.seat_id
 FROM cinema c1 JOIN cinema c2 
     ON abs(c1.seat_id - c2.seat_id) = 1
     AND c1.free = 1 AND c2.free = 1
-ORDER BY c1.seat_id;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="17-销售员"><a href="#17-销售员" class="headerlink" title="17.销售员"></a><a href="https://leetcode-cn.com/problems/sales-person" target="_blank" rel="noopener">17.销售员</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT name
+ORDER BY c1.seat_id;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="17-销售员"><a href="#17-销售员" class="headerlink" title="17.销售员"></a><a href="https://leetcode-cn.com/problems/sales-person" target="_blank" rel="noopener">17.销售员</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT name
 FROM salesperson
 WHERE sales_id NOT IN
 (
@@ -672,18 +648,15 @@ WHERE sales_id NOT IN
     FROM orders o LEFT JOIN company c
         ON o.com_id = c.com_id
     WHERE c.name = 'RED'
-);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="18-判断三角形"><a href="#18-判断三角形" class="headerlink" title="18.判断三角形"></a><a href="https://leetcode-cn.com/problems/triangle-judgement" target="_blank" rel="noopener">18.判断三角形</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT x, y, z, 
+);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="18-判断三角形"><a href="#18-判断三角形" class="headerlink" title="18.判断三角形"></a><a href="https://leetcode-cn.com/problems/triangle-judgement" target="_blank" rel="noopener">18.判断三角形</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT x, y, z, 
     CASE WHEN x + y > z AND x + z > y AND z + y > x THEN 'Yes' 
     ELSE 'No' END AS 'triangle'
-FROM triangle;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="19-直线上的最近距离"><a href="#19-直线上的最近距离" class="headerlink" title="19.直线上的最近距离"></a><a href="https://leetcode-cn.com/problems/shortest-distance-in-a-line" target="_blank" rel="noopener">19.直线上的最近距离</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT min(abs(p1.x - p2.x)) AS shortest
+FROM triangle;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="19-直线上的最近距离"><a href="#19-直线上的最近距离" class="headerlink" title="19.直线上的最近距离"></a><a href="https://leetcode-cn.com/problems/shortest-distance-in-a-line" target="_blank" rel="noopener">19.直线上的最近距离</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT min(abs(p1.x - p2.x)) AS shortest
 FROM point p1 JOIN point p2
-    ON p1.x <> p2.x;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="20-只出现一次的最大数字"><a href="#20-只出现一次的最大数字" class="headerlink" title=" 20.只出现一次的最大数字"></a><a href="https://leetcode-cn.com/problems/biggest-single-number" target="_blank" rel="noopener"> 20.只出现一次的最大数字</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT 
+    ON p1.x <> p2.x;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="20-只出现一次的最大数字"><a href="#20-只出现一次的最大数字" class="headerlink" title=" 20.只出现一次的最大数字"></a><a href="https://leetcode-cn.com/problems/biggest-single-number" target="_blank" rel="noopener"> 20.只出现一次的最大数字</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 
 IFNULL(
     (SELECT num
     FROM my_numbers
@@ -691,45 +664,38 @@ IFNULL(
     HAVING COUNT(num) = 1
     ORDER BY num DESC
     LIMIT 1), null
-) AS num;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="21-有趣的电影"><a href="#21-有趣的电影" class="headerlink" title=" 21.有趣的电影"></a><a href="https://leetcode-cn.com/problems/not-boring-movies" target="_blank" rel="noopener"> 21.有趣的电影</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT id, movie, description, rating
+) AS num;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="21-有趣的电影"><a href="#21-有趣的电影" class="headerlink" title=" 21.有趣的电影"></a><a href="https://leetcode-cn.com/problems/not-boring-movies" target="_blank" rel="noopener"> 21.有趣的电影</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT id, movie, description, rating
 FROM cinema
 WHERE description <> 'boring' AND id % 2 <> 0
-ORDER BY rating DESC;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="22-交换工资"><a href="#22-交换工资" class="headerlink" title="22.交换工资"></a><a href="https://leetcode-cn.com/problems/swap-salary" target="_blank" rel="noopener">22.交换工资</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">UPDATE salary
+ORDER BY rating DESC;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="22-交换工资"><a href="#22-交换工资" class="headerlink" title="22.交换工资"></a><a href="https://leetcode-cn.com/problems/swap-salary" target="_blank" rel="noopener">22.交换工资</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">UPDATE salary
     SET
         sex = CASE WHEN sex = 'm' THEN 'f'
         ELSE 'm'
-        END;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="23-合作过至少三次的演员和导演"><a href="#23-合作过至少三次的演员和导演" class="headerlink" title="23.合作过至少三次的演员和导演"></a><a href="https://leetcode-cn.com/problems/actors-and-directors-who-cooperated-at-least-three-times" target="_blank" rel="noopener">23.合作过至少三次的演员和导演</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT 
+        END;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="23-合作过至少三次的演员和导演"><a href="#23-合作过至少三次的演员和导演" class="headerlink" title="23.合作过至少三次的演员和导演"></a><a href="https://leetcode-cn.com/problems/actors-and-directors-who-cooperated-at-least-three-times" target="_blank" rel="noopener">23.合作过至少三次的演员和导演</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 
     actor_id AS ACTOR_ID, 
     director_id AS DIRECTOR_ID 
 FROM ActorDirector
 GROUP BY actor_id, director_id
-HAVING COUNT(*) >= 3;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="24-产品销售分析-I"><a href="#24-产品销售分析-I" class="headerlink" title="24.产品销售分析 I"></a><a href="https://leetcode-cn.com/problems/product-sales-analysis-i" target="_blank" rel="noopener">24.产品销售分析 I</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT p.product_name, s.year, s.price
+HAVING COUNT(*) >= 3;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="24-产品销售分析-I"><a href="#24-产品销售分析-I" class="headerlink" title="24.产品销售分析 I"></a><a href="https://leetcode-cn.com/problems/product-sales-analysis-i" target="_blank" rel="noopener">24.产品销售分析 I</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT p.product_name, s.year, s.price
 FROM Sales s LEFT JOIN Product p 
-    ON s.product_id = p.product_id;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="25-产品销售分析-II"><a href="#25-产品销售分析-II" class="headerlink" title="25.产品销售分析 II"></a><a href="https://leetcode-cn.com/problems/product-sales-analysis-ii" target="_blank" rel="noopener">25.产品销售分析 II</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT product_id, SUM(quantity) AS total_quantity
+    ON s.product_id = p.product_id;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="25-产品销售分析-II"><a href="#25-产品销售分析-II" class="headerlink" title="25.产品销售分析 II"></a><a href="https://leetcode-cn.com/problems/product-sales-analysis-ii" target="_blank" rel="noopener">25.产品销售分析 II</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT product_id, SUM(quantity) AS total_quantity
 FROM Sales
-GROUP BY product_id;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="26-项目员工-I"><a href="#26-项目员工-I" class="headerlink" title="26.项目员工 I"></a><a href="https://leetcode-cn.com/problems/project-employees-i" target="_blank" rel="noopener">26.项目员工 I</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT 
+GROUP BY product_id;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="26-项目员工-I"><a href="#26-项目员工-I" class="headerlink" title="26.项目员工 I"></a><a href="https://leetcode-cn.com/problems/project-employees-i" target="_blank" rel="noopener">26.项目员工 I</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 
     p.project_id, 
     ROUND(AVG(e.experience_years), 2) AS average_years
 FROM 
     Project p 
     LEFT JOIN Employee e 
         ON p.employee_id = e.employee_id
-GROUP BY p.project_id;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+GROUP BY p.project_id;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="27-项目员工II"><a href="#27-项目员工II" class="headerlink" title="27.项目员工II"></a><a href="https://leetcode-cn.com/problems/project-employees-ii" target="_blank" rel="noopener">27.项目员工II</a></h2><p>方法一：</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT project_id
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT project_id
 FROM Project
 GROUP BY project_id
 HAVING COUNT(employee_id) = 
@@ -739,28 +705,25 @@ HAVING COUNT(employee_id) =
     GROUP BY project_id
     ORDER BY num DESC
     LIMIT 1
-);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>方法二：</p>
-<pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT project_id
+<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT project_id
 FROM Project
 GROUP BY project_id
 HAVING COUNT(employee_id) >= ALL(
     SELECT COUNT(employee_id) AS num
     FROM Project
     GROUP BY project_id
-);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="28-销售分析-I"><a href="#28-销售分析-I" class="headerlink" title=" 28.销售分析 I "></a><a href="https://leetcode-cn.com/problems/sales-analysis-i" target="_blank" rel="noopener"> 28.销售分析 I </a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT seller_id
+);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="28-销售分析-I"><a href="#28-销售分析-I" class="headerlink" title=" 28.销售分析 I "></a><a href="https://leetcode-cn.com/problems/sales-analysis-i" target="_blank" rel="noopener"> 28.销售分析 I </a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT seller_id
 FROM Sales
 GROUP BY  seller_id
 HAVING SUM(price) >= ALL(
     SELECT SUM(price)
     FROM Sales
     GROUP BY seller_id
-);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="29-销售分析-II"><a href="#29-销售分析-II" class="headerlink" title="29.销售分析 II"></a><a href="https://leetcode-cn.com/problems/sales-analysis-ii" target="_blank" rel="noopener">29.销售分析 II</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT DISTINCT s.buyer_id
+); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="29-销售分析-II"><a href="#29-销售分析-II" class="headerlink" title="29.销售分析 II"></a><a href="https://leetcode-cn.com/problems/sales-analysis-ii" target="_blank" rel="noopener">29.销售分析 II</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT DISTINCT s.buyer_id
 FROM 
     Sales s
     LEFT JOIN Product p 
@@ -771,9 +734,8 @@ AND s.buyer_id NOT IN(
     FROM Sales s
         LEFT JOIN Product p ON s.product_id = p.product_id
     WHERE p.product_name = 'iPhone'
-);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="30-销售分析III"><a href="#30-销售分析III" class="headerlink" title="30.销售分析III"></a><a href="https://leetcode-cn.com/problems/sales-analysis-iii" target="_blank" rel="noopener">30.销售分析III</a></h2><pre class="line-numbers language-lang-mysql"><code class="language-lang-mysql">SELECT DISTINCT p.product_id, p.product_name
+);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="30-销售分析III"><a href="#30-销售分析III" class="headerlink" title="30.销售分析III"></a><a href="https://leetcode-cn.com/problems/sales-analysis-iii" target="_blank" rel="noopener">30.销售分析III</a></h2><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT DISTINCT p.product_id, p.product_name
 FROM Sales s LEFT JOIN Product p 
     ON s.product_id = p.product_id
 WHERE p.product_id NOT IN
@@ -781,8 +743,7 @@ WHERE p.product_id NOT IN
     SELECT product_id
     FROM Sales 
     WHERE sale_date NOT BETWEEN '2019-01-01' AND '2019-03-31'
-);
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="31-报告的记录"><a href="#31-报告的记录" class="headerlink" title="31.报告的记录"></a><a href="https://leetcode-cn.com/problems/reported-posts" target="_blank" rel="noopener">31.报告的记录</a></h2><h2 id="32-查询近30天活跃用户数"><a href="#32-查询近30天活跃用户数" class="headerlink" title="32.查询近30天活跃用户数"></a><a href="https://leetcode-cn.com/problems/user-activity-for-the-past-30-days-i" target="_blank" rel="noopener">32.查询近30天活跃用户数</a></h2><h2 id="33-过去30天的用户活动-II"><a href="#33-过去30天的用户活动-II" class="headerlink" title="33.过去30天的用户活动 II"></a><a href="https://leetcode-cn.com/problems/user-activity-for-the-past-30-days-ii" target="_blank" rel="noopener">33.过去30天的用户活动 II</a></h2><h2 id="34-文章浏览-I"><a href="#34-文章浏览-I" class="headerlink" title="34.文章浏览 I"></a><a href="https://leetcode-cn.com/problems/article-views-i" target="_blank" rel="noopener">34.文章浏览 I</a></h2><h2 id="35-即时食物配送-I"><a href="#35-即时食物配送-I" class="headerlink" title="35.即时食物配送 I"></a><a href="https://leetcode-cn.com/problems/immediate-food-delivery-i" target="_blank" rel="noopener">35.即时食物配送 I</a></h2><h2 id="36-重新格式化部门表"><a href="#36-重新格式化部门表" class="headerlink" title="36.重新格式化部门表"></a><a href="https://leetcode-cn.com/problems/reformat-department-table" target="_blank" rel="noopener">36.重新格式化部门表</a></h2><h2 id="37-查询结果的质量和占比"><a href="#37-查询结果的质量和占比" class="headerlink" title="37.查询结果的质量和占比"></a><a href="https://leetcode-cn.com/problems/queries-quality-and-percentage" target="_blank" rel="noopener">37.查询结果的质量和占比</a></h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1068,8 +1029,7 @@ WHERE p.product_id NOT IN
                 <a href="/posts/3ec761e7.html">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Typora中编辑数学公式">
+                        <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//2020-10-16-1.jpg" class="responsive-img" alt="Typora中编辑数学公式">
                         
                         <span class="card-title">Typora中编辑数学公式</span>
                     </div>
@@ -1080,11 +1040,10 @@ WHERE p.product_id NOT IN
                             Typora 对 LaTex 有很好的支持，本文学习利用 LaTex 进行公式编辑。
 1.常用公式代码1.1 上下标上标：使用 ^。例：$x^2$
 x^2
-
 下标：使用_。例：$x_2$
 x_2
-
 上下标组合：结合^和_。例：$x_1^2$
+x
                         
                     </div>
                     <div class="publish-info">
@@ -1339,7 +1298,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1533,7 +1492,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>

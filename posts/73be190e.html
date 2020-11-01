@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="大数据学习环境搭建(三)--Hive单机环境搭建, 简若">
     <meta name="description" content="Hive是一个架构在Hadoop之上的数据仓库工具，可以将结构化的数据文件映射成为一张数据库表，并提供类SQL的查询功能，为大数据查询和分析提供方便。这里在阿里云服务器上搭建Hive单机伪分布环境。
 1. Hive安装与配置1.1 下载与安">
@@ -29,11 +29,11 @@
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -467,7 +467,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
@@ -495,180 +495,157 @@
 <ul>
 <li>将安装包移动到/usr/local/src目录下，并解压到/usr/local/目录下，重命名为hive</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">tar -zxvf hive-1.1.0-cdh5.16.2.tar.gz -C /usr/local/
-# 将解压到/usr/local/目录下的文件夹重命名
-mv hive-1.1.0-cdh5.16.2 hive
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf hive-1.1.0-cdh5.16.2.tar.gz -C /usr/local/
+<span class="token comment" spellcheck="true"># 将解压到/usr/local/目录下的文件夹重命名</span>
+<span class="token function">mv</span> hive-1.1.0-cdh5.16.2 hive<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>配置环境变量</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 打开配置文件 
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 打开配置文件 </span>
 vim /etc/profile 
-# 添加Hive环境变量 
-export HIVE_HOME=/usr/local/hive
-export PATH=$PATH:$HIVE_HOME/bin
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 添加Hive环境变量 </span>
+<span class="token function">export</span> HIVE_HOME<span class="token operator">=</span>/usr/local/hive
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$HIVE_HOME</span>/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>环境变量生效</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">source /etc/profile
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="1-2-MySQL数据库安装"><a href="#1-2-MySQL数据库安装" class="headerlink" title="1.2 MySQL数据库安装"></a>1.2 MySQL数据库安装</h3><p>采用MySQL数据库保存Hive的元数据，而不采用Hive自带的derby来存储元数据。</p>
 <h4 id="1-2-1-安装前准备"><a href="#1-2-1-安装前准备" class="headerlink" title="1.2.1 安装前准备"></a>1.2.1 安装前准备</h4><ul>
 <li>下载并安装MySQL yum仓库</li>
 </ul>
 <p>可以到<a href="http://repo.mysql.com/" target="_blank" rel="noopener">MySQL Yum 仓库下载页</a>选择合适的版本</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 下载rpm包
-wget http://repo.mysql.com/mysql57-community-release-el7-11.noarch.rpm
-# 安装rpm包获得MySQL yum仓库
-sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 下载rpm包</span>
+<span class="token function">wget</span> http://repo.mysql.com/mysql57-community-release-el7-11.noarch.rpm
+<span class="token comment" spellcheck="true"># 安装rpm包获得MySQL yum仓库</span>
+<span class="token function">sudo</span> rpm -ivh mysql57-community-release-el7-11.noarch.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>选择一个发行版</li>
 </ul>
 <p>修改配置文件，选择MySQL5.7版本</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 修改/etc/yum.repos.d/目录下的mysql-community.repo配置文件，启用想安装的MySQL版本，这里我们选择MySQL5.7
-vi /etc/yum.repos.d/mysql-community.repo
-# 将配置文件中MySQL 5.7 Community Server的enabled属性值为1，其余都为0
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 修改/etc/yum.repos.d/目录下的mysql-community.repo配置文件，启用想安装的MySQL版本，这里我们选择MySQL5.7</span>
+<span class="token function">vi</span> /etc/yum.repos.d/mysql-community.repo
+<span class="token comment" spellcheck="true"># 将配置文件中MySQL 5.7 Community Server的enabled属性值为1，其余都为0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>验证mysql5.7是否已启用</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">[root@centos yum.repos.d]# yum repolist enabled | grep mysql
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos yum.repos.d<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># yum repolist enabled | grep mysql</span>
 mysql-connectors-community/x86_64 MySQL Connectors Community                 141
 mysql-tools-community/x86_64      MySQL Tools Community                      105
-mysql57-community/x86_64          MySQL 5.7 Community Server                 404
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+mysql57-community/x86_64          MySQL 5.7 Community Server                 404<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-2-安装MySQL"><a href="#1-2-2-安装MySQL" class="headerlink" title="1.2.2 安装MySQL"></a>1.2.2 安装MySQL</h4><p>安装MySQL，并自动安装依赖包</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"> yum install mysql-community-server
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"> yum <span class="token function">install</span> mysql-community-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="1-2-3-启动MySQL"><a href="#1-2-3-启动MySQL" class="headerlink" title="1.2.3 启动MySQL"></a>1.2.3 启动MySQL</h4><p>启动MySQL服务并检查状态</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 启动MySQL
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 启动MySQL</span>
 systemctl start mysqld.service
-#检查状态
-systemctl status mysqld.service
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="1-2-4-修改MySQL密码"><a href="#1-2-4-修改MySQL密码" class="headerlink" title="1.2.4 修改MySQL密码"></a>1.2.4 修改MySQL密码</h4><p>MySQL默认创建了’root’@’localhost’账号，并创建了临时密码，密码打印在mysql日志中，找到并修改密码</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 获取临时密码
-grep 'temporary password' /var/log/mysqld.log
-# 用获取的密码登录MySQL
+<span class="token comment" spellcheck="true">#检查状态</span>
+systemctl status mysqld.service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-2-4-修改MySQL密码"><a href="#1-2-4-修改MySQL密码" class="headerlink" title="1.2.4 修改MySQL密码"></a>1.2.4 修改MySQL密码</h4><p>MySQL默认创建了‘root’@’localhost’账号，并创建了临时密码，密码打印在mysql日志中，找到并修改密码</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 获取临时密码</span>
+<span class="token function">grep</span> <span class="token string">'temporary password'</span> /var/log/mysqld.log
+<span class="token comment" spellcheck="true"># 用获取的密码登录MySQL</span>
 mysql -uroot -p
-# 登陆MySQL后，修改密码。密码规则：至少包含1个大写字母、1个小写字母、1个数字、1个特殊字符，总长度不小于8
-ALTER USER 'root'@'localhost' IDENTIFIED BY '新密码';
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 登陆MySQL后，修改密码。密码规则：至少包含1个大写字母、1个小写字母、1个数字、1个特殊字符，总长度不小于8</span>
+ALTER USER <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED BY <span class="token string">'新密码'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-5-Navicat连接MySQL"><a href="#1-2-5-Navicat连接MySQL" class="headerlink" title="1.2.5 Navicat连接MySQL"></a>1.2.5 Navicat连接MySQL</h4><ul>
 <li>打开服务器的3306端口</li>
 <li>Navicat连接报错：Host ‘IP’ is not allowed to connect to this MySQL server，解决方法：</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 使用账号密码登陆MySQL
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 使用账号密码登陆MySQL</span>
 mysql -uroot -p
-# 选择数据库
-use mysql;
-# 允许任何主机连接
-update user set host='%' where user='root';
-# 刷新权限
-flush privileges;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 选择数据库</span>
+use mysql<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true"># 允许任何主机连接</span>
+update user <span class="token keyword">set</span> host<span class="token operator">=</span><span class="token string">'%'</span> where user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true"># 刷新权限</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-2-6-创建hive数据库"><a href="#1-2-6-创建hive数据库" class="headerlink" title="1.2.6 创建hive数据库"></a>1.2.6 创建hive数据库</h4><p>在MySQL中创建一个数据库，用来保存hive元数据</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 创建hive数据库，进入到mysql命令行
-mysql> create database hive;
-# 将hive数据库的字符编码设置为latin1
-mysql> alter database hive character set latin1;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 创建hive数据库，进入到mysql命令行</span>
+mysql<span class="token operator">></span> create database hive<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true"># 将hive数据库的字符编码设置为latin1</span>
+mysql<span class="token operator">></span> alter database hive character <span class="token keyword">set</span> latin1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-3-Hive配置"><a href="#1-3-Hive配置" class="headerlink" title="1.3 Hive配置"></a>1.3 Hive配置</h3><h4 id="1-3-1-修改配置"><a href="#1-3-1-修改配置" class="headerlink" title="1.3.1 修改配置"></a>1.3.1 修改配置</h4><ul>
 <li>hive-env.sh</li>
 </ul>
 <p>进入/usr/local/hive/conf目录，拷贝Hive的环境配置模板<code>flume-env.sh.template</code></p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">cp hive-env.sh.template hive-env.sh
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">cp</span> hive-env.sh.template hive-env.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>修改<code>hive-env.sh</code>，指定Hadoop的安装路径</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">HADOOP_HOME=/usr/local/hadoop
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">HADOOP_HOME<span class="token operator">=</span>/usr/local/hadoop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>hive-site.xml</li>
 </ul>
 <p>在/usr/local/hive/conf目录下，新建 hive-site.xml 文件，主要是配置存放元数据的MySQL的地址、驱动、用户名和密码等信息：</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 编辑hive-site.xml文件
-vim hive-site.xml
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-lang-xml"><code class="language-lang-xml"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
-<configuration>
-  <property>
-    <name>javax.jdo.option.ConnectionURL</name>
-    <value>jdbc:mysql://localhost:3306/hive?createDatabaseIfNotExist=true&amp;useSSL=false</value>
-    <description>JDBC connect string for a JDBC metastore</description>
-  </property>
-  <property>
-    <name>javax.jdo.option.ConnectionDriverName</name>
-    <value>com.mysql.jdbc.Driver</value>
-    <description>Driver class name for a JDBC metastore</description>
-  </property>
-  <property>
-    <!--MySQL用户名-->  
-    <name>javax.jdo.option.ConnectionUserName</name>
-    <value>USERNAME</value>
-    <description>username to use against metastore database</description>
-  </property>
-  <property>
-    <!--MySQL密码-->  
-    <name>javax.jdo.option.ConnectionPassword</name>
-    <value>PASSWORD</value>
-    <description>password to use against metastore database</description>
-  </property>
-</configuration>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 编辑hive-site.xml文件</span>
+vim hive-site.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?></span>
+<span class="token prolog">&lt;?xml-stylesheet type="text/xsl" href="configuration.xsl"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>javax.jdo.option.ConnectionURL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>jdbc:mysql://localhost:3306/hive?createDatabaseIfNotExist=true<span class="token entity" title="&amp;">&amp;amp;</span>useSSL=false<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>JDBC connect string for a JDBC metastore<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>javax.jdo.option.ConnectionDriverName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>com.mysql.jdbc.Driver<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>Driver class name for a JDBC metastore<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--MySQL用户名--></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>javax.jdo.option.ConnectionUserName<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>USERNAME<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>username to use against metastore database<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--MySQL密码--></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>javax.jdo.option.ConnectionPassword<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>PASSWORD<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>password to use against metastore database<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-3-2-添加数据库驱动"><a href="#1-3-2-添加数据库驱动" class="headerlink" title="1.3.2 添加数据库驱动"></a>1.3.2 添加数据库驱动</h4><p>由于Hive在连接MySQL时需要JDBC驱动，所以首先需要<a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" rel="noopener">下载</a>对应版本的驱动，然后将驱动移动到/usr/local/hive/lib中。</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 解压
-tar -zxvf mysql-connector-java-5.1.48.tar.gz
-# 进入到解压目录，将mysql-connector-java-5.1.48.jar移动到/usr/local/hive/lib目录下
-cd mysql-connector-java-5.1.48
-cp mysql-connector-java-5.1.48.jar /usr/local/hive/lib/
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 解压</span>
+<span class="token function">tar</span> -zxvf mysql-connector-java-5.1.48.tar.gz
+<span class="token comment" spellcheck="true"># 进入到解压目录，将mysql-connector-java-5.1.48.jar移动到/usr/local/hive/lib目录下</span>
+<span class="token function">cd</span> mysql-connector-java-5.1.48
+<span class="token function">cp</span> mysql-connector-java-5.1.48.jar /usr/local/hive/lib/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="1-3-3-初始化元数据库"><a href="#1-3-3-初始化元数据库" class="headerlink" title="1.3.3 初始化元数据库"></a>1.3.3 初始化元数据库</h4><ul>
 <li>当使用的 hive 是 1.x 版本时，可以不进行初始化操作，Hive 会在第一次启动的时候会自动进行初始化，但不会生成所有的元数据信息表，只会初始化必要的一部分，在之后的使用中用到其余表时会自动创建。</li>
 <li>当使用的 hive 是 2.x 版本时，必须手动初始化元数据库。初始化命令：</li>
 </ul>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># schematool 命令在/usr/local/hive/bin目录下
-schematool -dbType mysql -initSchema
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># schematool 命令在/usr/local/hive/bin目录下</span>
+schematool -dbType mysql -initSchema<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>这里我使用的是 CDH 的<code>hive-1.1.0-cdh5.16.2.tar.gz</code>，对应 <code>Hive 1.1.0</code> 版本，可以跳过这一步。</p>
 <h4 id="1-3-4-启动"><a href="#1-3-4-启动" class="headerlink" title="1.3.4 启动"></a>1.3.4 启动</h4><p>启动hive之前，请先启动hadoop集群</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 启动hive
-[root@centos ~]# hive
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 启动hive</span>
+<span class="token punctuation">[</span>root@centos ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># hive</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="2-HiveServer2-beeline配置"><a href="#2-HiveServer2-beeline配置" class="headerlink" title="2. HiveServer2/beeline配置"></a>2. HiveServer2/beeline配置</h2><p>Hive内置了HiveServer2服务，允许远程客户端可以使用各种编程语言向 Hive 提交请求并检索结果，支持多客户端并发访问和身份验证。HiveServer2 拥有自己的 CLI 工具——Beeline。Beeline 是一个基于 SQLLine 的 JDBC 客户端。</p>
 <h3 id="2-1-修改Hadoop配置"><a href="#2-1-修改Hadoop配置" class="headerlink" title="2.1 修改Hadoop配置"></a>2.1 修改Hadoop配置</h3><p>修改 /usr/local/hadoop/etc/hadoop/目录下hadoop 的 core-site.xml 配置文件，增加如下配置，指定 hadoop 的 root 用户可以代理本机上所有的用户。</p>
-<pre class="line-numbers language-lang-xml"><code class="language-lang-xml"><property>
-    <name>hadoop.proxyuser.root.hosts</name>
-    <value>*</value>
-</property>
-<property>
-    <name>hadoop.proxyuser.root.groups</name>
-    <value>*</value>
-</property>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.proxyuser.root.hosts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.proxyuser.root.groups<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-2-启动hiveserver2"><a href="#2-2-启动hiveserver2" class="headerlink" title="2.2 启动hiveserver2"></a>2.2 启动hiveserver2</h3><p>进入到/usr/local/hive/bin目录下，执行以下命令：</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">[root@centos bin]# hiveserver2
-# 打开另一个命令窗口，执行以下命令，出现10000的端口号表示成功开启
-netstat -nltp | grep 10000
-[root@centos bin]# netstat -nltp | grep 10000
-tcp        0      0 0.0.0.0:10000           0.0.0.0:*               LISTEN      17080/java
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># hiveserver2</span>
+<span class="token comment" spellcheck="true"># 打开另一个命令窗口，执行以下命令，出现10000的端口号表示成功开启</span>
+<span class="token function">netstat</span> -nltp <span class="token operator">|</span> <span class="token function">grep</span> 10000
+<span class="token punctuation">[</span>root@centos bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># netstat -nltp | grep 10000</span>
+tcp        0      0 0.0.0.0:10000           0.0.0.0:*               LISTEN      17080/java      <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>hivesever2每次要手动启动，因此设置为进程，后台运行。</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">[root@centos ~]# nohup hive --service hiveserver2 &
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># nohup hive --service hiveserver2 &amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="2-3-beeline的使用"><a href="#2-3-beeline的使用" class="headerlink" title="2.3 beeline的使用"></a>2.3 beeline的使用</h3><p>进入/usr/local/hive/bin目录下，执行以下命令进入beeline 交互式命令行，连接hive</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash">[root@centos bin]# beeline -u jdbc:hive2://localhost:10000 -n root
-# -u : 指定元数据库的链接信息  -n : 指定用户名
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@centos bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># beeline -u jdbc:hive2://localhost:10000 -n root</span>
+<span class="token comment" spellcheck="true"># -u : 指定元数据库的链接信息  -n : 指定用户名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>还有一种方式也可以去连接</p>
-<pre class="line-numbers language-lang-bash"><code class="language-lang-bash"># 先执行 beeline
-[root@centos bin]# beeline
-beeline>
-# 再执行以下命令进行连接
-!connect jdbc:hive2://localhost:10000 -n root
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 先执行 beeline</span>
+<span class="token punctuation">[</span>root@centos bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># beeline</span>
+beeline<span class="token operator">></span>
+<span class="token comment" spellcheck="true"># 再执行以下命令进行连接</span>
+<span class="token operator">!</span>connect jdbc:hive2://localhost:10000 -n root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1213,7 +1190,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">93.3k</span>&nbsp;字
+                class="white-color">100k</span>&nbsp;字
             
             
             
@@ -1407,7 +1384,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>
