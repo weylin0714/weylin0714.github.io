@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-10-31T14:49:46.096Z</updated>
+  <updated>2020-11-03T13:47:43.114Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://www.linwang93.cn/posts/c919fbee.html"/>
     <id>http://www.linwang93.cn/posts/c919fbee.html</id>
     <published>2020-10-30T14:03:00.000Z</published>
-    <updated>2020-10-31T14:49:46.096Z</updated>
+    <updated>2020-11-03T13:47:43.114Z</updated>
     
     <summary type="html">
     
@@ -105,7 +105,7 @@
     <link href="http://www.linwang93.cn/posts/3ec761e7.html"/>
     <id>http://www.linwang93.cn/posts/3ec761e7.html</id>
     <published>2020-10-16T14:00:20.000Z</published>
-    <updated>2020-11-01T10:13:56.218Z</updated>
+    <updated>2020-11-01T13:33:30.418Z</updated>
     
     <summary type="html">
     
@@ -350,11 +350,11 @@
       <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
+      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
+    
       <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
     
       <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
-    
-      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
     
       <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
     
