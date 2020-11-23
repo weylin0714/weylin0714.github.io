@@ -463,21 +463,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-27
+                    2020-11-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    13 分
                 </div>
                 
 
@@ -550,18 +550,12 @@
 <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86.png" style="zoom:25%;">
 
 <ol>
-<li><p>首先输出根节点 1。</p>
-</li>
-<li><p>由于根节点存在左孩子，输出左孩子 2。</p>
-</li>
-<li><p>由于节点 2 也存在左孩子，输出左孩子 4。</p>
-</li>
-<li><p>节点 4 既没有左孩子，也没有右孩子，那么回到节点 2，输出节点 2 的右孩子节点 5。</p>
-</li>
-<li><p>节点 5 既没有左孩子，也没有右孩子，那么回到节点 1，输出节点 1 的右孩子 3。</p>
-</li>
-<li><p>节点 3 没有左孩子，但是有右孩子，因此输出节点 3 的右孩子 6。</p>
-</li>
+<li>首先输出根节点 1。</li>
+<li>由于根节点存在左孩子，输出左孩子 2。</li>
+<li>由于节点 2 也存在左孩子，输出左孩子 4。</li>
+<li>节点 4 既没有左孩子，也没有右孩子，那么回到节点 2，输出节点 2 的右孩子节点 5。</li>
+<li>节点 5 既没有左孩子，也没有右孩子，那么回到节点 1，输出节点 1 的右孩子 3。</li>
+<li>节点 3 没有左孩子，但是有右孩子，因此输出节点 3 的右孩子 6。</li>
 </ol>
 <h4 id="3-2-2-2-中序遍历"><a href="#3-2-2-2-中序遍历" class="headerlink" title="3.2.2.2 中序遍历"></a>3.2.2.2 中序遍历</h4><p>二叉树的中序遍历，输出顺序是<strong>左子树、根节点、右子树</strong>。</p>
 <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.png" style="zoom:25%;">
@@ -577,9 +571,7 @@
 <h4 id="3-2-2-3-后序遍历"><a href="#3-2-2-3-后序遍历" class="headerlink" title="3.2.2.3 后序遍历"></a>3.2.2.3 后序遍历</h4><p>二叉树的后续遍历，输出顺序是左子树、右子树、根节点。</p>
 <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//%E5%90%8E%E5%BA%8F%E8%8A%82%E7%82%B9.png" style="zoom:25%;">
 
-<h4 id="3-2-2-4-遍历的代码实现"><a href="#3-2-2-4-遍历的代码实现" class="headerlink" title="3.2.2.4 遍历的代码实现"></a>3.2.2.4 遍历的代码实现</h4><ul>
-<li>用递归的思想实现遍历</li>
-</ul>
+<h4 id="3-2-2-4-遍历的代码实现"><a href="#3-2-2-4-遍历的代码实现" class="headerlink" title="3.2.2.4 遍历的代码实现"></a>3.2.2.4 遍历的代码实现</h4><p>用递归的思想实现遍历</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>data <span class="token operator">=</span> data
@@ -667,10 +659,169 @@ post_order_traversal<span class="token punctuation">(</span>root<span class="tok
 <span class="token number">4</span>
 <span class="token number">8</span>
 <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2-3-广度优先遍历"><a href="#3-2-3-广度优先遍历" class="headerlink" title="3.2.3 广度优先遍历"></a>3.2.3 广度优先遍历</h3><p>层序遍历：二叉树按照根节点到叶子节点的层次关系，一层一层横向遍历各个节点。</p>
+<p>同一层节点间没有直接关联，我们可以借助队列来实现层序遍历。</p>
+<img src="/posts/daf9d24b/%E6%BC%AB%E7%94%BB%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.png" style="zoom: 25%;">
+
+<p>上图二叉树的遍历顺序就是图中数字大小的先后顺序。</p>
+<p>利用队列实现层序遍历步骤：</p>
+<ol>
+<li>根节点进入队列。</li>
+<li>节点1出队，输出节点1，并得到节点1的左孩子节点2和右孩子节点3.让节点2和节点3入队。</li>
+<li>节点2出队，输出节点2，并得到节点2的左孩子节点4、右孩子节点5.让节点4和节点5入队。</li>
+<li>节点3出队，输出节点3，并得到节点3的右孩子6。让节点6入队。</li>
+<li>节点4出队，输出节点4，由于节点4没有孩子节点，所以没有新节点入队。</li>
+<li>节点5出队，输出节点5，由于节点5没有孩子节点，所以没有新节点入队。</li>
+<li>节点6出队，输出节点6，由于节点6没有孩子节点，所以没有新节点入队。</li>
+</ol>
+<p>至此，所有节点的遍历输出完毕。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> queue <span class="token keyword">import</span> Queue
+
+<span class="token keyword">def</span> <span class="token function">level_order_traversal</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    queue <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token operator">not</span> queue<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        node <span class="token operator">=</span> queue<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> node<span class="token punctuation">.</span>left <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> node<span class="token punctuation">.</span>right <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-3-二叉堆"><a href="#3-3-二叉堆" class="headerlink" title="3.3. 二叉堆"></a>3.3. 二叉堆</h2><h3 id="3-3-1-什么是二叉堆"><a href="#3-3-1-什么是二叉堆" class="headerlink" title="3.3.1 什么是二叉堆"></a>3.3.1 什么是二叉堆</h3><p>二叉堆本质上是一种完全二叉树，分为两种类型：最大堆、最小堆。</p>
+<p><strong>最大堆：</strong>任何一个父节点的值都<strong>大于或等于</strong>它的左孩子或右孩子节点的值。</p>
+<p><strong>最小堆：</strong>任何一个父节点的值都<strong>小于或等于</strong> 它的左孩子或右孩子节点的值。</p>
+<p>二叉堆的根节点叫作堆顶。最大堆和最小堆的特点决定了：最大堆的堆顶是整个堆中的<strong>最大元素</strong>；最小堆的堆顶是整个堆的<strong>最小元素</strong>。</p>
+<h3 id="3-3-2-二叉堆的自我调整"><a href="#3-3-2-二叉堆的自我调整" class="headerlink" title="3.3.2 二叉堆的自我调整"></a>3.3.2 二叉堆的自我调整</h3><p>二叉堆的自我调整：把一个不符合二叉堆性质的完全二叉树调整成一个堆。对于二叉堆，有如下几种操作：<strong>插入节点、删除节点、构建二叉堆。</strong></p>
 <ul>
-<li>用栈来实现遍历</li>
+<li>插入节点</li>
 </ul>
-<h3 id="3-2-3-广度优先遍历"><a href="#3-2-3-广度优先遍历" class="headerlink" title="3.2.3 广度优先遍历"></a>3.2.3 广度优先遍历</h3><h2 id="3-3-二叉堆"><a href="#3-3-二叉堆" class="headerlink" title="3.3. 二叉堆"></a>3.3. 二叉堆</h2><h2 id="3-4-优先队列"><a href="#3-4-优先队列" class="headerlink" title="3.4 优先队列"></a>3.4 优先队列</h2><script>
+<p>对于最小二叉堆，当在二叉堆插入节点时，<strong>插入位置是完全二叉树的最后一个位置</strong>，然后与父节点比较。如果比父节点小，不符合最小二叉堆的性质，于是让新节点上浮，与父节点交换位置。依次进行比较，直至满足最小二叉堆的性质。</p>
+<p>对于最大二叉堆，也同样按照上述思路进行比较。</p>
+<ul>
+<li>删除节点</li>
+</ul>
+<p>从二叉堆中删除节点，<strong>删除的是处于堆顶的节点</strong>。为了维持完全二叉树的结构，把堆的最后一个节点临时不到堆顶的位置。然后分别与左右孩子比较，如果不满足最大堆或最小堆的条件，则堆顶节点进行下沉，然后再继续比较，直至满足最大堆或最小堆的性质。</p>
+<ul>
+<li>构建二叉堆</li>
+</ul>
+<p>构建二叉堆就是把一个无序的完全二叉树调整为二叉堆，本质就是让所有非叶子节点依次“下沉”。</p>
+<p>堆的插入和删除操作的时间复杂度是 $O(logn)$。构建堆的时间复杂度是 $O(n)$。</p>
+<h3 id="3-3-3-二叉堆的代码实现"><a href="#3-3-3-二叉堆的代码实现" class="headerlink" title="3.3.3 二叉堆的代码实现"></a>3.3.3 二叉堆的代码实现</h3><p>二叉堆的存储方式是顺序存储，即所有节点都存储在数组中。在数组中，假设父节点的下标是 parent，则它的左孩子的下标就是 2xparent+1，右孩子的下标就是 2xparent+2。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">up_adjust</span><span class="token punctuation">(</span>array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    二叉堆的尾节点上浮操作
+    :param array: 原数组
+    """</span>
+    child_index <span class="token operator">=</span> len<span class="token punctuation">(</span>array<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+    parent_index <span class="token operator">=</span> <span class="token punctuation">(</span>child_index <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+    <span class="token comment" spellcheck="true"># temp 保存插入的叶子节点值，用于最后的赋值</span>
+    temp <span class="token operator">=</span> array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span>
+    <span class="token keyword">while</span> child_index <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">and</span> temp <span class="token operator">&lt;</span> array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        child_index <span class="token operator">=</span> parent_index
+        parent_index <span class="token operator">=</span> <span class="token punctuation">(</span>parent_index <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+    array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+<span class="token keyword">def</span> <span class="token function">down_adjust</span><span class="token punctuation">(</span>parent_index<span class="token punctuation">,</span> length<span class="token punctuation">,</span> array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    二叉堆的节点下沉操作
+    :param parent_index: 待下沉的节点下标
+    :param length: 堆的长度范围
+    :param array: 原数组
+    """</span>
+    <span class="token comment" spellcheck="true"># temp 保存父节点值，用于最后的赋值</span>
+    temp <span class="token operator">=</span> array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span>
+    child_index <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> parent_index <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> child_index <span class="token operator">&lt;</span> length<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 如果右右孩子，且右孩子的值小于左孩子的值，则定位到右孩子</span>
+        <span class="token keyword">if</span> child_index <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> length <span class="token operator">and</span> array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span> <span class="token operator">></span> array<span class="token punctuation">[</span>child_index  <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            child_index <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># 如果父节点的值小于任何一个子节点的值，直接跳出</span>
+        <span class="token keyword">if</span> temp <span class="token operator">&lt;=</span> array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+        <span class="token comment" spellcheck="true"># 无需真正交换，单向赋值即可</span>
+        array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span>
+        parent_index <span class="token operator">=</span> child_index
+        child_index <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> child_index <span class="token operator">+</span> <span class="token number">1</span>
+    array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+<span class="token keyword">def</span> <span class="token function">build_heap</span><span class="token punctuation">(</span>array<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    二叉堆的构建操作
+    :param array: 原数组
+    """</span>
+    <span class="token comment" spellcheck="true"># 从最后一个非叶子节点开始，依次下沉调整</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span> <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        down_adjust<span class="token punctuation">(</span>i<span class="token punctuation">,</span> len<span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span>
+
+my_array <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+up_adjust<span class="token punctuation">(</span>my_array<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_array<span class="token punctuation">)</span>
+my_array <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+build_heap<span class="token punctuation">(</span>my_array<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_array<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-4-优先队列"><a href="#3-4-优先队列" class="headerlink" title="3.4 优先队列"></a>3.4 优先队列</h2><h3 id="3-4-1-优先队列的特点"><a href="#3-4-1-优先队列的特点" class="headerlink" title="3.4.1 优先队列的特点"></a>3.4.1 优先队列的特点</h3><p>优先队列不再遵循先入先出的原则，而是分为两种情况：</p>
+<p><strong>最大优先队列：</strong>无论入队顺序如何，都是当前最大的元素优先出队。</p>
+<p><strong>最小优先队列：</strong>无论入队顺序如何，都是当前最小的元素优先出队。</p>
+<h3 id="3-4-2-优先队列的实现"><a href="#3-4-2-优先队列的实现" class="headerlink" title="3.4.2 优先队列的实现"></a>3.4.2 优先队列的实现</h3><p>最大堆的堆顶是整个堆中的最大元素，最小堆的堆顶是整个堆中的最小元素。因此，可以利用最大堆来实现最大优先队列，每一次的入队都是堆的插入操作，每一次出队操作就是删除堆顶节点。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">PriorityQueue</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>size <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">def</span> <span class="token function">enqueue</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> element<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>array<span class="token punctuation">.</span>append<span class="token punctuation">(</span>element<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>size <span class="token operator">+=</span> <span class="token number">1</span>
+        self<span class="token punctuation">.</span>up_adjust<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">dequeue</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>size <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"队列为空！"</span><span class="token punctuation">)</span>
+        head <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>self<span class="token punctuation">.</span>size<span class="token number">-1</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>size <span class="token operator">-=</span> <span class="token number">1</span>
+        self<span class="token punctuation">.</span>down_adjust<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> head
+
+    <span class="token keyword">def</span> <span class="token function">up_adjust</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        child_index <span class="token operator">=</span> self<span class="token punctuation">.</span>size <span class="token operator">-</span> <span class="token number">1</span>
+        parent_index <span class="token operator">=</span> <span class="token punctuation">(</span>child_index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+        <span class="token comment" spellcheck="true"># temp保存插入的叶子节点值，用于最后的赋值</span>
+        temp <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span>
+        <span class="token keyword">while</span> child_index <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">and</span> temp <span class="token operator">></span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 无须真正交换，单向赋值即可</span>
+            self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span>
+            child_index <span class="token operator">=</span> parent_index
+            parent_index <span class="token operator">=</span> <span class="token punctuation">(</span>parent_index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+        self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+    <span class="token keyword">def</span> <span class="token function">down_adjust</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        parent_index <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token comment" spellcheck="true"># temp保存父节点的值，用于最后的赋值</span>
+        temp <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span>
+        child_index <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> child_index <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>size<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 如果有右孩子，且右孩子的值大于左孩子的值，则定位到右孩子</span>
+            <span class="token keyword">if</span> child_index <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> self<span class="token punctuation">.</span>size <span class="token operator">and</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>child_index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">></span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                child_index <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token comment" spellcheck="true"># 如果父节点的值大于任何一个孩子的值，直接跳出</span>
+            <span class="token keyword">if</span> temp <span class="token operator">>=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+            <span class="token comment" spellcheck="true"># 无须真正交换，单向赋值即可</span>
+            self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>child_index<span class="token punctuation">]</span>
+            parent_index <span class="token operator">=</span> child_index
+            child_index <span class="token operator">=</span> child_index <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span>
+        self<span class="token punctuation">.</span>array<span class="token punctuation">[</span>parent_index<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+queue <span class="token operator">=</span> PriorityQueue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span>dequeue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span>dequeue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1221,7 +1372,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">100.4k</span>&nbsp;字
+                class="white-color">107.1k</span>&nbsp;字
             
             
             

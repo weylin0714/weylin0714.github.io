@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.linwang93.cn/"/>
-  <updated>2020-11-03T13:47:43.114Z</updated>
+  <updated>2020-11-23T14:21:48.406Z</updated>
   <id>http://www.linwang93.cn/</id>
   
   <author>
@@ -15,6 +15,91 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>命令行解析--sys.argv与模块argparse</title>
+    <link href="http://www.linwang93.cn/posts/18725c27.html"/>
+    <id>http://www.linwang93.cn/posts/18725c27.html</id>
+    <published>2020-11-21T05:35:28.000Z</published>
+    <updated>2020-11-23T14:21:48.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在执行Python脚本时，有时我们希望通过命令行传入参数。在本文中，我们介绍命令行参数解析 &lt;code&gt;sys.argv&lt;/code&gt; 和 &lt;code&gt;argparse&lt;/code&gt; 的使用方法。&lt;/p&gt;
+&lt;h2 id=&quot;1-sys-argv&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python之路" scheme="http://www.linwang93.cn/categories/Python%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="argparse" scheme="http://www.linwang93.cn/tags/argparse/"/>
+    
+      <category term="argv" scheme="http://www.linwang93.cn/tags/argv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据分析与挖掘实战--数据探索</title>
+    <link href="http://www.linwang93.cn/posts/cd3bde2.html"/>
+    <id>http://www.linwang93.cn/posts/cd3bde2.html</id>
+    <published>2020-11-08T09:30:20.000Z</published>
+    <updated>2020-11-11T15:54:45.353Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;数据探索：通过检验数据集的数据质量、绘制图表、计算某些特征量等手段，对样本数据集的结构和规律进行分析的过程。数据探索有助于选择合适的数据预处理和建模方法。&lt;/p&gt;
+&lt;h2 id=&quot;1-数据质量分析&quot;&gt;&lt;a href=&quot;#1-数据质量分析&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据分析与挖掘" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E6%8C%96%E6%8E%98/"/>
+    
+    
+      <category term="数据探索" scheme="http://www.linwang93.cn/tags/%E6%95%B0%E6%8D%AE%E6%8E%A2%E7%B4%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python数据分析常用库（二）--Matplotlib</title>
+    <link href="http://www.linwang93.cn/posts/f9f58c2d.html"/>
+    <id>http://www.linwang93.cn/posts/f9f58c2d.html</id>
+    <published>2020-11-03T13:59:44.000Z</published>
+    <updated>2020-11-07T13:37:43.759Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Matplotlib是一个非常强大的 Python 画图工具，可以帮助我们以直观的形式更好地了解数据。它支持两种绘图方式，即 &lt;code&gt;ax.plot()&lt;/code&gt;和&lt;code&gt;plt.plot()&lt;/code&gt;。&lt;code&gt;plt.plot()&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据分析" scheme="http://www.linwang93.cn/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="Matplotlib" scheme="http://www.linwang93.cn/tags/Matplotlib/"/>
+    
+  </entry>
   
   <entry>
     <title>Python数据分析常用库（一）--Numpy</title>
@@ -49,7 +134,7 @@
     <link href="http://www.linwang93.cn/posts/daf9d24b.html"/>
     <id>http://www.linwang93.cn/posts/daf9d24b.html</id>
     <published>2020-10-25T02:36:32.000Z</published>
-    <updated>2020-10-27T14:59:49.253Z</updated>
+    <updated>2020-11-18T15:45:39.767Z</updated>
     
     <summary type="html">
     
@@ -350,11 +435,11 @@
       <category term="工具" scheme="http://www.linwang93.cn/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
-    
       <category term="Github" scheme="http://www.linwang93.cn/tags/Github/"/>
     
       <category term="图床" scheme="http://www.linwang93.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+      <category term="Typora" scheme="http://www.linwang93.cn/tags/Typora/"/>
     
       <category term="Gitee" scheme="http://www.linwang93.cn/tags/Gitee/"/>
     
@@ -486,88 +571,6 @@
         
         
           &lt;h2 id=&quot;1-组织结构&quot;&gt;&lt;a href=&quot;#1-组织结构&quot; class=&quot;headerlink&quot; title=&quot;1. 组织结构&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（十一）：面向对象</title>
-    <link href="http://www.linwang93.cn/posts/b9ae55.html"/>
-    <id>http://www.linwang93.cn/posts/b9ae55.html</id>
-    <published>2020-05-03T07:29:47.000Z</published>
-    <updated>2020-06-20T14:40:16.377Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;面向对象中的两个基本概念就是类和对象。类用于定义抽象数据类型，而对象是类的一个实例。&lt;/p&gt;
-&lt;h2 id=&quot;1-类与实例对象&quot;&gt;&lt;a href=&quot;#1-类与实例对象&quot; class=&quot;headerlink&quot; title=&quot;1. 类与实例对象&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（十）：迭代器与生成器</title>
-    <link href="http://www.linwang93.cn/posts/4360111c.html"/>
-    <id>http://www.linwang93.cn/posts/4360111c.html</id>
-    <published>2020-05-03T07:28:43.000Z</published>
-    <updated>2020-06-01T16:06:47.823Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-可迭代对象&quot;&gt;&lt;a href=&quot;#1-可迭代对象&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://www.linwang93.cn/categories/Python/"/>
-    
-    
-      <category term="Python学习笔记" scheme="http://www.linwang93.cn/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习笔记（九）：函数进阶-匿名函数|高阶函数|闭包|装饰器</title>
-    <link href="http://www.linwang93.cn/posts/d7a6b6fc.html"/>
-    <id>http://www.linwang93.cn/posts/d7a6b6fc.html</id>
-    <published>2020-05-03T07:09:43.000Z</published>
-    <updated>2020-05-30T16:14:49.488Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-匿名函数&quot;&gt;&lt;a href=&quot;#1-匿名函数&quot; class=&quot;headerlink&quot;
         
       
     

@@ -1,0 +1,1579 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Python数据分析常用库（二）--Matplotlib, 简若">
+    <meta name="description" content="Matplotlib是一个非常强大的 Python 画图工具，可以帮助我们以直观的形式更好地了解数据。它支持两种绘图方式，即 ax.plot()和plt.plot()。plt.plot() 适合快速绘图，而 ax.plot() 适合用于精细">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Python数据分析常用库（二）--Matplotlib | 简若</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="简若" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">简若</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">简若</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/weylin0714/weylin0714.github.io.git" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #1E90FF;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/weylin0714/weylin0714.github.io.git" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//2020-11-07.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python数据分析常用库（二）--Matplotlib</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #1E90FF;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #1E90FF;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #1E90FF;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Matplotlib/">
+                                <span class="chip bg-color">Matplotlib</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
+                                数据分析
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-11-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-11-07
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    10 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Matplotlib是一个非常强大的 Python 画图工具，可以帮助我们以直观的形式更好地了解数据。它支持两种绘图方式，即 <code>ax.plot()</code>和<code>plt.plot()</code>。<code>plt.plot()</code> 适合快速绘图，而 <code>ax.plot()</code> 适合用于精细绘图。下面依次来介绍如何使用。</p>
+<h2 id="1-ax-plot-绘图"><a href="#1-ax-plot-绘图" class="headerlink" title="1. ax.plot() 绘图"></a>1. ax.plot() 绘图</h2><p>首先，我们来理解一些概念：Figure、Axes、Axis。</p>
+<p>Figure：如图中所示，可理解为画布，我们所有的内容都会绘制在这个上面。</p>
+<p>Axes：可理解为实际绘图的区域，在一个Figure中可以有多个 Axes。</p>
+<p>Axis：表示绘图时的横纵坐标轴。</p>
+<img src="/posts/f9f58c2d/fig_map.png" style="zoom: 67%;">
+
+<h3 id="1-1-基本介绍"><a href="#1-1-基本介绍" class="headerlink" title="1.1 基本介绍"></a>1.1 基本介绍</h3><p>首先导入 matplotlib 中的 pyplot 模块：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>创建一个没有 Axes 的 figure：</p>
+<pre class="line-numbers language-python"><code class="language-python">fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>创建 Axes：</p>
+<pre class="line-numbers language-python"><code class="language-python">fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 返回一个fig图像对象和ax区块对象</span>
+<span class="token comment" spellcheck="true"># 等价于</span>
+<span class="token comment" spellcheck="true"># fig = plt.figure()</span>
+<span class="token comment" spellcheck="true"># ax = fig.add_subplot(1,1,1)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>fig, ax=plt.subplots(m,n,figsize=(a,b))</code>：创建 $m\times n$  个 Axes 对象，每个大小为 $a\times b$。当创建多个 Axes对象时，返回的 ax 类型为<code>numpy.ndarray</code>。</p>
+<p>之后可以通过 ax 调用一系列函数进行绘图操作。</p>
+<h3 id="1-2-绘图操作"><a href="#1-2-绘图操作" class="headerlink" title="1.2 绘图操作"></a>1.2 绘图操作</h3><h4 id="1-2-1-折线图"><a href="#1-2-1-折线图" class="headerlink" title="1.2.1 折线图"></a>1.2.1 折线图</h4><pre><code>ax.plot(x, y, [fmt], [x2], [y2], [fmt2], ..., **kwargs)</code></pre>
+<p><code>fmt = '[marker][line][color]'</code>：可选的，由线条颜色、线型、标记符号组成。</p>
+<p><code>**kwargs</code>：可选的，设置其他属性，如线宽（linewidth）、图例标签（label）、标记符号大小（markersize）等。</p>
+<p>详细使用说明查看<a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" target="_blank" rel="noopener">官方文档</a>。</p>
+<p>示例：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token comment" spellcheck="true"># Fixing random state for reproducibility</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span>
+
+dt <span class="token operator">=</span> <span class="token number">0.1</span>
+t <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> dt<span class="token punctuation">)</span>
+nse1 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>len<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span>                 <span class="token comment" spellcheck="true"># white noise 1</span>
+nse2 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>len<span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span>                 <span class="token comment" spellcheck="true"># white noise 2</span>
+
+<span class="token comment" spellcheck="true"># Two signals with a coherent part at 10Hz and a random part</span>
+s1 <span class="token operator">=</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>pi <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">*</span> t<span class="token punctuation">)</span> <span class="token operator">+</span> nse1
+s2 <span class="token operator">=</span> np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>pi <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">*</span> t<span class="token punctuation">)</span> <span class="token operator">+</span> nse2
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>t<span class="token punctuation">,</span> s1<span class="token punctuation">,</span> t<span class="token punctuation">,</span> s2<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 设置显示范围</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'time'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 设置x轴标签</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'s1 and s2'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 设置y轴标签</span>
+ax<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//line.png" alt="line" style="zoom:80%;">
+
+<h4 id="1-2-2-散点图"><a href="#1-2-2-散点图" class="headerlink" title="1.2.2 散点图"></a>1.2.2 散点图</h4><pre><code>ax.scatter(x, y, s=None, c=None, alpha=None, marker=None, ..., **kwargs)</code></pre>
+<p><code>s, c, alpha</code>分别对应散点大小(size)、颜色(color)、透明度。<code>marker</code>：设置点的形状。详细说明查看<a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.scatter.html#matplotlib.axes.Axes.scatter" target="_blank" rel="noopener">官方文档</a>。</p>
+<p>示例：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"font.sans-serif"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"SimHei"</span> <span class="token comment" spellcheck="true"># 设置中文字体</span>
+
+<span class="token comment" spellcheck="true"># Fixing random state for reproducibility</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">19680801</span><span class="token punctuation">)</span>
+
+N <span class="token operator">=</span> <span class="token number">50</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>N<span class="token punctuation">)</span>
+y <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>N<span class="token punctuation">)</span>
+colors <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>N<span class="token punctuation">)</span>
+area <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">30</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span>
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> s<span class="token operator">=</span>area<span class="token punctuation">,</span> c<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'散点图'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//scatter.png" style="zoom:80%;">
+
+
+
+<p><strong>设置中文字体：</strong>由于 Matplotlib 的默认字体是英文，因此在向图表中添加中文的时候，常常无法显示，通过设置plt.rcParams[“font.sans-serif”] = “SimHei”，可以支持中文字体。</p>
+<p>其他常用中文字体：</p>
+<table>
+<thead>
+<tr>
+<th>中文字体</th>
+<th>英文描述</th>
+<th>中文字体</th>
+<th>英文描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>宋体</td>
+<td>SimSun</td>
+<td>楷体</td>
+<td>KaiTi</td>
+</tr>
+<tr>
+<td>黑体</td>
+<td>SimHei</td>
+<td>仿宋</td>
+<td>FangSong</td>
+</tr>
+<tr>
+<td>微软雅黑</td>
+<td>MicrosoftYaHei</td>
+<td>隶书</td>
+<td>LiSu</td>
+</tr>
+<tr>
+<td>微软正黑体</td>
+<td>MicrosoftJhengHei</td>
+<td>幼圆</td>
+<td>YouYuan</td>
+</tr>
+</tbody></table>
+<h4 id="1-2-3-柱状图"><a href="#1-2-3-柱状图" class="headerlink" title="1.2.3 柱状图"></a>1.2.3 柱状图</h4><pre><code>ax.bar(x, height, width=0.8, bottom=None, align='center', **kwargs)</code></pre>
+<p>x：柱状图x轴的坐标。</p>
+<p>height：各柱子的高度。</p>
+<p>width：柱的宽度，默认是0.8，可传入数组，绘制图不等宽的柱状图。</p>
+<p>bottom：各柱子底部的y坐标值，默认为0。</p>
+<p>align：柱子与x坐标的对齐方式，可设置为 {‘center’, ‘edge’}，默认为’center’。</p>
+<p>**kwargs：设置其他属性，如柱子颜色（color）、柱边框颜色（edgecolor）、边框线宽（linewidth）。</p>
+<p>详细说明查看<a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.bar.html#matplotlib.axes.Axes.bar" target="_blank" rel="noopener">官方网站</a>。</p>
+<p>示例一：分组柱状图</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+labels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'G1'</span><span class="token punctuation">,</span> <span class="token string">'G2'</span><span class="token punctuation">,</span> <span class="token string">'G3'</span><span class="token punctuation">,</span> <span class="token string">'G4'</span><span class="token punctuation">,</span> <span class="token string">'G5'</span><span class="token punctuation">]</span>
+men_means <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">]</span>
+women_means <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span>
+
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>len<span class="token punctuation">(</span>labels<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># the label locations</span>
+width <span class="token operator">=</span> <span class="token number">0.35</span>  <span class="token comment" spellcheck="true"># the width of the bars</span>
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+rects1 <span class="token operator">=</span> ax<span class="token punctuation">.</span>bar<span class="token punctuation">(</span>x <span class="token operator">-</span> width<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> men_means<span class="token punctuation">,</span> width<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Men'</span><span class="token punctuation">)</span>
+rects2 <span class="token operator">=</span> ax<span class="token punctuation">.</span>bar<span class="token punctuation">(</span>x <span class="token operator">+</span> width<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> women_means<span class="token punctuation">,</span> width<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Women'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Add some text for labels, title and custom x-axis tick labels, etc.</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Scores'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Scores by group and gender'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xticks<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xticklabels<span class="token punctuation">(</span>labels<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">autolabel</span><span class="token punctuation">(</span>rects<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Attach a text label above each bar in *rects*, displaying its height."""</span>
+    <span class="token keyword">for</span> rect <span class="token keyword">in</span> rects<span class="token punctuation">:</span>
+        height <span class="token operator">=</span> rect<span class="token punctuation">.</span>get_height<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        ax<span class="token punctuation">.</span>annotate<span class="token punctuation">(</span><span class="token string">'{}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    xy<span class="token operator">=</span><span class="token punctuation">(</span>rect<span class="token punctuation">.</span>get_x<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> rect<span class="token punctuation">.</span>get_width<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    xytext<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 1 points vertical offset</span>
+                    textcoords<span class="token operator">=</span><span class="token string">"offset points"</span><span class="token punctuation">,</span>
+                    ha<span class="token operator">=</span><span class="token string">'center'</span><span class="token punctuation">,</span> va<span class="token operator">=</span><span class="token string">'bottom'</span><span class="token punctuation">)</span>
+
+autolabel<span class="token punctuation">(</span>rects1<span class="token punctuation">)</span>
+autolabel<span class="token punctuation">(</span>rects2<span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用 <code>annotate()</code> 在指定位置添加文本，详情查看<a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.annotate.html#matplotlib.axes.Axes.annotate" target="_blank" rel="noopener">官方网站</a>。</p>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//group_bar.png" style="zoom:80%;">
+
+<p>示例二：堆叠柱状图</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+labels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'G1'</span><span class="token punctuation">,</span> <span class="token string">'G2'</span><span class="token punctuation">,</span> <span class="token string">'G3'</span><span class="token punctuation">,</span> <span class="token string">'G4'</span><span class="token punctuation">,</span> <span class="token string">'G5'</span><span class="token punctuation">]</span>
+men_means <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">]</span>
+women_means <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span>
+men_std <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+women_std <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+width <span class="token operator">=</span> <span class="token number">0.35</span>       <span class="token comment" spellcheck="true"># the width of the bars: can also be len(x) sequence</span>
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ax<span class="token punctuation">.</span>bar<span class="token punctuation">(</span>labels<span class="token punctuation">,</span> men_means<span class="token punctuation">,</span> width<span class="token punctuation">,</span> yerr<span class="token operator">=</span>men_std<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Men'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>bar<span class="token punctuation">(</span>labels<span class="token punctuation">,</span> women_means<span class="token punctuation">,</span> width<span class="token punctuation">,</span> yerr<span class="token operator">=</span>women_std<span class="token punctuation">,</span> bottom<span class="token operator">=</span>men_means<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'Women'</span><span class="token punctuation">)</span>
+
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Scores'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'Scores by group and gender'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//stacked_bar.png" style="zoom:80%;">
+
+<h4 id="1-3-4-水平条形图"><a href="#1-3-4-水平条形图" class="headerlink" title="1.3.4 水平条形图"></a>1.3.4 水平条形图</h4><pre><code>ax.barh(y, width, height=0.8, left=None, align='center', **kwargs)</code></pre>
+<p>y：y轴每个柱的位置，对应 bar的x。</p>
+<p>width：柱的宽度，对应bar的height。</p>
+<p>height：柱的高度，对应bar的width，默认值为0.8。</p>
+<p>left：条形图左边开始的x轴坐标，对应bar的bottom。</p>
+<p>align：柱子与y坐标的对齐方式，可设置为 {‘center’, ‘edge’}，默认为’center’。</p>
+<p>详细说明查看<a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.barh.html#matplotlib.axes.Axes.barh" target="_blank" rel="noopener">官方网站</a>。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment" spellcheck="true"># Fixing random state for reproducibility</span>
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>rcdefaults<span class="token punctuation">(</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Example data</span>
+people <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token string">'Dick'</span><span class="token punctuation">,</span> <span class="token string">'Harry'</span><span class="token punctuation">,</span> <span class="token string">'Slim'</span><span class="token punctuation">,</span> <span class="token string">'Jim'</span><span class="token punctuation">)</span>
+y_pos <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>len<span class="token punctuation">(</span>people<span class="token punctuation">)</span><span class="token punctuation">)</span>
+performance <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">10</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>len<span class="token punctuation">(</span>people<span class="token punctuation">)</span><span class="token punctuation">)</span>
+error <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>len<span class="token punctuation">(</span>people<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+ax<span class="token punctuation">.</span>barh<span class="token punctuation">(</span>y_pos<span class="token punctuation">,</span> performance<span class="token punctuation">,</span> xerr<span class="token operator">=</span>error<span class="token punctuation">,</span> align<span class="token operator">=</span><span class="token string">'center'</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'c'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_yticks<span class="token punctuation">(</span>y_pos<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_yticklabels<span class="token punctuation">(</span>people<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>invert_yaxis<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 改变标签的顺序，从上到下</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Performance'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'How fast do you want to go today?'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/posts/f9f58c2d/barh.png" style="zoom: 67%;">
+
+<h4 id="1-3-5-直方图"><a href="#1-3-5-直方图" class="headerlink" title="1.3.5 直方图"></a>1.3.5 直方图</h4><pre><code>ax.hist(x, bins=None, range=None, density=False, histtype='bar', color=None, label=None,...)</code></pre>
+<p>x：需要计算并绘制直方图的数组。</p>
+<p>bins：控制直方图分箱的个数，默认为10。</p>
+<p>range：bins的上下范围，如果未提供，则范围为 (x.min(), x.max())。</p>
+<p>density：绘制并返回一个概率密度，默认为False。</p>
+<p>histtype：绘制的直方图类型，可设置为{‘bar’, ‘barstacked’, ‘step’, ‘stepfilled’}其中之一, 默认为’bar’。</p>
+<p>color：颜色。</p>
+<p>label：标签。</p>
+<p>详细说明查看<a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" target="_blank" rel="noopener">官方网站</a>。</p>
+<p>示例一：一维数组的直方图</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># example data</span>
+mu <span class="token operator">=</span> <span class="token number">100</span>  <span class="token comment" spellcheck="true"># mean of distribution</span>
+sigma <span class="token operator">=</span> <span class="token number">15</span>  <span class="token comment" spellcheck="true"># standard deviation of distribution</span>
+x <span class="token operator">=</span> mu <span class="token operator">+</span> sigma <span class="token operator">*</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">437</span><span class="token punctuation">)</span>
+
+num_bins <span class="token operator">=</span> <span class="token number">50</span>
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># the histogram of the data</span>
+n<span class="token punctuation">,</span> bins<span class="token punctuation">,</span> patches <span class="token operator">=</span> ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> num_bins<span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># add a 'best fit' line</span>
+y <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> np<span class="token punctuation">.</span>pi<span class="token punctuation">)</span> <span class="token operator">*</span> sigma<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span>
+     np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.5</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> sigma <span class="token operator">*</span> <span class="token punctuation">(</span>bins <span class="token operator">-</span> mu<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>bins<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token string">'--'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'Smarts'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'Probability density'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span>r<span class="token string">'Histogram of IQ: $\mu=100$, $\sigma=15$'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Tweak spacing to prevent clipping of ylabel</span>
+fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//hist.png" style="zoom:72%;">
+
+<p>示例二：多个数据集的直方图</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span>
+
+n_bins <span class="token operator">=</span> <span class="token number">10</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+fig<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>ax0<span class="token punctuation">,</span> ax1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>ax2<span class="token punctuation">,</span> ax3<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>nrows<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> ncols<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'tan'</span><span class="token punctuation">,</span> <span class="token string">'lime'</span><span class="token punctuation">]</span>
+ax0<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">)</span>
+ax0<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>prop<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'size'</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+ax0<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'bars with legend'</span><span class="token punctuation">)</span>
+
+ax1<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">,</span> stacked<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'stacked bar'</span><span class="token punctuation">)</span>
+
+ax2<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'step'</span><span class="token punctuation">,</span> stacked<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> fill<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+ax2<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'stack step (unfilled)'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Make a multiple-histogram of data-sets with different length.</span>
+x_multi <span class="token operator">=</span> <span class="token punctuation">[</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">10000</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+ax3<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x_multi<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">)</span>
+ax3<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'different sample sizes'</span><span class="token punctuation">)</span>
+
+fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//hist_multiple_data.png" style="zoom:72%;">
+
+<h4 id="1-3-6-饼图"><a href="#1-3-6-饼图" class="headerlink" title="1.3.6 饼图"></a>1.3.6 饼图</h4><pre><code>ax.pie(x, explode=None, labels=None, colors=None, autopct=None, labeldistance=1.1, startangle=0, radius=1, counterclock=True,...)</code></pre>
+<p>x：数组x。</p>
+<p>explode：指定要偏移每个楔体的距离。</p>
+<p>labels：图例标签。</p>
+<p>colors：每一部分的颜色。</p>
+<p>autopct：用数值标记每一部分。</p>
+<p>labeldistance：label标记的绘制位置,相对于半径的比例，默认值为1.1, 如&lt;1则绘制在饼图内侧。</p>
+<p>startangle：起始绘制角度,默认图是从x轴正方向逆时针画起,如设定为90则从y轴正方向画起。</p>
+<p>radius：饼图的半径，默认为1。</p>
+<p>counterclock：指定指针方向，默认为True，即逆时针。若设置为False，则为逆时针。</p>
+<p>详细说明查看<a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.pie.html#matplotlib.axes.Axes.pie" target="_blank" rel="noopener">官方网站</a>。</p>
+<p>示例一：基本的饼图</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token comment" spellcheck="true"># Pie chart, where the slices will be ordered and plotted counter-clockwise:</span>
+labels <span class="token operator">=</span> <span class="token string">'Frogs'</span><span class="token punctuation">,</span> <span class="token string">'Hogs'</span><span class="token punctuation">,</span> <span class="token string">'Dogs'</span><span class="token punctuation">,</span> <span class="token string">'Logs'</span>
+sizes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span>
+explode <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># only "explode" the 2nd slice (i.e. 'Hogs')</span>
+
+fig1<span class="token punctuation">,</span> ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>pie<span class="token punctuation">(</span>sizes<span class="token punctuation">,</span> explode<span class="token operator">=</span>explode<span class="token punctuation">,</span> labels<span class="token operator">=</span>labels<span class="token punctuation">,</span> autopct<span class="token operator">=</span><span class="token string">'%1.1f%%'</span><span class="token punctuation">,</span>
+        shadow<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> startangle<span class="token operator">=</span><span class="token number">90</span><span class="token punctuation">)</span>
+ax1<span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token string">'equal'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># Equal aspect ratio ensures that pie is drawn as a circle.</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//pie.png" style="zoom:67%;">
+
+<p>示例二：给饼图添加图例</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> subplot_kw<span class="token operator">=</span>dict<span class="token punctuation">(</span>aspect<span class="token operator">=</span><span class="token string">"equal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+recipe <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"375 g flour"</span><span class="token punctuation">,</span>
+          <span class="token string">"75 g sugar"</span><span class="token punctuation">,</span>
+          <span class="token string">"250 g butter"</span><span class="token punctuation">,</span>
+          <span class="token string">"300 g berries"</span><span class="token punctuation">]</span>
+
+data <span class="token operator">=</span> <span class="token punctuation">[</span>float<span class="token punctuation">(</span>x<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> recipe<span class="token punctuation">]</span>
+ingredients <span class="token operator">=</span> <span class="token punctuation">[</span>x<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> recipe<span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>pct<span class="token punctuation">,</span> allvals<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    absolute <span class="token operator">=</span> int<span class="token punctuation">(</span>pct<span class="token operator">/</span><span class="token number">100</span><span class="token punctuation">.</span><span class="token operator">*</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>allvals<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">"{:.1f}%\n({:d} g)"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>pct<span class="token punctuation">,</span> absolute<span class="token punctuation">)</span>
+
+wedges<span class="token punctuation">,</span> texts<span class="token punctuation">,</span> autotexts <span class="token operator">=</span> ax<span class="token punctuation">.</span>pie<span class="token punctuation">(</span>data<span class="token punctuation">,</span> autopct<span class="token operator">=</span><span class="token keyword">lambda</span> pct<span class="token punctuation">:</span> func<span class="token punctuation">(</span>pct<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                  textprops<span class="token operator">=</span>dict<span class="token punctuation">(</span>color<span class="token operator">=</span><span class="token string">"w"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>wedges<span class="token punctuation">,</span> ingredients<span class="token punctuation">,</span>
+          title<span class="token operator">=</span><span class="token string">"Ingredients"</span><span class="token punctuation">,</span>
+          loc<span class="token operator">=</span><span class="token string">"center left"</span><span class="token punctuation">,</span>
+          bbox_to_anchor<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>setp<span class="token punctuation">(</span>autotexts<span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> weight<span class="token operator">=</span><span class="token string">"bold"</span><span class="token punctuation">)</span>
+
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Matplotlib bakery: A pie"</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//pie_label.png" style="zoom: 80%;">
+
+<h2 id="2-plt-plot-绘图"><a href="#2-plt-plot-绘图" class="headerlink" title="2.plt.plot() 绘图"></a>2.plt.plot() 绘图</h2><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.linwang93.cn" rel="external nofollow noreferrer">lin</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.linwang93.cn/posts/f9f58c2d.html">http://www.linwang93.cn/posts/f9f58c2d.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.linwang93.cn" target="_blank">lin</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Matplotlib/">
+                                    <span class="chip bg-color">Matplotlib</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '60961d5b5123175ae775',
+        clientSecret: 'ebda23c9758d4b26ea4b438580ae79620384442e',
+        repo: 'gitalk',
+        owner: 'weylin0714',
+        admin: "weylin0714",
+        id: '2020-11-03T21-59-44',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/cd3bde2.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="数据分析与挖掘实战--数据探索">
+                        
+                        <span class="card-title">数据分析与挖掘实战--数据探索</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数据探索：通过检验数据集的数据质量、绘制图表、计算某些特征量等手段，对样本数据集的结构和规律进行分析的过程。数据探索有助于选择合适的数据预处理和建模方法。
+1. 数据质量分析数据质量分析是数据预处理的前提，主要任务是检查原始数据中是否存在脏
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E6%8C%96%E6%8E%98/" class="post-category">
+                                    数据分析与挖掘
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8E%A2%E7%B4%A2/">
+                        <span class="chip bg-color">数据探索</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/c919fbee.html">
+                    <div class="card-image">
+                        
+                        <img src="https://gitee.com/linwang0714/ImgHosting/raw/master/article_card_img//20201030.jpg" class="responsive-img" alt="Python数据分析常用库（一）--Numpy">
+                        
+                        <span class="card-title">Python数据分析常用库（一）--Numpy</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Numpy 是 Python 科学计算的基础工具包，也是 Python 做数据分析的关键库之一。Numpy 包的核心是 ndarray 对象，用于存放同类型元素的多维数组。
+1. 创建 Numpy 数组和矩阵导入 numpy:
+import
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
+                                    数据分析
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Numpy/">
+                        <span class="chip bg-color">Numpy</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 简若<br />'
+            + '文章作者: Lin<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="http://www.linwang93.cn" target="_blank">Lin</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">107.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "2";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/weylin0714" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1424158077@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1424158077" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1424158077" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="/wechat.jpg" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?27b2193bd56374883530e68916a31549";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>
